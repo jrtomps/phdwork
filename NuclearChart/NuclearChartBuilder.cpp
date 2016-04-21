@@ -1,0 +1,75 @@
+// NuclearChartBuilder.cpp
+// 
+// Jeromy Tompkins
+// 3/16/2011
+//
+// Builds a nuclear chart
+
+#include <string>
+#include <fstream>
+#include "NuclearChartBuilder.h"
+#include "NuclearChart.h"
+#include "TObject.h"
+
+ClassImp(NuclearChartBuilder)
+
+NuclearChartBuilder::NuclearChartBuilder(const std::string& setupfile) 
+  : NuclearChart()
+{
+  Load(setupfile);
+}
+
+NuclearChartBuilder(NuclearChartBuilder const& obj)
+{
+  if (this != &obj)
+    {
+      chart = obj.chart;
+    }
+}
+
+
+NuclearChartBuilder::~NuclearChartBuilder(void)
+{}
+
+NuclearChartBuilder& 
+NuclearChartBuilder::operator=(NuclearChartBuilder const& obj)
+{
+  if (this != &obj)
+    {
+      chart = obj.chart;
+    }
+  return *this;
+}
+
+NuclearChart 
+NuclearChartBuilder::GetChart(void) const
+{ return chart;}
+
+void
+NuclearCharBuilder::Load(const std::string setupfile)
+{
+  std::ifstream file(setupfile, std::ifstream::in);
+  if (!file.is_open()) 
+    {
+      std::cerr << "file " << setupfile << " doesn't exist" << std::endl;
+      return;
+    }
+
+  int n, z;
+  while (1)
+    {
+      file >> n >> z;
+      if (file.eof()) break;
+      if (file.bad() || fail.fail()) 
+        {
+	std::cerr << "unexpected termination: file state = " 
+		<< file.rd_state() << std::endl;
+	break;
+        }
+      chart.AddIsotope(n,z);
+    }
+ 
+  std::cout << "Found " << chart.size() << " entries" << std::endl;
+
+  file.close();
+}

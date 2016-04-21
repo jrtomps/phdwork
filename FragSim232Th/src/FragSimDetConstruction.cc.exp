@@ -1,0 +1,495 @@
+//
+// ********************************************************************
+// * License and Disclaimer                                           *
+// *                                                                  *
+// * The  Geant4 software  is  copyright of the Copyright Holders  of *
+// * the Geant4 Collaboration.  It is provided  under  the terms  and *
+// * conditions of the Geant4 Software License,  included in the file *
+// * LICENSE and available at  http://cern.ch/geant4/license .  These *
+// * include a list of copyright holders.                             *
+// *                                                                  *
+// * Neither the authors of this software system, nor their employing *
+// * institutes,nor the agencies providing financial support for this *
+// * work  make  any representation or  warranty, express or implied, *
+// * regarding  this  software system or assume any liability for its *
+// * use.  Please see the license in the file  LICENSE  and URL above *
+// * for the full disclaimer and the limitation of liability.         *
+// *                                                                  *
+// * This  code  implementation is the result of  the  scientific and *
+// * technical work of the GEANT4 collaboration.                      *
+// * By using,  copying,  modifying or  distributing the software (or *
+// * any work based  on the software)  you  agree  to acknowledge its *
+// * use  in  resulting  scientific  publications,  and indicate your *
+// * acceptance of all terms of the Geant4 Software license.          *
+// ********************************************************************
+//
+//
+// $Id: FragExpConstruction.cc,v 1.9 2006/06/29 17:47:19 gunter Exp $
+// GEANT4 tag $Name: geant4-09-02 $
+//
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <cmath>
+#include <iostream>
+
+#include "FragSimDetConstruction.hh"
+#include "SensitiveSSD.hh"
+#include "SensitiveMultiFuncParamSphere.hh"
+#include "G4PSSphereSurfaceCurrent.hh"
+#include "PSPreStepEnergy.hh"
+#include "Target.hh"
+#include "TargetSensitivity.hh"
+#include "TargetMountBuilder.hh"
+
+#include "G4NistManager.hh"
+#include "G4Isotope.hh"
+#include "G4Element.hh"
+#include "G4Material.hh"
+
+#include "G4Box.hh"
+#include "G4Tubs.hh"
+#include "G4LogicalVolume.hh"
+#include "G4AssemblyVolume.hh"
+#include "G4PVPlacement.hh"
+#include "G4VisAttributes.hh"
+
+#include "G4ThreeVector.hh"
+#include "G4RotationMatrix.hh"
+#include "G4Transform3D.hh"
+
+#include "G4VSensitiveDetector.hh"
+#include "G4SDManager.hh"
+
+#include "DataBucket.h"
+#include "TreeMaker.hh"
+#include "FragSimDetMessenger.hh"
+
+#include "globals.hh"
+
+
+FragSimDetConstruction::FragSimDetConstruction()
+:
+  vacuum(0),
+  aluminum(0),
+  U235(0),
+  U238(0),
+  natU(0),
+  natUMaterial(0),
+  experimentalHall_log(0), 
+  chamberWall_log(0), 
+  experimentalHall_phys(0),
+  chamberWall_phys(0),
+  tr0(NULL),
+  tr1(NULL),
+  tr2(NULL),
+  tr3(NULL),
+  rotMatrix(NULL),
+  tr_tar(NULL),
+  SSD0("UpStreamTop",0),
+  SSD1("DownStreamLeft",1),
+  SSD2("UpStreamRight",2),
+  SSD3("DownStreamBottom",3),
+  tar(),
+  fTarShift(0,0,0),
+  fRot1Shift(0),
+  fRot2Shift(0),
+  multiFuncSphere(),
+  fMessenger(new FragSimDetMessenger(this))
+{
+  DefineMaterials();
+  std::cout << "Instance of FragSimDetConstruction constructed" << std::endl;
+  //  SSD0.GetBuilder().PrintGeometryInfo();
+//  SetupTransforms();
+
+  DataBucket& db = TreeMaker::GetTreeMakerPointer()->GetDataBucket();
+  db.GetDoubleMap()["target_offset_x"] = fTarShift.x();
+  db.GetDoubleMap()["target_offset_y"] = fTarShift.y();
+  db.GetDoubleMap()["target_offset_z"] = fTarShift.z();
+
+  db.GetDoubleMap()["target_rot1_offset (deg)"] = fRot1Shift/CLHEP::deg;
+  db.GetDoubleMap()["target_rot2_offset (deg)"] = fRot2Shift/CLHEP::deg;
+}
+
+FragSimDetConstruction::~FragSimDetConstruction()
+{
+  std::cout << "Instance of FragSimDetConstruction destructed" << std::endl;
+}
+
+void
+FragSimDetConstruction::DefineMaterials()
+{
+  G4String name;
+  G4String symbol;
+  G4double n, a, z, density, abundance;
+  G4int    ncomponents;
+ 
+  G4NistManager* man = G4NistManager::Instance();
+  
+  vacuum   = man->FindOrBuildMaterial("G4_Galactic");
+  aluminum = man->FindOrBuildMaterial("G4_Al");
+  
+  // define an Element from isotopes, by relative abundance 
+  U235 = new G4Isotope(name="U235", z=92, n=235, a=235.01*g/mole);
+  U238 = new G4Isotope(name="U238", z=92, n=238, a=238.03*g/mole);
+  
+  natU  = new G4Element(name="natural Uranium", symbol="U", ncomponents=2);
+  natU->AddIsotope(U235, abundance=  0.73*perCent);
+  natU->AddIsotope(U238, abundance= 99.27*perCent);
+  natUMaterial = new G4Material(name="natural Uranium",
+			  density = 19.1*g/cm3,
+			  1);
+  natUMaterial->AddElement(natU,abundance=100.*perCent);
+  
+  elCr = new G4Element("elCr", "Cr", 24, 51.996*g/mole);
+  elFe = new G4Element("elFe", "Fe", 26, 55.85*g/mole);
+  stSteel = new G4Material("Stainless Steel", 8.0*g/cm3, 2);
+  stSteel->AddElement(elCr, 0.11);
+  stSteel->AddElement(elFe, 0.89);
+
+}
+
+G4Transform3D*
+FragSimDetConstruction::GetTargetTransform(void) const
+{
+  return tr_tar;
+}
+
+void
+FragSimDetConstruction::SetupTransforms(void)
+{
+  // Target
+  G4double target_x          =  -0.44*cm;
+  G4double target_y          =  -0.01*cm;
+  G4double target_z          =  -1.67*cm;
+  
+  G4ThreeVector targetPos(target_x, target_y, target_z);
+  targetPos += fTarShift;
+  fRot1Shift = -10*deg;
+  fRot2Shift = -5*deg;
+
+  rotMatrix = new G4RotationMatrix;
+  G4RotationMatrix rM1;
+  rM1.rotateX(90.0*deg);
+  rM1.rotateZ(45.0*deg + fRot2Shift);
+  rM1.rotateY(45.0*deg);
+  //  G4RotationMatrix rM2; rM2.rotateY(45.0*deg + fRot1Shift);
+  *rotMatrix = rM1;
+
+  DataBucket& db = TreeMaker::GetTreeMakerPointer()->GetDataBucket();
+  db.GetDoubleMap()["target_rot1_offset (deg)"] = fRot1Shift/CLHEP::deg;
+  db.GetDoubleMap()["target_rot2_offset (deg)"] = fRot2Shift/CLHEP::deg;
+
+  tr_tar = new G4Transform3D(*rotMatrix, targetPos);
+
+  G4double detUpStreamTop_x =  0.00*cm;
+  G4double detUpStreamTop_y =  3.45*cm;
+  G4double detUpStreamTop_z =  -0.11*cm - 8.56*cm;
+  G4ThreeVector detUpStreamTopPos(detUpStreamTop_x,
+  			    detUpStreamTop_y,
+  			    detUpStreamTop_z);
+  G4RotationMatrix detUpStreamTopRotMatrix;
+  detUpStreamTopRotMatrix.rotateZ(180.0*deg);
+  detUpStreamTopRotMatrix.rotateY(  0.0*deg);
+  detUpStreamTopRotMatrix.rotateX( -22.5*deg);
+  
+  tr0 = new G4Transform3D(detUpStreamTopRotMatrix,detUpStreamTopPos);
+
+  G4double detDownStreamLeft_x =  3.45*cm;
+  G4double detDownStreamLeft_y =  0.00*cm;
+  G4double detDownStreamLeft_z =  0.00*cm;
+
+  G4ThreeVector detDownStreamLeftPos(detDownStreamLeft_x,
+  			       detDownStreamLeft_y,
+  			       detDownStreamLeft_z);
+  G4RotationMatrix detDownStreamLeftRotMatrix;
+  detDownStreamLeftRotMatrix.rotateZ( 90.0*deg);
+  detDownStreamLeftRotMatrix.rotateX(180.0*deg);
+  detDownStreamLeftRotMatrix.rotateY(-22.5*deg);
+  
+  tr1 = new G4Transform3D(detDownStreamLeftRotMatrix,detDownStreamLeftPos);
+
+  G4double detUpStreamRight_x = -3.45*cm;
+  G4double detUpStreamRight_y =  0.00*cm;
+  G4double detUpStreamRight_z =  -0.11*cm - 8.56*cm;
+  G4ThreeVector detUpStreamRightPos(detUpStreamRight_x,
+  			      detUpStreamRight_y,
+  			      detUpStreamRight_z);
+  G4RotationMatrix detUpStreamRightRotMatrix;
+  detUpStreamRightRotMatrix.rotateZ(270.0*deg);
+  // detUpStreamRightRotMatrix.rotateX(180.0*deg);
+  detUpStreamRightRotMatrix.rotateX(  0.0*deg);
+  detUpStreamRightRotMatrix.rotateY(-22.5*deg);
+  
+  tr2 = new G4Transform3D(detUpStreamRightRotMatrix,detUpStreamRightPos);
+
+  G4double detDownStreamBottom_x =  0.00*cm;
+  G4double detDownStreamBottom_y = -3.45*cm;
+  G4double detDownStreamBottom_z =  0.00*cm;
+  G4ThreeVector detDownStreamBottomPos(detDownStreamBottom_x,
+  			         detDownStreamBottom_y,
+  			         detDownStreamBottom_z);
+  G4RotationMatrix detDownStreamBottomRotMatrix;
+  detDownStreamBottomRotMatrix.rotateY(180.0*deg);
+  detDownStreamBottomRotMatrix.rotateX(-22.5*deg);
+
+  
+  tr3 = new G4Transform3D(detDownStreamBottomRotMatrix,detDownStreamBottomPos);
+
+}
+
+void FragSimDetConstruction::SetTargetShift(const G4ThreeVector &transl)
+{
+    fTarShift = transl;
+
+    DataBucket& db = TreeMaker::GetTreeMakerPointer()->GetDataBucket();
+    db.GetDoubleMap()["target_offset_x"] = fTarShift.x();
+    db.GetDoubleMap()["target_offset_y"] = fTarShift.y();
+    db.GetDoubleMap()["target_offset_z"] = fTarShift.z();
+
+
+}
+
+void FragSimDetConstruction::SetRot1Shift(const G4double& rot)
+{
+    fRot1Shift = rot;
+
+    DataBucket& db = TreeMaker::GetTreeMakerPointer()->GetDataBucket();
+    db.GetDoubleMap()["target_rot1_offset (deg)"] = fRot1Shift/CLHEP::deg;
+}
+
+void FragSimDetConstruction::SetRot2Shift(const G4double& rot)
+{
+    fRot2Shift = rot;
+
+    DataBucket& db = TreeMaker::GetTreeMakerPointer()->GetDataBucket();
+    db.GetDoubleMap()["target_rot2_offset (deg)"] = fRot2Shift/CLHEP::deg;
+}
+
+
+G4VPhysicalVolume* 
+FragSimDetConstruction::Construct()
+{
+
+    SetupTransforms();
+  //------------------------------------------------------ volumes
+
+  //------------------------------ experimental hall (world volume)
+  //------------------------------ beam line along x axis
+  G4double expHall_x = 0.5*m;
+  G4double expHall_y = 0.5*m;
+  G4double expHall_z = 0.5*m;
+  G4Box* experimentalHall_box = new G4Box("expHall_box",
+				  expHall_x,
+				  expHall_y,
+				  expHall_z);
+  
+  experimentalHall_log = new G4LogicalVolume(experimentalHall_box,
+                                             vacuum,"expHall_log");
+  experimentalHall_phys = new G4PVPlacement(0,G4ThreeVector(),
+				    experimentalHall_log,"expHall",
+				    0,false,0);
+  experimentalHall_log->SetVisAttributes(new G4VisAttributes(false));
+
+  // // Build aluminum chamber wall
+  // G4double innerChamberRadius = 17.8*cm;
+  // G4double outerChamberRadius = 22.9*cm;
+  // G4double chamberLength      = 35.6*cm;
+  
+  // G4Tubs* chamberWall_tub = new G4Tubs("chamberWall_tub",
+  // 			         innerChamberRadius,
+  // 			         outerChamberRadius,
+  // 			         chamberLength,
+  // 			         0,
+  // 			         2*pi);
+  // chamberWall_log = new G4LogicalVolume(chamberWall_tub,
+  // 				aluminum,"chamberWall_log");
+  // chamberWall_phys = new G4PVPlacement(0,G4ThreeVector(),
+  // 			         experimentalHall_log,"chamberWall",
+  // 			         0,false,0);
+
+  
+  
+  //------------------------------------------------------------------
+  
+  //-----Sensitive Detectors:
+  G4SDManager* SDman = G4SDManager::GetSDMpointer();
+      
+  SDman->AddNewDetector(SSD0.GetSensitivity());
+  SDman->AddNewDetector(SSD1.GetSensitivity());
+  SDman->AddNewDetector(SSD2.GetSensitivity());
+  SDman->AddNewDetector(SSD3.GetSensitivity());
+
+  SSD0.GetADetector()->MakeImprint(experimentalHall_log, *tr0);
+  SSD1.GetADetector()->MakeImprint(experimentalHall_log, *tr1);
+  SSD2.GetADetector()->MakeImprint(experimentalHall_log, *tr2);
+  SSD3.GetADetector()->MakeImprint(experimentalHall_log, *tr3);
+
+  TargetSensitivity *tar_sens = new TargetSensitivity("target",4);
+  target_log->SetSensitiveDetector(tar_sens);
+  SDman->AddNewDetector(tar_sens);
+
+
+  G4AssemblyVolume * target_assembly = new G4AssemblyVolume;
+
+  // Build 238U Target
+  G4double target_thickness  =  tar.GetThickness(); //0.10*cm;
+  G4double target_length     =  tar.GetLength();    //4.83*cm;
+  G4double target_width      =  tar.GetWidth();   //2.30*cm;
+
+  G4Box* target_box = new G4Box("target_box",
+                          target_length/2.,
+                          target_width/2.,
+                          target_thickness/2.);
+
+  target_log = new G4LogicalVolume(target_box,
+                             natUMaterial,
+                             "target_log");
+  G4VisAttributes target_attr(true);
+  target_attr.SetColor(0./255., 0./255., 255./255.);
+  target_log->SetVisAttributes(target_attr);
+
+  target_phys = new G4PVPlacement(rotMatrix, tr_tar->getTranslation(),target_log,
+                            "target",experimentalHall_log,
+                            false,0,false);
+
+  //  G4ThreeVector mount_transl (-1.1825*cm, -1.74302*cm, -3.231*cm);
+  // the following is directly computed from the compute_target_positions.cpp.
+  // Be sure to ensure that it is computed with the appropriate offset!
+  // rot2=-10*deg --> (-18.7665,-32.2021,-31.0665) mm
+  // rot2=-5*deg  --> (-20.6902,-30.3091,-32.9902) mm
+  // rot2=-3*deg  --> (-21.4258,-29.4867,-33.7258) mm
+  // rot2=0*deg   --> (-22.49,-28.1863,-34.79) mm
+
+  // new shifted yp direction coords + target dimensions
+  // rot2=0*deg   --> (-23.7885,-28.8227,-34.3915)
+  // rot2=-5.0*deg (0*yp) --> (-21.9478,-30.9986,-32.5508)
+
+  // rot1=10*deg rot2=0*deg 0*yp   --> (-20.4219,-28.8227,-37.4895)
+  // rot1=-10*deg rot2=0*deg 0*yp  --> (-26.5661,-28.8227,-30.7559)
+  // rot1=-10*deg rot2=-5*deg 0*yp  --> (-24.4337,-30.9986,-29.2628)
+  G4ThreeVector mount_transl (-24.4337,-30.9986,-29.2628);// (-22.525*mm,-28.1368*mm,-34.825*mm); //<< the original
+  mount_transl += fTarShift;
+  G4RotationMatrix mount_rot;
+  mount_rot.rotateY(-90.0*deg - fRot1Shift);
+  G4Transform3D *tr_mount = new G4Transform3D(mount_rot, mount_transl);
+  TargetMountBuilder tmb;
+  tmb.GetAssembly()->MakeImprint(experimentalHall_log, *tr_mount);
+
+  // sheet metal inserts used to clamp the target
+
+  // The following translation was computed by the compute_target_positions program
+  // rot2=-10*deg --> (-12.0772,-17.5846,-24.3772) mm
+  // rot2=-5*deg  --> (-13.1256,-16.5718,-25.4256) mm
+  // rot2=-3*deg  --> (-13.5267,-16.1311,-25.8267) mm
+  // rot2=0*deg   --> (-14.1075,-15.4336,-26.4075) mm
+  //
+  // rot2=0*deg + shift_offset=0.3*cm --> (-12.6075,-13.3123,-24.9075)  mm
+  //
+  // new shifted yp direction coords + target dimensions
+  // rot2=0*deg (0.5*yp)        --> (-14.9818,-16.07,-26.4332)
+  // rot2=0*deg (0 yp shift)    --> (-14.5575,-16.07,-26.8575)
+  // rot2=0*deg (-0.5*yp)       --> (-14.1332,-16.07,-27.2818)
+  // rot2=-5*deg (0*yp)         --> (-13.5346,-17.2612,-25.8346)
+
+  // rot1=10*deg  rot2=0*deg  0*yp  --> (-12.6394,-16.07,-28.467)
+  // rot1=-10*deg rot2=0*deg  0*yp  --> (-16.167,-16.07,-24.9394)
+  // rot1=-10*deg rot2=-5*deg 0*yp  --> (-14.9821,-17.2612,-24.1097)
+  G4ThreeVector target_ins_bot_trans (-14.9821,-17.2612,-24.1097);
+  target_ins_bot_trans += fTarShift;
+
+  G4Box* target_ins_bot_sol = new G4Box("target_ins_bot_sol",
+                                        1.27*cm,
+                                        1.27*cm,
+                                        0.0635*cm);
+
+  target_ins_bot_lv = new G4LogicalVolume(target_ins_bot_sol,
+                                          // aluminum,
+                                          stSteel,
+                                          "TargetInsertBottom_LV");
+
+//  G4RotationMatrix *bsh_rotMatrix = new G4RotationMatrix;
+//  G4ThreeVector a1(1,0,0);
+//  G4ThreeVector a2(0,1,0);
+//  G4ThreeVector a3(-1,0,1);
+//  G4RotationMatrix bsh_rM1; bsh_rM1.set(a1, 90.0*deg);
+//  G4RotationMatrix bsh_rM2; bsh_rM2.set(a2, 45.0*deg + fRot1Shift);
+//  G4RotationMatrix bsh_rM3; bsh_rM3.set(a3,-45.0*deg + fRot2Shift);
+//  *bsh_rotMatrix = bsh_rM1*bsh_rM2*bsh_rM3;
+
+
+  target_ins_bot_pv = new G4PVPlacement(rotMatrix,
+                                        target_ins_bot_trans,
+                                        target_ins_bot_lv,
+                                        "TargetInsertBottom",
+                                        experimentalHall_log,
+                                       false, 0, true);
+  G4VisAttributes target_ins_attr(true);
+  target_ins_attr.SetColor(255.0/255., 100.0/255., 255./255.);
+  target_ins_bot_lv->SetVisAttributes(target_ins_attr);
+
+
+  G4Box* target_ins_top_sol = new G4Box("target_ins_top_sol",1.27*cm, 1.27*cm, 0.0635*cm);
+  target_ins_top_lv = new G4LogicalVolume(target_ins_top_sol,
+                                          stSteel,
+                                          "TargetInsertTop_LV");
+
+  // The following translation was computed by the compute_target_positions program
+  // rot2=-10*deg --> (-14.0816,-17.6751,-26.3816) mm
+  // rot2=-5*deg  --> (-15.1279,-16.4149,-27.4279) mm
+  // rot2=-3*deg  --> (-15.5239,-15.8755,-27.8239) mm
+  // rot2=0*deg   --> (-16.0925,-15.0306,-28.3925) mm
+  //
+  // new yp shifts coords
+  // rot2=0*deg  (0 * py )      --> (-16.5425,-15.667,-28.8425)
+  // rot2=0*deg  (0.5 yp shift) --> (-16.9668,-15.667,-28.4182)
+  // rot2=-5*deg (0 * yp)       --> (-15.5369,-17.1044,-27.8369)
+
+  // rot1=10*deg   rot2=0*deg  0*yp    --> (-14.2495,-15.667,-30.7666)
+  // rot1=-10*deg  rot2=0*deg  0*yp    --> (-18.4666,-15.667,-26.5495)
+  // rot1=-10*deg  rot2=-5*deg 0*yp    --> (-17.3016,-17.1044,-25.7338)
+  G4ThreeVector target_ins_top_trans (-17.3016,-17.1044,-25.7338);
+  target_ins_top_trans += fTarShift;
+  target_ins_top_pv = new G4PVPlacement(rotMatrix,
+                                        target_ins_top_trans,
+                                        target_ins_top_lv,
+                                        "TargetInsertTop",
+                                        experimentalHall_log,
+                                        false, 0, true);
+  target_ins_top_lv->SetVisAttributes(target_ins_attr);
+
+
+  G4Box* al_spacer_sol = new G4Box("al_spacer_sol",
+                                   1.27*cm,
+                                   1.27*cm,
+                                   0.5*0.25*2.54*cm);
+
+  G4LogicalVolume *al_spacer_lv = new G4LogicalVolume(al_spacer_sol,
+                                                      aluminum,
+                                                      "al_spacer_lv");
+
+  G4ThreeVector center_mount_back(0.44958*cm, 0.635*cm, 2.73169*cm);
+  G4ThreeVector al_spacer_transl= center_mount_back;
+  al_spacer_transl += G4ThreeVector(0, 0, al_spacer_sol->GetZHalfLength());
+  //  al_spacer_transl += mount_transl;
+  //  G4ThreeVector mount_int_offset(1.36144*cm, -0.635*cm, -1.71831*cm);
+  //mount_int_offset += G4ThreeVector(0.44958*cm, 0.635*cm, 2.73169*cm);
+
+  G4RotationMatrix *rot_al_spacer = new G4RotationMatrix;//(mount_rot);
+//  rot_al_spacer->rotateY(-90.0*deg + fRot1Shift);
+//  mount_int_offset *= *rot_al_spacer;
+//  al_spacer_transl += mount_int_offset;
+  G4PVPlacement* al_spacer_pv = new G4PVPlacement(rot_al_spacer,
+                                        al_spacer_transl,
+                                        al_spacer_lv,
+                                        "al_spacer",
+                                        experimentalHall_log,
+                                       false, 0, true);
+  G4VisAttributes al_spacer_attr(true);
+  al_spacer_attr.SetColor(255.0/255., 100.0/255., 70.0/255.);
+  al_spacer_lv->SetVisAttributes(al_spacer_attr);
+
+
+  return experimentalHall_phys;
+}
+

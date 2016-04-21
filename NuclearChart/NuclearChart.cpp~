@@ -1,0 +1,34 @@
+// NuclearChart.h
+// 
+// Jeromy Tompkins
+// 3/16/2011
+//
+// A nuclear chart.
+
+#include <vector>
+#include "TBox.h"
+#include "TObject.h"
+#include "NuclearChart.h"
+
+ClassImp(NuclearChart)
+
+NuclearChart::NuclearChart(void) : std::vector<std::vector<TBox*> >()
+{}
+
+NuclearChart::NuclearChart(NuclearChart const& obj)
+{}
+
+NuclearChart::~NuclearChart(void)
+{}
+
+NuclearChart& 
+NuclearChart::operator=(NuclearChart const& obj)
+{}
+
+void 
+NuclearChart::AddIsotope(const int n, const int z)
+{}
+
+void
+NuclearChart::Draw() const
+{}

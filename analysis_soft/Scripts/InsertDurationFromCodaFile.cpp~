@@ -1,0 +1,74 @@
+
+#include <cstdlib>
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <sstream>
+#include "TFile.h"
+#include "include/SScalerTool.h"
+using namespace std;
+
+int
+InsertDuration()
+{
+  ifstream file("configdatabase.dat",ifstream::in);
+  ofstream filecpy("cp.dat",ofstream::out);
+  if (!file.is_open())  return 1;
+
+  string sclr_dir;
+  string exp_name;
+  cout << "Enter scaler directory : ";
+  cin  >> sclr_dir;
+  cout << "Enter experiment name  : ";
+  cin  >> exp_name;
+
+  if ( sclr_dir.rfind("/") == sclr_dir.length()-1)
+    sclr_dir.erase(sclr_dir.length()-1,1);
+ 
+  string sclr_fname = sclr_dir;
+  sclr_fname.append("/").append(exp_name).append("_scalers");
+  
+  SScalerTool st(sclr_fname.data(),
+		 (sclr_dir+"/scaler.config").data());
+
+  st.PrintChannels();
+
+  int run;
+  string str;
+  float dummy;
+
+  int inc = 0;
+  getline(file,str);
+  filecpy << str << endl;
+
+  while(1)
+    {
+      getline(file, str);
+
+      if (str.length()==0 || file.rdstate()!=0) break;
+
+      size_t in = str.find(' ');
+      run = atoi(str.substr(0,in).data());
+      in = str.find(' ',in+1);
+      in = str.find(' ',in+1);
+      in = str.find(' ',in+1);
+      
+      cout << run << endl;
+      stringstream ss;
+      ss << st.GetValue(run,"10HzClock")*0.1 << " " 
+	 << st.GetValue(run,"Veto10HzClock")*0.1 << " "; 
+      
+      str.insert(in+1,ss.str());
+
+      filecpy << str << endl;
+
+      inc++;
+    }
+
+  cout << "modified " << inc << " entries" << endl;
+  file.close();
+  filecpy.close();
+
+  return 0;
+}
+

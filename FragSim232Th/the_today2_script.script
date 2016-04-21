@@ -1,0 +1,2746 @@
+Script started on Wed 29 Aug 2012 09:43:48 AM EDT
+jrtomps@presario:FragSim232Th$ ./run_toa2[K[Kda2[Ky2.sh 
+Enter run name : 
+*************************************************************
+ Geant4 version Name: geant4-09-05-patch-01    (20-March-2012)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+Instance of SensitiveSSD constructed : UpStreamTop
+Instance of SensitiveSSD constructed : DownStreamLeft
+Instance of SensitiveSSD constructed : UpStreamRight
+Instance of SensitiveSSD constructed : DownStreamBottom
+Instance of FragSimDetConstruction constructed
+Instance of TreeMaker Constructed!
+Constructing FragSimSource2
+Constructing FragSimPrimaryGeneratorAction
+Instance of FragSimRunAction Constructed!
+G4VIS_USE conditional code executed
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Current available graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  G4HepRep (HepRepXML)
+  G4HepRepFile (HepRepFile)
+  RayTracer (RayTracer)
+  VRML1FILE (VRML1FILE)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+  OpenGLStoredQt (OGL)
+  OpenGLImmediateQt (OGLI)
+  OpenGLStoredQt (OGLS)
+  OpenGLImmediateX (OGLIX)
+  OpenGLStoredX (OGLSX)
+  OpenGLImmediateQt (OGLIQt)
+  OpenGLStoredQt (OGLSQt)
+  RayTracerX (RayTracerX)
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByCharge
+  drawByParticleID
+  drawByOriginVolume
+  drawByAttribute
+
+Registered filter factories:
+  chargeFilter
+  particleFilter
+  originVolumeFilter
+  attributeFilter
+
+Some /vis commands (optionally) take a string to specify colour.
+Available colours:
+  black, blue, cyan, gray, green, grey, magenta, red, white, yellow
+
+MassDistr Command = 
+Using fragment mass energy distribution defined in data/232th/7.0
+x[0]=78, y[0]=0.0008
+x[1]=84, y[1]=0.0612
+x[2]=85, y[2]=0.0834
+x[3]=87, y[3]=0.0898
+x[4]=88, y[4]=0.0788
+x[5]=89, y[5]=0.0649
+x[6]=91, y[6]=0.0727
+x[7]=92, y[7]=0.062
+x[8]=93, y[8]=0.0503
+x[9]=94, y[9]=0.0508
+x[10]=95, y[10]=0.0425
+x[11]=97, y[11]=0.024
+x[12]=99, y[12]=0.0099
+x[13]=101, y[13]=0.0019
+x[14]=103, y[14]=0
+x[15]=115, y[15]=0
+x[16]=128, y[16]=0.0002
+x[17]=129, y[17]=0.0026
+x[18]=131, y[18]=0.0081
+x[19]=132, y[19]=0.0185
+x[20]=133, y[20]=0.0318
+x[21]=134, y[21]=0.0412
+x[22]=135, y[22]=0.0449
+x[23]=137, y[23]=0.0498
+x[24]=138, y[24]=0.0502
+x[25]=139, y[25]=0.0717
+x[26]=140, y[26]=0.0847
+x[27]=141, y[27]=0.088
+x[28]=142, y[28]=0.0781
+x[29]=143, y[29]=0.0904
+x[30]=146, y[30]=0.0562
+x[31]=147, y[31]=0.0308
+x[32]=148, y[32]=0.0157
+Found 33 masses
+Found 73 energies 
+PhysicsList::AddPhysicsList: <emstandard_opt3>
+
+   [ (    0.454519     -0.707107      0.541675)
+     (    0.766044   3.93581e-17     -0.642788)
+     (    0.454519      0.707107      0.541675) ]
+phi=147.268
+theta=57.2022
+psi=139.879
+p0n: (25.05,14,-0.5) --> (1.21538,19.5108,21.0144)
+p1n: (25.05,-14,-0.5) --> (21.0144,19.5108,1.21538)
+p2n: (-25.05,-14,-0.5) --> (-1.75706,-18.868,-21.556)
+p3n: (-25.05,14,-0.5) --> (-21.556,-18.868,-1.75706)
+
+
+p0p: (25.05,14,0.5) --> (1.75706,18.868,21.556)
+p1p: (25.05,-14,0.5) --> (21.556,18.868,1.75706)
+p2p: (-25.05,-14,0.5) --> (-1.21538,-19.5108,-21.0144)
+p3p: (-25.05,14,0.5) --> (-21.0144,-19.5108,-1.21538)
+
+Center of the bottom of the target
+(-11.1149,-19.5108,-11.1149)
+The target is actually offset from the base
+of the mount slit. The base of the slit then should be
+displaced by the following vector
+(-6.9,-9.75807,-6.9) (mm)
+
+The displacement of the target from the is defined in the FragSimDetConstruction class.
+The mount is positioned relative to the position of the target. An absolute
+position is acquired by adding the recently computed offset to the bottom center
+of the target.
+
+Center of mount slit = (-18.0149,-29.2689,-18.0149) (mm)
+
+The target overhangs the edge of the mount as well. To account for this overhang
+the mount and sh metal plates are shifted in the +y' direction of the rotated coord
+system.
+
+Overhang   = 0.25 cm
+Shift in yp= 0.12 cm
+
+Also we know that the target is offset by the thickness of the sheet metal
+in the new z direction. Therefore, there must be a shift downwards
+in the mount along the new z-direction by 0.127 cm.
+
+
+The target offset was (-3.4,-0.1,-16.7) (mm)
+
+
+Slit center should then be at the following location: (-21.6284,-30.2669,-33.2313) (mm)
+
+
+The sheet metal inserts used to clamp the target in 
+place are positioned with the same rotation matrix as 
+the target but with the following translations
+
+Rotation (rot1): 3 degrees
+Rotation (rot2): 5 degrees
+Bot. sh. shift): 0 (cm)
+--------------------------------------------
+
+mount_transl   : (-21.6284,-30.2669,-33.2313) (mm)
+
+ins_bot_transl : (-11.9231,-17.5791,-26.0716) (mm)
+
+ins_top_transl : (-14.5369,-17.1044,-27.8369) (mm)
+PhysicsList::SetCuts:CutLength : 1 mm 
+
+phot:   for  gamma    SubType= 12
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       PhotoElectric :  Emin=        0 eV    Emax=       10 TeV  FluoActive
+
+compt:   for  gamma    SubType= 13
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        KleinNishina :  Emin=        0 eV    Emax=       10 TeV  FluoActive
+
+conv:   for  gamma    SubType= 14
+      Lambda tables from 1.022 MeV to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        BetheHeitler :  Emin=        0 eV    Emax=       10 TeV
+
+Rayl:   for  gamma    SubType= 11
+      Lambda tables from 10 eV  to 10 TeV in 200 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh :  Emin=        0 eV    Emax=      100 GeV
+
+msc:   for e-    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.04, stepLimitType: 2, latDisplacement: 1, skin= 1, geomFactor= 2.5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc95 :  Emin=        0 eV    Emax=       10 TeV
+
+eIoni:   for  e-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   AngularGen2BS
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   AngularGen2BS
+
+eIoni:   for  e+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   AngularGenUrban
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   AngularGenUrban
+
+annihil:   for  e+    SubType= 5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for proton    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  proton    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+hBrems:   for  proton    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  proton    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for GenericIon    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+ionIoni:   for  GenericIon    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.001, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      Stopping Power data for 17 ion/material pairs 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+         ParamICRU73 :  Emin=        0 eV    Emax=       10 TeV
+
+nuclearStopping:   for  GenericIon    SubType= 8
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping :  Emin=        0 eV    Emax=       10 TeV
+
+nuclearStopping:   for  alpha    SubType= 8
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  anti_proton    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+msc:   for kaon+    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  kaon+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  kaon-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+muMsc:   for mu+    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV
+
+muIoni:   for  mu+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu+    SubType= 1
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+muIoni:   for  mu-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu-    SubType= 1
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  pi+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for pi-    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  pi-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+========= Table of registered couples ==============================
+
+Index : 0     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Galactic
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  990 eV     e-  990 eV     e+  990 eV  proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 1     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_PLEXIGLASS
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  2.11555 keV    e-  244.79 keV    e+  241.522 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 2     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  5.00023 keV    e-  337.972 keV    e+  324.616 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 3     used in the geometry : Yes     recalculation needed : No 
+ Material : natural Uranium
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  106.748 keV    e-  1.14827 MeV    e+  1.05931 MeV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 4     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Al
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  5.00023 keV    e-  363.901 keV    e+  351.877 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 5     used in the geometry : Yes     recalculation needed : No 
+ Material : Stainless Steel
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  14.4581 keV    e-  741.896 keV    e+  707.805 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+====================================================================
+
+   TreeMaker::CreateNewFile - New File Created: ./sim_output/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0.root
+   TreeMaker::CreateNewTree - New Tree Created: Sim_Tree
+Found transform for :av_1_impr_7_target_log_pv_0
+Following propertiesEuler angles => (41.5296, 59.1639, 30.0609)
+Translate    => (-0.519097,-0.21,-2.00884) cm
+Rotated Thickness = 0.19509 cm
+Scale factor = 1.9509
+Source type set to surface_layer
+Plane norm : (0.569282,-0.642788,0.512584)
+Plane norm theta (deg) : 59.1639
+Plane norm phi   (deg) : -48.4704
+   TreeMaker::CreateBranch - Created Branch: DetID/I
+   TreeMaker::CreateBranch - Created Branch: SiStripID/I
+   TreeMaker::CreateBranch - Created Branch: EffPhi/D
+   TreeMaker::CreateBranch - Created Branch: EffTheta/D
+   TreeMaker::CreateBranch - Created Branch: SSDWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: SSDLocalPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: SSDKE/D
+   TreeMaker::CreateBranch - Created Branch: SSDTotDepE/D
+   TreeMaker::CreateBranch - Created Branch: SSDParticleName/C
+   TreeMaker::CreateBranch - Created Branch: TarPhi/D
+   TreeMaker::CreateBranch - Created Branch: TarTheta/D
+   TreeMaker::CreateBranch - Created Branch: TarWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarMomentum[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaMomentum[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarKE/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaKE/D
+   TreeMaker::CreateBranch - Created Branch: TarTotDepE/D
+   TreeMaker::CreateBranch - Created Branch: TarNonIonizingDepE/D
+   TreeMaker::CreateBranch - Created Branch: TarParticleName/C
+   TreeMaker::CreateBranch - Created Branch: TarCharge/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaCharge/D
+   TreeMaker::CreateBranch - Created Branch: TarTrackLength/D
+   TreeMaker::CreateBranch - Created Branch: TarNSteps/I
+   TreeMaker::CreateBranch - Created Branch: TarAveTrackLength/D
+   TreeMaker::CreateBranch - Created Branch: TarLocalPos[3]/D
+   TreeMaker::StartFillTimer - Timer reset and started.
+   TreeMaker::CreateBranch - Created Branch: month/I
+   TreeMaker::CreateBranch - Created Branch: day/I
+   TreeMaker::CreateBranch - Created Branch: year/I
+   TreeMaker::CreateBranch - Created Branch: elapsedRealTime/D
+
+	Filling Began On 8/29/2012
+	Number of Events to Fill: 1000000
+
+        Fill Number   -      Fill Rate      -   Clock   -   Elapsed   -  To Finish 
+                                               HH:MM:SS - DD:HH:MM:SS - DD:HH:MM:SS
+             1 fills  -     8774 fills/sec  -  09:43:59 - 00:00:00:00 - 00:00:01:54
+ 0%          8085 fills  -     1616 fills/sec  -  09:44:04 - 00:00:00:05 - 00:00:10:14
+         19105 fills  -     2203 fills/sec  -  09:44:09 - 00:00:00:10 - 00:00:07:25
+         30633 fills  -     2305 fills/sec  -  09:44:14 - 00:00:00:15 - 00:00:07:00
+         42228 fills  -     2318 fills/sec  -  09:44:19 - 00:00:00:20 - 00:00:06:53
+ 5%         53730 fills  -     2300 fills/sec  -  09:44:24 - 00:00:00:25 - 00:00:06:51
+         65210 fills  -     2295 fills/sec  -  09:44:29 - 00:00:00:30 - 00:00:06:47
+         76825 fills  -     2322 fills/sec  -  09:44:34 - 00:00:00:35 - 00:00:06:37
+         88419 fills  -     2318 fills/sec  -  09:44:39 - 00:00:00:40 - 00:00:06:33
+10%         99981 fills  -     2312 fills/sec  -  09:44:44 - 00:00:00:45 - 00:00:06:29
+        111647 fills  -     2333 fills/sec  -  09:44:49 - 00:00:00:50 - 00:00:06:21
+        123296 fills  -     2329 fills/sec  -  09:44:54 - 00:00:00:55 - 00:00:06:16
+        134919 fills  -     2324 fills/sec  -  09:44:59 - 00:00:01:00 - 00:00:06:12
+        146542 fills  -     2324 fills/sec  -  09:45:04 - 00:00:01:05 - 00:00:06:07
+15%        158152 fills  -     2322 fills/sec  -  09:45:09 - 00:00:01:10 - 00:00:06:03
+        169611 fills  -     2291 fills/sec  -  09:45:14 - 00:00:01:15 - 00:00:06:02
+        181700 fills  -     2417 fills/sec  -  09:45:19 - 00:00:01:20 - 00:00:05:38
+        193753 fills  -     2410 fills/sec  -  09:45:24 - 00:00:01:25 - 00:00:05:34
+20%        205833 fills  -     2416 fills/sec  -  09:45:29 - 00:00:01:30 - 00:00:05:29
+        217935 fills  -     2420 fills/sec  -  09:45:34 - 00:00:01:35 - 00:00:05:23
+        230050 fills  -     2423 fills/sec  -  09:45:39 - 00:00:01:40 - 00:00:05:18
+        242225 fills  -     2434 fills/sec  -  09:45:44 - 00:00:01:45 - 00:00:05:11
+25%        254452 fills  -     2445 fills/sec  -  09:45:49 - 00:00:01:50 - 00:00:05:05
+        266713 fills  -     2452 fills/sec  -  09:45:54 - 00:00:01:55 - 00:00:04:59
+        278818 fills  -     2421 fills/sec  -  09:45:59 - 00:00:02:00 - 00:00:04:58
+        291023 fills  -     2440 fills/sec  -  09:46:04 - 00:00:02:05 - 00:00:04:50
+30%        302999 fills  -     2395 fills/sec  -  09:46:09 - 00:00:02:10 - 00:00:04:51
+        315272 fills  -     2454 fills/sec  -  09:46:14 - 00:00:02:15 - 00:00:04:39
+        327563 fills  -     2458 fills/sec  -  09:46:19 - 00:00:02:20 - 00:00:04:34
+        332251 fills  -      835 fills/sec  -  09:46:25 - 00:00:02:26 - 00:00:13:19
+        342828 fills  -     2409 fills/sec  -  09:46:29 - 00:00:02:30 - 00:00:04:33
+35%        354977 fills  -     2429 fills/sec  -  09:46:34 - 00:00:02:35 - 00:00:04:25
+        367132 fills  -     2430 fills/sec  -  09:46:39 - 00:00:02:40 - 00:00:04:20
+        379292 fills  -     2432 fills/sec  -  09:46:44 - 00:00:02:45 - 00:00:04:15
+        391336 fills  -     2408 fills/sec  -  09:46:49 - 00:00:02:50 - 00:00:04:13
+40%        403703 fills  -     2473 fills/sec  -  09:46:54 - 00:00:02:55 - 00:00:04:01
+        415976 fills  -     2454 fills/sec  -  09:46:59 - 00:00:03:00 - 00:00:03:58
+        428246 fills  -     2454 fills/sec  -  09:47:04 - 00:00:03:05 - 00:00:03:53
+        440442 fills  -     2439 fills/sec  -  09:47:09 - 00:00:03:10 - 00:00:03:49
+45%        452691 fills  -     2449 fills/sec  -  09:47:14 - 00:00:03:15 - 00:00:03:43
+        464773 fills  -     2416 fills/sec  -  09:47:19 - 00:00:03:20 - 00:00:03:42
+        477045 fills  -     2454 fills/sec  -  09:47:24 - 00:00:03:25 - 00:00:03:33
+        489303 fills  -     2451 fills/sec  -  09:47:29 - 00:00:03:30 - 00:00:03:28
+50%        504526 fills  -     1522 fills/sec  -  09:47:39 - 00:00:03:40 - 00:00:05:25
+        516644 fills  -     2423 fills/sec  -  09:47:44 - 00:00:03:45 - 00:00:03:19
+        528714 fills  -     2414 fills/sec  -  09:47:49 - 00:00:03:50 - 00:00:03:15
+        540792 fills  -     2415 fills/sec  -  09:47:54 - 00:00:03:55 - 00:00:03:10
+55%        552843 fills  -     2410 fills/sec  -  09:47:59 - 00:00:04:00 - 00:00:03:06
+        562549 fills  -     1937 fills/sec  -  09:48:04 - 00:00:04:05 - 00:00:03:46
+        574307 fills  -     2356 fills/sec  -  09:48:09 - 00:00:04:10 - 00:00:03:01
+        586542 fills  -     2446 fills/sec  -  09:48:14 - 00:00:04:15 - 00:00:02:49
+60%        598775 fills  -     2446 fills/sec  -  09:48:19 - 00:00:04:20 - 00:00:02:44
+        610814 fills  -     2407 fills/sec  -  09:48:24 - 00:00:04:25 - 00:00:02:42
+        623047 fills  -     2446 fills/sec  -  09:48:29 - 00:00:04:30 - 00:00:02:34
+        635074 fills  -     2405 fills/sec  -  09:48:34 - 00:00:04:35 - 00:00:02:32
+        647321 fills  -     2449 fills/sec  -  09:48:39 - 00:00:04:40 - 00:00:02:24
+65%        659471 fills  -     2429 fills/sec  -  09:48:44 - 00:00:04:45 - 00:00:02:20
+        664501 fills  -      868 fills/sec  -  09:48:50 - 00:00:04:51 - 00:00:06:26
+        674728 fills  -     2430 fills/sec  -  09:48:54 - 00:00:04:55 - 00:00:02:14
+        686839 fills  -     2422 fills/sec  -  09:48:59 - 00:00:05:00 - 00:00:02:09
+70%        698913 fills  -     2414 fills/sec  -  09:49:04 - 00:00:05:05 - 00:00:02:05
+        710968 fills  -     2411 fills/sec  -  09:49:09 - 00:00:05:10 - 00:00:02:00
+        723097 fills  -     2425 fills/sec  -  09:49:14 - 00:00:05:15 - 00:00:01:54
+        735405 fills  -     2461 fills/sec  -  09:49:19 - 00:00:05:20 - 00:00:01:47
+75%        747701 fills  -     2459 fills/sec  -  09:49:24 - 00:00:05:25 - 00:00:01:43
+        760010 fills  -     2461 fills/sec  -  09:49:29 - 00:00:05:30 - 00:00:01:37
+        772210 fills  -     2439 fills/sec  -  09:49:34 - 00:00:05:35 - 00:00:01:33
+        784486 fills  -     2455 fills/sec  -  09:49:39 - 00:00:05:40 - 00:00:01:28
+        796603 fills  -     2423 fills/sec  -  09:49:44 - 00:00:05:45 - 00:00:01:24
+80%        808845 fills  -     2448 fills/sec  -  09:49:49 - 00:00:05:50 - 00:00:01:18
+        821082 fills  -     2447 fills/sec  -  09:49:54 - 00:00:05:55 - 00:00:01:13
+        836181 fills  -     1509 fills/sec  -  09:50:04 - 00:00:06:05 - 00:00:01:48
+85%        848334 fills  -     2430 fills/sec  -  09:50:09 - 00:00:06:10 - 00:00:01:02
+        860502 fills  -     2433 fills/sec  -  09:50:14 - 00:00:06:15 - 00:00:00:57
+        872274 fills  -     2354 fills/sec  -  09:50:19 - 00:00:06:20 - 00:00:00:54
+        884397 fills  -     2424 fills/sec  -  09:50:24 - 00:00:06:25 - 00:00:00:48
+90%        897448 fills  -     2610 fills/sec  -  09:50:29 - 00:00:06:30 - 00:00:00:39
+        909872 fills  -     2484 fills/sec  -  09:50:34 - 00:00:06:35 - 00:00:00:36
+        922189 fills  -     2463 fills/sec  -  09:50:39 - 00:00:06:40 - 00:00:00:32
+        934449 fills  -     2452 fills/sec  -  09:50:44 - 00:00:06:45 - 00:00:00:27
+95%        946754 fills  -     2460 fills/sec  -  09:50:49 - 00:00:06:50 - 00:00:00:22
+        959050 fills  -     2459 fills/sec  -  09:50:54 - 00:00:06:55 - 00:00:00:17
+        971189 fills  -     2427 fills/sec  -  09:50:59 - 00:00:07:00 - 00:00:00:12
+        983409 fills  -     2443 fills/sec  -  09:51:04 - 00:00:07:05 - 00:00:00:07
+        995611 fills  -     2440 fills/sec  -  09:51:09 - 00:00:07:10 - 00:00:00:02
+/
+/UpStreamTop   *** Active 
+/DownStreamLeft   *** Active 
+/UpStreamRight   *** Active 
+/DownStreamBottom   *** Active 
+/target   *** Active 
+   TreeMaker::AutoSaveTree - Flushed Buffer For Tree: Sim_Tree
+   TreeMaker::CloseCurrentFile - Closed File: ./sim_output/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0.root
+                                 Compression Level: 1
+                                         File Size: 171.89 MB
+Instance of TreeMaker Destructed!
+Instance of FragSimDetConstruction destructed
+Instance of SensitiveSSD destructed : DownStreamBottom
+Instance of SensitiveSSD destructed : UpStreamRight
+Instance of SensitiveSSD destructed : DownStreamLeft
+Instance of SensitiveSSD destructed : UpStreamTop
+Instance of FragSimRunAction Destructed!
+
+-----------------------------------------------------
+FragSimPrimaryGeneratorAction End of Life Information
+Total vertices = 1282448
+Used vertices  = 1000000
+Frac beam-target intersection = 7.798e-01
+Instance of FragSimEventAction Destructed!
+Enter run name : Stored Random Engine Data Found in : seeds/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0_1.seed
+Do you want to use it? (Y/n)? 
+*************************************************************
+ Geant4 version Name: geant4-09-05-patch-01    (20-March-2012)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+Instance of SensitiveSSD constructed : UpStreamTop
+Instance of SensitiveSSD constructed : DownStreamLeft
+Instance of SensitiveSSD constructed : UpStreamRight
+Instance of SensitiveSSD constructed : DownStreamBottom
+Instance of FragSimDetConstruction constructed
+Instance of TreeMaker Constructed!
+Constructing FragSimSource2
+Constructing FragSimPrimaryGeneratorAction
+Instance of FragSimRunAction Constructed!
+G4VIS_USE conditional code executed
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Current available graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  G4HepRep (HepRepXML)
+  G4HepRepFile (HepRepFile)
+  RayTracer (RayTracer)
+  VRML1FILE (VRML1FILE)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+  OpenGLStoredQt (OGL)
+  OpenGLImmediateQt (OGLI)
+  OpenGLStoredQt (OGLS)
+  OpenGLImmediateX (OGLIX)
+  OpenGLStoredX (OGLSX)
+  OpenGLImmediateQt (OGLIQt)
+  OpenGLStoredQt (OGLSQt)
+  RayTracerX (RayTracerX)
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByCharge
+  drawByParticleID
+  drawByOriginVolume
+  drawByAttribute
+
+Registered filter factories:
+  chargeFilter
+  particleFilter
+  originVolumeFilter
+  attributeFilter
+
+Some /vis commands (optionally) take a string to specify colour.
+Available colours:
+  black, blue, cyan, gray, green, grey, magenta, red, white, yellow
+
+MassDistr Command = 
+Using fragment mass energy distribution defined in data/232th/7.0
+x[0]=78, y[0]=0.0008
+x[1]=84, y[1]=0.0612
+x[2]=85, y[2]=0.0834
+x[3]=87, y[3]=0.0898
+x[4]=88, y[4]=0.0788
+x[5]=89, y[5]=0.0649
+x[6]=91, y[6]=0.0727
+x[7]=92, y[7]=0.062
+x[8]=93, y[8]=0.0503
+x[9]=94, y[9]=0.0508
+x[10]=95, y[10]=0.0425
+x[11]=97, y[11]=0.024
+x[12]=99, y[12]=0.0099
+x[13]=101, y[13]=0.0019
+x[14]=103, y[14]=0
+x[15]=115, y[15]=0
+x[16]=128, y[16]=0.0002
+x[17]=129, y[17]=0.0026
+x[18]=131, y[18]=0.0081
+x[19]=132, y[19]=0.0185
+x[20]=133, y[20]=0.0318
+x[21]=134, y[21]=0.0412
+x[22]=135, y[22]=0.0449
+x[23]=137, y[23]=0.0498
+x[24]=138, y[24]=0.0502
+x[25]=139, y[25]=0.0717
+x[26]=140, y[26]=0.0847
+x[27]=141, y[27]=0.088
+x[28]=142, y[28]=0.0781
+x[29]=143, y[29]=0.0904
+x[30]=146, y[30]=0.0562
+x[31]=147, y[31]=0.0308
+x[32]=148, y[32]=0.0157
+Found 33 masses
+Found 73 energies 
+PhysicsList::AddPhysicsList: <emstandard_opt3>
+
+   [ (    0.454519     -0.707107      0.541675)
+     (    0.766044   3.93581e-17     -0.642788)
+     (    0.454519      0.707107      0.541675) ]
+phi=147.268
+theta=57.2022
+psi=139.879
+p0n: (25.05,14,-0.5) --> (1.21538,19.5108,21.0144)
+p1n: (25.05,-14,-0.5) --> (21.0144,19.5108,1.21538)
+p2n: (-25.05,-14,-0.5) --> (-1.75706,-18.868,-21.556)
+p3n: (-25.05,14,-0.5) --> (-21.556,-18.868,-1.75706)
+
+
+p0p: (25.05,14,0.5) --> (1.75706,18.868,21.556)
+p1p: (25.05,-14,0.5) --> (21.556,18.868,1.75706)
+p2p: (-25.05,-14,0.5) --> (-1.21538,-19.5108,-21.0144)
+p3p: (-25.05,14,0.5) --> (-21.0144,-19.5108,-1.21538)
+
+Center of the bottom of the target
+(-11.1149,-19.5108,-11.1149)
+The target is actually offset from the base
+of the mount slit. The base of the slit then should be
+displaced by the following vector
+(-6.9,-9.75807,-6.9) (mm)
+
+The displacement of the target from the is defined in the FragSimDetConstruction class.
+The mount is positioned relative to the position of the target. An absolute
+position is acquired by adding the recently computed offset to the bottom center
+of the target.
+
+Center of mount slit = (-18.0149,-29.2689,-18.0149) (mm)
+
+The target overhangs the edge of the mount as well. To account for this overhang
+the mount and sh metal plates are shifted in the +y' direction of the rotated coord
+system.
+
+Overhang   = 0.25 cm
+Shift in yp= 0.12 cm
+
+Also we know that the target is offset by the thickness of the sheet metal
+in the new z direction. Therefore, there must be a shift downwards
+in the mount along the new z-direction by 0.127 cm.
+
+
+The target offset was (-3.4,-0.1,-16.7) (mm)
+
+
+Slit center should then be at the following location: (-21.6284,-30.2669,-33.2313) (mm)
+
+
+The sheet metal inserts used to clamp the target in 
+place are positioned with the same rotation matrix as 
+the target but with the following translations
+
+Rotation (rot1): 3 degrees
+Rotation (rot2): 5 degrees
+Bot. sh. shift): 0 (cm)
+--------------------------------------------
+
+mount_transl   : (-21.6284,-30.2669,-33.2313) (mm)
+
+ins_bot_transl : (-11.9231,-17.5791,-26.0716) (mm)
+
+ins_top_transl : (-14.5369,-17.1044,-27.8369) (mm)
+PhysicsList::SetCuts:CutLength : 1 mm 
+
+phot:   for  gamma    SubType= 12
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       PhotoElectric :  Emin=        0 eV    Emax=       10 TeV  FluoActive
+
+compt:   for  gamma    SubType= 13
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        KleinNishina :  Emin=        0 eV    Emax=       10 TeV  FluoActive
+
+conv:   for  gamma    SubType= 14
+      Lambda tables from 1.022 MeV to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        BetheHeitler :  Emin=        0 eV    Emax=       10 TeV
+
+Rayl:   for  gamma    SubType= 11
+      Lambda tables from 10 eV  to 10 TeV in 200 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh :  Emin=        0 eV    Emax=      100 GeV
+
+msc:   for e-    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.04, stepLimitType: 2, latDisplacement: 1, skin= 1, geomFactor= 2.5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc95 :  Emin=        0 eV    Emax=       10 TeV
+
+eIoni:   for  e-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   AngularGen2BS
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   AngularGen2BS
+
+eIoni:   for  e+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   AngularGenUrban
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   AngularGenUrban
+
+annihil:   for  e+    SubType= 5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for proton    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  proton    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+hBrems:   for  proton    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  proton    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for GenericIon    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+ionIoni:   for  GenericIon    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.001, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      Stopping Power data for 17 ion/material pairs 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+         ParamICRU73 :  Emin=        0 eV    Emax=       10 TeV
+
+nuclearStopping:   for  GenericIon    SubType= 8
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping :  Emin=        0 eV    Emax=       10 TeV
+
+nuclearStopping:   for  alpha    SubType= 8
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  anti_proton    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+msc:   for kaon+    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  kaon+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  kaon-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+muMsc:   for mu+    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV
+
+muIoni:   for  mu+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu+    SubType= 1
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+muIoni:   for  mu-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu-    SubType= 1
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  pi+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for pi-    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  pi-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+========= Table of registered couples ==============================
+
+Index : 0     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Galactic
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  990 eV     e-  990 eV     e+  990 eV  proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 1     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_PLEXIGLASS
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  2.11555 keV    e-  244.79 keV    e+  241.522 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 2     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  5.00023 keV    e-  337.972 keV    e+  324.616 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 3     used in the geometry : Yes     recalculation needed : No 
+ Material : natural Uranium
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  106.748 keV    e-  1.14827 MeV    e+  1.05931 MeV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 4     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Al
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  5.00023 keV    e-  363.901 keV    e+  351.877 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 5     used in the geometry : Yes     recalculation needed : No 
+ Material : Stainless Steel
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  14.4581 keV    e-  741.896 keV    e+  707.805 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+====================================================================
+
+   TreeMaker::CreateNewFile - New File Created: ./sim_output/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0.root
+   TreeMaker::CreateNewTree - New Tree Created: Sim_Tree
+Found transform for :av_1_impr_7_target_log_pv_0
+Following propertiesEuler angles => (41.5296, 59.1639, 30.0609)
+Translate    => (-0.519097,-0.21,-2.00884) cm
+Rotated Thickness = 0.19509 cm
+Scale factor = 1.9509
+Source type set to surface_layer
+Plane norm : (0.569282,-0.642788,0.512584)
+Plane norm theta (deg) : 59.1639
+Plane norm phi   (deg) : -48.4704
+   TreeMaker::CreateBranch - Created Branch: DetID/I
+   TreeMaker::CreateBranch - Created Branch: SiStripID/I
+   TreeMaker::CreateBranch - Created Branch: EffPhi/D
+   TreeMaker::CreateBranch - Created Branch: EffTheta/D
+   TreeMaker::CreateBranch - Created Branch: SSDWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: SSDLocalPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: SSDKE/D
+   TreeMaker::CreateBranch - Created Branch: SSDTotDepE/D
+   TreeMaker::CreateBranch - Created Branch: SSDParticleName/C
+   TreeMaker::CreateBranch - Created Branch: TarPhi/D
+   TreeMaker::CreateBranch - Created Branch: TarTheta/D
+   TreeMaker::CreateBranch - Created Branch: TarWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarMomentum[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaMomentum[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarKE/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaKE/D
+   TreeMaker::CreateBranch - Created Branch: TarTotDepE/D
+   TreeMaker::CreateBranch - Created Branch: TarNonIonizingDepE/D
+   TreeMaker::CreateBranch - Created Branch: TarParticleName/C
+   TreeMaker::CreateBranch - Created Branch: TarCharge/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaCharge/D
+   TreeMaker::CreateBranch - Created Branch: TarTrackLength/D
+   TreeMaker::CreateBranch - Created Branch: TarNSteps/I
+   TreeMaker::CreateBranch - Created Branch: TarAveTrackLength/D
+   TreeMaker::CreateBranch - Created Branch: TarLocalPos[3]/D
+   TreeMaker::StartFillTimer - Timer reset and started.
+   TreeMaker::CreateBranch - Created Branch: month/I
+   TreeMaker::CreateBranch - Created Branch: day/I
+   TreeMaker::CreateBranch - Created Branch: year/I
+   TreeMaker::CreateBranch - Created Branch: elapsedRealTime/D
+
+	Filling Began On 8/29/2012
+	Number of Events to Fill: 1000000
+
+        Fill Number   -      Fill Rate      -   Clock   -   Elapsed   -  To Finish 
+                                               HH:MM:SS - DD:HH:MM:SS - DD:HH:MM:SS
+             1 fills  -     8338 fills/sec  -  09:51:18 - 00:00:00:00 - 00:00:02:00
+ 0%          8106 fills  -     1620 fills/sec  -  09:51:23 - 00:00:00:05 - 00:00:10:12
+         19100 fills  -     2198 fills/sec  -  09:51:28 - 00:00:00:10 - 00:00:07:26
+         30788 fills  -     2337 fills/sec  -  09:51:33 - 00:00:00:15 - 00:00:06:55
+         42467 fills  -     2335 fills/sec  -  09:51:38 - 00:00:00:20 - 00:00:06:50
+ 5%         54216 fills  -     2349 fills/sec  -  09:51:43 - 00:00:00:25 - 00:00:06:43
+         66081 fills  -     2373 fills/sec  -  09:51:48 - 00:00:00:30 - 00:00:06:34
+         77962 fills  -     2376 fills/sec  -  09:51:53 - 00:00:00:35 - 00:00:06:28
+         89858 fills  -     2379 fills/sec  -  09:51:58 - 00:00:00:40 - 00:00:06:23
+10%        101712 fills  -     2370 fills/sec  -  09:52:03 - 00:00:00:45 - 00:00:06:19
+        113577 fills  -     2372 fills/sec  -  09:52:08 - 00:00:00:50 - 00:00:06:14
+        125437 fills  -     2372 fills/sec  -  09:52:13 - 00:00:00:55 - 00:00:06:09
+        137196 fills  -     2351 fills/sec  -  09:52:18 - 00:00:01:00 - 00:00:06:07
+        149003 fills  -     2361 fills/sec  -  09:52:23 - 00:00:01:05 - 00:00:06:00
+15%        160810 fills  -     2357 fills/sec  -  09:52:28 - 00:00:01:10 - 00:00:05:56
+        172589 fills  -     2359 fills/sec  -  09:52:33 - 00:00:01:15 - 00:00:05:51
+        184872 fills  -     2456 fills/sec  -  09:52:38 - 00:00:01:20 - 00:00:05:32
+        197222 fills  -     2470 fills/sec  -  09:52:43 - 00:00:01:25 - 00:00:05:25
+20%        209578 fills  -     2471 fills/sec  -  09:52:48 - 00:00:01:30 - 00:00:05:20
+        221927 fills  -     2469 fills/sec  -  09:52:53 - 00:00:01:35 - 00:00:05:15
+        234118 fills  -     2438 fills/sec  -  09:52:58 - 00:00:01:40 - 00:00:05:14
+        246489 fills  -     2474 fills/sec  -  09:53:03 - 00:00:01:45 - 00:00:05:05
+25%        258863 fills  -     2474 fills/sec  -  09:53:08 - 00:00:01:50 - 00:00:04:59
+        271148 fills  -     2456 fills/sec  -  09:53:13 - 00:00:01:55 - 00:00:04:57
+        283535 fills  -     2477 fills/sec  -  09:53:18 - 00:00:02:00 - 00:00:04:49
+        295916 fills  -     2476 fills/sec  -  09:53:23 - 00:00:02:05 - 00:00:04:44
+30%        308112 fills  -     2439 fills/sec  -  09:53:28 - 00:00:02:10 - 00:00:04:44
+        320479 fills  -     2473 fills/sec  -  09:53:33 - 00:00:02:15 - 00:00:04:35
+        335665 fills  -     1518 fills/sec  -  09:53:43 - 00:00:02:25 - 00:00:07:17
+        347893 fills  -     2445 fills/sec  -  09:53:48 - 00:00:02:30 - 00:00:04:27
+35%        360130 fills  -     2447 fills/sec  -  09:53:53 - 00:00:02:35 - 00:00:04:21
+        372327 fills  -     2439 fills/sec  -  09:53:58 - 00:00:02:40 - 00:00:04:17
+        384586 fills  -     2451 fills/sec  -  09:54:03 - 00:00:02:45 - 00:00:04:11
+        396849 fills  -     2452 fills/sec  -  09:54:08 - 00:00:02:50 - 00:00:04:06
+40%        409033 fills  -     2436 fills/sec  -  09:54:13 - 00:00:02:55 - 00:00:04:03
+        421384 fills  -     2470 fills/sec  -  09:54:18 - 00:00:03:00 - 00:00:03:54
+        433659 fills  -     2454 fills/sec  -  09:54:23 - 00:00:03:05 - 00:00:03:51
+        446017 fills  -     2471 fills/sec  -  09:54:28 - 00:00:03:10 - 00:00:03:44
+45%        458356 fills  -     2467 fills/sec  -  09:54:33 - 00:00:03:15 - 00:00:03:39
+        470546 fills  -     2437 fills/sec  -  09:54:38 - 00:00:03:20 - 00:00:03:37
+        482902 fills  -     2471 fills/sec  -  09:54:43 - 00:00:03:25 - 00:00:03:29
+        495240 fills  -     2467 fills/sec  -  09:54:48 - 00:00:03:30 - 00:00:03:25
+50%        498376 fills  -      611 fills/sec  -  09:54:53 - 00:00:03:35 - 00:00:13:40
+        510310 fills  -     2449 fills/sec  -  09:54:58 - 00:00:03:40 - 00:00:03:20
+        522554 fills  -     2448 fills/sec  -  09:55:03 - 00:00:03:45 - 00:00:03:15
+        534829 fills  -     2455 fills/sec  -  09:55:08 - 00:00:03:50 - 00:00:03:09
+        547119 fills  -     2457 fills/sec  -  09:55:13 - 00:00:03:55 - 00:00:03:04
+55%        559413 fills  -     2458 fills/sec  -  09:55:18 - 00:00:04:00 - 00:00:02:59
+        571665 fills  -     2450 fills/sec  -  09:55:23 - 00:00:04:05 - 00:00:02:55
+        583821 fills  -     2431 fills/sec  -  09:55:28 - 00:00:04:10 - 00:00:02:51
+        596186 fills  -     2473 fills/sec  -  09:55:33 - 00:00:04:15 - 00:00:02:43
+60%        608467 fills  -     2456 fills/sec  -  09:55:38 - 00:00:04:20 - 00:00:02:39
+        620832 fills  -     2473 fills/sec  -  09:55:43 - 00:00:04:25 - 00:00:02:33
+        633006 fills  -     2434 fills/sec  -  09:55:48 - 00:00:04:30 - 00:00:02:31
+        645380 fills  -     2474 fills/sec  -  09:55:53 - 00:00:04:35 - 00:00:02:23
+65%        657708 fills  -     2465 fills/sec  -  09:55:58 - 00:00:04:40 - 00:00:02:19
+        672776 fills  -     1506 fills/sec  -  09:56:08 - 00:00:04:50 - 00:00:03:37
+        685018 fills  -     2448 fills/sec  -  09:56:13 - 00:00:04:55 - 00:00:02:09
+        697263 fills  -     2448 fills/sec  -  09:56:18 - 00:00:05:00 - 00:00:02:04
+70%        709514 fills  -     2450 fills/sec  -  09:56:23 - 00:00:05:05 - 00:00:01:59
+        721751 fills  -     2447 fills/sec  -  09:56:28 - 00:00:05:10 - 00:00:01:54
+        734023 fills  -     2454 fills/sec  -  09:56:33 - 00:00:05:15 - 00:00:01:48
+        746198 fills  -     2434 fills/sec  -  09:56:38 - 00:00:05:20 - 00:00:01:44
+75%        758448 fills  -     2450 fills/sec  -  09:56:43 - 00:00:05:25 - 00:00:01:39
+        770742 fills  -     2458 fills/sec  -  09:56:48 - 00:00:05:30 - 00:00:01:33
+        783094 fills  -     2470 fills/sec  -  09:56:53 - 00:00:05:35 - 00:00:01:28
+        795464 fills  -     2473 fills/sec  -  09:56:58 - 00:00:05:40 - 00:00:01:23
+80%        807618 fills  -     2430 fills/sec  -  09:57:03 - 00:00:05:45 - 00:00:01:19
+        819967 fills  -     2469 fills/sec  -  09:57:08 - 00:00:05:50 - 00:00:01:13
+        835029 fills  -     1506 fills/sec  -  09:57:18 - 00:00:06:00 - 00:00:01:50
+85%        847298 fills  -     2453 fills/sec  -  09:57:23 - 00:00:06:05 - 00:00:01:02
+        859567 fills  -     2453 fills/sec  -  09:57:28 - 00:00:06:10 - 00:00:00:57
+        871835 fills  -     2453 fills/sec  -  09:57:33 - 00:00:06:15 - 00:00:00:52
+        884096 fills  -     2452 fills/sec  -  09:57:38 - 00:00:06:20 - 00:00:00:47
+        896381 fills  -     2456 fills/sec  -  09:57:43 - 00:00:06:25 - 00:00:00:42
+90%        908622 fills  -     2448 fills/sec  -  09:57:48 - 00:00:06:30 - 00:00:00:37
+        920482 fills  -     2371 fills/sec  -  09:57:53 - 00:00:06:35 - 00:00:00:34
+        933524 fills  -     2608 fills/sec  -  09:57:58 - 00:00:06:40 - 00:00:00:25
+        946048 fills  -     2504 fills/sec  -  09:58:03 - 00:00:06:45 - 00:00:00:22
+95%        958483 fills  -     2487 fills/sec  -  09:58:08 - 00:00:06:50 - 00:00:00:17
+        970724 fills  -     2448 fills/sec  -  09:58:13 - 00:00:06:55 - 00:00:00:12
+        983093 fills  -     2473 fills/sec  -  09:58:18 - 00:00:07:00 - 00:00:00:07
+        995460 fills  -     2473 fills/sec  -  09:58:23 - 00:00:07:05 - 00:00:00:02
+/
+/UpStreamTop   *** Active 
+/DownStreamLeft   *** Active 
+/UpStreamRight   *** Active 
+/DownStreamBottom   *** Active 
+/target   *** Active 
+   TreeMaker::AutoSaveTree - Flushed Buffer For Tree: Sim_Tree
+   TreeMaker::CloseCurrentFile - Closed File: ./sim_output/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0.root
+                                 Compression Level: 1
+                                         File Size: 171.83 MB
+Instance of TreeMaker Destructed!
+Instance of FragSimDetConstruction destructed
+Instance of SensitiveSSD destructed : DownStreamBottom
+Instance of SensitiveSSD destructed : UpStreamRight
+Instance of SensitiveSSD destructed : DownStreamLeft
+Instance of SensitiveSSD destructed : UpStreamTop
+Instance of FragSimRunAction Destructed!
+
+-----------------------------------------------------
+FragSimPrimaryGeneratorAction End of Life Information
+Total vertices = 1282130
+Used vertices  = 1000000
+Frac beam-target intersection = 7.800e-01
+Instance of FragSimEventAction Destructed!
+Enter run name : Stored Random Engine Data Found in : seeds/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0_2.seed
+Do you want to use it? (Y/n)? 
+*************************************************************
+ Geant4 version Name: geant4-09-05-patch-01    (20-March-2012)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+Instance of SensitiveSSD constructed : UpStreamTop
+Instance of SensitiveSSD constructed : DownStreamLeft
+Instance of SensitiveSSD constructed : UpStreamRight
+Instance of SensitiveSSD constructed : DownStreamBottom
+Instance of FragSimDetConstruction constructed
+Instance of TreeMaker Constructed!
+Constructing FragSimSource2
+Constructing FragSimPrimaryGeneratorAction
+Instance of FragSimRunAction Constructed!
+G4VIS_USE conditional code executed
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Current available graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  G4HepRep (HepRepXML)
+  G4HepRepFile (HepRepFile)
+  RayTracer (RayTracer)
+  VRML1FILE (VRML1FILE)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+  OpenGLStoredQt (OGL)
+  OpenGLImmediateQt (OGLI)
+  OpenGLStoredQt (OGLS)
+  OpenGLImmediateX (OGLIX)
+  OpenGLStoredX (OGLSX)
+  OpenGLImmediateQt (OGLIQt)
+  OpenGLStoredQt (OGLSQt)
+  RayTracerX (RayTracerX)
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByCharge
+  drawByParticleID
+  drawByOriginVolume
+  drawByAttribute
+
+Registered filter factories:
+  chargeFilter
+  particleFilter
+  originVolumeFilter
+  attributeFilter
+
+Some /vis commands (optionally) take a string to specify colour.
+Available colours:
+  black, blue, cyan, gray, green, grey, magenta, red, white, yellow
+
+MassDistr Command = 
+Using fragment mass energy distribution defined in data/232th/7.0
+x[0]=78, y[0]=0.0008
+x[1]=84, y[1]=0.0612
+x[2]=85, y[2]=0.0834
+x[3]=87, y[3]=0.0898
+x[4]=88, y[4]=0.0788
+x[5]=89, y[5]=0.0649
+x[6]=91, y[6]=0.0727
+x[7]=92, y[7]=0.062
+x[8]=93, y[8]=0.0503
+x[9]=94, y[9]=0.0508
+x[10]=95, y[10]=0.0425
+x[11]=97, y[11]=0.024
+x[12]=99, y[12]=0.0099
+x[13]=101, y[13]=0.0019
+x[14]=103, y[14]=0
+x[15]=115, y[15]=0
+x[16]=128, y[16]=0.0002
+x[17]=129, y[17]=0.0026
+x[18]=131, y[18]=0.0081
+x[19]=132, y[19]=0.0185
+x[20]=133, y[20]=0.0318
+x[21]=134, y[21]=0.0412
+x[22]=135, y[22]=0.0449
+x[23]=137, y[23]=0.0498
+x[24]=138, y[24]=0.0502
+x[25]=139, y[25]=0.0717
+x[26]=140, y[26]=0.0847
+x[27]=141, y[27]=0.088
+x[28]=142, y[28]=0.0781
+x[29]=143, y[29]=0.0904
+x[30]=146, y[30]=0.0562
+x[31]=147, y[31]=0.0308
+x[32]=148, y[32]=0.0157
+Found 33 masses
+Found 73 energies 
+PhysicsList::AddPhysicsList: <emstandard_opt3>
+
+   [ (    0.454519     -0.707107      0.541675)
+     (    0.766044   3.93581e-17     -0.642788)
+     (    0.454519      0.707107      0.541675) ]
+phi=147.268
+theta=57.2022
+psi=139.879
+p0n: (25.05,14,-0.5) --> (1.21538,19.5108,21.0144)
+p1n: (25.05,-14,-0.5) --> (21.0144,19.5108,1.21538)
+p2n: (-25.05,-14,-0.5) --> (-1.75706,-18.868,-21.556)
+p3n: (-25.05,14,-0.5) --> (-21.556,-18.868,-1.75706)
+
+
+p0p: (25.05,14,0.5) --> (1.75706,18.868,21.556)
+p1p: (25.05,-14,0.5) --> (21.556,18.868,1.75706)
+p2p: (-25.05,-14,0.5) --> (-1.21538,-19.5108,-21.0144)
+p3p: (-25.05,14,0.5) --> (-21.0144,-19.5108,-1.21538)
+
+Center of the bottom of the target
+(-11.1149,-19.5108,-11.1149)
+The target is actually offset from the base
+of the mount slit. The base of the slit then should be
+displaced by the following vector
+(-6.9,-9.75807,-6.9) (mm)
+
+The displacement of the target from the is defined in the FragSimDetConstruction class.
+The mount is positioned relative to the position of the target. An absolute
+position is acquired by adding the recently computed offset to the bottom center
+of the target.
+
+Center of mount slit = (-18.0149,-29.2689,-18.0149) (mm)
+
+The target overhangs the edge of the mount as well. To account for this overhang
+the mount and sh metal plates are shifted in the +y' direction of the rotated coord
+system.
+
+Overhang   = 0.25 cm
+Shift in yp= 0.12 cm
+
+Also we know that the target is offset by the thickness of the sheet metal
+in the new z direction. Therefore, there must be a shift downwards
+in the mount along the new z-direction by 0.127 cm.
+
+
+The target offset was (-3.4,-0.1,-16.7) (mm)
+
+
+Slit center should then be at the following location: (-21.6284,-30.2669,-33.2313) (mm)
+
+
+The sheet metal inserts used to clamp the target in 
+place are positioned with the same rotation matrix as 
+the target but with the following translations
+
+Rotation (rot1): 3 degrees
+Rotation (rot2): 5 degrees
+Bot. sh. shift): 0 (cm)
+--------------------------------------------
+
+mount_transl   : (-21.6284,-30.2669,-33.2313) (mm)
+
+ins_bot_transl : (-11.9231,-17.5791,-26.0716) (mm)
+
+ins_top_transl : (-14.5369,-17.1044,-27.8369) (mm)
+PhysicsList::SetCuts:CutLength : 1 mm 
+
+phot:   for  gamma    SubType= 12
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       PhotoElectric :  Emin=        0 eV    Emax=       10 TeV  FluoActive
+
+compt:   for  gamma    SubType= 13
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        KleinNishina :  Emin=        0 eV    Emax=       10 TeV  FluoActive
+
+conv:   for  gamma    SubType= 14
+      Lambda tables from 1.022 MeV to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        BetheHeitler :  Emin=        0 eV    Emax=       10 TeV
+
+Rayl:   for  gamma    SubType= 11
+      Lambda tables from 10 eV  to 10 TeV in 200 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh :  Emin=        0 eV    Emax=      100 GeV
+
+msc:   for e-    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.04, stepLimitType: 2, latDisplacement: 1, skin= 1, geomFactor= 2.5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc95 :  Emin=        0 eV    Emax=       10 TeV
+
+eIoni:   for  e-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   AngularGen2BS
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   AngularGen2BS
+
+eIoni:   for  e+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   AngularGenUrban
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   AngularGenUrban
+
+annihil:   for  e+    SubType= 5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for proton    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  proton    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+hBrems:   for  proton    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  proton    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for GenericIon    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+ionIoni:   for  GenericIon    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.001, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      Stopping Power data for 17 ion/material pairs 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+         ParamICRU73 :  Emin=        0 eV    Emax=       10 TeV
+
+nuclearStopping:   for  GenericIon    SubType= 8
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping :  Emin=        0 eV    Emax=       10 TeV
+
+nuclearStopping:   for  alpha    SubType= 8
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  anti_proton    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+msc:   for kaon+    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  kaon+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  kaon-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+muMsc:   for mu+    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV
+
+muIoni:   for  mu+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu+    SubType= 1
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+muIoni:   for  mu-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu-    SubType= 1
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  pi+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for pi-    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  pi-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+========= Table of registered couples ==============================
+
+Index : 0     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Galactic
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  990 eV     e-  990 eV     e+  990 eV  proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 1     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_PLEXIGLASS
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  2.11555 keV    e-  244.79 keV    e+  241.522 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 2     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  5.00023 keV    e-  337.972 keV    e+  324.616 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 3     used in the geometry : Yes     recalculation needed : No 
+ Material : natural Uranium
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  106.748 keV    e-  1.14827 MeV    e+  1.05931 MeV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 4     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Al
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  5.00023 keV    e-  363.901 keV    e+  351.877 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 5     used in the geometry : Yes     recalculation needed : No 
+ Material : Stainless Steel
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  14.4581 keV    e-  741.896 keV    e+  707.805 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+====================================================================
+
+   TreeMaker::CreateNewFile - New File Created: ./sim_output/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0.root
+   TreeMaker::CreateNewTree - New Tree Created: Sim_Tree
+Found transform for :av_1_impr_7_target_log_pv_0
+Following propertiesEuler angles => (41.5296, 59.1639, 30.0609)
+Translate    => (-0.519097,-0.21,-2.00884) cm
+Rotated Thickness = 0.19509 cm
+Scale factor = 1.9509
+Source type set to surface_layer
+Plane norm : (0.569282,-0.642788,0.512584)
+Plane norm theta (deg) : 59.1639
+Plane norm phi   (deg) : -48.4704
+   TreeMaker::CreateBranch - Created Branch: DetID/I
+   TreeMaker::CreateBranch - Created Branch: SiStripID/I
+   TreeMaker::CreateBranch - Created Branch: EffPhi/D
+   TreeMaker::CreateBranch - Created Branch: EffTheta/D
+   TreeMaker::CreateBranch - Created Branch: SSDWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: SSDLocalPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: SSDKE/D
+   TreeMaker::CreateBranch - Created Branch: SSDTotDepE/D
+   TreeMaker::CreateBranch - Created Branch: SSDParticleName/C
+   TreeMaker::CreateBranch - Created Branch: TarPhi/D
+   TreeMaker::CreateBranch - Created Branch: TarTheta/D
+   TreeMaker::CreateBranch - Created Branch: TarWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarMomentum[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaMomentum[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarKE/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaKE/D
+   TreeMaker::CreateBranch - Created Branch: TarTotDepE/D
+   TreeMaker::CreateBranch - Created Branch: TarNonIonizingDepE/D
+   TreeMaker::CreateBranch - Created Branch: TarParticleName/C
+   TreeMaker::CreateBranch - Created Branch: TarCharge/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaCharge/D
+   TreeMaker::CreateBranch - Created Branch: TarTrackLength/D
+   TreeMaker::CreateBranch - Created Branch: TarNSteps/I
+   TreeMaker::CreateBranch - Created Branch: TarAveTrackLength/D
+   TreeMaker::CreateBranch - Created Branch: TarLocalPos[3]/D
+   TreeMaker::StartFillTimer - Timer reset and started.
+   TreeMaker::CreateBranch - Created Branch: month/I
+   TreeMaker::CreateBranch - Created Branch: day/I
+   TreeMaker::CreateBranch - Created Branch: year/I
+   TreeMaker::CreateBranch - Created Branch: elapsedRealTime/D
+
+	Filling Began On 8/29/2012
+	Number of Events to Fill: 1000000
+
+        Fill Number   -      Fill Rate      -   Clock   -   Elapsed   -  To Finish 
+                                               HH:MM:SS - DD:HH:MM:SS - DD:HH:MM:SS
+             1 fills  -     8924 fills/sec  -  09:58:31 - 00:00:00:00 - 00:00:01:52
+ 0%          8030 fills  -     1605 fills/sec  -  09:58:36 - 00:00:00:05 - 00:00:10:18
+         19507 fills  -     2295 fills/sec  -  09:58:41 - 00:00:00:10 - 00:00:07:07
+         31121 fills  -     2322 fills/sec  -  09:58:46 - 00:00:00:15 - 00:00:06:57
+         42696 fills  -     2315 fills/sec  -  09:58:51 - 00:00:00:20 - 00:00:06:53
+ 5%         54564 fills  -     2373 fills/sec  -  09:58:56 - 00:00:00:25 - 00:00:06:38
+         66451 fills  -     2377 fills/sec  -  09:59:01 - 00:00:00:30 - 00:00:06:33
+         78375 fills  -     2385 fills/sec  -  09:59:06 - 00:00:00:35 - 00:00:06:26
+         90055 fills  -     2336 fills/sec  -  09:59:11 - 00:00:00:40 - 00:00:06:30
+10%        101924 fills  -     2373 fills/sec  -  09:59:16 - 00:00:00:45 - 00:00:06:18
+        113840 fills  -     2383 fills/sec  -  09:59:21 - 00:00:00:50 - 00:00:06:12
+        125744 fills  -     2380 fills/sec  -  09:59:26 - 00:00:00:55 - 00:00:06:07
+        137631 fills  -     2377 fills/sec  -  09:59:31 - 00:00:01:00 - 00:00:06:03
+15%        149510 fills  -     2375 fills/sec  -  09:59:36 - 00:00:01:05 - 00:00:05:58
+        161399 fills  -     2377 fills/sec  -  09:59:41 - 00:00:01:10 - 00:00:05:53
+        173270 fills  -     2374 fills/sec  -  09:59:46 - 00:00:01:15 - 00:00:05:48
+        185652 fills  -     2476 fills/sec  -  09:59:51 - 00:00:01:20 - 00:00:05:29
+        198036 fills  -     2476 fills/sec  -  09:59:56 - 00:00:01:25 - 00:00:05:24
+20%        210404 fills  -     2473 fills/sec  -  10:00:01 - 00:00:01:30 - 00:00:05:19
+        222800 fills  -     2479 fills/sec  -  10:00:06 - 00:00:01:35 - 00:00:05:14
+        235202 fills  -     2480 fills/sec  -  10:00:11 - 00:00:01:40 - 00:00:05:08
+        247531 fills  -     2465 fills/sec  -  10:00:16 - 00:00:01:45 - 00:00:05:05
+25%        260048 fills  -     2503 fills/sec  -  10:00:21 - 00:00:01:50 - 00:00:04:56
+        272474 fills  -     2485 fills/sec  -  10:00:26 - 00:00:01:55 - 00:00:04:53
+        285015 fills  -     2508 fills/sec  -  10:00:31 - 00:00:02:00 - 00:00:04:45
+        297336 fills  -     2464 fills/sec  -  10:00:36 - 00:00:02:05 - 00:00:04:45
+30%        309867 fills  -     2506 fills/sec  -  10:00:41 - 00:00:02:10 - 00:00:04:35
+        322358 fills  -     2498 fills/sec  -  10:00:46 - 00:00:02:15 - 00:00:04:31
+        337700 fills  -     1534 fills/sec  -  10:00:56 - 00:00:02:25 - 00:00:07:12
+35%        350029 fills  -     2465 fills/sec  -  10:01:01 - 00:00:02:30 - 00:00:04:24
+        362352 fills  -     2464 fills/sec  -  10:01:06 - 00:00:02:35 - 00:00:04:19
+        374689 fills  -     2467 fills/sec  -  10:01:11 - 00:00:02:40 - 00:00:04:13
+        387026 fills  -     2467 fills/sec  -  10:01:16 - 00:00:02:45 - 00:00:04:08
+40%        399354 fills  -     2465 fills/sec  -  10:01:21 - 00:00:02:50 - 00:00:04:04
+        411677 fills  -     2464 fills/sec  -  10:01:26 - 00:00:02:55 - 00:00:03:59
+        424144 fills  -     2493 fills/sec  -  10:01:31 - 00:00:03:00 - 00:00:03:51
+        436546 fills  -     2480 fills/sec  -  10:01:36 - 00:00:03:05 - 00:00:03:47
+45%        449013 fills  -     2493 fills/sec  -  10:01:41 - 00:00:03:10 - 00:00:03:41
+        461467 fills  -     2490 fills/sec  -  10:01:46 - 00:00:03:15 - 00:00:03:36
+        473761 fills  -     2458 fills/sec  -  10:01:51 - 00:00:03:20 - 00:00:03:34
+        486216 fills  -     2491 fills/sec  -  10:01:56 - 00:00:03:25 - 00:00:03:26
+50%        501480 fills  -     1526 fills/sec  -  10:02:06 - 00:00:03:35 - 00:00:05:27
+        513822 fills  -     2468 fills/sec  -  10:02:11 - 00:00:03:40 - 00:00:03:17
+        526159 fills  -     2467 fills/sec  -  10:02:16 - 00:00:03:45 - 00:00:03:12
+        538497 fills  -     2467 fills/sec  -  10:02:21 - 00:00:03:50 - 00:00:03:07
+55%        550818 fills  -     2464 fills/sec  -  10:02:26 - 00:00:03:55 - 00:00:03:02
+        563130 fills  -     2462 fills/sec  -  10:02:31 - 00:00:04:00 - 00:00:02:57
+        575508 fills  -     2475 fills/sec  -  10:02:36 - 00:00:04:05 - 00:00:02:51
+        587994 fills  -     2497 fills/sec  -  10:02:41 - 00:00:04:10 - 00:00:02:45
+60%        600370 fills  -     2475 fills/sec  -  10:02:46 - 00:00:04:15 - 00:00:02:41
+        612837 fills  -     2493 fills/sec  -  10:02:51 - 00:00:04:20 - 00:00:02:35
+        625302 fills  -     2493 fills/sec  -  10:02:56 - 00:00:04:25 - 00:00:02:30
+        637588 fills  -     2457 fills/sec  -  10:03:01 - 00:00:04:30 - 00:00:02:27
+65%        650043 fills  -     2491 fills/sec  -  10:03:06 - 00:00:04:35 - 00:00:02:20
+        662511 fills  -     2493 fills/sec  -  10:03:11 - 00:00:04:40 - 00:00:02:15
+        665442 fills  -      586 fills/sec  -  10:03:16 - 00:00:04:45 - 00:00:09:31
+        677828 fills  -     2477 fills/sec  -  10:03:21 - 00:00:04:50 - 00:00:02:10
+        690209 fills  -     2476 fills/sec  -  10:03:26 - 00:00:04:55 - 00:00:02:05
+70%        702590 fills  -     2476 fills/sec  -  10:03:31 - 00:00:05:00 - 00:00:02:00
+        714953 fills  -     2472 fills/sec  -  10:03:36 - 00:00:05:05 - 00:00:01:55
+        727260 fills  -     2461 fills/sec  -  10:03:41 - 00:00:05:10 - 00:00:01:51
+        739723 fills  -     2492 fills/sec  -  10:03:46 - 00:00:05:15 - 00:00:01:44
+75%        752243 fills  -     2503 fills/sec  -  10:03:51 - 00:00:05:20 - 00:00:01:39
+        764770 fills  -     2505 fills/sec  -  10:03:56 - 00:00:05:25 - 00:00:01:34
+        777167 fills  -     2479 fills/sec  -  10:04:01 - 00:00:05:30 - 00:00:01:30
+        789684 fills  -     2503 fills/sec  -  10:04:06 - 00:00:05:35 - 00:00:01:24
+80%        802008 fills  -     2464 fills/sec  -  10:04:11 - 00:00:05:40 - 00:00:01:20
+        814505 fills  -     2499 fills/sec  -  10:04:16 - 00:00:05:45 - 00:00:01:14
+        826978 fills  -     2494 fills/sec  -  10:04:21 - 00:00:05:50 - 00:00:01:09
+        830626 fills  -      688 fills/sec  -  10:04:27 - 00:00:05:55 - 00:00:04:06
+        842262 fills  -     2474 fills/sec  -  10:04:31 - 00:00:06:00 - 00:00:01:04
+85%        854618 fills  -     2471 fills/sec  -  10:04:36 - 00:00:06:05 - 00:00:00:59
+        866985 fills  -     2473 fills/sec  -  10:04:41 - 00:00:06:10 - 00:00:00:54
+        879080 fills  -     2418 fills/sec  -  10:04:46 - 00:00:06:15 - 00:00:00:50
+        891338 fills  -     2451 fills/sec  -  10:04:51 - 00:00:06:20 - 00:00:00:44
+90%        904636 fills  -     2659 fills/sec  -  10:04:56 - 00:00:06:25 - 00:00:00:36
+        917127 fills  -     2498 fills/sec  -  10:05:01 - 00:00:06:30 - 00:00:00:33
+        929569 fills  -     2488 fills/sec  -  10:05:06 - 00:00:06:35 - 00:00:00:28
+        941825 fills  -     2451 fills/sec  -  10:05:11 - 00:00:06:40 - 00:00:00:24
+95%        954136 fills  -     2462 fills/sec  -  10:05:16 - 00:00:06:45 - 00:00:00:19
+        966301 fills  -     2432 fills/sec  -  10:05:21 - 00:00:06:50 - 00:00:00:14
+        978605 fills  -     2460 fills/sec  -  10:05:26 - 00:00:06:55 - 00:00:00:09
+        990882 fills  -     2455 fills/sec  -  10:05:31 - 00:00:07:00 - 00:00:00:04
+/
+/UpStreamTop   *** Active 
+/DownStreamLeft   *** Active 
+/UpStreamRight   *** Active 
+/DownStreamBottom   *** Active 
+/target   *** Active 
+   TreeMaker::AutoSaveTree - Flushed Buffer For Tree: Sim_Tree
+   TreeMaker::CloseCurrentFile - Closed File: ./sim_output/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0.root
+                                 Compression Level: 1
+                                         File Size: 171.89 MB
+Instance of TreeMaker Destructed!
+Instance of FragSimDetConstruction destructed
+Instance of SensitiveSSD destructed : DownStreamBottom
+Instance of SensitiveSSD destructed : UpStreamRight
+Instance of SensitiveSSD destructed : DownStreamLeft
+Instance of SensitiveSSD destructed : UpStreamTop
+Instance of FragSimRunAction Destructed!
+
+-----------------------------------------------------
+FragSimPrimaryGeneratorAction End of Life Information
+Total vertices = 1281285
+Used vertices  = 1000000
+Frac beam-target intersection = 7.805e-01
+Instance of FragSimEventAction Destructed!
+Enter run name : Stored Random Engine Data Found in : seeds/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0_3.seed
+Do you want to use it? (Y/n)? 
+*************************************************************
+ Geant4 version Name: geant4-09-05-patch-01    (20-March-2012)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+Instance of SensitiveSSD constructed : UpStreamTop
+Instance of SensitiveSSD constructed : DownStreamLeft
+Instance of SensitiveSSD constructed : UpStreamRight
+Instance of SensitiveSSD constructed : DownStreamBottom
+Instance of FragSimDetConstruction constructed
+Instance of TreeMaker Constructed!
+Constructing FragSimSource2
+Constructing FragSimPrimaryGeneratorAction
+Instance of FragSimRunAction Constructed!
+G4VIS_USE conditional code executed
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Current available graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  G4HepRep (HepRepXML)
+  G4HepRepFile (HepRepFile)
+  RayTracer (RayTracer)
+  VRML1FILE (VRML1FILE)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+  OpenGLStoredQt (OGL)
+  OpenGLImmediateQt (OGLI)
+  OpenGLStoredQt (OGLS)
+  OpenGLImmediateX (OGLIX)
+  OpenGLStoredX (OGLSX)
+  OpenGLImmediateQt (OGLIQt)
+  OpenGLStoredQt (OGLSQt)
+  RayTracerX (RayTracerX)
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByCharge
+  drawByParticleID
+  drawByOriginVolume
+  drawByAttribute
+
+Registered filter factories:
+  chargeFilter
+  particleFilter
+  originVolumeFilter
+  attributeFilter
+
+Some /vis commands (optionally) take a string to specify colour.
+Available colours:
+  black, blue, cyan, gray, green, grey, magenta, red, white, yellow
+
+MassDistr Command = 
+Using fragment mass energy distribution defined in data/232th/7.0
+x[0]=78, y[0]=0.0008
+x[1]=84, y[1]=0.0612
+x[2]=85, y[2]=0.0834
+x[3]=87, y[3]=0.0898
+x[4]=88, y[4]=0.0788
+x[5]=89, y[5]=0.0649
+x[6]=91, y[6]=0.0727
+x[7]=92, y[7]=0.062
+x[8]=93, y[8]=0.0503
+x[9]=94, y[9]=0.0508
+x[10]=95, y[10]=0.0425
+x[11]=97, y[11]=0.024
+x[12]=99, y[12]=0.0099
+x[13]=101, y[13]=0.0019
+x[14]=103, y[14]=0
+x[15]=115, y[15]=0
+x[16]=128, y[16]=0.0002
+x[17]=129, y[17]=0.0026
+x[18]=131, y[18]=0.0081
+x[19]=132, y[19]=0.0185
+x[20]=133, y[20]=0.0318
+x[21]=134, y[21]=0.0412
+x[22]=135, y[22]=0.0449
+x[23]=137, y[23]=0.0498
+x[24]=138, y[24]=0.0502
+x[25]=139, y[25]=0.0717
+x[26]=140, y[26]=0.0847
+x[27]=141, y[27]=0.088
+x[28]=142, y[28]=0.0781
+x[29]=143, y[29]=0.0904
+x[30]=146, y[30]=0.0562
+x[31]=147, y[31]=0.0308
+x[32]=148, y[32]=0.0157
+Found 33 masses
+Found 73 energies 
+PhysicsList::AddPhysicsList: <emstandard_opt3>
+
+   [ (    0.454519     -0.707107      0.541675)
+     (    0.766044   3.93581e-17     -0.642788)
+     (    0.454519      0.707107      0.541675) ]
+phi=147.268
+theta=57.2022
+psi=139.879
+p0n: (25.05,14,-0.5) --> (1.21538,19.5108,21.0144)
+p1n: (25.05,-14,-0.5) --> (21.0144,19.5108,1.21538)
+p2n: (-25.05,-14,-0.5) --> (-1.75706,-18.868,-21.556)
+p3n: (-25.05,14,-0.5) --> (-21.556,-18.868,-1.75706)
+
+
+p0p: (25.05,14,0.5) --> (1.75706,18.868,21.556)
+p1p: (25.05,-14,0.5) --> (21.556,18.868,1.75706)
+p2p: (-25.05,-14,0.5) --> (-1.21538,-19.5108,-21.0144)
+p3p: (-25.05,14,0.5) --> (-21.0144,-19.5108,-1.21538)
+
+Center of the bottom of the target
+(-11.1149,-19.5108,-11.1149)
+The target is actually offset from the base
+of the mount slit. The base of the slit then should be
+displaced by the following vector
+(-6.9,-9.75807,-6.9) (mm)
+
+The displacement of the target from the is defined in the FragSimDetConstruction class.
+The mount is positioned relative to the position of the target. An absolute
+position is acquired by adding the recently computed offset to the bottom center
+of the target.
+
+Center of mount slit = (-18.0149,-29.2689,-18.0149) (mm)
+
+The target overhangs the edge of the mount as well. To account for this overhang
+the mount and sh metal plates are shifted in the +y' direction of the rotated coord
+system.
+
+Overhang   = 0.25 cm
+Shift in yp= 0.12 cm
+
+Also we know that the target is offset by the thickness of the sheet metal
+in the new z direction. Therefore, there must be a shift downwards
+in the mount along the new z-direction by 0.127 cm.
+
+
+The target offset was (-3.4,-0.1,-16.7) (mm)
+
+
+Slit center should then be at the following location: (-21.6284,-30.2669,-33.2313) (mm)
+
+
+The sheet metal inserts used to clamp the target in 
+place are positioned with the same rotation matrix as 
+the target but with the following translations
+
+Rotation (rot1): 3 degrees
+Rotation (rot2): 5 degrees
+Bot. sh. shift): 0 (cm)
+--------------------------------------------
+
+mount_transl   : (-21.6284,-30.2669,-33.2313) (mm)
+
+ins_bot_transl : (-11.9231,-17.5791,-26.0716) (mm)
+
+ins_top_transl : (-14.5369,-17.1044,-27.8369) (mm)
+PhysicsList::SetCuts:CutLength : 1 mm 
+
+phot:   for  gamma    SubType= 12
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       PhotoElectric :  Emin=        0 eV    Emax=       10 TeV  FluoActive
+
+compt:   for  gamma    SubType= 13
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        KleinNishina :  Emin=        0 eV    Emax=       10 TeV  FluoActive
+
+conv:   for  gamma    SubType= 14
+      Lambda tables from 1.022 MeV to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        BetheHeitler :  Emin=        0 eV    Emax=       10 TeV
+
+Rayl:   for  gamma    SubType= 11
+      Lambda tables from 10 eV  to 10 TeV in 200 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh :  Emin=        0 eV    Emax=      100 GeV
+
+msc:   for e-    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.04, stepLimitType: 2, latDisplacement: 1, skin= 1, geomFactor= 2.5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc95 :  Emin=        0 eV    Emax=       10 TeV
+
+eIoni:   for  e-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   AngularGen2BS
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   AngularGen2BS
+
+eIoni:   for  e+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   AngularGenUrban
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   AngularGenUrban
+
+annihil:   for  e+    SubType= 5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for proton    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  proton    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+hBrems:   for  proton    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  proton    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for GenericIon    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+ionIoni:   for  GenericIon    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.001, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      Stopping Power data for 17 ion/material pairs 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+         ParamICRU73 :  Emin=        0 eV    Emax=       10 TeV
+
+nuclearStopping:   for  GenericIon    SubType= 8
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping :  Emin=        0 eV    Emax=       10 TeV
+
+nuclearStopping:   for  alpha    SubType= 8
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  anti_proton    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+msc:   for kaon+    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  kaon+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  kaon-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+muMsc:   for mu+    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV
+
+muIoni:   for  mu+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu+    SubType= 1
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+muIoni:   for  mu-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu-    SubType= 1
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  pi+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for pi-    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  pi-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+========= Table of registered couples ==============================
+
+Index : 0     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Galactic
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  990 eV     e-  990 eV     e+  990 eV  proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 1     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_PLEXIGLASS
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  2.11555 keV    e-  244.79 keV    e+  241.522 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 2     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  5.00023 keV    e-  337.972 keV    e+  324.616 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 3     used in the geometry : Yes     recalculation needed : No 
+ Material : natural Uranium
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  106.748 keV    e-  1.14827 MeV    e+  1.05931 MeV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 4     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Al
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  5.00023 keV    e-  363.901 keV    e+  351.877 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 5     used in the geometry : Yes     recalculation needed : No 
+ Material : Stainless Steel
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  14.4581 keV    e-  741.896 keV    e+  707.805 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+====================================================================
+
+   TreeMaker::CreateNewFile - New File Created: ./sim_output/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0.root
+   TreeMaker::CreateNewTree - New Tree Created: Sim_Tree
+Found transform for :av_1_impr_7_target_log_pv_0
+Following propertiesEuler angles => (41.5296, 59.1639, 30.0609)
+Translate    => (-0.519097,-0.21,-2.00884) cm
+Rotated Thickness = 0.19509 cm
+Scale factor = 1.9509
+Source type set to surface_layer
+Plane norm : (0.569282,-0.642788,0.512584)
+Plane norm theta (deg) : 59.1639
+Plane norm phi   (deg) : -48.4704
+   TreeMaker::CreateBranch - Created Branch: DetID/I
+   TreeMaker::CreateBranch - Created Branch: SiStripID/I
+   TreeMaker::CreateBranch - Created Branch: EffPhi/D
+   TreeMaker::CreateBranch - Created Branch: EffTheta/D
+   TreeMaker::CreateBranch - Created Branch: SSDWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: SSDLocalPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: SSDKE/D
+   TreeMaker::CreateBranch - Created Branch: SSDTotDepE/D
+   TreeMaker::CreateBranch - Created Branch: SSDParticleName/C
+   TreeMaker::CreateBranch - Created Branch: TarPhi/D
+   TreeMaker::CreateBranch - Created Branch: TarTheta/D
+   TreeMaker::CreateBranch - Created Branch: TarWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarMomentum[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaMomentum[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarKE/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaKE/D
+   TreeMaker::CreateBranch - Created Branch: TarTotDepE/D
+   TreeMaker::CreateBranch - Created Branch: TarNonIonizingDepE/D
+   TreeMaker::CreateBranch - Created Branch: TarParticleName/C
+   TreeMaker::CreateBranch - Created Branch: TarCharge/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaCharge/D
+   TreeMaker::CreateBranch - Created Branch: TarTrackLength/D
+   TreeMaker::CreateBranch - Created Branch: TarNSteps/I
+   TreeMaker::CreateBranch - Created Branch: TarAveTrackLength/D
+   TreeMaker::CreateBranch - Created Branch: TarLocalPos[3]/D
+   TreeMaker::StartFillTimer - Timer reset and started.
+   TreeMaker::CreateBranch - Created Branch: month/I
+   TreeMaker::CreateBranch - Created Branch: day/I
+   TreeMaker::CreateBranch - Created Branch: year/I
+   TreeMaker::CreateBranch - Created Branch: elapsedRealTime/D
+
+	Filling Began On 8/29/2012
+	Number of Events to Fill: 1000000
+
+        Fill Number   -      Fill Rate      -   Clock   -   Elapsed   -  To Finish 
+                                               HH:MM:SS - DD:HH:MM:SS - DD:HH:MM:SS
+             1 fills  -     8701 fills/sec  -  10:05:42 - 00:00:00:00 - 00:00:01:55
+ 0%          7636 fills  -     1526 fills/sec  -  10:05:47 - 00:00:00:05 - 00:00:10:50
+         18443 fills  -     2161 fills/sec  -  10:05:52 - 00:00:00:10 - 00:00:07:34
+         29542 fills  -     2219 fills/sec  -  10:05:57 - 00:00:00:15 - 00:00:07:17
+         40733 fills  -     2238 fills/sec  -  10:06:02 - 00:00:00:20 - 00:00:07:09
+ 5%         51886 fills  -     2230 fills/sec  -  10:06:07 - 00:00:00:25 - 00:00:07:05
+         63135 fills  -     2249 fills/sec  -  10:06:12 - 00:00:00:30 - 00:00:06:56
+         74405 fills  -     2254 fills/sec  -  10:06:17 - 00:00:00:35 - 00:00:06:51
+         85653 fills  -     2249 fills/sec  -  10:06:22 - 00:00:00:40 - 00:00:06:46
+         96924 fills  -     2254 fills/sec  -  10:06:27 - 00:00:00:45 - 00:00:06:41
+10%        108174 fills  -     2249 fills/sec  -  10:06:32 - 00:00:00:50 - 00:00:06:36
+        119510 fills  -     2267 fills/sec  -  10:06:37 - 00:00:00:55 - 00:00:06:28
+        130768 fills  -     2251 fills/sec  -  10:06:42 - 00:00:01:00 - 00:00:06:26
+        142065 fills  -     2259 fills/sec  -  10:06:47 - 00:00:01:05 - 00:00:06:20
+15%        153270 fills  -     2240 fills/sec  -  10:06:52 - 00:00:01:10 - 00:00:06:18
+        164580 fills  -     2262 fills/sec  -  10:06:57 - 00:00:01:15 - 00:00:06:09
+        175960 fills  -     2276 fills/sec  -  10:07:02 - 00:00:01:20 - 00:00:06:02
+        187775 fills  -     2362 fills/sec  -  10:07:07 - 00:00:01:25 - 00:00:05:44
+20%        199534 fills  -     2351 fills/sec  -  10:07:12 - 00:00:01:30 - 00:00:05:40
+        211342 fills  -     2361 fills/sec  -  10:07:17 - 00:00:01:35 - 00:00:05:34
+        223083 fills  -     2348 fills/sec  -  10:07:22 - 00:00:01:40 - 00:00:05:31
+        234950 fills  -     2373 fills/sec  -  10:07:27 - 00:00:01:45 - 00:00:05:22
+        246853 fills  -     2380 fills/sec  -  10:07:32 - 00:00:01:50 - 00:00:05:16
+25%        258761 fills  -     2381 fills/sec  -  10:07:37 - 00:00:01:55 - 00:00:05:11
+        270542 fills  -     2356 fills/sec  -  10:07:42 - 00:00:02:00 - 00:00:05:10
+        282450 fills  -     2381 fills/sec  -  10:07:47 - 00:00:02:05 - 00:00:05:01
+        294314 fills  -     2372 fills/sec  -  10:07:52 - 00:00:02:10 - 00:00:04:57
+30%        306010 fills  -     2339 fills/sec  -  10:07:57 - 00:00:02:15 - 00:00:04:57
+        317868 fills  -     2371 fills/sec  -  10:08:02 - 00:00:02:20 - 00:00:04:48
+        329731 fills  -     2372 fills/sec  -  10:08:07 - 00:00:02:25 - 00:00:04:42
+        332741 fills  -      601 fills/sec  -  10:08:12 - 00:00:02:30 - 00:00:18:28
+        344489 fills  -     2349 fills/sec  -  10:08:17 - 00:00:02:35 - 00:00:04:39
+35%        356266 fills  -     2355 fills/sec  -  10:08:22 - 00:00:02:40 - 00:00:04:33
+        368049 fills  -     2356 fills/sec  -  10:08:27 - 00:00:02:45 - 00:00:04:28
+        379826 fills  -     2355 fills/sec  -  10:08:32 - 00:00:02:50 - 00:00:04:23
+        391547 fills  -     2344 fills/sec  -  10:08:37 - 00:00:02:55 - 00:00:04:20
+40%        403406 fills  -     2371 fills/sec  -  10:08:42 - 00:00:03:00 - 00:00:04:12
+        415275 fills  -     2373 fills/sec  -  10:08:47 - 00:00:03:05 - 00:00:04:06
+        427157 fills  -     2376 fills/sec  -  10:08:52 - 00:00:03:10 - 00:00:04:01
+        438931 fills  -     2354 fills/sec  -  10:08:57 - 00:00:03:15 - 00:00:03:58
+45%        450775 fills  -     2368 fills/sec  -  10:09:02 - 00:00:03:20 - 00:00:03:52
+        462634 fills  -     2371 fills/sec  -  10:09:07 - 00:00:03:25 - 00:00:03:47
+        474340 fills  -     2341 fills/sec  -  10:09:12 - 00:00:03:30 - 00:00:03:45
+        486224 fills  -     2376 fills/sec  -  10:09:17 - 00:00:03:35 - 00:00:03:36
+        498098 fills  -     2374 fills/sec  -  10:09:22 - 00:00:03:40 - 00:00:03:31
+50%        501069 fills  -      594 fills/sec  -  10:09:27 - 00:00:03:45 - 00:00:14:00
+        512826 fills  -     2351 fills/sec  -  10:09:32 - 00:00:03:50 - 00:00:03:27
+        524574 fills  -     2349 fills/sec  -  10:09:37 - 00:00:03:55 - 00:00:03:22
+        536367 fills  -     2358 fills/sec  -  10:09:42 - 00:00:04:00 - 00:00:03:17
+55%        548146 fills  -     2355 fills/sec  -  10:09:47 - 00:00:04:05 - 00:00:03:12
+        559835 fills  -     2337 fills/sec  -  10:09:52 - 00:00:04:10 - 00:00:03:08
+        571725 fills  -     2377 fills/sec  -  10:09:57 - 00:00:04:15 - 00:00:03:00
+        583622 fills  -     2379 fills/sec  -  10:10:02 - 00:00:04:20 - 00:00:02:55
+        595468 fills  -     2369 fills/sec  -  10:10:07 - 00:00:04:25 - 00:00:02:51
+60%        607231 fills  -     2352 fills/sec  -  10:10:12 - 00:00:04:30 - 00:00:02:47
+        619085 fills  -     2370 fills/sec  -  10:10:17 - 00:00:04:35 - 00:00:02:41
+        630779 fills  -     2338 fills/sec  -  10:10:22 - 00:00:04:40 - 00:00:02:38
+        642641 fills  -     2372 fills/sec  -  10:10:27 - 00:00:04:45 - 00:00:02:31
+65%        654479 fills  -     2367 fills/sec  -  10:10:32 - 00:00:04:50 - 00:00:02:26
+        669292 fills  -     1481 fills/sec  -  10:10:42 - 00:00:05:00 - 00:00:03:43
+        681053 fills  -     2352 fills/sec  -  10:10:47 - 00:00:05:05 - 00:00:02:16
+        692810 fills  -     2351 fills/sec  -  10:10:52 - 00:00:05:10 - 00:00:02:11
+70%        704599 fills  -     2357 fills/sec  -  10:10:57 - 00:00:05:15 - 00:00:02:05
+        716329 fills  -     2346 fills/sec  -  10:11:02 - 00:00:05:20 - 00:00:02:01
+        728008 fills  -     2335 fills/sec  -  10:11:07 - 00:00:05:25 - 00:00:01:56
+        740005 fills  -     2399 fills/sec  -  10:11:12 - 00:00:05:30 - 00:00:01:48
+75%        751879 fills  -     2374 fills/sec  -  10:11:17 - 00:00:05:35 - 00:00:01:44
+        763776 fills  -     2379 fills/sec  -  10:11:22 - 00:00:05:40 - 00:00:01:39
+        775579 fills  -     2360 fills/sec  -  10:11:27 - 00:00:05:45 - 00:00:01:35
+        787465 fills  -     2377 fills/sec  -  10:11:32 - 00:00:05:50 - 00:00:01:29
+80%        799179 fills  -     2342 fills/sec  -  10:11:37 - 00:00:05:55 - 00:00:01:26
+        811070 fills  -     2378 fills/sec  -  10:11:42 - 00:00:06:00 - 00:00:01:19
+        822952 fills  -     2376 fills/sec  -  10:11:47 - 00:00:06:05 - 00:00:01:15
+        837603 fills  -     1465 fills/sec  -  10:11:57 - 00:00:06:15 - 00:00:01:51
+85%        849389 fills  -     2356 fills/sec  -  10:12:02 - 00:00:06:20 - 00:00:01:04
+        861207 fills  -     2363 fills/sec  -  10:12:07 - 00:00:06:25 - 00:00:00:59
+        873002 fills  -     2359 fills/sec  -  10:12:12 - 00:00:06:30 - 00:00:00:54
+        884542 fills  -     2307 fills/sec  -  10:12:17 - 00:00:06:35 - 00:00:00:50
+        896642 fills  -     2420 fills/sec  -  10:12:22 - 00:00:06:40 - 00:00:00:43
+90%        908022 fills  -     2276 fills/sec  -  10:12:27 - 00:00:06:45 - 00:00:00:40
+        919637 fills  -     2323 fills/sec  -  10:12:32 - 00:00:06:50 - 00:00:00:35
+        931292 fills  -     2330 fills/sec  -  10:12:37 - 00:00:06:55 - 00:00:00:29
+        942980 fills  -     2337 fills/sec  -  10:12:42 - 00:00:07:00 - 00:00:00:24
+95%        954657 fills  -     2335 fills/sec  -  10:12:47 - 00:00:07:05 - 00:00:00:19
+        966340 fills  -     2336 fills/sec  -  10:12:52 - 00:00:07:10 - 00:00:00:14
+        978016 fills  -     2335 fills/sec  -  10:12:57 - 00:00:07:15 - 00:00:00:09
+        989616 fills  -     2320 fills/sec  -  10:13:02 - 00:00:07:20 - 00:00:00:04
+/
+/UpStreamTop   *** Active 
+/DownStreamLeft   *** Active 
+/UpStreamRight   *** Active 
+/DownStreamBottom   *** Active 
+/target   *** Active 
+   TreeMaker::AutoSaveTree - Flushed Buffer For Tree: Sim_Tree
+   TreeMaker::CloseCurrentFile - Closed File: ./sim_output/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0.root
+                                 Compression Level: 1
+                                         File Size: 171.86 MB
+Instance of TreeMaker Destructed!
+Instance of FragSimDetConstruction destructed
+Instance of SensitiveSSD destructed : DownStreamBottom
+Instance of SensitiveSSD destructed : UpStreamRight
+Instance of SensitiveSSD destructed : DownStreamLeft
+Instance of SensitiveSSD destructed : UpStreamTop
+Instance of FragSimRunAction Destructed!
+
+-----------------------------------------------------
+FragSimPrimaryGeneratorAction End of Life Information
+Total vertices = 1281689
+Used vertices  = 1000000
+Frac beam-target intersection = 7.802e-01
+Instance of FragSimEventAction Destructed!
+./analyze_all: error while loading shared libraries: libFragSim232Th.so: cannot open shared object file: No such file or directory
+jrtomps@presario:FragSim232Th$ [Kjrtomps@presario:FragSim232Th$ ls
+aar0                                 [0m[01;35mglobal_shifted_x1cm_y0_z0.bmp[0m
+aar0.5                               [01;32mGNUmakefile[0m
+aar1                                 [01;34minclude[0m
+aar2                                 [01;34mmacros[0m
+aar3                                 [01;35mno_global_shift.bmp.bmp[0m
+aar4                                 [01;34mNotes[0m
+_alpha_source_1.seed                 overlay_alpha_strip_ratios.C
+[01;35malpha_source_dist_xy.png[0m             overlay_alpha_strip_ratios_y.C
+[01;34manalysis[0m                             overlay_alpha_strip_ratios_z.C
+ar0                                  [01;34mparams[0m
+ar1                                  rootlogon.C
+ar2                                  [01;32mrun_alphas_rot.sh[0m
+ar3                                  [01;32mrun_alphas_x.sh[0m
+ar4                                  [01;32mrun_alphas_y.sh[0m
+ar5                                  [01;32mrun_alphas_z.sh[0m
+asdf.root                            [01;32mrun.sh[0m
+Canvas_1.root                        [01;32mrun_today2.sh[0m
+create_strip_plots.C                 [01;32mrun_today.sh[0m
+[01;34mdata[0m                                 [01;32mrun_tonight.sh[0m
+[01;34mdocs[0m                                 [01;34mseeds[0m
+Doxyfile                             [01;32msendemail.py[0m
+Doxyfile.bak                         [01;32msetup.sh[0m
+[01;35mfrag_1_source_dist_localz.png[0m        [01;35msim_comparison_totdepe.png[0m
+[01;35mfrag_1_source_dist_xy.png[0m            sim_comparison_totdepe.root
+[01;35mfrag_2_gy4_beam-target_intesect.png[0m  [01;34msim_output[0m
+[01;35mfrag_2_totdepe_fragsim232th.png[0m      [01;34msrc[0m
+FragSim232Th.cc                      tag_file
+fragsim232th_complete                temp
+FragSim232Th.config                  [01;32mtest.py[0m
+FragSim232Th.creator                 the_overnight_script.script
+FragSim232Th.creator.user            the_today2_script.script
+FragSim232Th.files                   the_today_script.script
+FragSim232Th.includes                [01;34mtools[0m
+geo_traj.mac                         vis.mac
+getZ.C
+[mjrtomps@presario:FragSim232Th$ cd na[K[Kanalysis/
+jrtomps@presario:analysis$ source setup.sh 
+jrtomps@presario:analysis$ ./analysze[K[K[Kze_all
+Do you want to run multiple files? y
+
+Enter base name : ../Si  sim_output/frag_2_gsn  xn2_gyn2_gz0_r3_r4 5_x1_y0) _z0_
+Enter first index : 0
+Enter last index :  3
+
+IntMap listings
+nevents                  1000000     
+
+DoubleMap listings
+a                        0.00e+00    
+b                        0.00e+00    
+c                        0.00e+00    
+d                        0.00e+00    
+elapsed_time (s)         4.30e+02    
+global_assembly_shift_x  -2.00e+00   
+global_assembly_shift_y  -2.00e+00   
+global_assembly_shift_z  0.00e+00    
+rotated_thickness_mm     1.95e+00    
+step_max_um              3.00e-01    
+surf_thickness_um        1.00e+01    
+target_offset_x          1.00e+00    
+target_offset_y          0.00e+00    
+target_offset_z          0.00e+00    
+target_rot1_offset (deg) 3.00e+00    
+target_rot2_offset (deg) 5.00e+00    
+
+StringMap listings
+distribution             isotropic   
+physics_list             emstandard_opt3
+source_type              surface_layer
+Association to Sim_Tree made
+Found branch DetID                type=Int_t           IntMap=0   size=1         
+Found branch SiStripID            type=Int_t           IntMap=1   size=1         
+Found branch EffPhi               type=Double_t     DoubleMap=0   size=1         
+Found branch EffTheta             type=Double_t     DoubleMap=1   size=1         
+Found branch SSDWorldPos          type=Double_t     VectorMap=0   size=3         
+Found branch SSDLocalPos          type=Double_t     VectorMap=1   size=3         
+Found branch SSDKE                type=Double_t     DoubleMap=2   size=1         
+Found branch SSDTotDepE           type=Double_t     DoubleMap=3   size=1         
+Found branch SSDParticleName      type=Char_t       StringMap=0   size=11        
+Found branch TarPhi               type=Double_t     DoubleMap=4   size=1         
+Found branch TarTheta             type=Double_t     DoubleMap=5   size=1         
+Found branch TarWorldPos          type=Double_t     VectorMap=2   size=3         
+Found branch TarDeltaWorldPos     type=Double_t     VectorMap=3   size=3         
+Found branch TarMomentum          type=Double_t     VectorMap=4   size=3         
+Found branch TarDeltaMomentum     type=Double_t     VectorMap=5   size=3         
+Found branch TarKE                type=Double_t     DoubleMap=6   size=1         
+Found branch TarDeltaKE           type=Double_t     DoubleMap=7   size=1         
+Found branch TarTotDepE           type=Double_t     DoubleMap=8   size=1         
+Found branch TarNonIonizingDepE   type=Double_t     DoubleMap=9   size=1         
+Found branch TarParticleName      type=Char_t       StringMap=1   size=11        
+Found branch TarCharge            type=Double_t     DoubleMap=10  size=1         
+Found branch TarDeltaCharge       type=Double_t     DoubleMap=11  size=1         
+Found branch TarTrackLength       type=Double_t     DoubleMap=12  size=1         
+Found branch TarNSteps            type=Int_t           IntMap=2   size=1         
+Found branch TarAveTrackLength    type=Double_t     DoubleMap=13  size=1         
+Found branch TarLocalPos          type=Double_t     VectorMap=6   size=3         
+Found branch month                type=Int_t           IntMap=3   size=1         
+Found branch day                  type=Int_t           IntMap=4   size=1         
+Found branch year                 type=Int_t           IntMap=5   size=1         
+Found branch elapsedRealTime      type=Double_t     DoubleMap=14  size=1         
+Loading tree is complete
+
+Opening file ../sim_output/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0_0.root
+0.0   %0.1   %0.2   %0.3   %0.4   %0.5   %0.6   %0.7   %0.8   %0.9   %1.0   %1.1   %1.2   %1.3   %1.4   %1.5   %1.6   %1.7   %1.8   %1.9   %2.0   %2.1   %2.2   %2.3   %2.4   %2.5   %2.6   %2.7   %2.8   %2.9   %3.0   %3.1   %3.2   %3.3   %3.4   %3.5   %3.6   %3.7   %3.8   %3.9   %4.0   %4.1   %4.2   %4.3   %4.4   %4.5   %4.6   %4.7   %4.8   %4.9   %5.0   %5.1   %5.2   %5.3   %5.4   %5.5   %5.6   %5.7   %5.8   %5.9   %6.0   %6.1   %6.2   %6.3   %6.4   %6.5   %6.6   %6.7   %6.8   %6.9   %7.0   %7.1   %7.2   %7.3   %7.4   %7.5   %7.6   %7.7   %7.8   %7.9   %8.0   %8.1   %8.2   %8.3   %8.4   %8.5   %8.6   %8.7   %8.8   %8.9   %9.0   %9.1   %9.2   %9.3   %9.4   %9.5   %9.6   %9.7   %9.8   %9.9   %10.0  %10.1  %10.2  %10.3  %10.4  %10.5  %10.6  %10.7  %10.8  %10.9  %11.0  %11.1  %11.2  %11.3  %11.4  %11.5  %11.6  %11.7  %11.8  %11.9  %12.0  %12.1  %12.2  %12.3  %12.4  %12.5  %12.6  %12.7  %12.8  %12.9  %13.0  %13.1  %13.2  %13.3  %13.4  %13.5  %13.6  %13.7  %13.8  %13.9  %14.0  %14.1  %14.2  %14.3  %14.4  %14.5  %14.6  %14.7  %14.8  %14.9  %15.0  %15.1  %15.2  %15.3  %15.4  %15.5  %15.6  %15.7  %15.8  %15.9  %16.0  %16.1  %16.2  %16.3  %16.4  %16.5  %16.6  %16.7  %16.8  %16.9  %17.0  %17.1  %17.2  %17.3  %17.4  %17.5  %17.6  %17.7  %17.8  %17.9  %18.0  %18.1  %18.2  %18.3  %18.4  %18.5  %18.6  %18.7  %18.8  %18.9  %19.0  %19.1  %19.2  %19.3  %19.4  %19.5  %19.6  %19.7  %19.8  %19.9  %20.0  %20.1  %20.2  %20.3  %20.4  %20.5  %20.6  %20.7  %20.8  %20.9  %21.0  %21.1  %21.2  %21.3  %21.4  %21.5  %21.6  %21.7  %21.8  %21.9  %22.0  %22.1  %22.2  %22.3  %22.4  %22.5  %22.6  %22.7  %22.8  %22.9  %23.0  %23.1  %23.2  %23.3  %23.4  %23.5  %23.6  %23.7  %23.8  %23.9  %24.0  %24.1  %24.2  %24.3  %24.4  %24.5  %24.6  %24.7  %24.8  %24.9  %25.0  %25.1  %25.2  %25.3  %25.4  %25.5  %25.6  %25.7  %25.8  %25.9  %26.0  %26.1  %26.2  %26.3  %26.4  %26.5  %26.6  %26.7  %26.8  %26.9  %27.0  %27.1  %27.2  %27.3  %27.4  %27.5  %27.6  %27.7  %27.8  %27.9  %28.0  %28.1  %28.2  %28.3  %28.4  %28.5  %28.6  %28.7  %28.8  %28.9  %29.0  %29.1  %29.2  %29.3  %29.4  %29.5  %29.6  %29.7  %29.8  %29.9  %30.0  %30.1  %30.2  %30.3  %30.4  %30.5  %30.6  %30.7  %30.8  %30.9  %31.0  %31.1  %31.2  %31.3  %31.4  %31.5  %31.6  %31.7  %31.8  %31.9  %32.0  %32.1  %32.2  %32.3  %32.4  %32.5  %32.6  %32.7  %32.8  %32.9  %33.0  %33.1  %33.2  %33.3  %33.4  %33.5  %33.6  %33.7  %33.8  %33.9  %34.0  %34.1  %34.2  %34.3  %34.4  %34.5  %34.6  %34.7  %34.8  %34.9  %35.0  %35.1  %35.2  %35.3  %35.4  %35.5  %35.6  %35.7  %35.8  %35.9  %36.0  %36.1  %36.2  %36.3  %36.4  %36.5  %36.6  %36.7  %36.8  %36.9  %37.0  %37.1  %37.2  %37.3  %37.4  %37.5  %37.6  %37.7  %37.8  %37.9  %38.0  %38.1  %38.2  %38.3  %38.4  %38.5  %38.6  %38.7  %38.8  %38.9  %39.0  %39.1  %39.2  %39.3  %39.4  %39.5  %39.6  %39.7  %39.8  %39.9  %40.0  %40.1  %40.2  %40.3  %40.4  %40.5  %40.6  %40.7  %40.8  %40.9  %41.0  %41.1  %41.2  %41.3  %41.4  %41.5  %41.6  %41.7  %41.8  %41.9  %42.0  %42.1  %42.2  %42.3  %42.4  %42.5  %42.6  %42.7  %42.8  %42.9  %43.0  %43.1  %43.2  %43.3  %43.4  %43.5  %43.6  %43.7  %43.8  %43.9  %44.0  %44.1  %44.2  %44.3  %44.4  %44.5  %44.6  %44.7  %44.8  %44.9  %45.0  %45.1  %45.2  %45.3  %45.4  %45.5  %45.6  %45.7  %45.8  %45.9  %46.0  %46.1  %46.2  %46.3  %46.4  %46.5  %46.6  %46.7  %46.8  %46.9  %47.0  %47.1  %47.2  %47.3  %47.4  %47.5  %47.6  %47.7  %47.8  %47.9  %48.0  %48.1  %48.2  %48.3  %48.4  %48.5  %48.6  %48.7  %48.8  %48.9  %49.0  %49.1  %49.2  %49.3  %49.4  %49.5  %49.6  %49.7  %49.8  %49.9  %50.0  %50.1  %50.2  %50.3  %50.4  %50.5  %50.6  %50.7  %50.8  %50.9  %51.0  %51.1  %51.2  %51.3  %51.4  %51.5  %51.6  %51.7  %51.8  %51.9  %52.0  %52.1  %52.2  %52.3  %52.4  %52.5  %52.6  %52.7  %52.8  %52.9  %53.0  %53.1  %53.2  %53.3  %53.4  %53.5  %53.6  %53.7  %53.8  %53.9  %54.0  %54.1  %54.2  %54.3  %54.4  %54.5  %54.6  %54.7  %54.8  %54.9  %55.0  %55.1  %55.2  %55.3  %55.4  %55.5  %55.6  %55.7  %55.8  %55.9  %56.0  %56.1  %56.2  %56.3  %56.4  %56.5  %56.6  %56.7  %56.8  %56.9  %57.0  %57.1  %57.2  %57.3  %57.4  %57.5  %57.6  %57.7  %57.8  %57.9  %58.0  %58.1  %58.2  %58.3  %58.4  %58.5  %58.6  %58.7  %58.8  %58.9  %59.0  %59.1  %59.2  %59.3  %59.4  %59.5  %59.6  %59.7  %59.8  %59.9  %60.0  %60.1  %60.2  %60.3  %60.4  %60.5  %60.6  %60.7  %60.8  %60.9  %61.0  %61.1  %61.2  %61.3  %61.4  %61.5  %61.6  %61.7  %61.8  %61.9  %62.0  %62.1  %62.2  %62.3  %62.4  %62.5  %62.6  %62.7  %62.8  %62.9  %63.0  %63.1  %63.2  %63.3  %63.4  %63.5  %63.6  %63.7  %63.8  %63.9  %64.0  %64.1  %64.2  %64.3  %64.4  %64.5  %64.6  %64.7  %64.8  %64.9  %65.0  %65.1  %65.2  %65.3  %65.4  %65.5  %65.6  %65.7  %65.8  %65.9  %66.0  %66.1  %66.2  %66.3  %66.4  %66.5  %66.6  %66.7  %66.8  %66.9  %67.0  %67.1  %67.2  %67.3  %67.4  %67.5  %67.6  %67.7  %67.8  %67.9  %68.0  %68.1  %68.2  %68.3  %68.4  %68.5  %68.6  %68.7  %68.8  %68.9  %69.0  %69.1  %69.2  %69.3  %69.4  %69.5  %69.6  %69.7  %69.8  %69.9  %70.0  %70.1  %70.2  %70.3  %70.4  %70.5  %70.6  %70.7  %70.8  %70.9  %71.0  %71.1  %71.2  %71.3  %71.4  %71.5  %71.6  %71.7  %71.8  %71.9  %72.0  %72.1  %72.2  %72.3  %72.4  %72.5  %72.6  %72.7  %72.8  %72.9  %73.0  %73.1  %73.2  %73.3  %73.4  %73.5  %73.6  %73.7  %73.8  %73.9  %74.0  %74.1  %74.2  %74.3  %74.4  %74.5  %74.6  %74.7  %74.8  %74.9  %75.0  %75.1  %75.2  %75.3  %75.4  %75.5  %75.6  %75.7  %75.8  %75.9  %76.0  %76.1  %76.2  %76.3  %76.4  %76.5  %76.6  %76.7  %76.8  %76.9  %77.0  %77.1  %77.2  %77.3  %77.4  %77.5  %77.6  %77.7  %77.8  %77.9  %78.0  %78.1  %78.2  %78.3  %78.4  %78.5  %78.6  %78.7  %78.8  %78.9  %79.0  %79.1  %79.2  %79.3  %79.4  %79.5  %79.6  %79.7  %79.8  %79.9  %80.0  %80.1  %80.2  %80.3  %80.4  %80.5  %80.6  %80.7  %80.8  %80.9  %81.0  %81.1  %81.2  %81.3  %81.4  %81.5  %81.6  %81.7  %81.8  %81.9  %82.0  %82.1  %82.2  %82.3  %82.4  %82.5  %82.6  %82.7  %82.8  %82.9  %83.0  %83.1  %83.2  %83.3  %83.4  %83.5  %83.6  %83.7  %83.8  %83.9  %84.0  %84.1  %84.2  %84.3  %84.4  %84.5  %84.6  %84.7  %84.8  %84.9  %85.0  %85.1  %85.2  %85.3  %85.4  %85.5  %85.6  %85.7  %85.8  %85.9  %86.0  %86.1  %86.2  %86.3  %86.4  %86.5  %86.6  %86.7  %86.8  %86.9  %87.0  %87.1  %87.2  %87.3  %87.4  %87.5  %87.6  %87.7  %87.8  %87.9  %88.0  %88.1  %88.2  %88.3  %88.4  %88.5  %88.6  %88.7  %88.8  %88.9  %89.0  %89.1  %89.2  %89.3  %89.4  %89.5  %89.6  %89.7  %89.8  %89.9  %90.0  %90.1  %90.2  %90.3  %90.4  %90.5  %90.6  %90.7  %90.8  %90.9  %91.0  %91.1  %91.2  %91.3  %91.4  %91.5  %91.6  %91.7  %91.8  %91.9  %92.0  %92.1  %92.2  %92.3  %92.4  %92.5  %92.6  %92.7  %92.8  %92.9  %93.0  %93.1  %93.2  %93.3  %93.4  %93.5  %93.6  %93.7  %93.8  %93.9  %94.0  %94.1  %94.2  %94.3  %94.4  %94.5  %94.6  %94.7  %94.8  %94.9  %95.0  %95.1  %95.2  %95.3  %95.4  %95.5  %95.6  %95.7  %95.8  %95.9  %96.0  %96.1  %96.2  %96.3  %96.4  %96.5  %96.6  %96.7  %96.8  %96.9  %97.0  %97.1  %97.2  %97.3  %97.4  %97.5  %97.6  %97.7  %97.8  %97.9  %98.0  %98.1  %98.2  %98.3  %98.4  %98.5  %98.6  %98.7  %98.8  %98.9  %99.0  %99.1  %99.2  %99.3  %99.4  %99.5  %99.6  %99.7  %99.8  %99.9  %100.0 %
+Opening file ../sim_output/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0_1.root
+0.0   %0.1   %0.2   %0.3   %0.4   %0.5   %0.6   %0.7   %0.8   %0.9   %1.0   %1.1   %1.2   %1.3   %1.4   %1.5   %1.6   %1.7   %1.8   %1.9   %2.0   %2.1   %2.2   %2.3   %2.4   %2.5   %2.6   %2.7   %2.8   %2.9   %3.0   %3.1   %3.2   %3.3   %3.4   %3.5   %3.6   %3.7   %3.8   %3.9   %4.0   %4.1   %4.2   %4.3   %4.4   %4.5   %4.6   %4.7   %4.8   %4.9   %5.0   %5.1   %5.2   %5.3   %5.4   %5.5   %5.6   %5.7   %5.8   %5.9   %6.0   %6.1   %6.2   %6.3   %6.4   %6.5   %6.6   %6.7   %6.8   %6.9   %7.0   %7.1   %7.2   %7.3   %7.4   %7.5   %7.6   %7.7   %7.8   %7.9   %8.0   %8.1   %8.2   %8.3   %8.4   %8.5   %8.6   %8.7   %8.8   %8.9   %9.0   %9.1   %9.2   %9.3   %9.4   %9.5   %9.6   %9.7   %9.8   %9.9   %10.0  %10.1  %10.2  %10.3  %10.4  %10.5  %10.6  %10.7  %10.8  %10.9  %11.0  %11.1  %11.2  %11.3  %11.4  %11.5  %11.6  %11.7  %11.8  %11.9  %12.0  %12.1  %12.2  %12.3  %12.4  %12.5  %12.6  %12.7  %12.8  %12.9  %13.0  %13.1  %13.2  %13.3  %13.4  %13.5  %13.6  %13.7  %13.8  %13.9  %14.0  %14.1  %14.2  %14.3  %14.4  %14.5  %14.6  %14.7  %14.8  %14.9  %15.0  %15.1  %15.2  %15.3  %15.4  %15.5  %15.6  %15.7  %15.8  %15.9  %16.0  %16.1  %16.2  %16.3  %16.4  %16.5  %16.6  %16.7  %16.8  %16.9  %17.0  %17.1  %17.2  %17.3  %17.4  %17.5  %17.6  %17.7  %17.8  %17.9  %18.0  %18.1  %18.2  %18.3  %18.4  %18.5  %18.6  %18.7  %18.8  %18.9  %19.0  %19.1  %19.2  %19.3  %19.4  %19.5  %19.6  %19.7  %19.8  %19.9  %20.0  %20.1  %20.2  %20.3  %20.4  %20.5  %20.6  %20.7  %20.8  %20.9  %21.0  %21.1  %21.2  %21.3  %21.4  %21.5  %21.6  %21.7  %21.8  %21.9  %22.0  %22.1  %22.2  %22.3  %22.4  %22.5  %22.6  %22.7  %22.8  %22.9  %23.0  %23.1  %23.2  %23.3  %23.4  %23.5  %23.6  %23.7  %23.8  %23.9  %24.0  %24.1  %24.2  %24.3  %24.4  %24.5  %24.6  %24.7  %24.8  %24.9  %25.0  %25.1  %25.2  %25.3  %25.4  %25.5  %25.6  %25.7  %25.8  %25.9  %26.0  %26.1  %26.2  %26.3  %26.4  %26.5  %26.6  %26.7  %26.8  %26.9  %27.0  %27.1  %27.2  %27.3  %27.4  %27.5  %27.6  %27.7  %27.8  %27.9  %28.0  %28.1  %28.2  %28.3  %28.4  %28.5  %28.6  %28.7  %28.8  %28.9  %29.0  %29.1  %29.2  %29.3  %29.4  %29.5  %29.6  %29.7  %29.8  %29.9  %30.0  %30.1  %30.2  %30.3  %30.4  %30.5  %30.6  %30.7  %30.8  %30.9  %31.0  %31.1  %31.2  %31.3  %31.4  %31.5  %31.6  %31.7  %31.8  %31.9  %32.0  %32.1  %32.2  %32.3  %32.4  %32.5  %32.6  %32.7  %32.8  %32.9  %33.0  %33.1  %33.2  %33.3  %33.4  %33.5  %33.6  %33.7  %33.8  %33.9  %34.0  %34.1  %34.2  %34.3  %34.4  %34.5  %34.6  %34.7  %34.8  %34.9  %35.0  %35.1  %35.2  %35.3  %35.4  %35.5  %35.6  %35.7  %35.8  %35.9  %36.0  %36.1  %36.2  %36.3  %36.4  %36.5  %36.6  %36.7  %36.8  %36.9  %37.0  %37.1  %37.2  %37.3  %37.4  %37.5  %37.6  %37.7  %37.8  %37.9  %38.0  %38.1  %38.2  %38.3  %38.4  %38.5  %38.6  %38.7  %38.8  %38.9  %39.0  %39.1  %39.2  %39.3  %39.4  %39.5  %39.6  %39.7  %39.8  %39.9  %40.0  %40.1  %40.2  %40.3  %40.4  %40.5  %40.6  %40.7  %40.8  %40.9  %41.0  %41.1  %41.2  %41.3  %41.4  %41.5  %41.6  %41.7  %41.8  %41.9  %42.0  %42.1  %42.2  %42.3  %42.4  %42.5  %42.6  %42.7  %42.8  %42.9  %43.0  %43.1  %43.2  %43.3  %43.4  %43.5  %43.6  %43.7  %43.8  %43.9  %44.0  %44.1  %44.2  %44.3  %44.4  %44.5  %44.6  %44.7  %44.8  %44.9  %45.0  %45.1  %45.2  %45.3  %45.4  %45.5  %45.6  %45.7  %45.8  %45.9  %46.0  %46.1  %46.2  %46.3  %46.4  %46.5  %46.6  %46.7  %46.8  %46.9  %47.0  %47.1  %47.2  %47.3  %47.4  %47.5  %47.6  %47.7  %47.8  %47.9  %48.0  %48.1  %48.2  %48.3  %48.4  %48.5  %48.6  %48.7  %48.8  %48.9  %49.0  %49.1  %49.2  %49.3  %49.4  %49.5  %49.6  %49.7  %49.8  %49.9  %50.0  %50.1  %50.2  %50.3  %50.4  %50.5  %50.6  %50.7  %50.8  %50.9  %51.0  %51.1  %51.2  %51.3  %51.4  %51.5  %51.6  %51.7  %51.8  %51.9  %52.0  %52.1  %52.2  %52.3  %52.4  %52.5  %52.6  %52.7  %52.8  %52.9  %53.0  %53.1  %53.2  %53.3  %53.4  %53.5  %53.6  %53.7  %53.8  %53.9  %54.0  %54.1  %54.2  %54.3  %54.4  %54.5  %54.6  %54.7  %54.8  %54.9  %55.0  %55.1  %55.2  %55.3  %55.4  %55.5  %55.6  %55.7  %55.8  %55.9  %56.0  %56.1  %56.2  %56.3  %56.4  %56.5  %56.6  %56.7  %56.8  %56.9  %57.0  %57.1  %57.2  %57.3  %57.4  %57.5  %57.6  %57.7  %57.8  %57.9  %58.0  %58.1  %58.2  %58.3  %58.4  %58.5  %58.6  %58.7  %58.8  %58.9  %59.0  %59.1  %59.2  %59.3  %59.4  %59.5  %59.6  %59.7  %59.8  %59.9  %60.0  %60.1  %60.2  %60.3  %60.4  %60.5  %60.6  %60.7  %60.8  %60.9  %61.0  %61.1  %61.2  %61.3  %61.4  %61.5  %61.6  %61.7  %61.8  %61.9  %62.0  %62.1  %62.2  %62.3  %62.4  %62.5  %62.6  %62.7  %62.8  %62.9  %63.0  %63.1  %63.2  %63.3  %63.4  %63.5  %63.6  %63.7  %63.8  %63.9  %64.0  %64.1  %64.2  %64.3  %64.4  %64.5  %64.6  %64.7  %64.8  %64.9  %65.0  %65.1  %65.2  %65.3  %65.4  %65.5  %65.6  %65.7  %65.8  %65.9  %66.0  %66.1  %66.2  %66.3  %66.4  %66.5  %66.6  %66.7  %66.8  %66.9  %67.0  %67.1  %67.2  %67.3  %67.4  %67.5  %67.6  %67.7  %67.8  %67.9  %68.0  %68.1  %68.2  %68.3  %68.4  %68.5  %68.6  %68.7  %68.8  %68.9  %69.0  %69.1  %69.2  %69.3  %69.4  %69.5  %69.6  %69.7  %69.8  %69.9  %70.0  %70.1  %70.2  %70.3  %70.4  %70.5  %70.6  %70.7  %70.8  %70.9  %71.0  %71.1  %71.2  %71.3  %71.4  %71.5  %71.6  %71.7  %71.8  %71.9  %72.0  %72.1  %72.2  %72.3  %72.4  %72.5  %72.6  %72.7  %72.8  %72.9  %73.0  %73.1  %73.2  %73.3  %73.4  %73.5  %73.6  %73.7  %73.8  %73.9  %74.0  %74.1  %74.2  %74.3  %74.4  %74.5  %74.6  %74.7  %74.8  %74.9  %75.0  %75.1  %75.2  %75.3  %75.4  %75.5  %75.6  %75.7  %75.8  %75.9  %76.0  %76.1  %76.2  %76.3  %76.4  %76.5  %76.6  %76.7  %76.8  %76.9  %77.0  %77.1  %77.2  %77.3  %77.4  %77.5  %77.6  %77.7  %77.8  %77.9  %78.0  %78.1  %78.2  %78.3  %78.4  %78.5  %78.6  %78.7  %78.8  %78.9  %79.0  %79.1  %79.2  %79.3  %79.4  %79.5  %79.6  %79.7  %79.8  %79.9  %80.0  %80.1  %80.2  %80.3  %80.4  %80.5  %80.6  %80.7  %80.8  %80.9  %81.0  %81.1  %81.2  %81.3  %81.4  %81.5  %81.6  %81.7  %81.8  %81.9  %82.0  %82.1  %82.2  %82.3  %82.4  %82.5  %82.6  %82.7  %82.8  %82.9  %83.0  %83.1  %83.2  %83.3  %83.4  %83.5  %83.6  %83.7  %83.8  %83.9  %84.0  %84.1  %84.2  %84.3  %84.4  %84.5  %84.6  %84.7  %84.8  %84.9  %85.0  %85.1  %85.2  %85.3  %85.4  %85.5  %85.6  %85.7  %85.8  %85.9  %86.0  %86.1  %86.2  %86.3  %86.4  %86.5  %86.6  %86.7  %86.8  %86.9  %87.0  %87.1  %87.2  %87.3  %87.4  %87.5  %87.6  %87.7  %87.8  %87.9  %88.0  %88.1  %88.2  %88.3  %88.4  %88.5  %88.6  %88.7  %88.8  %88.9  %89.0  %89.1  %89.2  %89.3  %89.4  %89.5  %89.6  %89.7  %89.8  %89.9  %90.0  %90.1  %90.2  %90.3  %90.4  %90.5  %90.6  %90.7  %90.8  %90.9  %91.0  %91.1  %91.2  %91.3  %91.4  %91.5  %91.6  %91.7  %91.8  %91.9  %92.0  %92.1  %92.2  %92.3  %92.4  %92.5  %92.6  %92.7  %92.8  %92.9  %93.0  %93.1  %93.2  %93.3  %93.4  %93.5  %93.6  %93.7  %93.8  %93.9  %94.0  %94.1  %94.2  %94.3  %94.4  %94.5  %94.6  %94.7  %94.8  %94.9  %95.0  %95.1  %95.2  %95.3  %95.4  %95.5  %95.6  %95.7  %95.8  %95.9  %96.0  %96.1  %96.2  %96.3  %96.4  %96.5  %96.6  %96.7  %96.8  %96.9  %97.0  %97.1  %97.2  %97.3  %97.4  %97.5  %97.6  %97.7  %97.8  %97.9  %98.0  %98.1  %98.2  %98.3  %98.4  %98.5  %98.6  %98.7  %98.8  %98.9  %99.0  %99.1  %99.2  %99.3  %99.4  %99.5  %99.6  %99.7  %99.8  %99.9  %100.0 %
+Opening file ../sim_output/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0_2.root
+0.0   %0.1   %0.2   %0.3   %0.4   %0.5   %0.6   %0.7   %0.8   %0.9   %1.0   %1.1   %1.2   %1.3   %1.4   %1.5   %1.6   %1.7   %1.8   %1.9   %2.0   %2.1   %2.2   %2.3   %2.4   %2.5   %2.6   %2.7   %2.8   %2.9   %3.0   %3.1   %3.2   %3.3   %3.4   %3.5   %3.6   %3.7   %3.8   %3.9   %4.0   %4.1   %4.2   %4.3   %4.4   %4.5   %4.6   %4.7   %4.8   %4.9   %5.0   %5.1   %5.2   %5.3   %5.4   %5.5   %5.6   %5.7   %5.8   %5.9   %6.0   %6.1   %6.2   %6.3   %6.4   %6.5   %6.6   %6.7   %6.8   %6.9   %7.0   %7.1   %7.2   %7.3   %7.4   %7.5   %7.6   %7.7   %7.8   %7.9   %8.0   %8.1   %8.2   %8.3   %8.4   %8.5   %8.6   %8.7   %8.8   %8.9   %9.0   %9.1   %9.2   %9.3   %9.4   %9.5   %9.6   %9.7   %9.8   %9.9   %10.0  %10.1  %10.2  %10.3  %10.4  %10.5  %10.6  %10.7  %10.8  %10.9  %11.0  %11.1  %11.2  %11.3  %11.4  %11.5  %11.6  %11.7  %11.8  %11.9  %12.0  %12.1  %12.2  %12.3  %12.4  %12.5  %12.6  %12.7  %12.8  %12.9  %13.0  %13.1  %13.2  %13.3  %13.4  %13.5  %13.6  %13.7  %13.8  %13.9  %14.0  %14.1  %14.2  %14.3  %14.4  %14.5  %14.6  %14.7  %14.8  %14.9  %15.0  %15.1  %15.2  %15.3  %15.4  %15.5  %15.6  %15.7  %15.8  %15.9  %16.0  %16.1  %16.2  %16.3  %16.4  %16.5  %16.6  %16.7  %16.8  %16.9  %17.0  %17.1  %17.2  %17.3  %17.4  %17.5  %17.6  %17.7  %17.8  %17.9  %18.0  %18.1  %18.2  %18.3  %18.4  %18.5  %18.6  %18.7  %18.8  %18.9  %19.0  %19.1  %19.2  %19.3  %19.4  %19.5  %19.6  %19.7  %19.8  %19.9  %20.0  %20.1  %20.2  %20.3  %20.4  %20.5  %20.6  %20.7  %20.8  %20.9  %21.0  %21.1  %21.2  %21.3  %21.4  %21.5  %21.6  %21.7  %21.8  %21.9  %22.0  %22.1  %22.2  %22.3  %22.4  %22.5  %22.6  %22.7  %22.8  %22.9  %23.0  %23.1  %23.2  %23.3  %23.4  %23.5  %23.6  %23.7  %23.8  %23.9  %24.0  %24.1  %24.2  %24.3  %24.4  %24.5  %24.6  %24.7  %24.8  %24.9  %25.0  %25.1  %25.2  %25.3  %25.4  %25.5  %25.6  %25.7  %25.8  %25.9  %26.0  %26.1  %26.2  %26.3  %26.4  %26.5  %26.6  %26.7  %26.8  %26.9  %27.0  %27.1  %27.2  %27.3  %27.4  %27.5  %27.6  %27.7  %27.8  %27.9  %28.0  %28.1  %28.2  %28.3  %28.4  %28.5  %28.6  %28.7  %28.8  %28.9  %29.0  %29.1  %29.2  %29.3  %29.4  %29.5  %29.6  %29.7  %29.8  %29.9  %30.0  %30.1  %30.2  %30.3  %30.4  %30.5  %30.6  %30.7  %30.8  %30.9  %31.0  %31.1  %31.2  %31.3  %31.4  %31.5  %31.6  %31.7  %31.8  %31.9  %32.0  %32.1  %32.2  %32.3  %32.4  %32.5  %32.6  %32.7  %32.8  %32.9  %33.0  %33.1  %33.2  %33.3  %33.4  %33.5  %33.6  %33.7  %33.8  %33.9  %34.0  %34.1  %34.2  %34.3  %34.4  %34.5  %34.6  %34.7  %34.8  %34.9  %35.0  %35.1  %35.2  %35.3  %35.4  %35.5  %35.6  %35.7  %35.8  %35.9  %36.0  %36.1  %36.2  %36.3  %36.4  %36.5  %36.6  %36.7  %36.8  %36.9  %37.0  %37.1  %37.2  %37.3  %37.4  %37.5  %37.6  %37.7  %37.8  %37.9  %38.0  %38.1  %38.2  %38.3  %38.4  %38.5  %38.6  %38.7  %38.8  %38.9  %39.0  %39.1  %39.2  %39.3  %39.4  %39.5  %39.6  %39.7  %39.8  %39.9  %40.0  %40.1  %40.2  %40.3  %40.4  %40.5  %40.6  %40.7  %40.8  %40.9  %41.0  %41.1  %41.2  %41.3  %41.4  %41.5  %41.6  %41.7  %41.8  %41.9  %42.0  %42.1  %42.2  %42.3  %42.4  %42.5  %42.6  %42.7  %42.8  %42.9  %43.0  %43.1  %43.2  %43.3  %43.4  %43.5  %43.6  %43.7  %43.8  %43.9  %44.0  %44.1  %44.2  %44.3  %44.4  %44.5  %44.6  %44.7  %44.8  %44.9  %45.0  %45.1  %45.2  %45.3  %45.4  %45.5  %45.6  %45.7  %45.8  %45.9  %46.0  %46.1  %46.2  %46.3  %46.4  %46.5  %46.6  %46.7  %46.8  %46.9  %47.0  %47.1  %47.2  %47.3  %47.4  %47.5  %47.6  %47.7  %47.8  %47.9  %48.0  %48.1  %48.2  %48.3  %48.4  %48.5  %48.6  %48.7  %48.8  %48.9  %49.0  %49.1  %49.2  %49.3  %49.4  %49.5  %49.6  %49.7  %49.8  %49.9  %50.0  %50.1  %50.2  %50.3  %50.4  %50.5  %50.6  %50.7  %50.8  %50.9  %51.0  %51.1  %51.2  %51.3  %51.4  %51.5  %51.6  %51.7  %51.8  %51.9  %52.0  %52.1  %52.2  %52.3  %52.4  %52.5  %52.6  %52.7  %52.8  %52.9  %53.0  %53.1  %53.2  %53.3  %53.4  %53.5  %53.6  %53.7  %53.8  %53.9  %54.0  %54.1  %54.2  %54.3  %54.4  %54.5  %54.6  %54.7  %54.8  %54.9  %55.0  %55.1  %55.2  %55.3  %55.4  %55.5  %55.6  %55.7  %55.8  %55.9  %56.0  %56.1  %56.2  %56.3  %56.4  %56.5  %56.6  %56.7  %56.8  %56.9  %57.0  %57.1  %57.2  %57.3  %57.4  %57.5  %57.6  %57.7  %57.8  %57.9  %58.0  %58.1  %58.2  %58.3  %58.4  %58.5  %58.6  %58.7  %58.8  %58.9  %59.0  %59.1  %59.2  %59.3  %59.4  %59.5  %59.6  %59.7  %59.8  %59.9  %60.0  %60.1  %60.2  %60.3  %60.4  %60.5  %60.6  %60.7  %60.8  %60.9  %61.0  %61.1  %61.2  %61.3  %61.4  %61.5  %61.6  %61.7  %61.8  %61.9  %62.0  %62.1  %62.2  %62.3  %62.4  %62.5  %62.6  %62.7  %62.8  %62.9  %63.0  %63.1  %63.2  %63.3  %63.4  %63.5  %63.6  %63.7  %63.8  %63.9  %64.0  %64.1  %64.2  %64.3  %64.4  %64.5  %64.6  %64.7  %64.8  %64.9  %65.0  %65.1  %65.2  %65.3  %65.4  %65.5  %65.6  %65.7  %65.8  %65.9  %66.0  %66.1  %66.2  %66.3  %66.4  %66.5  %66.6  %66.7  %66.8  %66.9  %67.0  %67.1  %67.2  %67.3  %67.4  %67.5  %67.6  %67.7  %67.8  %67.9  %68.0  %68.1  %68.2  %68.3  %68.4  %68.5  %68.6  %68.7  %68.8  %68.9  %69.0  %69.1  %69.2  %69.3  %69.4  %69.5  %69.6  %69.7  %69.8  %69.9  %70.0  %70.1  %70.2  %70.3  %70.4  %70.5  %70.6  %70.7  %70.8  %70.9  %71.0  %71.1  %71.2  %71.3  %71.4  %71.5  %71.6  %71.7  %71.8  %71.9  %72.0  %72.1  %72.2  %72.3  %72.4  %72.5  %72.6  %72.7  %72.8  %72.9  %73.0  %73.1  %73.2  %73.3  %73.4  %73.5  %73.6  %73.7  %73.8  %73.9  %74.0  %74.1  %74.2  %74.3  %74.4  %74.5  %74.6  %74.7  %74.8  %74.9  %75.0  %75.1  %75.2  %75.3  %75.4  %75.5  %75.6  %75.7  %75.8  %75.9  %76.0  %76.1  %76.2  %76.3  %76.4  %76.5  %76.6  %76.7  %76.8  %76.9  %77.0  %77.1  %77.2  %77.3  %77.4  %77.5  %77.6  %77.7  %77.8  %77.9  %78.0  %78.1  %78.2  %78.3  %78.4  %78.5  %78.6  %78.7  %78.8  %78.9  %79.0  %79.1  %79.2  %79.3  %79.4  %79.5  %79.6  %79.7  %79.8  %79.9  %80.0  %80.1  %80.2  %80.3  %80.4  %80.5  %80.6  %80.7  %80.8  %80.9  %81.0  %81.1  %81.2  %81.3  %81.4  %81.5  %81.6  %81.7  %81.8  %81.9  %82.0  %82.1  %82.2  %82.3  %82.4  %82.5  %82.6  %82.7  %82.8  %82.9  %83.0  %83.1  %83.2  %83.3  %83.4  %83.5  %83.6  %83.7  %83.8  %83.9  %84.0  %84.1  %84.2  %84.3  %84.4  %84.5  %84.6  %84.7  %84.8  %84.9  %85.0  %85.1  %85.2  %85.3  %85.4  %85.5  %85.6  %85.7  %85.8  %85.9  %86.0  %86.1  %86.2  %86.3  %86.4  %86.5  %86.6  %86.7  %86.8  %86.9  %87.0  %87.1  %87.2  %87.3  %87.4  %87.5  %87.6  %87.7  %87.8  %87.9  %88.0  %88.1  %88.2  %88.3  %88.4  %88.5  %88.6  %88.7  %88.8  %88.9  %89.0  %89.1  %89.2  %89.3  %89.4  %89.5  %89.6  %89.7  %89.8  %89.9  %90.0  %90.1  %90.2  %90.3  %90.4  %90.5  %90.6  %90.7  %90.8  %90.9  %91.0  %91.1  %91.2  %91.3  %91.4  %91.5  %91.6  %91.7  %91.8  %91.9  %92.0  %92.1  %92.2  %92.3  %92.4  %92.5  %92.6  %92.7  %92.8  %92.9  %93.0  %93.1  %93.2  %93.3  %93.4  %93.5  %93.6  %93.7  %93.8  %93.9  %94.0  %94.1  %94.2  %94.3  %94.4  %94.5  %94.6  %94.7  %94.8  %94.9  %95.0  %95.1  %95.2  %95.3  %95.4  %95.5  %95.6  %95.7  %95.8  %95.9  %96.0  %96.1  %96.2  %96.3  %96.4  %96.5  %96.6  %96.7  %96.8  %96.9  %97.0  %97.1  %97.2  %97.3  %97.4  %97.5  %97.6  %97.7  %97.8  %97.9  %98.0  %98.1  %98.2  %98.3  %98.4  %98.5  %98.6  %98.7  %98.8  %98.9  %99.0  %99.1  %99.2  %99.3  %99.4  %99.5  %99.6  %99.7  %99.8  %99.9  %100.0 %
+Opening file ../sim_output/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0_3.root
+0.0   %0.1   %0.2   %0.3   %0.4   %0.5   %0.6   %0.7   %0.8   %0.9   %1.0   %1.1   %1.2   %1.3   %1.4   %1.5   %1.6   %1.7   %1.8   %1.9   %2.0   %2.1   %2.2   %2.3   %2.4   %2.5   %2.6   %2.7   %2.8   %2.9   %3.0   %3.1   %3.2   %3.3   %3.4   %3.5   %3.6   %3.7   %3.8   %3.9   %4.0   %4.1   %4.2   %4.3   %4.4   %4.5   %4.6   %4.7   %4.8   %4.9   %5.0   %5.1   %5.2   %5.3   %5.4   %5.5   %5.6   %5.7   %5.8   %5.9   %6.0   %6.1   %6.2   %6.3   %6.4   %6.5   %6.6   %6.7   %6.8   %6.9   %7.0   %7.1   %7.2   %7.3   %7.4   %7.5   %7.6   %7.7   %7.8   %7.9   %8.0   %8.1   %8.2   %8.3   %8.4   %8.5   %8.6   %8.7   %8.8   %8.9   %9.0   %9.1   %9.2   %9.3   %9.4   %9.5   %9.6   %9.7   %9.8   %9.9   %10.0  %10.1  %10.2  %10.3  %10.4  %10.5  %10.6  %10.7  %10.8  %10.9  %11.0  %11.1  %11.2  %11.3  %11.4  %11.5  %11.6  %11.7  %11.8  %11.9  %12.0  %12.1  %12.2  %12.3  %12.4  %12.5  %12.6  %12.7  %12.8  %12.9  %13.0  %13.1  %13.2  %13.3  %13.4  %13.5  %13.6  %13.7  %13.8  %13.9  %14.0  %14.1  %14.2  %14.3  %14.4  %14.5  %14.6  %14.7  %14.8  %14.9  %15.0  %15.1  %15.2  %15.3  %15.4  %15.5  %15.6  %15.7  %15.8  %15.9  %16.0  %16.1  %16.2  %16.3  %16.4  %16.5  %16.6  %16.7  %16.8  %16.9  %17.0  %17.1  %17.2  %17.3  %17.4  %17.5  %17.6  %17.7  %17.8  %17.9  %18.0  %18.1  %18.2  %18.3  %18.4  %18.5  %18.6  %18.7  %18.8  %18.9  %19.0  %19.1  %19.2  %19.3  %19.4  %19.5  %19.6  %19.7  %19.8  %19.9  %20.0  %20.1  %20.2  %20.3  %20.4  %20.5  %20.6  %20.7  %20.8  %20.9  %21.0  %21.1  %21.2  %21.3  %21.4  %21.5  %21.6  %21.7  %21.8  %21.9  %22.0  %22.1  %22.2  %22.3  %22.4  %22.5  %22.6  %22.7  %22.8  %22.9  %23.0  %23.1  %23.2  %23.3  %23.4  %23.5  %23.6  %23.7  %23.8  %23.9  %24.0  %24.1  %24.2  %24.3  %24.4  %24.5  %24.6  %24.7  %24.8  %24.9  %25.0  %25.1  %25.2  %25.3  %25.4  %25.5  %25.6  %25.7  %25.8  %25.9  %26.0  %26.1  %26.2  %26.3  %26.4  %26.5  %26.6  %26.7  %26.8  %26.9  %27.0  %27.1  %27.2  %27.3  %27.4  %27.5  %27.6  %27.7  %27.8  %27.9  %28.0  %28.1  %28.2  %28.3  %28.4  %28.5  %28.6  %28.7  %28.8  %28.9  %29.0  %29.1  %29.2  %29.3  %29.4  %29.5  %29.6  %29.7  %29.8  %29.9  %30.0  %30.1  %30.2  %30.3  %30.4  %30.5  %30.6  %30.7  %30.8  %30.9  %31.0  %31.1  %31.2  %31.3  %31.4  %31.5  %31.6  %31.7  %31.8  %31.9  %32.0  %32.1  %32.2  %32.3  %32.4  %32.5  %32.6  %32.7  %32.8  %32.9  %33.0  %33.1  %33.2  %33.3  %33.4  %33.5  %33.6  %33.7  %33.8  %33.9  %34.0  %34.1  %34.2  %34.3  %34.4  %34.5  %34.6  %34.7  %34.8  %34.9  %35.0  %35.1  %35.2  %35.3  %35.4  %35.5  %35.6  %35.7  %35.8  %35.9  %36.0  %36.1  %36.2  %36.3  %36.4  %36.5  %36.6  %36.7  %36.8  %36.9  %37.0  %37.1  %37.2  %37.3  %37.4  %37.5  %37.6  %37.7  %37.8  %37.9  %38.0  %38.1  %38.2  %38.3  %38.4  %38.5  %38.6  %38.7  %38.8  %38.9  %39.0  %39.1  %39.2  %39.3  %39.4  %39.5  %39.6  %39.7  %39.8  %39.9  %40.0  %40.1  %40.2  %40.3  %40.4  %40.5  %40.6  %40.7  %40.8  %40.9  %41.0  %41.1  %41.2  %41.3  %41.4  %41.5  %41.6  %41.7  %41.8  %41.9  %42.0  %42.1  %42.2  %42.3  %42.4  %42.5  %42.6  %42.7  %42.8  %42.9  %43.0  %43.1  %43.2  %43.3  %43.4  %43.5  %43.6  %43.7  %43.8  %43.9  %44.0  %44.1  %44.2  %44.3  %44.4  %44.5  %44.6  %44.7  %44.8  %44.9  %45.0  %45.1  %45.2  %45.3  %45.4  %45.5  %45.6  %45.7  %45.8  %45.9  %46.0  %46.1  %46.2  %46.3  %46.4  %46.5  %46.6  %46.7  %46.8  %46.9  %47.0  %47.1  %47.2  %47.3  %47.4  %47.5  %47.6  %47.7  %47.8  %47.9  %48.0  %48.1  %48.2  %48.3  %48.4  %48.5  %48.6  %48.7  %48.8  %48.9  %49.0  %49.1  %49.2  %49.3  %49.4  %49.5  %49.6  %49.7  %49.8  %49.9  %50.0  %50.1  %50.2  %50.3  %50.4  %50.5  %50.6  %50.7  %50.8  %50.9  %51.0  %51.1  %51.2  %51.3  %51.4  %51.5  %51.6  %51.7  %51.8  %51.9  %52.0  %52.1  %52.2  %52.3  %52.4  %52.5  %52.6  %52.7  %52.8  %52.9  %53.0  %53.1  %53.2  %53.3  %53.4  %53.5  %53.6  %53.7  %53.8  %53.9  %54.0  %54.1  %54.2  %54.3  %54.4  %54.5  %54.6  %54.7  %54.8  %54.9  %55.0  %55.1  %55.2  %55.3  %55.4  %55.5  %55.6  %55.7  %55.8  %55.9  %56.0  %56.1  %56.2  %56.3  %56.4  %56.5  %56.6  %56.7  %56.8  %56.9  %57.0  %57.1  %57.2  %57.3  %57.4  %57.5  %57.6  %57.7  %57.8  %57.9  %58.0  %58.1  %58.2  %58.3  %58.4  %58.5  %58.6  %58.7  %58.8  %58.9  %59.0  %59.1  %59.2  %59.3  %59.4  %59.5  %59.6  %59.7  %59.8  %59.9  %60.0  %60.1  %60.2  %60.3  %60.4  %60.5  %60.6  %60.7  %60.8  %60.9  %61.0  %61.1  %61.2  %61.3  %61.4  %61.5  %61.6  %61.7  %61.8  %61.9  %62.0  %62.1  %62.2  %62.3  %62.4  %62.5  %62.6  %62.7  %62.8  %62.9  %63.0  %63.1  %63.2  %63.3  %63.4  %63.5  %63.6  %63.7  %63.8  %63.9  %64.0  %64.1  %64.2  %64.3  %64.4  %64.5  %64.6  %64.7  %64.8  %64.9  %65.0  %65.1  %65.2  %65.3  %65.4  %65.5  %65.6  %65.7  %65.8  %65.9  %66.0  %66.1  %66.2  %66.3  %66.4  %66.5  %66.6  %66.7  %66.8  %66.9  %67.0  %67.1  %67.2  %67.3  %67.4  %67.5  %67.6  %67.7  %67.8  %67.9  %68.0  %68.1  %68.2  %68.3  %68.4  %68.5  %68.6  %68.7  %68.8  %68.9  %69.0  %69.1  %69.2  %69.3  %69.4  %69.5  %69.6  %69.7  %69.8  %69.9  %70.0  %70.1  %70.2  %70.3  %70.4  %70.5  %70.6  %70.7  %70.8  %70.9  %71.0  %71.1  %71.2  %71.3  %71.4  %71.5  %71.6  %71.7  %71.8  %71.9  %72.0  %72.1  %72.2  %72.3  %72.4  %72.5  %72.6  %72.7  %72.8  %72.9  %73.0  %73.1  %73.2  %73.3  %73.4  %73.5  %73.6  %73.7  %73.8  %73.9  %74.0  %74.1  %74.2  %74.3  %74.4  %74.5  %74.6  %74.7  %74.8  %74.9  %75.0  %75.1  %75.2  %75.3  %75.4  %75.5  %75.6  %75.7  %75.8  %75.9  %76.0  %76.1  %76.2  %76.3  %76.4  %76.5  %76.6  %76.7  %76.8  %76.9  %77.0  %77.1  %77.2  %77.3  %77.4  %77.5  %77.6  %77.7  %77.8  %77.9  %78.0  %78.1  %78.2  %78.3  %78.4  %78.5  %78.6  %78.7  %78.8  %78.9  %79.0  %79.1  %79.2  %79.3  %79.4  %79.5  %79.6  %79.7  %79.8  %79.9  %80.0  %80.1  %80.2  %80.3  %80.4  %80.5  %80.6  %80.7  %80.8  %80.9  %81.0  %81.1  %81.2  %81.3  %81.4  %81.5  %81.6  %81.7  %81.8  %81.9  %82.0  %82.1  %82.2  %82.3  %82.4  %82.5  %82.6  %82.7  %82.8  %82.9  %83.0  %83.1  %83.2  %83.3  %83.4  %83.5  %83.6  %83.7  %83.8  %83.9  %84.0  %84.1  %84.2  %84.3  %84.4  %84.5  %84.6  %84.7  %84.8  %84.9  %85.0  %85.1  %85.2  %85.3  %85.4  %85.5  %85.6  %85.7  %85.8  %85.9  %86.0  %86.1  %86.2  %86.3  %86.4  %86.5  %86.6  %86.7  %86.8  %86.9  %87.0  %87.1  %87.2  %87.3  %87.4  %87.5  %87.6  %87.7  %87.8  %87.9  %88.0  %88.1  %88.2  %88.3  %88.4  %88.5  %88.6  %88.7  %88.8  %88.9  %89.0  %89.1  %89.2  %89.3  %89.4  %89.5  %89.6  %89.7  %89.8  %89.9  %90.0  %90.1  %90.2  %90.3  %90.4  %90.5  %90.6  %90.7  %90.8  %90.9  %91.0  %91.1  %91.2  %91.3  %91.4  %91.5  %91.6  %91.7  %91.8  %91.9  %92.0  %92.1  %92.2  %92.3  %92.4  %92.5  %92.6  %92.7  %92.8  %92.9  %93.0  %93.1  %93.2  %93.3  %93.4  %93.5  %93.6  %93.7  %93.8  %93.9  %94.0  %94.1  %94.2  %94.3  %94.4  %94.5  %94.6  %94.7  %94.8  %94.9  %95.0  %95.1  %95.2  %95.3  %95.4  %95.5  %95.6  %95.7  %95.8  %95.9  %96.0  %96.1  %96.2  %96.3  %96.4  %96.5  %96.6  %96.7  %96.8  %96.9  %97.0  %97.1  %97.2  %97.3  %97.4  %97.5  %97.6  %97.7  %97.8  %97.9  %98.0  %98.1  %98.2  %98.3  %98.4  %98.5  %98.6  %98.7  %98.8  %98.9  %99.0  %99.1  %99.2  %99.3  %99.4  %99.5  %99.6  %99.7  %99.8  %99.9  %100.0 %
+Mean Theta per det (deg)
+------------------------------------------------------------------------
+det0
+          -0.942   -0.94  -0.927  -0.907  -0.902  -0.882  -0.865  -0.836
+          -0.814  -0.777  -0.741  -0.699  -0.645  -0.595  -0.534  -0.468
+det1
+           0.856    0.82   0.778   0.724   0.659   0.592   0.509   0.421
+           0.331   0.235   0.136  0.0412 -0.0439  -0.131  -0.218  -0.288
+det2
+          -0.939  -0.935  -0.917  -0.909  -0.892  -0.874  -0.851  -0.826
+            -0.8   -0.76  -0.723  -0.679  -0.626  -0.575  -0.516   -0.45
+det3
+           0.837   0.795   0.749   0.694   0.633   0.563   0.481     0.4
+           0.308    0.22   0.126  0.0331 -0.0487  -0.133  -0.212  -0.293
+
+RMS Theta per det (deg)
+------------------------------------------------------------------------
+det0
+          0.0865  0.0939   0.105   0.131  0.0987   0.121   0.114   0.138
+           0.125   0.141   0.137   0.153   0.165   0.173   0.181   0.186
+det1
+           0.129    0.14   0.142   0.165   0.176   0.192   0.206   0.216
+           0.221   0.224   0.218   0.215   0.207   0.202   0.196   0.195
+det2
+           0.101  0.0835   0.111   0.106   0.126   0.116   0.124   0.131
+           0.121   0.143   0.144   0.151   0.155   0.166   0.172    0.18
+det3
+           0.134   0.149   0.154    0.17   0.179   0.192   0.208   0.211
+           0.218   0.219   0.217   0.214   0.205   0.196   0.195   0.182
+
+Mean Phi per det (deg)
+------------------------------------------------------------------------
+det0
+            1.36     1.4    25.1    18.8    1.54    1.57    1.59    11.4
+            1.63    1.64     5.4    1.65    1.67    1.67    1.65    1.63
+det1
+          -0.213     238     236     233     237     232  -0.197   -0.19
+             241  -0.206   -0.22  -0.238  -0.263  -0.275  -0.237  -0.219
+det2
+          0.0904 0.00914  0.0239   0.101     170    0.19   0.249     161
+            0.34   0.384   0.426   0.517    0.55   0.552   0.453   0.365
+det3
+             351     353     354   -1.46     356   -1.45   -1.44   -1.43
+           -1.43   -1.42   -1.39   -1.36   -1.34   -1.32   -1.36    -1.4
+
+RMS Phi per det (deg)
+------------------------------------------------------------------------
+det0
+            1.14    1.06    88.5    76.3   0.909   0.833   0.787      58
+           0.691   0.679    36.2   0.608    0.59   0.551   0.509    0.45
+det1
+           0.657     170     170     172     170     172   0.481   0.467
+             169    0.45   0.434   0.427   0.411   0.399   0.362   0.338
+det2
+            2.58     2.6    2.63    2.63     177    2.67    2.69     176
+            2.69     2.7     2.7    2.69     2.7    2.71    2.77    2.83
+det3
+            51.2    45.6      39   0.543    32.6   0.496   0.463   0.472
+           0.439   0.437   0.421   0.409   0.389   0.372   0.329   0.333
+
+Solid Angle per det (deg)
+------------------------------------------------------------------------
+det0
+         2.0e-03 2.3e-03 3.0e-03 3.7e-03 4.5e-03 5.7e-03 7.0e-03 8.6e-03
+         1.0e-02 1.3e-02 1.5e-02 1.7e-02 2.0e-02 2.1e-02 2.0e-02 1.9e-02
+det1
+         9.3e-03 1.2e-02 1.6e-02 2.0e-02 2.5e-02 2.9e-02 3.3e-02 3.4e-02
+         3.4e-02 3.3e-02 2.9e-02 2.5e-02 2.0e-02 1.6e-02 1.1e-02 7.3e-03
+det2
+         1.8e-03 2.2e-03 2.7e-03 3.5e-03 4.4e-03 5.5e-03 6.7e-03 7.9e-03
+         9.4e-03 1.1e-02 1.3e-02 1.5e-02 1.7e-02 1.8e-02 1.7e-02 1.5e-02
+det3
+         9.5e-03 1.2e-02 1.5e-02 1.9e-02 2.4e-02 2.7e-02 2.9e-02 3.1e-02
+         3.0e-02 2.9e-02 2.6e-02 2.2e-02 1.8e-02 1.4e-02 9.7e-03 6.2e-03
+
+Total entries per det
+------------------------------------------------------------------------
+det0
+             942    1083    1425    1775    2164    2744    3387    4135
+            4942    6031    7018    8100    9453   10224    9738    9041
+det1
+            4479    5950    7757    9562   11928   13893   15753   16547
+           16530   15771   13862   12060    9765    7679    5305    3514
+det2
+             844    1077    1320    1688    2133    2631    3214    3815
+            4535    5503    6441    7363    8284    8619    8290    7373
+det3
+            4582    5970    7453    9259   11327   12887   14159   14729
+           14596   14084   12522   10815    8749    6765    4647    2963
+
+Finished analyzing ../sim_output/frag_2_gxn2_gyn2_gz0_r3_r5_x1_y0_z0_
+jrtomps@presario:analysis$ [Kjrtomps@presario:analysis$ [Kjrtomps@presario:analysis$ [Kjrtomps@presario:analysis$ [Kjrtomps@presario:analysis$ [Kjrtomps@presario:analysis$ exit
+exit
+
+Script done on Wed 29 Aug 2012 10:28:26 AM EDT

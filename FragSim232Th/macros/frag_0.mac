@@ -1,0 +1,22 @@
+
+/FragSim02/run/name frag_0 
+
+/source/type surface_layer
+/source/surface_thickness 6 um
+
+/FragSim02/generator/set_user_distribution params/less_simple.params
+/FragSim02/generator/set_mass_distribution 1 
+
+/testem/phys/addPhysics emstandard_opt3
+
+/run/initialize 
+
+/testem/stepMax 0.3 um
+
+/gun/particle ion
+/gun/ion 54 130 1 
+/gun/energy 80.8 MeV
+
+/testem/phys/setCuts 0.5 mm
+
+/run/beamOn 20000

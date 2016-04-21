@@ -1,0 +1,272 @@
+// FragSimEventAction.cc
+//
+// Jeromy Tompkins
+// 9/16/2011
+//
+// 
+
+#include "TreeMaker.hh"
+#include "G4Event.hh"
+#include "SSDHit.hh"
+#include "G4String.hh"
+#include "G4SDManager.hh"
+#include "G4ThreeVector.hh"
+#include "G4HCofThisEvent.hh"
+#include "G4UserEventAction.hh"
+#include "G4Run.hh"
+#include "G4RunManager.hh"
+#include "TString.h"
+#include "TROOT.h"
+#include "G4THitsMap.hh"
+#include "globals.hh"
+#include "FragSimEventAction.hh"
+
+FragSimEventAction::FragSimEventAction(void)
+    : G4UserEventAction(),
+    fHCoE(NULL),
+    fnumHits(0),
+    fhitsCollection(NULL),
+    fdetID(0),
+    fdetName()
+{
+}
+
+FragSimEventAction::~FragSimEventAction()
+{
+    G4cout << "Instance of FragSimEventAction Destructed!" << G4endl;
+}
+
+void 
+        FragSimEventAction::BeginOfEventAction(const G4Event* /*anEvent*/)
+{
+#ifdef DEBUG_EventAction
+    std::cout << "Begin event" << std::endl;
+#endif
+}
+
+
+void FragSimEventAction::ProcessEvent(void)
+{  
+    ResetData();
+    // Loop over all the collections for each of the sensitive detectors
+    for(G4int i=0; i<fHCoE->GetNumberOfCollections(); i++)
+    {
+        SSDHitsCollection *ssdhc = dynamic_cast<SSDHitsCollection*>(fHCoE->GetHC(i));
+        if( ssdhc )
+        {
+            ProcessSSDHit(ssdhc);
+        }
+
+        G4THitsMap<G4double>* hmap = dynamic_cast<G4THitsMap<G4double>* >(fHCoE->GetHC(i));
+        if ( hmap )
+        {
+            ProcessHitMap(hmap);
+        }
+
+        TargetHitsCollection* thc = dynamic_cast<TargetHitsCollection*>(fHCoE->GetHC(i));
+        if (thc)
+        {
+            ProcessTargetHit(thc);
+        }
+
+    }//END of for loop
+
+}
+
+
+void FragSimEventAction::ProcessSSDHit(SSDHitsCollection *ssdhc)
+{
+    G4int numHits = ssdhc->entries();
+    SSDHit thisHit;
+
+    // Loop through the hits collection.
+    // And sum up the hits to get the total
+    // hit... this effectively accounts for
+    // summing the deposited energy correctly.
+    for(G4int i=0; i<numHits; i++)
+    {
+        if (i==0)
+            thisHit = *((*ssdhc)[i]);
+        else
+            thisHit += *((*ssdhc)[i]);
+    }
+
+    finitKE   = thisHit.GetInitKE();
+    ffinalKE  = thisHit.GetFinalKE();
+    fdetID    = thisHit.GetDetID();
+    fsiStrip  = thisHit.GetStripID();
+    fphi      = thisHit.GetPhi();
+    ftheta    = thisHit.GetTheta();
+    CopyThreeVectorToArray(finitWorldPos,  thisHit.GetInitWorldPos());
+    CopyThreeVectorToArray(ffinalWorldPos, thisHit.GetFinalWorldPos());
+    CopyThreeVectorToArray(ffinalLocalPos, thisHit.GetFinalLocalPos());
+    CopyThreeVectorToArray(finitMomentum,  thisHit.GetInitMomentum());
+    CopyThreeVectorToArray(ffinalMomentum, thisHit.GetFinalMomentum());
+    fparticleName = thisHit.GetParticleName();
+    fmass     = thisHit.GetMass();
+    fcharge   = thisHit.GetCharge();
+
+}
+
+void FragSimEventAction::ProcessHitMap(G4THitsMap<G4double> *hc)
+{
+    std::cout << "Processing hitmap " << hc->GetName();
+    if (hc->GetMap()->size()==0) {std::cout << std::endl; return;}
+
+    std::cout << " nonempty" << std::endl;
+    std::pair<G4double, G4double> theta_phi;
+
+    std::map<G4int, G4double*>::iterator it = hc->GetMap()->begin();
+
+    theta_phi = ComputeThetaAndPhiFromReplicaIndex(it->first);
+    ftheta = theta_phi.first;
+    fphi   = theta_phi.second;
+
+    if (IsPSPrestepEnergy(hc))
+        fprestepE = *it->second;
+    else
+        fsurfCurr = *it->second;
+
+    // Since I am storing eventwise info, it is necessary to
+    // reset the map everytime
+    //hc->clear();
+
+}
+
+void FragSimEventAction::ProcessTargetHit(TargetHitCollection *thc)
+{
+    G4int numHits = thc->entries();
+    TargetHit thisHit;
+
+    // Loop through the hits collection.
+    // And sum up the hits to get the total
+    // hit... this effectively accounts for
+    // summing the deposited energy correctly.
+    for(G4int i=0; i<numHits; i++)
+    {
+        if (i==0)
+            thisHit = *((*thc)[i]);
+        else
+            thisHit += *((*thc)[i]);
+    }
+
+    finitKE   = thisHit.GetInitKE();
+    ffinalKE  = thisHit.GetFinalKE();
+    fdetID    = thisHit.GetDetID();
+    fsiStrip  = thisHit.GetStripID();
+    fphi      = thisHit.GetPhi();
+    ftheta    = thisHit.GetTheta();
+    CopyThreeVectorToArray(finitWorldPos,  thisHit.GetInitWorldPos());
+    CopyThreeVectorToArray(ffinalWorldPos, thisHit.GetFinalWorldPos());
+    CopyThreeVectorToArray(ffinalLocalPos, thisHit.GetFinalLocalPos());
+    CopyThreeVectorToArray(finitMomentum,  thisHit.GetInitMomentum());
+    CopyThreeVectorToArray(ffinalMomentum, thisHit.GetFinalMomentum());
+    fparticleName = thisHit.GetParticleName();
+    fmass     = thisHit.GetMass();
+    fcharge   = thisHit.GetCharge();
+}
+
+std::pair<G4double, G4double> FragSimEventAction::ComputeThetaAndPhiFromReplicaIndex(G4int index)
+{
+    G4int nPhi = 36; // assuming deltaPhi = 10*deg
+    G4double phi = (index%nPhi)*deg + 5.0*deg;
+    G4double theta = (index/nPhi)*deg + 5.0*deg;
+    return std::make_pair(theta,phi);
+}
+
+bool FragSimEventAction::IsPSPrestepEnergy(G4THitsMap<G4double> *hc)
+{
+    return (hc->GetName().rfind("psenergy")!=G4String::npos);
+}
+
+void FragSimEventAction::ResetData()
+{
+    fdetID = 0;
+    fsiStrip = 0;
+    fphi = 0;
+    ftheta = 0;
+    finitWorldPos[0] = 0;    finitWorldPos[1] = 0;    finitWorldPos[2] = 0;
+    ffinalWorldPos[0] = 0;    ffinalWorldPos[1] = 0;    ffinalWorldPos[2] = 0;
+    ffinalLocalPos[0] = 0;    ffinalLocalPos[1] = 0;    ffinalLocalPos[2] = 0;
+    finitMomentum[0] = 0;    finitMomentum[1] = 0;    finitMomentum[2] = 0;
+    ffinalMomentum[0] = 0;    ffinalMomentum[1] = 0;    ffinalMomentum[2] = 0;
+    finitKE = 0;
+    ffinalKE = 0;
+    fdepKE = 0;
+    fdetName = "";
+    fparticleName = "";
+    fmass = 0;
+    fcharge = 0;
+    fprestepE = 0;
+    fsurfCurr = 0;
+
+}
+
+void FragSimEventAction::RecordEvent(void)
+{
+    TreeMaker *treeMakerControl = TreeMaker::GetTreeMakerPointer();
+
+    treeMakerControl->FillBranch("DetID", "I", &fdetID);
+    treeMakerControl->FillBranch("SiStripID", "I", &fsiStrip);
+    treeMakerControl->FillBranch("Phi", "D", &fphi);
+    treeMakerControl->FillBranch("Theta","D",&ftheta);
+    treeMakerControl->FillBranch("InitWorldPos","D",&finitWorldPos[0],3);
+    treeMakerControl->FillBranch("FinalWorldPos","D",&ffinalWorldPos[0],3);
+    treeMakerControl->FillBranch("FinalLocalPos","D",&ffinalLocalPos[0],3);
+    treeMakerControl->FillBranch("InitMomentum","D",&finitMomentum[0],3);
+    treeMakerControl->FillBranch("FinalMomentum","D",&ffinalMomentum[0],3);
+    treeMakerControl->FillBranch("InitKE","D",&finitKE);
+    treeMakerControl->FillBranch("FinalKE","D",&ffinalKE);
+    treeMakerControl->FillBranch("DepKE","D",&fdepKE);
+    TString str(fparticleName.data());
+    treeMakerControl->FillBranch("ParticleName","C",&str);
+    treeMakerControl->FillBranch("Mass","D",&fmass);
+    treeMakerControl->FillBranch("Charge","D",&fcharge);
+
+    treeMakerControl->FillBranch("PreStepE","D", &fprestepE);
+    treeMakerControl->FillBranch("SurfCurrent","D", &fsurfCurr);
+    treeMakerControl->FillTree();
+}//END of RecordEvent()
+
+void FragSimEventAction::EndOfEventAction(const G4Event* thisEvent)
+{
+    // Store the address of this event for use in ProcessEvent
+    fThisEvent = thisEvent;
+
+    // The HCofThisEvent has an entry for the SSDHitsCollection*
+    // associated with each sensitive detector registered to
+    // the SDManager
+    fHCoE = thisEvent->GetHCofThisEvent();
+
+    if( fHCoE )
+    {
+        ProcessEvent();
+        RecordEvent();
+    }
+
+    std::ios::fmtflags rmask = (std::ios::fixed | std::ios::right);
+    std::ios::fmtflags lmask = (std::ios::fixed | std::ios::left);
+
+    const G4Run* run = G4RunManager::GetRunManager()->GetCurrentRun();
+
+    G4int n = run->GetNumberOfEventToBeProcessed()/20;
+
+    if ((run->GetNumberOfEvent()%n)==0)
+    {
+        std::cout << std::setiosflags(rmask);
+        std::cout << "\r" << std::setw(2) << std::setprecision(0)
+                << 100.0*run->GetNumberOfEvent()/run->GetNumberOfEventToBeProcessed()
+                << std::resetiosflags(rmask);
+        std::cout << std::left << "%";
+        std::cout << std::resetiosflags(lmask);
+        std::cout.flush();
+    }
+}
+
+void FragSimEventAction::CopyThreeVectorToArray(G4double* arr,
+                                                   const G4ThreeVector& vec)
+{
+    arr[0]= vec.getX();
+    arr[1]= vec.getY();
+    arr[2]= vec.getZ();
+}

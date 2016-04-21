@@ -1,0 +1,18 @@
+
+
+
+TFoam::GetMCvect(double* arr)
+	- copies contents of fMCvect into arr
+
+fMCvect is allocated during TFoam::Initialize()
+
+TFoam::MakeEvent()
+	- fMCvect is set to coords of a cell
+	- fMCvect is passed to TFoam::Eval(fMCvect)
+ 
+\
+ \
+  V
+TFoam::Eval(double* arr)
+	- arr is passed to TFoamIntegrand::Density(int, double*)
+	- it is then can be edited by TFoamIntegrand::Density

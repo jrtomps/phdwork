@@ -1,0 +1,5 @@
+for file in ./d_*.csv
+do
+	echo ${file}
+	cat ${file} | sed 1d >> ${file}.col
+done

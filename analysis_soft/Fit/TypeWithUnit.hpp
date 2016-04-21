@@ -1,0 +1,4 @@
+#ifndef TYPEWITHUNIT_HPP
+#define TYPEWITHUNIT_HPP
+
+#endif // TYPEWITHUNIT_HPP

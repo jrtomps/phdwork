@@ -1,0 +1,5 @@
+#include "FragSimSourceMessenger.hh"
+
+FragSimSourceMessenger::FragSimSourceMessenger()
+{
+}

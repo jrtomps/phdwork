@@ -1,0 +1,599 @@
+// ProofPlot.cpp
+//
+// Author : Jeromy Tompkins
+// Date   : 7/13/2010
+//
+// Purpose: To implement a version of plot.C that runs PROOF
+
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include "TTree.h"
+#include "TH1F.h"
+#include "TH2F.h"
+#include "TCutG.h"
+#include "TFile.h"
+#include "TCanvas.h"
+#include "ConfigManager.h"
+#include "ConfigEntry.h"
+#include "ProofPlot.h"
+
+ClassImp(ProofPlot) 
+
+Double_t ProofPlot::ph_edge = 0.517;
+
+//_________________________________________________________________
+ProofPlot::ProofPlot(const Char_t *dbname, Int_t runnum, bool save) 
+  : ndet(18),     adc(),      ph(),    tac(),  tdc(),    tdccut(),
+    tdcns(),      tdcnscut(), necut(), radc(), phvsEn(), psd(), 
+    tofnsvspsd(), cpsd(),     nevsT(), adccutvsT(),      cut(),
+    cuttof(),     runnumber(),starttime(), endtime(), n_phys_events(), 
+    max_clock(),  cm(ndet)
+{
+  willSave = save;
+  strcpy(label[0], "Left 55#circ");
+  strcpy(label[1],"Top 55#circ");
+  strcpy(label[2],"Right 55#circ");
+  strcpy(label[3],"Bottom 55#circ");
+  strcpy(label[4],"Left 90#circ");
+  strcpy(label[5],"Top 90#circ");
+  strcpy(label[6],"Right 90#circ");
+  strcpy(label[7],"Bottom 90#circ");
+  strcpy(label[8],"Left 125#circ");
+  strcpy(label[9],"Top 125#circ");
+  strcpy(label[10],"Right 125#circ");
+  strcpy(label[11],"Bottom 125#circ");
+  strcpy(label[12],"Top 72#circ");
+  strcpy(label[13],"Right 72#circ");
+  strcpy(label[14],"Top 107#circ");
+  strcpy(label[15],"Right 107#circ");
+  strcpy(label[16],"Top 142#circ");
+  strcpy(label[17],"Right 142#circ");
+
+  runcount=0;
+  runnumber.push_back(runnum);
+
+  cm.LoadDbFromFile(dbname);
+  pce = cm.GetRun(runnumber[runcount]);
+  LoadSettings(pce);
+  
+}
+//_________________________________________________________________
+ProofPlot::~ProofPlot() 
+{
+  std::cout << "destructing" << std::endl;
+  if (! willSave) 
+    {
+      std::cout << "deleting all hists" << std::endl;
+      delete bpm;
+      
+      for (Int_t i=0; i<psd.size(); i++)
+        {
+	delete psd[i];
+	delete tofnsvspsd[i];
+	delete cpsd[i];
+	delete adc[i];
+	delete tac[i];
+	delete tdc[i];
+	delete tdccut[i];
+	delete tdcns[i];
+	delete tdcnscut[i];
+	delete necut[i];
+	delete radc[i];
+	delete nevsT[i];
+	delete adccutvsT[i];
+	delete ph[i];
+	delete phvsEn[i];
+        }
+    }
+}
+//_________________________________________________________________
+void
+ProofPlot::Begin(TTree*) 
+{
+  std::cout << "begin" << std::endl;
+};
+
+//__________________________________________________________________
+void
+ProofPlot::SlaveBegin(TTree* tree) 
+{
+  std::cout << "slave begin" << std::endl;
+  bpm = new TH1F("bpm",Form("Run %d bpm",runnumber[runcount]),4096,0,4095);
+  latch = new TH1F("latch","latch",4096,-0.5,4095.5);
+
+  for (Int_t i=0; i<ndet; i++ ) 
+    {
+      psd.push_back(new TH2F(Form("psd%i",i),Form("Run %d %s psd", runnumber[runcount],label[i]),512,0,4095,512,0,4095));
+      //    psd.push_back(new TH2F(Form("psd%i",i),Form("Run %d psd%i",runnumber[runcount],i),512,0,4095,512,0,4095));
+      tofnsvspsd.push_back(new TH2F(Form("tofnsvspsd%i",i),Form("Run %d %s tofnsvspsd%i",runnumber[runcount],label[i], i),512,0,4095,512,0,4095*tdc_calib[i]));
+      cpsd.push_back(new TH2F(Form("cpsd%i",i),Form("Run %d %s cut psd%i",runnumber[runcount],label[i],i),512,0,4095,512,0,4095));
+      adc.push_back(new TH1F(Form("adc%i",i),Form("Run %d %s adc%i",runnumber[runcount],label[i],i),4096,0,4095));
+      tac.push_back(new TH1F(Form("tac%i",i),Form("Run %d %s tac%i",runnumber[runcount],label[i],i),4096,0,4095));
+      tdc.push_back(new TH1F(Form("tdc%i",i),Form("Run %d %s tdc%i",runnumber[runcount],label[i],i),4096,0,4095));
+      tdccut.push_back(new TH1F(Form("tdccut%i",i),Form("Run %d %s tdccut%i",runnumber[runcount],label[i],i),4096,0,4095));
+      tdcns.push_back(new TH1F(Form("tdcns%i",i),Form("Run %d %s tdc (ns)%i",runnumber[runcount],label[i],i),4096,0,4095*tdc_calib[i]));
+      tdcnscut.push_back(new TH1F(Form("tdcnscut%i",i),Form("Run %d %s tdc (ns)%i Cut by PSD",runnumber[runcount],label[i],i),4096,0,4095*tdc_calib[i]));
+      necut.push_back(new TH1F(Form("necut%i",i),Form("Run %d %s Cut by PSD",runnumber[runcount],label[i],label[i]),128,0,16.0));
+      radc.push_back(new TH1F(Form("radc%i",i),Form("Run %d %s raw adc%i",runnumber[runcount],label[i],i),4096,0,4095));
+      nevsT.push_back(new TH2F(Form("nevsT%i",i),Form("Run %d %s raw nevsT%i",runnumber[runcount],label[i],i),
+			 360,0,3600,128,0,12));
+      nevsT[i]->SetXTitle("T [s]");
+      nevsT[i]->SetYTitle("En [MeV]");
+      
+      adccutvsT.push_back(new TH2F(Form("adccutvsT%i",i),Form("Run %d %s raw adccutvsT%i",runnumber[runcount],label[i],i),
+			     360,0,3600,512,0,4096));
+      
+      
+      adccutvsT[i]->SetXTitle("T [s]");
+      adccutvsT[i]->SetYTitle("ADC [Chan]");
+      
+      psd[i]->SetXTitle("TAC");
+      psd[i]->SetYTitle("ADC");
+      tofnsvspsd[i]->SetXTitle("PSD [channels]");
+      tofnsvspsd[i]->SetYTitle("ToF [ns]");
+      cpsd[i]->SetMarkerColor(4);
+      adc[i]->SetXTitle("ADC Channel");
+      adc[i]->SetYTitle("Counts");
+      tac[i]->SetXTitle("TAC Channel");
+      tac[i]->SetYTitle("Counts");
+      tdc[i]->SetXTitle("TDC Channel");
+      tdc[i]->SetYTitle("Counts");
+      tdccut[i]->SetXTitle("TDC Channel");
+      tdccut[i]->SetYTitle("Counts");
+      tdccut[i]->SetLineColor(2);
+      necut[i]->SetXTitle("E_{n} [MeV]");
+      necut[i]->SetYTitle("Counts");
+      tdcns[i]->SetXTitle("Timing (ns)");
+      tdcns[i]->SetYTitle("Counts");
+      tdcnscut[i]->SetXTitle("Timing (ns)");
+      tdcnscut[i]->SetYTitle("Counts");
+      tdcnscut[i]->SetLineColor(2);
+      adc[i]->SetLineColor(2);
+      radc[i]->SetXTitle("ADC Channel");
+      radc[i]->SetYTitle("Counts");
+
+      Double_t ph_max = ph_edge*(4096.0 - ped[i])/(adc_edge[i] - ped[i]);
+      
+      ph.push_back(new TH1F(Form("ph%i",i),Form("Run %d %s ph%i",runnumber[runcount],label[i],i),1024,0,ph_max));
+      ph[i]->SetXTitle("PH (MeVee)");
+      ph[i]->SetLabelSize(0.055,"X");
+      ph[i]->SetLabelSize(0.055,"Y");
+      ph[i]->SetTitleSize(0.065,"X");
+      ph[i]->SetTitleSize(0.065,"Y");
+      
+      phvsEn.push_back(new TH2F(Form("phvsEn%i",i),
+			  Form("Run %d %s ph%i",
+			       runnumber[runcount],label[i],i),128,0,16.0,
+			  1024,0,ph_max));
+      phvsEn[i]->SetXTitle("En [MeV]");
+      phvsEn[i]->SetYTitle("Pulse height [MeVee]");
+      
+    }
+
+  Init(tree);
+
+}
+
+//_________________________________________________________________
+void
+ProofPlot::Init(TTree* tree) 
+{
+
+  if (tree == 0)
+    {
+      std::cout << "Tree does not exist" << std::endl;
+      return;
+    }
+  std::cout << "init" << std::endl;
+  //D2O, 11 MeV, Linear pol
+  //  TFile *f2 = new TFile("2dcuts_Run73.root");
+  //Cd 15.5 MeV, Circ pol
+  TFile f2 ("2dcuts_Run157.root");
+  
+  for (Int_t i=0;i<ndet;i++)
+    {
+      cut.push_back((TCutG*)f2.Get(Form("cut%i",i+1)));
+      std::cout << i+1 << std::endl;
+      cut[i]->SetName(Form("cut%i",i));
+      cut[i]->SetLineColor(2);
+      cut[i]->SetLineWidth(2);
+    } 
+  f2.Close();
+
+  std::cout << "loading tofvspsd cuts" << std::endl;
+  //D2O, 11 MeV, Linear pol
+  //  TFile *f3 = new TFile("2dcuts_tofnsvspsd_Run75.root");
+  //9Be, Circ, 15.5 MeV
+  TFile f3 ("2dcuts_tofnsvspsd_Run187.root");
+  for (Int_t i=0;i<ndet;i++)
+    {
+      cuttof.push_back((TCutG*)f3.Get(Form("cut%i",i+1)));
+      cuttof[i]->SetName(Form("cut%i",i));
+      cuttof[i]->SetLineColor(2);
+      cuttof[i]->SetLineWidth(2);
+    }
+  f3.Close();
+  //end
+  //--------------------------------
+
+  std::cout << "Loaded 2d cuts" << std::endl;
+  
+  tree->SetBranchAddress("BPM",&nt_bpm);
+ 
+  tree->SetBranchAddress("EventNumber",&nt_evnum, &(b_evnum));
+  tree->SetBranchAddress("RunNumber",&nt_run,&(b_run));
+  // tree->SetBranchAddress("start",&nt_start, &(b_start));
+  // tree->SetBranchAddress("end",&nt_end, &(b_end));
+  // tree->SetBranchAddress("nphyev",&nt_nphyev, &(b_nphyev));
+  // tree->SetBranchAddress("evtype",&nt_evtype, &(b_evtype));
+  // tree->SetBranchAddress("LATCH",&nt_latch, &(b_latch));
+  // tree->SetBranchAddress("Clock",&nt_clock , &(b_clock));
+    
+  tree->SetBranchAddress("TDC1",&nt_tdc[0],&(b_tdc0));
+  tree->SetBranchAddress("TDC2",&nt_tdc[1],&(b_tdc1));
+  tree->SetBranchAddress("TDC3",&nt_tdc[2],&(b_tdc2));
+  tree->SetBranchAddress("TDC4",&nt_tdc[3],&(b_tdc3));
+  tree->SetBranchAddress("TDC5",&nt_tdc[4],&(b_tdc4));
+  tree->SetBranchAddress("TDC6",&nt_tdc[5],&(b_tdc5));
+  tree->SetBranchAddress("TDC7",&nt_tdc[6],&(b_tdc6));
+  tree->SetBranchAddress("TDC8",&nt_tdc[7],&(b_tdc7));
+  tree->SetBranchAddress("TDC9",&nt_tdc[8],&(b_tdc8));
+  tree->SetBranchAddress("TDC10",&nt_tdc[9],&(b_tdc9));
+  tree->SetBranchAddress("TDC11",&nt_tdc[10],&(b_tdc10));
+  tree->SetBranchAddress("TDC12",&nt_tdc[11],&(b_tdc11));
+  tree->SetBranchAddress("TDC13",&nt_tdc[12],&(b_tdc12));
+  tree->SetBranchAddress("TDC14",&nt_tdc[13],&(b_tdc13));
+  tree->SetBranchAddress("TDC15",&nt_tdc[14],&(b_tdc14));
+  tree->SetBranchAddress("TDC16",&nt_tdc[15],&(b_tdc15));
+  tree->SetBranchAddress("TDC17",&nt_tdc[16],&(b_tdc16));
+  tree->SetBranchAddress("TDC18",&nt_tdc[17],&(b_tdc17));
+
+  tree->SetBranchAddress("ADC1",&nt_adc[0],&(b_adc0));
+  tree->SetBranchAddress("ADC2",&nt_adc[1],&(b_adc1));
+  tree->SetBranchAddress("ADC3",&nt_adc[2],&(b_adc2));
+  tree->SetBranchAddress("ADC4",&nt_adc[3],&(b_adc3));
+  tree->SetBranchAddress("ADC5",&nt_adc[4],&(b_adc4));
+  tree->SetBranchAddress("ADC6",&nt_adc[5],&(b_adc5));
+  tree->SetBranchAddress("ADC7",&nt_adc[6],&(b_adc6));
+  tree->SetBranchAddress("ADC8",&nt_adc[7],&(b_adc7));
+  tree->SetBranchAddress("ADC9",&nt_adc[8],&(b_adc8));
+  tree->SetBranchAddress("ADC10",&nt_adc[9],&(b_adc9));
+  tree->SetBranchAddress("ADC11",&nt_adc[10],&(b_adc10));
+  tree->SetBranchAddress("ADC12",&nt_adc[11],&(b_adc11));
+  tree->SetBranchAddress("ADC13",&nt_adc[12],&(b_adc12));
+  tree->SetBranchAddress("ADC14",&nt_adc[13],&(b_adc13));
+  tree->SetBranchAddress("ADC15",&nt_adc[14],&(b_adc14));
+  tree->SetBranchAddress("ADC16",&nt_adc[15],&(b_adc15));
+  tree->SetBranchAddress("ADC17",&nt_adc[16],&(b_adc16));
+  tree->SetBranchAddress("ADC18",&nt_adc[17],&(b_adc17));
+
+  tree->SetBranchAddress("TAC1",&nt_tac[0],&(b_tac0));
+  tree->SetBranchAddress("TAC2",&nt_tac[1],&(b_tac1));
+  tree->SetBranchAddress("TAC3",&nt_tac[2],&(b_tac2));
+  tree->SetBranchAddress("TAC4",&nt_tac[3],&(b_tac3));
+  tree->SetBranchAddress("TAC5",&nt_tac[4],&(b_tac4));
+  tree->SetBranchAddress("TAC6",&nt_tac[5],&(b_tac5));
+  tree->SetBranchAddress("TAC7",&nt_tac[6],&(b_tac6));
+  tree->SetBranchAddress("TAC8",&nt_tac[7],&(b_tac7));
+  tree->SetBranchAddress("TAC9",&nt_tac[8],&(b_tac8));
+  tree->SetBranchAddress("TAC10",&nt_tac[9],&(b_tac9));
+  tree->SetBranchAddress("TAC11",&nt_tac[10],&(b_tac10));
+  tree->SetBranchAddress("TAC12",&nt_tac[11],&(b_tac11));
+  tree->SetBranchAddress("TAC13",&nt_tac[12],&(b_tac12));
+  tree->SetBranchAddress("TAC14",&nt_tac[13],&(b_tac13));
+  tree->SetBranchAddress("TAC15",&nt_tac[14],&(b_tac14));
+  tree->SetBranchAddress("TAC16",&nt_tac[15],&(b_tac15));
+  tree->SetBranchAddress("TAC17",&nt_tac[16],&(b_tac16));
+  tree->SetBranchAddress("TAC18",&nt_tac[17],&(b_tac17));
+
+  max_clock.push_back(0);
+  nentries = tree->GetEntries();
+
+}
+
+//_________________________________________________________________
+Bool_t
+ProofPlot::Process(Long64_t entry) 
+{
+  std::cout << "Processing " << entry << std::endl;
+  GetEntries(entry,1)
+   b_evnum->GetEntry(entry);
+   b_run->GetEntry(entry);
+   b_start->GetEntry(entry);
+   b_end->GetEntry(entry);
+   b_nphyev->GetEntry(entry);
+   b_evtype->GetEntry(entry);
+   b_latch->GetEntry(entry);
+   b_clock->GetEntry(entry);
+
+   b_tdc0->GetEntry(entry);
+   b_tdc1->GetEntry(entry);
+   b_tdc2->GetEntry(entry);
+   b_tdc3->GetEntry(entry);
+   b_tdc4->GetEntry(entry);
+   b_tdc5->GetEntry(entry);
+   b_tdc6->GetEntry(entry);
+   b_tdc7->GetEntry(entry);
+   b_tdc8->GetEntry(entry);
+   b_tdc9->GetEntry(entry);
+   b_tdc10->GetEntry(entry);
+   b_tdc11->GetEntry(entry);
+   b_tdc12->GetEntry(entry);
+   b_tdc13->GetEntry(entry);
+   b_tdc14->GetEntry(entry);
+   b_tdc15->GetEntry(entry);
+   b_tdc16->GetEntry(entry);
+   b_tdc17->GetEntry(entry);
+
+   b_adc0->GetEntry(entry);
+   b_adc1->GetEntry(entry);
+   b_adc2->GetEntry(entry);
+   b_adc3->GetEntry(entry);
+   b_adc4->GetEntry(entry);
+   b_adc5->GetEntry(entry);
+   b_adc6->GetEntry(entry);
+   b_adc7->GetEntry(entry);
+   b_adc8->GetEntry(entry);
+   b_adc9->GetEntry(entry);
+   b_adc10->GetEntry(entry);
+   b_adc11->GetEntry(entry);
+   b_adc12->GetEntry(entry);
+   b_adc13->GetEntry(entry);
+   b_adc14->GetEntry(entry);
+   b_adc15->GetEntry(entry);
+   b_adc16->GetEntry(entry);
+   b_adc17->GetEntry(entry);
+
+   b_tac0->GetEntry(entry);
+   b_tac1->GetEntry(entry);
+   b_tac2->GetEntry(entry);
+   b_tac3->GetEntry(entry);
+   b_tac4->GetEntry(entry);
+   b_tac5->GetEntry(entry);
+   b_tac6->GetEntry(entry);
+   b_tac7->GetEntry(entry);
+   b_tac8->GetEntry(entry);
+   b_tac9->GetEntry(entry);
+   b_tac10->GetEntry(entry);
+   b_tac11->GetEntry(entry);
+   b_tac12->GetEntry(entry);
+   b_tac13->GetEntry(entry);
+   b_tac14->GetEntry(entry);
+   b_tac15->GetEntry(entry);
+   b_tac16->GetEntry(entry);
+   b_tac17->GetEntry(entry);
+
+  if (nt_evtype==17)
+    {
+      runnumber.push_back(nt_run);
+      pce = cm.GetRun(runnumber[runcount]);
+      LoadSettings(pce);
+    }
+  if (nt_evtype==18) 
+    {
+      starttime.push_back(nt_start);
+    }
+  if (nt_evtype==20)
+    {
+      endtime.push_back(nt_end);
+      n_phys_events.push_back(nt_nphyev);
+      runcount++;
+    }
+  
+  if (nt_clock>max_clock[runcount])
+    max_clock[runcount]=nt_clock;
+  
+  if (entry % 100000 ==0) {
+    std::cout.precision(2);
+    std::cout << "\r" << entry/ (Float_t) nentries*100. << "% completed  ";
+    std::cout.flush();
+  }
+  //  printf("%i\n",i);
+  latch->Fill(nt_latch);
+  //With beam on/off latch for run 139 to 151
+  //    if (nt_evtype==1&&fabs(nt_latch-4)<0.5){
+  //No latch cut
+  //    if (nt_evtype==1){
+  if (1)
+    {
+      for (Int_t j=0;j<ndet;j++)
+        {
+	if (nt_adc[j]>0)
+	  {
+	    radc[j]->Fill(nt_adc[j]);
+	    ph_MeVee = ph_edge*(nt_adc[j] - ped[j])/(adc_edge[j] - ped[j]);
+	    if (ph_MeVee>0.05)
+	      ph[j]->Fill(ph_MeVee);
+	    
+	  }
+	if (nt_tac[j]>0)
+	  tac[j]->Fill(nt_tac[j]);
+	
+	if (nt_tdc[j]>1000)
+	  psd[j]->Fill(nt_tac[j],nt_adc[j]);
+	
+	bpm->Fill(nt_bpm);
+	if(nt_tdc[j]>10)
+	  tdcns[j]->Fill((nt_tdc[j]-nt_bpm+tdc_offset[j]/tdc_calib[j])*tdc_calib[j]);
+	
+	tofnsvspsd[j]->Fill(nt_tac[j],(nt_tdc[j]-nt_bpm+tdc_offset[j]/tdc_calib[j])*tdc_calib[j]);
+	if (nt_tdc[j]>0)
+	  tdc[j]->Fill(nt_tdc[j]);
+	
+	//To use PH vs PSD cuts
+	if (cut[j]->IsInside(nt_tac[j],nt_adc[j])&&
+	    //	if (1&&
+	    //To use ToF vs PSD cuts
+	    //	if (cuttof[j]->IsInside(nt_tac[j],(nt_tdc[j]-nt_bpm+tdc_offset[j])*tdc_calib[j]) &&
+	    //For the Cd, Sn, Ta runs
+	    //    (nt_adc[j]>=(ped[j]+0.5*(thresh[j]-ped[j])))){
+	    //For the Be runs
+	    //	    (ph_MeVee>=(0.517*0.75))){
+	    // For the Pu runs
+	    (ph_MeVee>=(0.517*0.5))){
+	  //	if (1){
+	  tdccut[j]->Fill(nt_tdc[j]);
+	  if(nt_tdc[j]>200)
+	    {
+	      tdcnscut[j]->Fill((nt_tdc[j]-nt_bpm+tdc_offset[j]/tdc_calib[j])*tdc_calib[j]);
+	      necut[j]->Fill(tof2ne((nt_tdc[j]-nt_bpm+tdc_offset[j]/tdc_calib[j])*tdc_calib[j]-gflash[j]+
+			        det_dist[j]/299792458*1e9,
+			        det_dist[j]));
+	      nevsT[j]->Fill(nt_clock/10,
+			 tof2ne((nt_tdc[j]-nt_bpm+tdc_offset[j]/tdc_calib[j])*tdc_calib[j]-gflash[j]+
+			        det_dist[j]/299792458*1e9,
+			        det_dist[j]));
+	      adccutvsT[j]->Fill(nt_clock/10,nt_adc[j]);
+	      if (nt_adc[j]>0)
+	        {
+		phvsEn[j]->Fill(tof2ne((nt_tdc[j]-nt_bpm+tdc_offset[j]/tdc_calib[j])*tdc_calib[j]-gflash[j]+
+				   det_dist[j]/299792458*1e9,
+				   det_dist[j]),
+			      ph_MeVee);
+	        }
+	      adc[j]->Fill(nt_adc[j]);
+	      cpsd[j]->Fill(nt_tac[j],nt_adc[j]);
+	    }
+	}
+        }
+    }  
+  
+  
+  return kTRUE;
+}
+
+//_________________________________________________________________
+void
+ProofPlot::SlaveTerminate() 
+{
+  
+
+}
+
+//_________________________________________________________________
+void
+ProofPlot::Terminate() 
+{
+  // TCanvas *c1 = new TCanvas("c1");
+  // c1->Divide(5,4);
+  // for (Int_t i=0; i<fNhist; i++) {
+  //   c1->cd(i+1);
+  //   fHist[i]->Draw();
+  // }
+
+  for (Int_t i=0; i<ndet; i++) 
+    {
+      psd[i]->SetTitle(Form("Run %d %s psd%i",runnumber[runcount], label[i],i));
+      tofnsvspsd[i]->SetTitle(Form("Run %d %s tofnsvspsd%i",runnumber[runcount], label[i],i));
+      cpsd[i]->SetTitle(Form("Run %d %s cut psd%i",runnumber[runcount], label[i],i));
+      adc[i]->SetTitle(Form("Run %d %s adc%i",runnumber[runcount], label[i],i));
+      tac[i]->SetTitle(Form("Run %d %s tac%i",runnumber[runcount], label[i],i));
+      tdc[i]->SetTitle(Form("Run %d %s tdc%i",runnumber[runcount], label[i],i));
+      tdccut[i]->SetTitle(Form("Run %d %s tdccut%i",runnumber[runcount], label[i],i));
+      tdcns[i]->SetTitle(Form("Run %d %s tdc (ns)%i",runnumber[runcount], label[i],i));
+      tdcnscut[i]->SetTitle(Form("Run %d %s tdc (ns)%i Cut by PSD",runnumber[runcount], label[i],i));
+      necut[i]->SetTitle(Form("Run %d %s Cut by PSD%i",runnumber[runcount], label[i],i));
+      radc[i]->SetTitle(Form("Run %d %s raw adc%i",runnumber[runcount], label[i],i));
+      nevsT[i]->SetTitle(Form("Run %d %s praw nevsT%i",runnumber[runcount], label[i],i));
+      adccutvsT[i]->SetTitle(Form("Run %d %s raw adccutvsT%i",runnumber[runcount], label[i],i));
+      
+    }
+
+
+  if (willSave==1)
+    {
+      TFile *histfile =new TFile(Form("pfjuly10_hist_run%i.root",runnumber[runcount]),"RECREATE");
+      
+      for(Int_t i=0;i<ndet;i++)
+        {
+	adc[i]->Write();
+	ph[i]->Write();
+	tac[i]->Write();
+	tdc[i]->Write();
+	tdccut[i]->Write();
+	tdcns[i]->Write();
+	tdcnscut[i]->Write();
+	necut[i]->Write();
+	radc[i]->Write();
+	phvsEn[i]->Write();
+	psd[i]->Write();
+	tofnsvspsd[i]->Write();
+	cpsd[i]->Write();
+	nevsT[i]->Write();
+	adccutvsT[i]->Write();
+        }
+      histfile->Close();
+             
+    }
+}
+
+//tof in ns, ddist in m
+Double_t 
+ProofPlot::tof2ne(Double_t tof,Double_t ddist)
+{
+
+  if (tof < 0)
+    return 0;
+
+  Double_t v = ddist/tof*1.0e9;
+  Double_t beta=v/299792458.0;
+
+  Double_t mn=939.565;//MeV
+
+  Double_t E;
+
+  E=mn/sqrt(1-beta*beta);
+
+  return E-mn;
+
+}
+
+//Kinetic Energy in MeV, dist in m
+Double_t 
+ProofPlot::ne2tof(Double_t En,Double_t ddist)
+{
+
+  if (En < 0)
+    return 0;
+
+  Double_t mn=939.565;//MeV
+
+  Double_t p=sqrt((En+mn)*(En+mn)-mn*mn);
+  Double_t beta=p/(En+mn);
+
+  Double_t v=beta*299792458;
+
+  Double_t t=ddist/v*1e9;//ns
+
+  return t;
+
+}
+
+void
+ProofPlot::LoadSettings(ConfigEntry *dbentry)
+{
+  //  fEnergy = dbentry->GetEnergy;
+
+  angle    = dbentry->GetAngle();
+  adc_edge = dbentry->GetAdc_edge();
+  det_dist = dbentry->GetDet_dist();
+  deut_en  = dbentry->GetDeut_en();
+  ntof     = dbentry->GetNtof();
+  gflash   = dbentry->GetGflash();
+  ped      = dbentry->GetPed();
+  tdc_calib= dbentry->GetTdc_calib();
+  tdc_offset=dbentry->GetTdc_offset();
+  thresh   = dbentry->GetThresh();
+
+  // std::copy(dbentry->GetAngle(),    dbentry->GetAngle()+dbentry->GetNDets(),    angle);
+  // std::copy(dbentry->GetAdc_edge(), dbentry->GetAdc_edge()+dbentry->GetNDets(), adc_edge);
+  // std::copy(dbentry->GetDet_dist(), dbentry->GetDet_dist()+dbentry->GetNDets(), det_dist);
+  // std::copy(dbentry->GetDeut_en(),  dbentry->GetDeut_en()+dbentry->GetNDets(),  deut_en);
+  // std::copy(dbentry->GetNtof(),     dbentry->GetNtof()+dbentry->GetNDets(),     ntof);
+  // std::copy(dbentry->GetGflash(),   dbentry->GetGflash()+dbentry->GetNDets(),   gflash);
+  // std::copy(dbentry->GetPed(),      dbentry->GetPed()+dbentry->GetNDets(),      ped);
+  // std::copy(dbentry->GetThresh(),   dbentry->GetThresh()+dbentry->GetNDets(),   thresh);
+  
+}

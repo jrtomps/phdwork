@@ -1,0 +1,4456 @@
+<?xml version='1.0' encoding='ISO-8859-1' standalone='yes' ?>
+<tagfile>
+  <compound kind="file">
+    <name>DataBucket.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>DataBucket_8hh</filename>
+    <class kind="class">DataBucket</class>
+  </compound>
+  <compound kind="file">
+    <name>exGPSPrimaryGeneratorAction.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>exGPSPrimaryGeneratorAction_8hh</filename>
+    <class kind="class">exGPSPrimaryGeneratorAction</class>
+  </compound>
+  <compound kind="file">
+    <name>FragSimDetConstruction.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>FragSimDetConstruction_8hh</filename>
+    <includes id="FragSimDetConstruction_8hh" name="FragSimDetConstruction.hh" local="yes" imported="no">SensitiveSSD.hh</includes>
+    <class kind="class">FragSimDetConstruction</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>FragSimDetConstruction_H</name>
+      <anchorfile>FragSimDetConstruction_8hh.html</anchorfile>
+      <anchor>ae0bf624469d2b614ba22612346058673</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>FragSimEventAction.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>FragSimEventAction_8hh</filename>
+    <includes id="SSDHit_8hh" name="SSDHit.hh" local="yes" imported="no">SSDHit.hh</includes>
+    <includes id="FragSimEventAction_8hh" name="FragSimEventAction.hh" local="yes" imported="no">TargetHit.hh</includes>
+    <class kind="class">FragSimEventAction</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>FRAGSIMUSEREVENTACTION_H</name>
+      <anchorfile>FragSimEventAction_8hh.html</anchorfile>
+      <anchor>afb209baed68a9ccc35dda0953879f61e</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>FragSimPrimaryGeneratorAction.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>FragSimPrimaryGeneratorAction_8hh</filename>
+    <includes id="FragSimPrimaryGeneratorAction_8hh" name="FragSimPrimaryGeneratorAction.hh" local="yes" imported="no">VSource.hh</includes>
+    <class kind="class">FragSimPrimaryGeneratorAction</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>FragSimPrimaryGeneratorAction_h</name>
+      <anchorfile>FragSimPrimaryGeneratorAction_8hh.html</anchorfile>
+      <anchor>add0385b0f4b35e1425479c280c5738e4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>DISTR</name>
+      <anchorfile>FragSimPrimaryGeneratorAction_8hh.html</anchorfile>
+      <anchor>a5299805379d973d493ad7db8005c8abf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>kSymmetric</name>
+      <anchorfile>FragSimPrimaryGeneratorAction_8hh.html</anchorfile>
+      <anchor>a5299805379d973d493ad7db8005c8abfad47e638ba2a0d6dc0d8fe890de5daaa3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>kUserDistribution</name>
+      <anchorfile>FragSimPrimaryGeneratorAction_8hh.html</anchorfile>
+      <anchor>a5299805379d973d493ad7db8005c8abfafeee09f1eb13c11313e9a22d28e5fa73</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>FragSimRunAction.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>FragSimRunAction_8hh</filename>
+    <class kind="class">FragSimRunAction</class>
+  </compound>
+  <compound kind="file">
+    <name>FragSimSource.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>FragSimSource_8hh</filename>
+    <includes id="Target_8hh" name="Target.hh" local="yes" imported="no">Target.hh</includes>
+    <includes id="VSource_8hh" name="VSource.hh" local="yes" imported="no">VSource.hh</includes>
+    <includes id="FragSimSource_8hh" name="FragSimSource.hh" local="yes" imported="no">FragSimSourceMessenger.hh</includes>
+    <class kind="class">FragSimSource</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>FRAGSIMSOURCE_HH</name>
+      <anchorfile>FragSimSource_8hh.html</anchorfile>
+      <anchor>aa0c55fe556a85e54cec480027ed80571</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>FragSimSourceMessenger.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>FragSimSourceMessenger_8hh</filename>
+    <class kind="class">FragSimSourceMessenger</class>
+  </compound>
+  <compound kind="file">
+    <name>LinkDef.h</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>LinkDef_8h</filename>
+  </compound>
+  <compound kind="file">
+    <name>ParameterisedSphereBuilder.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>ParameterisedSphereBuilder_8hh</filename>
+    <includes id="SphereParameterisation_8hh" name="SphereParameterisation.hh" local="yes" imported="no">SphereParameterisation.hh</includes>
+    <class kind="class">ParameterisedSphereBuilder</class>
+    <member kind="function">
+      <type>void</type>
+      <name>swap</name>
+      <anchorfile>ParameterisedSphereBuilder_8hh.html</anchorfile>
+      <anchor>a7482f86cb69822438aff45981c0de439</anchor>
+      <arglist>(ParameterisedSphereBuilder &amp;lhs, ParameterisedSphereBuilder &amp;rhs)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>PhysicsList.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>PhysicsList_8hh</filename>
+    <class kind="class">PhysicsList</class>
+  </compound>
+  <compound kind="file">
+    <name>PhysicsListMessenger.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>PhysicsListMessenger_8hh</filename>
+    <class kind="class">PhysicsListMessenger</class>
+  </compound>
+  <compound kind="file">
+    <name>PhysListEmStandard.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>PhysListEmStandard_8hh</filename>
+    <class kind="class">PhysListEmStandard</class>
+  </compound>
+  <compound kind="file">
+    <name>PhysListEmStandardGS.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>PhysListEmStandardGS_8hh</filename>
+    <class kind="class">PhysListEmStandardGS</class>
+  </compound>
+  <compound kind="file">
+    <name>PhysListEmStandardSS.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>PhysListEmStandardSS_8hh</filename>
+    <class kind="class">PhysListEmStandardSS</class>
+  </compound>
+  <compound kind="file">
+    <name>PrimarySupervisor.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>PrimarySupervisor_8hh</filename>
+    <class kind="class">MyException</class>
+    <class kind="class">PrimarySupervisor</class>
+  </compound>
+  <compound kind="file">
+    <name>PSPreStepEnergy.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>PSPreStepEnergy_8hh</filename>
+    <class kind="class">PSPreStepEnergy</class>
+  </compound>
+  <compound kind="file">
+    <name>RandomSeedManager.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>RandomSeedManager_8hh</filename>
+    <class kind="class">RandomSeedManager</class>
+  </compound>
+  <compound kind="file">
+    <name>SensitiveMultiFuncParamSphere.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>SensitiveMultiFuncParamSphere_8hh</filename>
+    <includes id="ParameterisedSphereBuilder_8hh" name="ParameterisedSphereBuilder.hh" local="yes" imported="no">ParameterisedSphereBuilder.hh</includes>
+    <class kind="class">SensitiveMultiFuncParamSphere</class>
+    <member kind="function">
+      <type>void</type>
+      <name>swap</name>
+      <anchorfile>SensitiveMultiFuncParamSphere_8hh.html</anchorfile>
+      <anchor>a85acd76c59adcc08eb2302dfc2fbf85a</anchor>
+      <arglist>(SensitiveMultiFuncParamSphere &amp;lhs, SensitiveMultiFuncParamSphere &amp;rhs)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>SensitiveSSD.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>SensitiveSSD_8hh</filename>
+    <includes id="SSDBuilder_8hh" name="SSDBuilder.hh" local="yes" imported="no">SSDBuilder.hh</includes>
+    <includes id="SSDSensitivity_8hh" name="SSDSensitivity.hh" local="yes" imported="no">SSDSensitivity.hh</includes>
+    <class kind="class">SensitiveSSD</class>
+  </compound>
+  <compound kind="file">
+    <name>SphereParameterisation.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>SphereParameterisation_8hh</filename>
+    <class kind="class">SphereParameterisation</class>
+  </compound>
+  <compound kind="file">
+    <name>SSDBuilder.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>SSDBuilder_8hh</filename>
+    <class kind="class">SSDBuilderException</class>
+    <class kind="class">SSDBuilder</class>
+  </compound>
+  <compound kind="file">
+    <name>SSDHit.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>SSDHit_8hh</filename>
+    <class kind="class">SSDDebugMsg</class>
+    <class kind="class">SSDHit</class>
+    <member kind="typedef">
+      <type>G4THitsCollection&lt; SSDHit &gt;</type>
+      <name>SSDHitsCollection</name>
+      <anchorfile>SSDHit_8hh.html</anchorfile>
+      <anchor>a27faee2616e8fb6fca409d98bd2c306f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>swap</name>
+      <anchorfile>SSDHit_8hh.html</anchorfile>
+      <anchor>a8cc42c2f304c0ae44c1dd8617f56a6eb</anchor>
+      <arglist>(SSDHit &amp;lhs, SSDHit &amp;rhs)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>SSDSensitivity.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>SSDSensitivity_8hh</filename>
+    <includes id="SSDHit_8hh" name="SSDHit.hh" local="yes" imported="no">SSDHit.hh</includes>
+    <class kind="class">SSDSensitivity</class>
+  </compound>
+  <compound kind="file">
+    <name>StepMax.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>StepMax_8hh</filename>
+    <class kind="class">StepMax</class>
+  </compound>
+  <compound kind="file">
+    <name>StepMaxMessenger.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>StepMaxMessenger_8hh</filename>
+    <class kind="class">StepMaxMessenger</class>
+  </compound>
+  <compound kind="file">
+    <name>Target.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>Target_8hh</filename>
+    <class kind="class">Target</class>
+  </compound>
+  <compound kind="file">
+    <name>TargetHit.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>TargetHit_8hh</filename>
+    <class kind="class">TargetDebugMsg</class>
+    <class kind="class">TargetHit</class>
+    <member kind="typedef">
+      <type>G4THitsCollection&lt; TargetHit &gt;</type>
+      <name>TargetHitsCollection</name>
+      <anchorfile>TargetHit_8hh.html</anchorfile>
+      <anchor>a45dacb0786acc833ef66219cdeb43501</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>swap</name>
+      <anchorfile>TargetHit_8hh.html</anchorfile>
+      <anchor>a001f241990a4845ff8961b1b2c6c149f</anchor>
+      <arglist>(TargetHit &amp;lhs, TargetHit &amp;rhs)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>TargetSensitivity.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>TargetSensitivity_8hh</filename>
+    <includes id="TargetHit_8hh" name="TargetHit.hh" local="yes" imported="no">TargetHit.hh</includes>
+    <class kind="class">TargetSensitivity</class>
+  </compound>
+  <compound kind="file">
+    <name>TreeMaker.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>TreeMaker_8hh</filename>
+    <includes id="TreeMaker_8hh" name="TreeMaker.hh" local="yes" imported="no">DataBucket.hh</includes>
+    <class kind="class">TreeMaker</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>TreeMaker_h</name>
+      <anchorfile>TreeMaker_8hh.html</anchorfile>
+      <anchor>af56eb81b352d24dfb889538066971a51</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>VSource.hh</name>
+    <path>/home/jrtomps/g4work/FragSim02/include/</path>
+    <filename>VSource_8hh</filename>
+    <class kind="class">VSource</class>
+  </compound>
+  <compound kind="class">
+    <name>DataBucket</name>
+    <filename>classDataBucket.html</filename>
+    <base>TNamed</base>
+    <member kind="function">
+      <type></type>
+      <name>DataBucket</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>a2b2cd8a9571bcf11a3d51ffbe64a1845</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>DataBucket</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>addface74fd68a4ff98fd542ce5df6654</anchor>
+      <arglist>(const DataBucket &amp;orig)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~DataBucket</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>a997b0ef49c952841eb8e966b1675f129</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTime</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>afaf0fcd4efe11c24d97d19f03fa3c654</anchor>
+      <arglist>(Int_t t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetNumEvents</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>a5f2a3b79071729e0b4105f3af3b5fac5</anchor>
+      <arglist>(Int_t n)</arglist>
+    </member>
+    <member kind="function">
+      <type>Int_t</type>
+      <name>GetTime</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>af5031b9696822ced7521d89a9ae8181f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Int_t</type>
+      <name>GetNumEvents</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>ad37e48fbe3e6b86bfc6555af2c0ac0d6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Int_t</type>
+      <name>GetIntByKey</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>a258902469962167aebfd3f4ef05b3b14</anchor>
+      <arglist>(std::string key)</arglist>
+    </member>
+    <member kind="function">
+      <type>Double_t</type>
+      <name>GetDoubleByKey</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>aa29e100c844cf33b117d6a92a62ea318</anchor>
+      <arglist>(std::string key)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>GetStringByKey</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>a010ebc168bef6121c20ace73510cb3bf</anchor>
+      <arglist>(std::string key)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::map&lt; std::string, Int_t &gt; &amp;</type>
+      <name>GetIntMap</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>ad398a1407f45f2d746eafcc506c68f4e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>std::map&lt; std::string, Double_t &gt; &amp;</type>
+      <name>GetDoubleMap</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>a9e2e4008648a73dcac48d5842d65e1e5</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>std::map&lt; std::string, std::string &gt; &amp;</type>
+      <name>GetStringMap</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>aa0c9600034ebbb4ed5ffb99e99310024</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Bool_t</type>
+      <name>InsertInt</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>a1a015c2f53f3fcb8e2d77f5b5f3f7087</anchor>
+      <arglist>(std::string key, Int_t val)</arglist>
+    </member>
+    <member kind="function">
+      <type>Bool_t</type>
+      <name>InsertDouble</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>ac297dfcda23d6148fa7fcc915c11974b</anchor>
+      <arglist>(std::string key, Double_t val)</arglist>
+    </member>
+    <member kind="function">
+      <type>Bool_t</type>
+      <name>InsertString</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>ae4b538651e0ef62074f18ed88b1fe3db</anchor>
+      <arglist>(std::string key, std::string str)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DumpContents</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>ae81ab492b869d81a2f43569a75b60eb8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Long64_t</type>
+      <name>Merge</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>aa15e3d314be4ab88fb4400463e42cbab</anchor>
+      <arglist>(TCollection *li)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fTime</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>a8ba594bf77117cf0363fe45ed48475f8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fNumberOfEvents</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>a9fe750bbe105c66b2ad50381bb6a44a9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::map&lt; std::string, Int_t &gt;</type>
+      <name>fIntMap</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>ad047dcb7832cf61288be44180fcc110d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::map&lt; std::string, Double_t &gt;</type>
+      <name>fDoubleMap</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>aaab4b690d88bf05e52477d68cbfaddeb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::map&lt; std::string, std::string &gt;</type>
+      <name>fStringMap</name>
+      <anchorfile>classDataBucket.html</anchorfile>
+      <anchor>a6fb6f28c66d418291cd19bf8ed73b76b</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>exGPSPrimaryGeneratorAction</name>
+    <filename>classexGPSPrimaryGeneratorAction.html</filename>
+    <base>G4VUserPrimaryGeneratorAction</base>
+    <member kind="function">
+      <type></type>
+      <name>exGPSPrimaryGeneratorAction</name>
+      <anchorfile>classexGPSPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a687b3c0f5d88c81196f7af6efa05df5f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~exGPSPrimaryGeneratorAction</name>
+      <anchorfile>classexGPSPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a777c958554172093ee3cb65dbe15f4e2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>GeneratePrimaries</name>
+      <anchorfile>classexGPSPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a1ca679ee0fb61831fd280773f50d4c9e</anchor>
+      <arglist>(G4Event *anEvent)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4GeneralParticleSource *</type>
+      <name>particleGun</name>
+      <anchorfile>classexGPSPrimaryGeneratorAction.html</anchorfile>
+      <anchor>af455836ea2e46524a00ef3c3aa017f5a</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FragSimDetConstruction</name>
+    <filename>classFragSimDetConstruction.html</filename>
+    <base>G4VUserDetectorConstruction</base>
+    <member kind="function">
+      <type></type>
+      <name>FragSimDetConstruction</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a3b8128f55db90b6a66cb4eed3048e471</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~FragSimDetConstruction</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a45cfe989008cab602eab7a9df1e3f4e3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DefineMaterials</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a79093e3cf1e7a66be3e6445f0be0323f</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4VPhysicalVolume *</type>
+      <name>Construct</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a69796307183327d7cffe7f7ab290683d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>G4Transform3D *</type>
+      <name>GetTargetTransform</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a2153da2cd93a7ffcc6b2aac5656e53ee</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>SetupTransforms</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>ae8aa3385b154b1ee58647f1decb6a8a1</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Material *</type>
+      <name>vacuum</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a62de70d9b7c7746a4ed75f688fd75953</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Material *</type>
+      <name>aluminum</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>ac6bc716f5dbf70f630d00b06d1bd0460</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Isotope *</type>
+      <name>U235</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a7c051b36cc44d520b1b2723c1ee9f77f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Isotope *</type>
+      <name>U238</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a9ebfa03fd0b6fc56cf5cbe60743548fc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Element *</type>
+      <name>natU</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>ac58ad94dce5fc5ab7f1a36e324299972</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Material *</type>
+      <name>natUMaterial</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a24ff693beaca0d0ca3520ef8d611b493</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4LogicalVolume *</type>
+      <name>experimentalHall_log</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a91a637098ed428b164748e6bf7128195</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4LogicalVolume *</type>
+      <name>chamberWall_log</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a7a006b8783106deee3d72a3f135eaed6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4LogicalVolume *</type>
+      <name>target_log</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a96ecb69c638c8cd4530bd379368c4ea9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4VPhysicalVolume *</type>
+      <name>experimentalHall_phys</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a3b16a0d7e3f644b1aec36fcdc2fe019a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4VPhysicalVolume *</type>
+      <name>chamberWall_phys</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>aea758e04f3af526979de4c2c0e3fa988</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4VPhysicalVolume *</type>
+      <name>target_phys</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>af20797f8faa2e79116cf5f46787bd83d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Transform3D *</type>
+      <name>tr0</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a54312e99de0984e511262f6fad8dca39</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Transform3D *</type>
+      <name>tr1</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>ae33bbbb41e33f209fa2529515b4c89dd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Transform3D *</type>
+      <name>tr2</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>ad0320ac3e95eb29df2f908402f4c9b6b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Transform3D *</type>
+      <name>tr3</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a473af1b4b509af381b7236581bfa7dd2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4RotationMatrix *</type>
+      <name>rotMatrix</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>ac5877b31af0a875dd27148f32f3f507a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Transform3D *</type>
+      <name>tr_tar</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>ad98d86cf6e988ef1dd65e29c410b6090</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>SensitiveSSD</type>
+      <name>SSD0</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>af9dd0ee48dd7a8f47cd00cf02e07778b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>SensitiveSSD</type>
+      <name>SSD1</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a99c290b39e95e342672f2b3a4b48ad55</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>SensitiveSSD</type>
+      <name>SSD2</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a65d1d2d72a1a8da227c6ead8d07f34d3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>SensitiveSSD</type>
+      <name>SSD3</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a8730f0e9fdd3f8e6e1d47c3c4395e8ef</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Target</type>
+      <name>tar</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>aea0569fc0e7fcffae6e37e07de208cfe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>SensitiveMultiFuncParamSphere</type>
+      <name>multiFuncSphere</name>
+      <anchorfile>classFragSimDetConstruction.html</anchorfile>
+      <anchor>a72b8220d640f83b417c756202aec5604</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FragSimEventAction</name>
+    <filename>classFragSimEventAction.html</filename>
+    <base>G4UserEventAction</base>
+    <member kind="function">
+      <type></type>
+      <name>FragSimEventAction</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>ae9a186ac87a62aedb6201c317a635140</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~FragSimEventAction</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a3e86b04e49a03ebb918c9cad8783ac91</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>BeginOfEventAction</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>aa2b318093ac7f7df290d526ba0d00ca1</anchor>
+      <arglist>(const G4Event *anEvent)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>EndOfEventAction</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a6f2b325d6649b6717a10a73ec1494ac8</anchor>
+      <arglist>(const G4Event *anEvent)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ProcessEvent</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a96a84f6770a149d94ab6fe74fb051e26</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ProcessSSDHit</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>afd1ef682a03b0966a65b14fe429b4ec3</anchor>
+      <arglist>(SSDHitsCollection *hc)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ProcessHitMap</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a7a69d3727739cabba4af69a320ca7bae</anchor>
+      <arglist>(G4THitsMap&lt; G4double &gt; *hc)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ProcessTargetHit</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a335fcfe0f74cb3c52e51f6532fa34fc0</anchor>
+      <arglist>(TargetHitsCollection *thc)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ResetData</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a06fde51a7dbc3ffec500bc71658f57b1</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>bool</type>
+      <name>IsPSPrestepEnergy</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a5eac8fbfbc8eb5289bf57761895f4ea4</anchor>
+      <arglist>(G4THitsMap&lt; G4double &gt; *hc)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>RecordEvent</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>ab3fa973448e3f3214e93f4cc4f5ea3d9</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>CopyThreeVectorToArray</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>ab1f5401d2d73ac72246bda3a396dfd04</anchor>
+      <arglist>(G4double arr[3], const G4ThreeVector &amp;vec)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>std::pair&lt; G4double, G4double &gt;</type>
+      <name>ComputeThetaAndPhiFromReplicaIndex</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a922cfc15518b238ef3f27f68470bc88e</anchor>
+      <arglist>(const G4int index)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4HCofThisEvent *</type>
+      <name>fHCoE</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>ae808fbba9f700585680ff091a62686b2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4int</type>
+      <name>fnumHits</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a2f559553fcc65b31f2fa2555ba7dbe0d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4HitsCollection *</type>
+      <name>fhitsCollection</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a4ebcf185c3cbcabcd5f82f50a673336f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>const G4Event *</type>
+      <name>fThisEvent</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>ae03af57261e8b87151c30dcbdd8dfa95</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4int</type>
+      <name>fssdDetID</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>af54b084824a7dc97bb38b29270fec162</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4int</type>
+      <name>fssdSiStrip</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a39bd5c441180aa7c239a7c7f5f72b25c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fssdEffPhi</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a33bdeebb0a69456e163e8ca81b8ecacd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fssdEffTheta</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a2d07b91147e36d1d397d2b5d2d246347</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fssdWorldPos</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>ae9ca64d9be03638c3c2e8dc82f9b4c47</anchor>
+      <arglist>[3]</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fssdDeltaWorldPos</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>afd181940772584ebc60bf9fedafb89f9</anchor>
+      <arglist>[3]</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fssdLocalPos</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a8f25885c189923520ce8a49ce3617b88</anchor>
+      <arglist>[3]</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fssdMomentum</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a78e3167f809325f5e74c6d8dd511bdde</anchor>
+      <arglist>[3]</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fssdDeltaMomentum</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>af61bf892818e5704a52047a753390c53</anchor>
+      <arglist>[3]</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fssdKE</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>af8085d125875758c25e3b486e9f69a1b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fssdDeltaKE</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a310c6ffc39a7e9b78c81800f2731270f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fssdTotDepE</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a7421699b5a399ddb63833d8aeb93eaaa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fssdNonIonizingDepE</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>ae6d9011bfac53f0eb4ef9d8509db3da7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4String</type>
+      <name>fssdDetName</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a074349240e76f6fd02e71f931f745d0a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4String</type>
+      <name>fssdParticleName</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a5e9c6c8052aeb5a59cf1b6b541693a7f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fssdMass</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>af658f1b2d8eec20e45d27dbd1e28d368</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fssdCharge</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>abdd89466238be205dd7ecae8c5cdb06e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fprestepE</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>ac68e9c5a3c121f9eb01dd0c238958567</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fsurfCurr</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a2de302c45e92e5b1011c2d3e6837431e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftarPhi</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a038645a87e398f8b82ae85f9a69c2865</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftarTheta</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a6c92ffac0c8554ae46e47ee49021d395</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftarPos</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>ac3ffc461aa49ff67831abe7131f28095</anchor>
+      <arglist>[3]</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftarDeltaPos</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a680fd0408e40ce26116fe640250bf301</anchor>
+      <arglist>[3]</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftarMomentum</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a4a281fa91ce80cdd9109e6db9e035126</anchor>
+      <arglist>[3]</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftarDeltaMomentum</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a77fde16d87b654aa5ce48a57dc2ea283</anchor>
+      <arglist>[3]</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftarKE</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>aaeb41153234956f2a6c36d3ccebd569c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftarDeltaKE</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>aa52f6375608999fb6e7c4bb888ad4b40</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftarTotDepE</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a78d09537914ab5660552db7b21846dc2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftarNonIonizingDepE</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>af404266e5e877b601463e02150c34350</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4String</type>
+      <name>ftarParticleName</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>abdbe41771dad25bef4dbbe5f90e9164d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftarMass</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a584ab9fc208ce4da79617ab45cbadde8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftarCharge</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a9ef66bb0743c5655c7efc35155011ca9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftarDeltaCharge</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>a7660f1f7204593917b7e37f1fb136c97</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>bool</type>
+      <name>fDataExists</name>
+      <anchorfile>classFragSimEventAction.html</anchorfile>
+      <anchor>ae06703701dd9938d4b431f6a3bad56fb</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FragSimPrimaryGeneratorAction</name>
+    <filename>classFragSimPrimaryGeneratorAction.html</filename>
+    <base>G4VUserPrimaryGeneratorAction</base>
+    <member kind="function">
+      <type></type>
+      <name>FragSimPrimaryGeneratorAction</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a2a2fa32ad6af10df8c425ebc7d0269db</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~FragSimPrimaryGeneratorAction</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a7022ec8988eacb77f44736df69ff47b0</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUserDistribution</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a22d4e73925a8e3b24e4133c7e9425504</anchor>
+      <arglist>(const ROOT::Math::IBaseFunctionMultiDim &amp;func)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSource</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>add07a842eba5711a04d5111237ea3d48</anchor>
+      <arglist>(VSource &amp;source)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTransformation</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a7350c281c0d64029768a463c9099241d</anchor>
+      <arglist>(const G4Transform3D &amp;trans)</arglist>
+    </member>
+    <member kind="function">
+      <type>const G4ParticleGun *</type>
+      <name>GetParticleGun</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>abb9650cf578a7a78d22e5a7ebd9f7a1e</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4ParticleGun *</type>
+      <name>GetParticleGun</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a82a9df3aac034209d4b4c259d3274355</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4ParticleTable *</type>
+      <name>GetParticleTable</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>aca12f8b5a7e5c425d4371f1940f95193</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>GeneratePrimaries</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a252624f3620a005efdd77d2715f8a059</anchor>
+      <arglist>(G4Event *anEvent)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>SampleIsotropicDistribution</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a04e95ec2ea1c802fa1425a108c454ec5</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>SampleUserDistribution</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a2f6b9736c783e4fc4bf8029e608f2181</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>GetRandomDirection</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a776ef7b7719b3b4fe1395f193d3d2138</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>GenerateVertexPosition</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a588c1fc0f9d2748352bc715bb2581f8a</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>GenerateVertexDirection</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>af98a28419ee4ae93336ffb57b912d9ae</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetPrimarySupervisor</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a81d24fd127b13aa743d51f8c6f6d2fb6</anchor>
+      <arglist>(const PrimarySupervisor *ps)</arglist>
+    </member>
+    <member kind="function">
+      <type>PrimarySupervisor *</type>
+      <name>GetPrimarySupervisor</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a85819879a677b74b24d0999b3e1a7137</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>SetupNameMap</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a8917025f2749e7a815dbe6c49988e520</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ParticleGun *</type>
+      <name>fParticleGun</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a8515886059e624904c587edd7f8fa9f6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4String</type>
+      <name>fDistribution</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>ab12e46c3cfc20930b982d7e18d32deaa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>fOrigin</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>afe8464617e18dd98bac80b0d138b22bf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>fVertexPos</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>ac2022762c54f74708b91691063694765</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>fVertexDir</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a44cf2de27d0a689b2523692e57d8a50e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Transform3D</type>
+      <name>fTransform</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a7c63b13dff1e75a89da821a1722f08bf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>VSource *</type>
+      <name>fSource</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>ae5f66f8773c7b49a9c7c12c3ab31a9e0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>DISTR</type>
+      <name>fDistState</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a0900ceee99559c12611ecd351cde0e6e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::map&lt; DISTR, G4String &gt;</type>
+      <name>fDistNameMap</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a754b2b108cf1d5367d439340413f4979</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>PrimarySupervisor *</type>
+      <name>fSupervisor</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>ad11abcc3c4440ecd0dfcaf86ea2c80d1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>TFoam *</type>
+      <name>fFoam</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>a84c78bb6f9e5d0b333d6f0fe1aab022b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>TRandom3 *</type>
+      <name>fRandom</name>
+      <anchorfile>classFragSimPrimaryGeneratorAction.html</anchorfile>
+      <anchor>ab4c343ade990c077af39566cca5ab76b</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FragSimRunAction</name>
+    <filename>classFragSimRunAction.html</filename>
+    <base>G4UserRunAction</base>
+    <member kind="function">
+      <type></type>
+      <name>FragSimRunAction</name>
+      <anchorfile>classFragSimRunAction.html</anchorfile>
+      <anchor>addf56f95b8ac2197b630192952b284d7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FragSimRunAction</name>
+      <anchorfile>classFragSimRunAction.html</anchorfile>
+      <anchor>a8b73ddec89f6da6f0b5fdf30a03f6738</anchor>
+      <arglist>(const G4String run_name)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~FragSimRunAction</name>
+      <anchorfile>classFragSimRunAction.html</anchorfile>
+      <anchor>a3e113af3030cbc33031b10ad2a59c0e3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>BeginOfRunAction</name>
+      <anchorfile>classFragSimRunAction.html</anchorfile>
+      <anchor>ac3bca15c038863abd609cc8655d3886e</anchor>
+      <arglist>(const G4Run *aRun)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>EndOfRunAction</name>
+      <anchorfile>classFragSimRunAction.html</anchorfile>
+      <anchor>a7cbb98cd935b82297dd28f0db30a71c0</anchor>
+      <arglist>(const G4Run *aRun)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>G4int</type>
+      <name>GetNumberOfEventsInRun</name>
+      <anchorfile>classFragSimRunAction.html</anchorfile>
+      <anchor>adaca05e23579088d0c774b305173a1db</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>TreeMaker *</type>
+      <name>ftreeMaker</name>
+      <anchorfile>classFragSimRunAction.html</anchorfile>
+      <anchor>adcdd396895e66b03b4e49a78c9516424</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4String</type>
+      <name>frun_name</name>
+      <anchorfile>classFragSimRunAction.html</anchorfile>
+      <anchor>a69038734d8fb12976d03e0c033440d28</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FragSimSource</name>
+    <filename>classFragSimSource.html</filename>
+    <base>VSource</base>
+    <member kind="enumeration">
+      <name>FSSType</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a4ce6cab87719a4b452c8b102091f72d0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>kSurface</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a4ce6cab87719a4b452c8b102091f72d0a75976df1cf0c66cf4d3f38619e4f2322</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>kSurfaceLayer</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a4ce6cab87719a4b452c8b102091f72d0aa7886542d4c45c949d18871790f9bf99</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>kVolume</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a4ce6cab87719a4b452c8b102091f72d0abf6b47451c1fba1bdee201b5908e49a0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FragSimSource</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a75bf702c059c500cf581d975e4ea2840</anchor>
+      <arglist>(const G4double r, const G4Transform3D &amp;trans)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FragSimSource</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>ab0d3ee1a2b04eebf82b056201c5d262b</anchor>
+      <arglist>(const G4double r, const G4Transform3D &amp;trans, const FSSType type)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FragSimSource</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a3b32158a07470499b48173f5dc5fa2d5</anchor>
+      <arglist>(const G4double r, const G4Transform3D &amp;trans, const FSSType type, const G4double surf_thickness)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FragSimSource</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a2f3c094f4228bb574b2d8f49921000c3</anchor>
+      <arglist>(FragSimSource const &amp;obj)</arglist>
+    </member>
+    <member kind="function">
+      <type>FragSimSource &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>acc82a4d2b74d7644b99f666a9c7fb0e9</anchor>
+      <arglist>(FragSimSource const &amp;obj)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~FragSimSource</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a1f8f5ab19dc07a3ab69ff375bc4b4839</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>GetRandomPosition</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>aa685b7447969971e2802923bc911352c</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetRadius</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>ac29ed08a7695629dbccfdfa6aac77eb6</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRadius</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>acea274907e338f4bb3ebacb765386d3e</anchor>
+      <arglist>(const G4double r)</arglist>
+    </member>
+    <member kind="function">
+      <type>FSSType</type>
+      <name>GetType</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>ab1a67e56504ddde08b89b16060aeba66</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetType</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a945cd30e061a7be1fcd8f63f5a6988e7</anchor>
+      <arglist>(FSSType type)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetType</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a8ab7f444be236337cc01dc708d85f2bd</anchor>
+      <arglist>(G4String type_name)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetSurfaceThickness</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>ade56b9e5ba37c5e37f84a5dc2435a2a5</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSurfaceThickness</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a360bc2c389eeb31ff3f63d5c0096cf96</anchor>
+      <arglist>(const G4double thick)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>PrintInfo</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>aaec7c5564bb1c74fd472492c088b9b97</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>G4double</type>
+      <name>ComputeRotThickness</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a39cc9f9c426a3e736b27bd12ac4553a5</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>G4double</type>
+      <name>ComputeZ</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a53d8b0fee991b25e305a7802cda27c4a</anchor>
+      <arglist>(const G4double x, const G4double y) const </arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fRadius</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a32a112a13b1f3944c3f06991c3fab032</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fRotThickness</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a393e4204fe1cc4a3ee7c0ad02065765e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Target</type>
+      <name>fTar</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a992f19d2ffc53052cbcd0bef07cc2449</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>FSSType</type>
+      <name>fSType</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a84bb6a26eafd68c3d8f126728e051aac</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fSurfaceThickness</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a8211c6f4fd3eb7e2e9e9f5a66e244880</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>FragSimSourceMessenger *</type>
+      <name>messenger</name>
+      <anchorfile>classFragSimSource.html</anchorfile>
+      <anchor>a2cc7bdb1b9b59e10a8b32b35494b1dd5</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FragSimSourceMessenger</name>
+    <filename>classFragSimSourceMessenger.html</filename>
+    <base>G4UImessenger</base>
+    <member kind="function">
+      <type></type>
+      <name>FragSimSourceMessenger</name>
+      <anchorfile>classFragSimSourceMessenger.html</anchorfile>
+      <anchor>aad049e93fe3ecc108d8f3adafcaf6e5d</anchor>
+      <arglist>(FragSimSource *source)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~FragSimSourceMessenger</name>
+      <anchorfile>classFragSimSourceMessenger.html</anchorfile>
+      <anchor>a9c732c35832dec5b25c4886152865a40</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FragSimSourceMessenger</name>
+      <anchorfile>classFragSimSourceMessenger.html</anchorfile>
+      <anchor>a82ae392f6810170a3f10a472c85fc772</anchor>
+      <arglist>(const FragSimSourceMessenger &amp;obj)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetNewValue</name>
+      <anchorfile>classFragSimSourceMessenger.html</anchorfile>
+      <anchor>aa13e8a50a425dbf343699b7b9d52c9ec</anchor>
+      <arglist>(G4UIcommand *command, G4String newValue)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>FragSimSource *</type>
+      <name>fFSSource</name>
+      <anchorfile>classFragSimSourceMessenger.html</anchorfile>
+      <anchor>a65c64583da01b2887ae2644df4552364</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4UIdirectory *</type>
+      <name>srcDir</name>
+      <anchorfile>classFragSimSourceMessenger.html</anchorfile>
+      <anchor>a530a1061d3c4550c486b0232f09df992</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4UIcmdWithAString *</type>
+      <name>srcTypeCmd</name>
+      <anchorfile>classFragSimSourceMessenger.html</anchorfile>
+      <anchor>a77f6bf595e0a96721e3fb45973f94776</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4UIcmdWithADoubleAndUnit *</type>
+      <name>srcSurfThickCmd</name>
+      <anchorfile>classFragSimSourceMessenger.html</anchorfile>
+      <anchor>abba3c57a24fc0c29458ff78392d3ad11</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>MyException</name>
+    <filename>classMyException.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>MyException</name>
+      <anchorfile>classMyException.html</anchorfile>
+      <anchor>a161d8516b5d1df2a6c7082f8219c80be</anchor>
+      <arglist>(const G4String &amp;what)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~MyException</name>
+      <anchorfile>classMyException.html</anchorfile>
+      <anchor>a814cb6c75e3932af43146d7a45ae81d6</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>what</name>
+      <anchorfile>classMyException.html</anchorfile>
+      <anchor>a51888d398573011d0df58223f7954fd0</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4String</type>
+      <name>fWhat</name>
+      <anchorfile>classMyException.html</anchorfile>
+      <anchor>ac3097fcbc63d649976abb6072c2cd13c</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ParameterisedSphereBuilder</name>
+    <filename>classParameterisedSphereBuilder.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>ParameterisedSphereBuilder</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>a7a815fc2c32ea86eaacd57736f061a5f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ParameterisedSphereBuilder</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>a027b488b8a9fdec817472f58c1d882ca</anchor>
+      <arglist>(G4double iradius, G4double oradius, G4double deltaTheta, G4double deltaPhi, G4Material *mat)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ParameterisedSphereBuilder</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>a3c9545e60150c26bab29c8a1d2420fcb</anchor>
+      <arglist>(const ParameterisedSphereBuilder &amp;obj)</arglist>
+    </member>
+    <member kind="function">
+      <type>ParameterisedSphereBuilder &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>ad92ad39ae325229aeef668b7dd84970b</anchor>
+      <arglist>(ParameterisedSphereBuilder obj)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~ParameterisedSphereBuilder</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>aae6c9bb28cb3b897463c849ac298f1d7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>G4AssemblyVolume *</type>
+      <name>GetADetector</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>a935589fa8b754a7d7c409326ec1919a7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSensitivity</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>a4ff73c02f0c4cb99691cbd8d7ee8b7d5</anchor>
+      <arglist>(G4VSensitiveDetector *sensitivity)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>Assemble</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>a00eefb11dbb2de12a1fa09e79793a059</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Sphere *</type>
+      <name>fSolid</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>a3ab9b72447ca4da03db9566b5c32682b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Material *</type>
+      <name>fMaterial</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>a682db11a5d4be7ce98171ff2fd38c8f5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4LogicalVolume *</type>
+      <name>fMotherLog</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>ae00ec7d1d0939da55b5275162eca282d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4LogicalVolume *</type>
+      <name>fParamLog</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>a2567e7c56ec12a09db3c076c3bedd552</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>SphereParameterisation *</type>
+      <name>fParameterisation</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>ae944aae95b23832b4bf3a2ab6d08f1f4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4PVParameterised *</type>
+      <name>fParameterised</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>a157e851e90450cf26f16f5de02f70378</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4VSensitiveDetector *</type>
+      <name>fSensitivity</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>a590dfc11529c15220326ef66991c347c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4AssemblyVolume *</type>
+      <name>fAssembly</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>a626d1fb9b426decba37022f5cdd7d954</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend void</type>
+      <name>swap</name>
+      <anchorfile>classParameterisedSphereBuilder.html</anchorfile>
+      <anchor>a7482f86cb69822438aff45981c0de439</anchor>
+      <arglist>(ParameterisedSphereBuilder &amp;lhs, ParameterisedSphereBuilder &amp;rhs)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>PhysicsList</name>
+    <filename>classPhysicsList.html</filename>
+    <base>G4VModularPhysicsList</base>
+    <member kind="function">
+      <type></type>
+      <name>PhysicsList</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>aeecf835245a0b10c24e5e6c37cbb0dab</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~PhysicsList</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>a6f9911ef2a7735bbc337b6b9f7b6b9d4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ConstructParticle</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>af7906507122c985d2da3e61c56efe60e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>AddPhysicsList</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>a582db39b11e130b8da07860c3f9ecd0d</anchor>
+      <arglist>(const G4String &amp;name)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ConstructProcess</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>a9c08bc28eba2ae62104b967280901a3f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>AddDecay</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>ad4b820c9498de96974542bdbfbc8255a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>AddStepMax</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>a07ed38b92ebee0aedbecfb09a4baf50f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCuts</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>a0ba901b82ae30657b109930645fe8017</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCutForGamma</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>a845a2db77a1fce1173bdb55d4bfc4d1d</anchor>
+      <arglist>(G4double)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCutForElectron</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>a93b5f6f02332a11539faa3d74331c9ae</anchor>
+      <arglist>(G4double)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCutForPositron</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>a50188eab934a89f7a04e79be2e569474</anchor>
+      <arglist>(G4double)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>PhysicsListMessenger *</type>
+      <name>pMessenger</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>ad93390c0a33c035721b71a71c734e194</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4String</type>
+      <name>emName</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>ab419a3270244f48eac1ba5238aefab34</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4VPhysicsConstructor *</type>
+      <name>emPhysicsList</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>a42bc9d6de2109e287fcf0265edb87c73</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>cutForGamma</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>a19ce93348cf5affb7a4f191efd6a0cea</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>cutForElectron</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>a45e4be505e7a385077e10edf224cf10a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>cutForPositron</name>
+      <anchorfile>classPhysicsList.html</anchorfile>
+      <anchor>ab856bed84a2ba42338dcec33d323bb02</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>PhysicsListMessenger</name>
+    <filename>classPhysicsListMessenger.html</filename>
+    <base>G4UImessenger</base>
+    <member kind="function">
+      <type></type>
+      <name>PhysicsListMessenger</name>
+      <anchorfile>classPhysicsListMessenger.html</anchorfile>
+      <anchor>a9be0a967c6cdd635944f8b4f960f365f</anchor>
+      <arglist>(PhysicsList *)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~PhysicsListMessenger</name>
+      <anchorfile>classPhysicsListMessenger.html</anchorfile>
+      <anchor>abc73f80dcb1f194d2bfa88708a760a01</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetNewValue</name>
+      <anchorfile>classPhysicsListMessenger.html</anchorfile>
+      <anchor>a29f24268eddba6a0e7a6505f9473c5bb</anchor>
+      <arglist>(G4UIcommand *, G4String)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>PhysicsList *</type>
+      <name>pPhysicsList</name>
+      <anchorfile>classPhysicsListMessenger.html</anchorfile>
+      <anchor>a68f4399afe595229454782152a9edc46</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4UIdirectory *</type>
+      <name>physDir</name>
+      <anchorfile>classPhysicsListMessenger.html</anchorfile>
+      <anchor>a487c7fa650d7dd9f4a5066a7903f6109</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4UIcmdWithAString *</type>
+      <name>pListCmd</name>
+      <anchorfile>classPhysicsListMessenger.html</anchorfile>
+      <anchor>aad4c94fbc3c747cff0bea327b29ae7a5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4UIcmdWithADoubleAndUnit *</type>
+      <name>gammaCutCmd</name>
+      <anchorfile>classPhysicsListMessenger.html</anchorfile>
+      <anchor>a1e99e13d06989e64e031b18f2c28c5b5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4UIcmdWithADoubleAndUnit *</type>
+      <name>electCutCmd</name>
+      <anchorfile>classPhysicsListMessenger.html</anchorfile>
+      <anchor>a6a524b1039b794994a2d98888d539954</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4UIcmdWithADoubleAndUnit *</type>
+      <name>protoCutCmd</name>
+      <anchorfile>classPhysicsListMessenger.html</anchorfile>
+      <anchor>ad6815983ff25b00688c738a87a7fd4a2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4UIcmdWithADoubleAndUnit *</type>
+      <name>allCutCmd</name>
+      <anchorfile>classPhysicsListMessenger.html</anchorfile>
+      <anchor>a37c9d76b919ae88a58f34194c7dcb061</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>PhysListEmStandard</name>
+    <filename>classPhysListEmStandard.html</filename>
+    <base>G4VPhysicsConstructor</base>
+    <member kind="function">
+      <type></type>
+      <name>PhysListEmStandard</name>
+      <anchorfile>classPhysListEmStandard.html</anchorfile>
+      <anchor>a014e5ba581d73a11391ec661f38204a9</anchor>
+      <arglist>(const G4String &amp;name=&quot;standard&quot;)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~PhysListEmStandard</name>
+      <anchorfile>classPhysListEmStandard.html</anchorfile>
+      <anchor>a89af80dc857838cb9ebedff0da9a9d45</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ConstructParticle</name>
+      <anchorfile>classPhysListEmStandard.html</anchorfile>
+      <anchor>a4615620877453a025f908a53dcc869e8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ConstructProcess</name>
+      <anchorfile>classPhysListEmStandard.html</anchorfile>
+      <anchor>a81d82b49c38e371a29b03a419a417de6</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>PhysListEmStandardGS</name>
+    <filename>classPhysListEmStandardGS.html</filename>
+    <base>G4VPhysicsConstructor</base>
+    <member kind="function">
+      <type></type>
+      <name>PhysListEmStandardGS</name>
+      <anchorfile>classPhysListEmStandardGS.html</anchorfile>
+      <anchor>a864d4c19fedd5ea9037522da99d5eca9</anchor>
+      <arglist>(const G4String &amp;name=&quot;standardGS&quot;)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~PhysListEmStandardGS</name>
+      <anchorfile>classPhysListEmStandardGS.html</anchorfile>
+      <anchor>a4ebb6a102156908421a5d942937142de</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ConstructParticle</name>
+      <anchorfile>classPhysListEmStandardGS.html</anchorfile>
+      <anchor>af8adae03fc23a097d1665a79be566fb2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ConstructProcess</name>
+      <anchorfile>classPhysListEmStandardGS.html</anchorfile>
+      <anchor>afbbb9cbb802234001b845aa13bae592a</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>PhysListEmStandardSS</name>
+    <filename>classPhysListEmStandardSS.html</filename>
+    <base>G4VPhysicsConstructor</base>
+    <member kind="function">
+      <type></type>
+      <name>PhysListEmStandardSS</name>
+      <anchorfile>classPhysListEmStandardSS.html</anchorfile>
+      <anchor>aac1853b76aaee4eea9dfa6e4e9602988</anchor>
+      <arglist>(const G4String &amp;name=&quot;standardSS&quot;)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~PhysListEmStandardSS</name>
+      <anchorfile>classPhysListEmStandardSS.html</anchorfile>
+      <anchor>a830a9f4090e7bf2ec78372555a4a6da6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ConstructParticle</name>
+      <anchorfile>classPhysListEmStandardSS.html</anchorfile>
+      <anchor>ad5fc62265699d4a888736e984d41b440</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ConstructProcess</name>
+      <anchorfile>classPhysListEmStandardSS.html</anchorfile>
+      <anchor>a9d07f38b9c60a9e938df347edee4f6d2</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>PrimarySupervisor</name>
+    <filename>classPrimarySupervisor.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>PrimarySupervisor</name>
+      <anchorfile>classPrimarySupervisor.html</anchorfile>
+      <anchor>afc1a81916d3a15b35e5b7fdaa33310df</anchor>
+      <arglist>(const G4String &amp;worldname, const G4String &amp;pvname)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>PrimarySupervisor</name>
+      <anchorfile>classPrimarySupervisor.html</anchorfile>
+      <anchor>acf18baf73b923e24d89bf9fc67225604</anchor>
+      <arglist>(const PrimarySupervisor &amp;that)</arglist>
+    </member>
+    <member kind="function">
+      <type>PrimarySupervisor &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classPrimarySupervisor.html</anchorfile>
+      <anchor>ad36eca622981c66282f0c3d45e006a83</anchor>
+      <arglist>(const PrimarySupervisor &amp;that)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~PrimarySupervisor</name>
+      <anchorfile>classPrimarySupervisor.html</anchorfile>
+      <anchor>ae98c7a226d0808cb3d7df15e14d33c8d</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4bool</type>
+      <name>IsGoodVertex</name>
+      <anchorfile>classPrimarySupervisor.html</anchorfile>
+      <anchor>a9c36121bb45ebe84bca36165f2aff803</anchor>
+      <arglist>(const G4ThreeVector &amp;vec)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type></type>
+      <name>PrimarySupervisor</name>
+      <anchorfile>classPrimarySupervisor.html</anchorfile>
+      <anchor>a6648cd33dc1797426cc5b6670253b602</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>InitializeSolidPtr</name>
+      <anchorfile>classPrimarySupervisor.html</anchorfile>
+      <anchor>a6f5853fb2695b101363c4a201ebe76f8</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4String</type>
+      <name>fWorldName</name>
+      <anchorfile>classPrimarySupervisor.html</anchorfile>
+      <anchor>a2c78029f7775be8fb095fcb3c4b31ea7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4String</type>
+      <name>fPVName</name>
+      <anchorfile>classPrimarySupervisor.html</anchorfile>
+      <anchor>abd930f88482a484aff4ac8918139bad7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4VSolid *</type>
+      <name>fSolid</name>
+      <anchorfile>classPrimarySupervisor.html</anchorfile>
+      <anchor>ad8178deea72d493c4b4423f1998f503c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4AffineTransform *</type>
+      <name>fTrans</name>
+      <anchorfile>classPrimarySupervisor.html</anchorfile>
+      <anchor>ae388fba3023dbdd7f092bc45fde1d7c4</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>PSPreStepEnergy</name>
+    <filename>classPSPreStepEnergy.html</filename>
+    <base>G4VPrimitiveScorer</base>
+    <member kind="function">
+      <type></type>
+      <name>PSPreStepEnergy</name>
+      <anchorfile>classPSPreStepEnergy.html</anchorfile>
+      <anchor>a783c8c2d0cd14a732248a8710aff57a0</anchor>
+      <arglist>(G4String name, G4int depth=0)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>PSPreStepEnergy</name>
+      <anchorfile>classPSPreStepEnergy.html</anchorfile>
+      <anchor>a68108989e252dcc9a7ccb019fbe05a9b</anchor>
+      <arglist>(G4String name, const G4String &amp;unit, G4int depth=0)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~PSPreStepEnergy</name>
+      <anchorfile>classPSPreStepEnergy.html</anchorfile>
+      <anchor>a55441ee1395a60ea5eba92c55a57fa06</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>Initialize</name>
+      <anchorfile>classPSPreStepEnergy.html</anchorfile>
+      <anchor>ab645f8c301283233ab2a5f91b91b6433</anchor>
+      <arglist>(G4HCofThisEvent *)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>EndOfEvent</name>
+      <anchorfile>classPSPreStepEnergy.html</anchorfile>
+      <anchor>a4bd76c35c1c4019423402c3af028b4f8</anchor>
+      <arglist>(G4HCofThisEvent *)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>clear</name>
+      <anchorfile>classPSPreStepEnergy.html</anchorfile>
+      <anchor>ab446dcdccbdae649493074bf7140276b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>DrawAll</name>
+      <anchorfile>classPSPreStepEnergy.html</anchorfile>
+      <anchor>a287249741ee03708a6fde14fc7181f6e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>PrintAll</name>
+      <anchorfile>classPSPreStepEnergy.html</anchorfile>
+      <anchor>a8257355f2d4976ff41394cc9131e18b7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>SetUnit</name>
+      <anchorfile>classPSPreStepEnergy.html</anchorfile>
+      <anchor>aaa9accd280bf447d2006ab7ceed4cbe0</anchor>
+      <arglist>(const G4String &amp;unit)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::map&lt; G4int, G4int &gt; &amp;</type>
+      <name>GetMapMultiplicities</name>
+      <anchorfile>classPSPreStepEnergy.html</anchorfile>
+      <anchor>a8bca1883b09879c9c587cd7f6c6ec6f9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected" virtualness="virtual">
+      <type>virtual G4bool</type>
+      <name>ProcessHits</name>
+      <anchorfile>classPSPreStepEnergy.html</anchorfile>
+      <anchor>a559e3d315268f67d1914539b5608816b</anchor>
+      <arglist>(G4Step *, G4TouchableHistory *)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4int</type>
+      <name>HCID</name>
+      <anchorfile>classPSPreStepEnergy.html</anchorfile>
+      <anchor>a7f16cafac57f8f1e30a56a43008cd337</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4THitsMap&lt; G4double &gt; *</type>
+      <name>EvtMap</name>
+      <anchorfile>classPSPreStepEnergy.html</anchorfile>
+      <anchor>acb3c7f6b755d0d5576c9da551bf4b623</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::map&lt; G4int, G4int &gt;</type>
+      <name>fEvtMapMultiplicities</name>
+      <anchorfile>classPSPreStepEnergy.html</anchorfile>
+      <anchor>ad4c495b33a47ae6524fbcca3c63e38b5</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>RandomSeedManager</name>
+    <filename>classRandomSeedManager.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>RandomSeedManager</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>ae16ee45bb46140cd5dffea639ece6650</anchor>
+      <arglist>(const std::string name)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~RandomSeedManager</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>a8f2a17139325f33c005072866ac58292</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSeedDir</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>a79172eaba0a695143b4248f111b2dfcf</anchor>
+      <arglist>(const std::string name)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>initialize</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>a4a6d01ed168503021a1d693508a6c7ec</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>interactiveClose</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>a518ba6d325d6be57d0892afbc2f0824a</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>formFullName</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>a65be72cc847beba6ff20d04e44bc30ce</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>bool</type>
+      <name>askToUseFile</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>a2a8145bd3d776ebc6f50bee8c4857208</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>stripIDFromFName</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>a1dbaba1c8c10881545804bc8a10efaa1</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::string</type>
+      <name>fSeedDir</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>a3c2462c1578055f93a3cacd2738c5a4a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::string</type>
+      <name>fFName</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>aa6aab7dc21be3ae1924cf59a9298dbc3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::string</type>
+      <name>fFullName</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>a62290ff544777650d3bc78dadd46255c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::string</type>
+      <name>fStrippedFName</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>ac250f6ef7d41869943a17616e529e35c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>int</type>
+      <name>fFIndex</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>afbfbf7dcd31e28e737599812421cd2b4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::ofstream</type>
+      <name>fOFile</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>afec000e9882b754efa398eabeb149285</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::ifstream</type>
+      <name>fIFile</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>a47796bbcdc8d5f0f750ab8bbf5d23340</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>bool</type>
+      <name>fWantSeedManagement</name>
+      <anchorfile>classRandomSeedManager.html</anchorfile>
+      <anchor>a19fde0a5fdf07f9c1be87c73bd36de1b</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>SensitiveMultiFuncParamSphere</name>
+    <filename>classSensitiveMultiFuncParamSphere.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>SensitiveMultiFuncParamSphere</name>
+      <anchorfile>classSensitiveMultiFuncParamSphere.html</anchorfile>
+      <anchor>ad4d470dcab2bf195e69055bcddc2b093</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>SensitiveMultiFuncParamSphere</name>
+      <anchorfile>classSensitiveMultiFuncParamSphere.html</anchorfile>
+      <anchor>a863ca78a2423e0a5244c0eb4faca8918</anchor>
+      <arglist>(const G4String name, G4double iradius, G4double oradius, G4double deltaTheta, G4double deltaPhi, G4Material *mat)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>SensitiveMultiFuncParamSphere</name>
+      <anchorfile>classSensitiveMultiFuncParamSphere.html</anchorfile>
+      <anchor>ac7086f089b1589117b4abe74b72a10ac</anchor>
+      <arglist>(const SensitiveMultiFuncParamSphere &amp;obj)</arglist>
+    </member>
+    <member kind="function">
+      <type>SensitiveMultiFuncParamSphere &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classSensitiveMultiFuncParamSphere.html</anchorfile>
+      <anchor>ac7741ae83cab882f70aae3957b5679df</anchor>
+      <arglist>(SensitiveMultiFuncParamSphere obj)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~SensitiveMultiFuncParamSphere</name>
+      <anchorfile>classSensitiveMultiFuncParamSphere.html</anchorfile>
+      <anchor>a2602d7e25e0f9911d4797b56d25cc232</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>const ParameterisedSphereBuilder &amp;</type>
+      <name>GetBuilder</name>
+      <anchorfile>classSensitiveMultiFuncParamSphere.html</anchorfile>
+      <anchor>a7f8b429e7eee4fc787f35c2891906493</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4MultiFunctionalDetector *</type>
+      <name>GetSensitivity</name>
+      <anchorfile>classSensitiveMultiFuncParamSphere.html</anchorfile>
+      <anchor>a4aad638dbbe19e43005a9841c6d6e805</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4AssemblyVolume *</type>
+      <name>GetADetector</name>
+      <anchorfile>classSensitiveMultiFuncParamSphere.html</anchorfile>
+      <anchor>a381aa085baa5a5eb9c45540b26c26096</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4int</type>
+      <name>GetCollectionID</name>
+      <anchorfile>classSensitiveMultiFuncParamSphere.html</anchorfile>
+      <anchor>a61cda3215f78b2f266a09e2e9baf40ca</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCollectionID</name>
+      <anchorfile>classSensitiveMultiFuncParamSphere.html</anchorfile>
+      <anchor>ad8a2741e95b0e4e970412116105925ed</anchor>
+      <arglist>(G4int id)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>ParameterisedSphereBuilder</type>
+      <name>ftheBuilder</name>
+      <anchorfile>classSensitiveMultiFuncParamSphere.html</anchorfile>
+      <anchor>ab3f7c397030f7ef411244fc814a65f61</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4MultiFunctionalDetector *</type>
+      <name>ftheSensitivity</name>
+      <anchorfile>classSensitiveMultiFuncParamSphere.html</anchorfile>
+      <anchor>a6d015ccf72befb325042ebab3cdc6f2b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4int</type>
+      <name>fcollectionID</name>
+      <anchorfile>classSensitiveMultiFuncParamSphere.html</anchorfile>
+      <anchor>a2c8c9b0588f682de697f7e797f28de5e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend void</type>
+      <name>swap</name>
+      <anchorfile>classSensitiveMultiFuncParamSphere.html</anchorfile>
+      <anchor>a85acd76c59adcc08eb2302dfc2fbf85a</anchor>
+      <arglist>(SensitiveMultiFuncParamSphere &amp;lhs, SensitiveMultiFuncParamSphere &amp;rhs)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>SensitiveSSD</name>
+    <filename>classSensitiveSSD.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>SensitiveSSD</name>
+      <anchorfile>classSensitiveSSD.html</anchorfile>
+      <anchor>a60d67070896aa097bce6b8d66abc9a7a</anchor>
+      <arglist>(const G4String name, const G4int detID)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~SensitiveSSD</name>
+      <anchorfile>classSensitiveSSD.html</anchorfile>
+      <anchor>a30b2992e7b97946738085bcafccff52e</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>SSDBuilder</type>
+      <name>GetBuilder</name>
+      <anchorfile>classSensitiveSSD.html</anchorfile>
+      <anchor>a9d017631174025a2845059dd3cc3f096</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>SSDSensitivity *</type>
+      <name>GetSensitivity</name>
+      <anchorfile>classSensitiveSSD.html</anchorfile>
+      <anchor>ab1cb52e788ca3dc1bfef5452e84eb446</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4AssemblyVolume *</type>
+      <name>GetADetector</name>
+      <anchorfile>classSensitiveSSD.html</anchorfile>
+      <anchor>a5c5dc659afaa16802f0d4b87913ab167</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>SSDBuilder</type>
+      <name>ftheBuilder</name>
+      <anchorfile>classSensitiveSSD.html</anchorfile>
+      <anchor>acf803a76c35af61eb9501a76ffbd2487</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>SSDSensitivity *</type>
+      <name>ftheSensitivity</name>
+      <anchorfile>classSensitiveSSD.html</anchorfile>
+      <anchor>abb0892c2da28ee08455276a17f156398</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>SphereParameterisation</name>
+    <filename>classSphereParameterisation.html</filename>
+    <base>G4VPVParameterisation</base>
+    <member kind="function">
+      <type></type>
+      <name>SphereParameterisation</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>aa09818efb2fb04fd8555e1ed1c2c167e</anchor>
+      <arglist>(const G4double minRadius, const G4double maxRadius, const G4double deltaTheta, const G4double deltaPhi)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~SphereParameterisation</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>ad2ad47bca02237d4d6ea06da26632a58</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>ComputeDimensions</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a1b175aff21561ed254016b06246ab612</anchor>
+      <arglist>(G4Sphere &amp;sphere, const G4int copyNo, const G4VPhysicalVolume *) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ComputeTransformation</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a2cf09c60cd0d7853305ffec54fae1b97</anchor>
+      <arglist>(const G4int, G4VPhysicalVolume *) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ComputeDimensions</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>afc1cdb760b74e59e2a5ffe97a78d903d</anchor>
+      <arglist>(G4Tubs &amp;, const G4int, const G4VPhysicalVolume *) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ComputeDimensions</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a44f2bed3b0a1883d084b24f0e3e6585f</anchor>
+      <arglist>(G4Trd &amp;, const G4int, const G4VPhysicalVolume *) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ComputeDimensions</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a33f744255b588494dd936db1a087ad2e</anchor>
+      <arglist>(G4Trap &amp;, const G4int, const G4VPhysicalVolume *) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ComputeDimensions</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a3bee5c42de6cfac300a62c52e3a68e48</anchor>
+      <arglist>(G4Cons &amp;, const G4int, const G4VPhysicalVolume *) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ComputeDimensions</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a663c13ec2beb263eb89d4041f0008a77</anchor>
+      <arglist>(G4Orb &amp;, const G4int, const G4VPhysicalVolume *) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ComputeDimensions</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a2aedd9ada334d7cd80beeadc7e6f2e31</anchor>
+      <arglist>(G4Torus &amp;, const G4int, const G4VPhysicalVolume *) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ComputeDimensions</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a7a4671b3f7f3ba10c1fbc6eff468d912</anchor>
+      <arglist>(G4Para &amp;, const G4int, const G4VPhysicalVolume *) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ComputeDimensions</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a01b28e24d224a5c17d869bbb69cb4d0e</anchor>
+      <arglist>(G4Hype &amp;, const G4int, const G4VPhysicalVolume *) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ComputeDimensions</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a39cf6332a2fb3696b811b8bc608d1ccc</anchor>
+      <arglist>(G4Box &amp;, const G4int, const G4VPhysicalVolume *) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ComputeDimensions</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a6f14e8adc2be8d25a9f9d8c14c5e704b</anchor>
+      <arglist>(G4Polycone &amp;, const G4int, const G4VPhysicalVolume *) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>ComputeDimensions</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a9878abb90edc9cea8f7aa0359da34aac</anchor>
+      <arglist>(G4Polyhedra &amp;, const G4int, const G4VPhysicalVolume *) const </arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fMinRadius</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a1ad49ef572eb2abd5b0a85803e7d7665</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fMaxRadius</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a947abcbee2694dd96582d01462c56115</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fDeltaTheta</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a91064319d48c3c45d479a932aa4b98c4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fDeltaPhi</name>
+      <anchorfile>classSphereParameterisation.html</anchorfile>
+      <anchor>a0c7f5caeeef6a86d2bd3e3492bbfe465</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>SSDBuilder</name>
+    <filename>classSSDBuilder.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>SSDBuilder</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>aa8e30ac4b34df4b53a49713aad33d9d1</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>SSDBuilder</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>ad21edf6927fabc9c7371dd072521c1d8</anchor>
+      <arglist>(SSDBuilder const &amp;obj)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~SSDBuilder</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a3474c499338a9b914fd585433d7d36d5</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>SSDBuilder &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a8351199622e2e3e6310ad637479a39a6</anchor>
+      <arglist>(SSDBuilder const &amp;obj)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSensitivity</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a0fff713a8d0789e098538b9f1dbd494c</anchor>
+      <arglist>(G4VSensitiveDetector *sens)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4AssemblyVolume *</type>
+      <name>GetADetector</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a0b03079a1b86f6016c8b59a29751ea3d</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>const G4ThreeVector</type>
+      <name>GetSiOffset</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>ae84149093b3dd41af8c8b1e20acc1102</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>const G4ThreeVector</type>
+      <name>GetDielectricOffset</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a0e9a6efcc9a365e431850f56da299e52</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>PrintGeometryInfo</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>afbc8715d4008e392b96b9c60bd4dcc57</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static const G4ThreeVector</type>
+      <name>strip_arc_center</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a993a64268106c83eef5847c37ff1388a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static const G4double</type>
+      <name>radius_first_strip_edge</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a3b8cef3fcb0f59ad7f91dbe437154a79</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static const G4double</type>
+      <name>strip_width</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a59fbc34b01a50adc51d2ec6c169f999d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>Assemble</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a04c39a104c3104e15e5647eb9d6df5ec</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>DefineMaterials</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>aad713d8dccae90bbb754ff6f60b4b8d7</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>BuildSilicon</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>ab28d482144bcd2a63632749e4d7e9a69</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>BuildDielectricBoard</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a65ef44fd14da620c707da14aa85a2fa9</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>fsiOffset</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a9bac37ed660dbc6f24f8b7e7383c9a2c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>fDielectricOffset</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>ac17327ad45c83a80384eaa8f57ffcf6f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::map&lt; G4String, G4Material * &gt;</type>
+      <name>fmaterials</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>aeb0f109d67e378919e2d4d67a3326fee</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4VSensitiveDetector *</type>
+      <name>fsensitivity</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a9cd8e6efd9884c95dd6889eacb38b159</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4LogicalVolume *</type>
+      <name>fsilicon_log</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>aedc9959bd82e36ff5e86553e798cfe5f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4LogicalVolume *</type>
+      <name>fdielectricBoard_log</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>aadf6142ffd81b4a4be3e28ab945532c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4AssemblyVolume *</type>
+      <name>ssd_assembly</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a11c2487022dc4f2f1dbbda7f971a6b1f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4Trap *</type>
+      <name>fsilicon_solid</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>aa258d00bfddf7ba6220cc9803525df9a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4SubtractionSolid *</type>
+      <name>fdielectricBoard_solid</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>aab32993913b9dc481a0b211bd908d893</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4PVPlacement *</type>
+      <name>fsilicon_phys</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a73a5c2868b87f353570b6731e7aced2f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4PVPlacement *</type>
+      <name>fdielectricBoard_phys</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>aaf57774bf8883995a78155f2486ea02e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>flongWidth</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a863d8f935a90bb67aa80cdae64ff451d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fshortWidth</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>ab86f0329657e6efdd49ddff8832f42bf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fthickness</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>ae2199dca34d53a7e1fdf571af7af71ec</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>flength</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a553c213d1bd61ff6c8ae5379624f6cec</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fobtuseAngle</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a92d164b3b864d251cbb14c18226bed35</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>facuteAngle</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a2f951b979e89563c23eab222551beeb8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fdielectricBoardOffset_X</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a4b5fee8a5bde0eaf0c96c34cdfd8054e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fdielectricBoardOffset_Y</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a8f4ad026d40555d70e75242dc2b168b1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fdielectricBoardOffset_Z</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>ab467d887dabaf53ff2b6d5a09f9294cd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fcutoutLength</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a9c20d80ea57dd5ba6c4a4df99f27d115</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fcutoutLongWidth</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a3d41449633f0f668314c8b451cdb5005</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fcutoutShortWidth</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>aa350b8f18019783ceff21d286bff666a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fcutoutOffset_X</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a0d595f88d0bd2a12c7313623f3743c20</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fcutoutOffset_Y</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a787c6ac78ffadcc4043c52ebf26ac296</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fcutoutOffset_Z</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a77b54229b8f6e1190698831b8fe65deb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fsiliconThickness</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a33c74cd93cff05a07a007bfa3b364256</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fsiliconLongWidth</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a5d5d8d43e5001ba9da194573f1fa27b4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fsiliconShortWidth_0</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>ab1ff5dfa0f20002a6fbebab99f87a1e7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fsiliconShortWidth_1</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>ac379c23f02e43ebc4168369be46f1e44</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fsiliconLength_0</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a3224c3c836bc4682b2a2c4287ce43bc0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fsiliconLength_1</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a593ba5f5a9924c1b6cb89d87d71aba72</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fbottomSiliconOffset</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>aedc60576d552d7a373bf61604dd037c9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fsiliconOffset_X</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>ae5e655a463b8bb3ce1374625653cc955</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fsiliconOffset_Y</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>a4cde86b37e5346a92ff66f04dcd533f4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static const G4double</type>
+      <name>fsiliconOffset_Z</name>
+      <anchorfile>classSSDBuilder.html</anchorfile>
+      <anchor>abd64bb341c0c8efc5f84cce4233ad6d8</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>SSDBuilderException</name>
+    <filename>classSSDBuilderException.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>SSDDebugMsg</name>
+    <filename>classSSDDebugMsg.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>SSDDebugMsg</name>
+      <anchorfile>classSSDDebugMsg.html</anchorfile>
+      <anchor>a127e136ae035d2c8377880ad06ebb184</anchor>
+      <arglist>(G4int id)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>SSDDebugMsg</name>
+      <anchorfile>classSSDDebugMsg.html</anchorfile>
+      <anchor>a3f0d132e0ae7965c713eb752ecafe001</anchor>
+      <arglist>(G4String name)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>SSDHit</name>
+    <filename>classSSDHit.html</filename>
+    <base>G4VHit</base>
+    <member kind="function">
+      <type></type>
+      <name>SSDHit</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a1ee1950f459f34dbf66043ca7837a19a</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>SSDHit</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>aaabb659056570a73e3ea740da82ce405</anchor>
+      <arglist>(G4String idetname, G4Step *aStep, G4int idetector, G4int iSistrip)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>SSDHit</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a96eb70c504839f5ab16f57841df443eb</anchor>
+      <arglist>(const SSDHit &amp;obj)</arglist>
+    </member>
+    <member kind="function">
+      <type>SSDHit &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a3730be088ac5587e4ba8a420cc977131</anchor>
+      <arglist>(SSDHit obj)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~SSDHit</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>ac14bc35d375cbc7d4eaf958cf4d0ea7d</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>SSDHit &amp;</type>
+      <name>operator+=</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a948811b46efe44a2266d0f875b2e0da0</anchor>
+      <arglist>(SSDHit &amp;obj)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetEffPhiTheta</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a189b4e2db22b76188a4cd37d4190483e</anchor>
+      <arglist>(G4double iphi, G4double ithe)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetEffPhiTheta</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>ad2ce52f01091395b2a6df787e3065113</anchor>
+      <arglist>(G4Step *aStep)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDetName</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>ac8d81f72c290893c6582ab53cc0d62b3</anchor>
+      <arglist>(G4String name)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLocalPos</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>acea52818a72ce12e5557aac7045defe7</anchor>
+      <arglist>(const G4ThreeVector &amp;avec)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4int</type>
+      <name>GetDetID</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a06f46fafd8adc282e13f40a896a89af3</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4int</type>
+      <name>GetStripID</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a3bb14b6ed380533b0825f8297ff3d0e8</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetPhi</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a7379c2881f653ebc3af6cf26b44b5a45</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetTheta</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a5be423f93313b10b8c09a838d261579d</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>GetWorldPos</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a76fb84aae7102d2e7e04dbae6893415a</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>GetDeltaPosition</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a16b9ed5f1abbc7ae0446cbf8281e09b8</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>GetFinalLocalPos</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>af635cebca641bcb5c6bf63028e29af86</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>GetMomentum</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>ad383fefdff9a343ab6ee40d8debacd5e</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>GetDeltaMomentum</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>ae760aa75ab03952d5442dceb3ec43e04</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetKineticEnergy</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a5e79a5ff3e48bf19fc35a89530dd0d90</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetDeltaKineticEnergy</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a105f34186e0422923c6b284349a904a7</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetTotalEnergyDeposit</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a350b373cc1faa8cb26d4f665e690d563</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetNonIonizingEnergyDeposit</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a246ec4fc27b3b8c40500e8304bb46060</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4String</type>
+      <name>GetParticleName</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>ac7d89c6170b834bd541762ef525d34e6</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetMass</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>ae1cdc543d1435740a710895b904e6f58</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetCharge</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a79aec759bffe63870157c21306f55b2e</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>SetupDetLocationMap</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a93a50d437c9ff93ded1659d969b3fa94</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4int</type>
+      <name>fdetID</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a6ac24394b6b732d042dad2e44c138baa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4int</type>
+      <name>fsiStrip</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a30ee50153b150a6b94515b8fddbf8b83</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>feffPhi</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a8523118ceeacb4d2f06b154a90fc89c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>feffTheta</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a8ce21a83ee94b7e3a539202b76941306</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>fworldPos</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>ac8de3d5afcc03943d04483fb0f3bda9e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>fdeltaWorldPos</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a2327294b7e0f50e14c47c519a8daf10b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>flocalPos</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>af54c297834710c524b6c69a07bd5a3e9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>fmomentum</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a66865217b793c964f3ebd0f015485ae5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>fdeltaMomentum</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a8b46142745182e44c49dac4dcabcbd35</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>finitKE</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a6438b69bbd3a323552befd3f4924c5a2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fdeltaKE</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a116c58d39d720021fa0e5519fffa3235</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftotDepE</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a2db031ab66f80992503b3463eadb0379</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fnonIonizingDepE</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a1616b4982273967c78e08577ffa09aa5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4String</type>
+      <name>fdetName</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a3cd66948867bc3448fe67f74654ecaca</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4String</type>
+      <name>fparticleName</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>aef32e2f6d23001f2b95de4cd132252a1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fmass</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>af0d8ce3978a3f8f642882433661ca0cb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fcharge</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a05a205659da7e7142c6b0b7689498fd5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::map&lt; G4int, G4String &gt;</type>
+      <name>fdetLocationMap</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a143d4cd4c76355841680f0e5c0f715ad</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend void</type>
+      <name>swap</name>
+      <anchorfile>classSSDHit.html</anchorfile>
+      <anchor>a8cc42c2f304c0ae44c1dd8617f56a6eb</anchor>
+      <arglist>(SSDHit &amp;lhs, SSDHit &amp;rhs)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>SSDSensitivity</name>
+    <filename>classSSDSensitivity.html</filename>
+    <base>G4VSensitiveDetector</base>
+    <member kind="function">
+      <type></type>
+      <name>SSDSensitivity</name>
+      <anchorfile>classSSDSensitivity.html</anchorfile>
+      <anchor>ac2081182eae86918a3845061a1251709</anchor>
+      <arglist>(G4String name, G4int detID)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~SSDSensitivity</name>
+      <anchorfile>classSSDSensitivity.html</anchorfile>
+      <anchor>abb8a122c8f33c35025b25b6da0c8d4ac</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCenter</name>
+      <anchorfile>classSSDSensitivity.html</anchorfile>
+      <anchor>a2f10b9055dd9b40185ce29700a4a4765</anchor>
+      <arglist>(const G4double x, const G4double y, const G4double z)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>Initialize</name>
+      <anchorfile>classSSDSensitivity.html</anchorfile>
+      <anchor>a4f5a4459d9d57675e41395597725df99</anchor>
+      <arglist>(G4HCofThisEvent *HCE)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual G4bool</type>
+      <name>ProcessHits</name>
+      <anchorfile>classSSDSensitivity.html</anchorfile>
+      <anchor>aacf69977f75804fd3868c0088281056a</anchor>
+      <arglist>(G4Step *aStep, G4TouchableHistory *ROHist)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>EndOfEvent</name>
+      <anchorfile>classSSDSensitivity.html</anchorfile>
+      <anchor>a42925a32004c106f52ae9f8fdf5767e7</anchor>
+      <arglist>(G4HCofThisEvent *HCE)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4String</type>
+      <name>GetDetName</name>
+      <anchorfile>classSSDSensitivity.html</anchorfile>
+      <anchor>a1f19f351ba78fd5655e86153408689b9</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>SSDHitsCollection *</type>
+      <name>hitsCollection</name>
+      <anchorfile>classSSDSensitivity.html</anchorfile>
+      <anchor>ae6d9ed700ba050df6843294627991822</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4int</type>
+      <name>fcollectionID</name>
+      <anchorfile>classSSDSensitivity.html</anchorfile>
+      <anchor>a173f30e7ad52ea3f8b980cb247d11fd8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>const G4String</type>
+      <name>fdetName</name>
+      <anchorfile>classSSDSensitivity.html</anchorfile>
+      <anchor>a14934bd2f2efba6f7760c7196c8c5f3c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4int</type>
+      <name>fdetID</name>
+      <anchorfile>classSSDSensitivity.html</anchorfile>
+      <anchor>a48e5c479154a12cca5dfb866ea76434b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>fcenter</name>
+      <anchorfile>classSSDSensitivity.html</anchorfile>
+      <anchor>a90d9f524ec9ac416af25b957b1b9708f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4bool</type>
+      <name>fhit</name>
+      <anchorfile>classSSDSensitivity.html</anchorfile>
+      <anchor>a4a8434b360891e569db75add7af55c8e</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>StepMax</name>
+    <filename>classStepMax.html</filename>
+    <base>G4VDiscreteProcess</base>
+    <member kind="function">
+      <type></type>
+      <name>StepMax</name>
+      <anchorfile>classStepMax.html</anchorfile>
+      <anchor>ad079aaefbc66f778b47f1b40fdec4b0a</anchor>
+      <arglist>(const G4String &amp;processName=&quot;UserStepMax&quot;)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~StepMax</name>
+      <anchorfile>classStepMax.html</anchorfile>
+      <anchor>a05e5672a2762334f6215d7f01cfc1727</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>G4bool</type>
+      <name>IsApplicable</name>
+      <anchorfile>classStepMax.html</anchorfile>
+      <anchor>a027f286401cccff97b995a3e6f7c00bd</anchor>
+      <arglist>(const G4ParticleDefinition &amp;)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMaxStep</name>
+      <anchorfile>classStepMax.html</anchorfile>
+      <anchor>ae8057f1231c54e0a9585a02dc52668a0</anchor>
+      <arglist>(G4double)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetMaxStep</name>
+      <anchorfile>classStepMax.html</anchorfile>
+      <anchor>ab0d39cfefa6b495811fc6214409c7009</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>PostStepGetPhysicalInteractionLength</name>
+      <anchorfile>classStepMax.html</anchorfile>
+      <anchor>adfa98fcff2ee54d5621535bea3269311</anchor>
+      <arglist>(const G4Track &amp;track, G4double previousStepSize, G4ForceCondition *condition)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4VParticleChange *</type>
+      <name>PostStepDoIt</name>
+      <anchorfile>classStepMax.html</anchorfile>
+      <anchor>a5ce32001a6269dea2babff14452e7241</anchor>
+      <arglist>(const G4Track &amp;, const G4Step &amp;)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetMeanFreePath</name>
+      <anchorfile>classStepMax.html</anchorfile>
+      <anchor>af48f4e65fcc5aafa9e92784cfdb23dd8</anchor>
+      <arglist>(const G4Track &amp;, G4double, G4ForceCondition *)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>MaxChargedStep</name>
+      <anchorfile>classStepMax.html</anchorfile>
+      <anchor>a470a0bccc0b4bfeb23164ae46bdb85a4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>StepMaxMessenger *</type>
+      <name>pMess</name>
+      <anchorfile>classStepMax.html</anchorfile>
+      <anchor>ac367a63256d93707579fba0ce2512be0</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>StepMaxMessenger</name>
+    <filename>classStepMaxMessenger.html</filename>
+    <base>G4UImessenger</base>
+    <member kind="function">
+      <type></type>
+      <name>StepMaxMessenger</name>
+      <anchorfile>classStepMaxMessenger.html</anchorfile>
+      <anchor>a23881690b9082bf010ae8c964a4a0054</anchor>
+      <arglist>(StepMax *)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~StepMaxMessenger</name>
+      <anchorfile>classStepMaxMessenger.html</anchorfile>
+      <anchor>a230b3e7730159e551b480efe85e8950d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetNewValue</name>
+      <anchorfile>classStepMaxMessenger.html</anchorfile>
+      <anchor>a58320bceb437b6cfba026ee4ab4a6b23</anchor>
+      <arglist>(G4UIcommand *, G4String)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>StepMax *</type>
+      <name>pStepMax</name>
+      <anchorfile>classStepMaxMessenger.html</anchorfile>
+      <anchor>a836a71d5e0fea3270b3a90655583a792</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4UIcmdWithADoubleAndUnit *</type>
+      <name>StepMaxCmd</name>
+      <anchorfile>classStepMaxMessenger.html</anchorfile>
+      <anchor>a72cfe56ebd262439436fbc5381b1b26b</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Target</name>
+    <filename>classTarget.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>Target</name>
+      <anchorfile>classTarget.html</anchorfile>
+      <anchor>a72b38d80965a58863d0cbc39310834ee</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Target</name>
+      <anchorfile>classTarget.html</anchorfile>
+      <anchor>a87b6d9f273e9dc45912e54f64bda1560</anchor>
+      <arglist>(Target const &amp;that)</arglist>
+    </member>
+    <member kind="function">
+      <type>Target &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classTarget.html</anchorfile>
+      <anchor>adcdbaafef671d8c84d1bac11654ace79</anchor>
+      <arglist>(Target const &amp;that)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~Target</name>
+      <anchorfile>classTarget.html</anchorfile>
+      <anchor>af80a645cfa0b82c5caf6853fdf5616db</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetThickness</name>
+      <anchorfile>classTarget.html</anchorfile>
+      <anchor>a023a5935f87fbb713aedeb6d9e0b0a9b</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetLength</name>
+      <anchorfile>classTarget.html</anchorfile>
+      <anchor>a151c0e32ea15a5a20c4afd7a9e027824</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetWidth</name>
+      <anchorfile>classTarget.html</anchorfile>
+      <anchor>aeae20ce13e7a8fa794c98d507618af2a</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fThickness</name>
+      <anchorfile>classTarget.html</anchorfile>
+      <anchor>a5b50eb5adb4bf24272fbeca82c90a148</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fLength</name>
+      <anchorfile>classTarget.html</anchorfile>
+      <anchor>afc0c8e29eda31638e47dd8e1b1eec95d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fWidth</name>
+      <anchorfile>classTarget.html</anchorfile>
+      <anchor>a1e0c95666b57e838d4d6ecc39ab74039</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>TargetDebugMsg</name>
+    <filename>classTargetDebugMsg.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>TargetDebugMsg</name>
+      <anchorfile>classTargetDebugMsg.html</anchorfile>
+      <anchor>a9f65a16fdc87660b7ad9ea65d85f2db2</anchor>
+      <arglist>(G4int id)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TargetDebugMsg</name>
+      <anchorfile>classTargetDebugMsg.html</anchorfile>
+      <anchor>a1a8af3f82cf31b5b73a7b285932b591e</anchor>
+      <arglist>(G4String name)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>TargetHit</name>
+    <filename>classTargetHit.html</filename>
+    <base>G4VHit</base>
+    <member kind="function">
+      <type></type>
+      <name>TargetHit</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a4a08eae9d27a20c2a86eb73640237363</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TargetHit</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a5960095e34df8fe9145e96bcf6a9fbd0</anchor>
+      <arglist>(G4Step *aStep)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TargetHit</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a928f9c042df421f6514e66a84f0e47da</anchor>
+      <arglist>(const TargetHit &amp;obj)</arglist>
+    </member>
+    <member kind="function">
+      <type>TargetHit &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>abfdc46d04b7ede8d9c57b01610650ef2</anchor>
+      <arglist>(TargetHit obj)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~TargetHit</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a007179e82025737d28922cbd4842f1cd</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>TargetHit &amp;</type>
+      <name>operator+=</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>aad3e9c915a550647916b79534946492d</anchor>
+      <arglist>(TargetHit &amp;obj)</arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetPhi</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a6c6642afbe63987c5a125a90e7073175</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetTheta</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>ab1c161f6c382c457a46779246ce02617</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>GetPosition</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>ac57005405321cee71ba106b6e7087aa7</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>GetDeltaPosition</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a5c03414cffc4f3a0e2028a85bf8215c7</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>GetMomentum</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>afd1c3f0ce01114b768b7cf8d4dd9a67f</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4ThreeVector</type>
+      <name>GetDeltaMomentum</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a144a71dd730bca2619d541408796eede</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetKineticEnergy</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a253178aaa0febba18f170447d6af1771</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetDeltaKineticEnergy</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a0ae6d3e6a87ae93e34f9fa56eae30874</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetTotalEnergyDeposit</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a02d1cc960768d3e433695bfae18971ec</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetNonIonizingEnergyDeposit</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a917918eeb2ab20fa0227ec8b0ea1b899</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4String</type>
+      <name>GetParticleName</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a5975149127caa7108625114e8fa88ff8</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetMass</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a519137b99907d45910099a3ac3ec4493</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetCharge</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a090d2cf89368f257e5d87273842151a7</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>G4double</type>
+      <name>GetDeltaCharge</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a1a2ce4b3564535dffef5c61568b041e2</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>SetupDetLocationMap</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a8d0e33e5ba959a62193c190628353ca7</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fphi</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>af73367a73230a007d9e9cf926decb202</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftheta</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>abc845133462385ab29312558a869910a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>finitWorldPos</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>afe4fdcd4750f31c9c0a039632c47e3be</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>fdeltaWorldPos</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>abbd7992b75e18a557a3869d8c81621a6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>finitMomentum</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>aae9e88f235030852f3e37b3ee32accf4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4ThreeVector</type>
+      <name>fdeltaMomentum</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>ae971320a1c3414a065ee16b5416a2f99</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>finitKE</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>ab2c3090f18f83a2d6ff80293ecc08bea</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fdeltaKE</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a5d462be2ea060a5e378a0f598ef63e16</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>ftotDepE</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a038c94adeaa4f77cfa1d206466257a2e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fnonIonizingDepE</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>aca2c2db86fa0f38dad65c8fd7c7c0057</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4String</type>
+      <name>fparticleName</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a0ddac2a4b5c972c8aeaed74a36002694</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fmass</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>adbbabf2842532ebd506d32f1a1ceaaa2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fcharge</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>ac0ff635faff48093ddebed308527ee52</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4double</type>
+      <name>fdeltaCharge</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>ae02c7ee5cfd05f0ac012e6ecf7444611</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend void</type>
+      <name>swap</name>
+      <anchorfile>classTargetHit.html</anchorfile>
+      <anchor>a001f241990a4845ff8961b1b2c6c149f</anchor>
+      <arglist>(TargetHit &amp;lhs, TargetHit &amp;rhs)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>TargetSensitivity</name>
+    <filename>classTargetSensitivity.html</filename>
+    <base>G4VSensitiveDetector</base>
+    <member kind="function">
+      <type></type>
+      <name>TargetSensitivity</name>
+      <anchorfile>classTargetSensitivity.html</anchorfile>
+      <anchor>a5c9efa68722f763c15dcf1fde6a7f6f9</anchor>
+      <arglist>(G4String name, G4int collectionID)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~TargetSensitivity</name>
+      <anchorfile>classTargetSensitivity.html</anchorfile>
+      <anchor>a3f325fc639e3fd6d5deaeaa87195afde</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>Initialize</name>
+      <anchorfile>classTargetSensitivity.html</anchorfile>
+      <anchor>aeff38ac6202a8149d7c40eae6fc984d7</anchor>
+      <arglist>(G4HCofThisEvent *HCE)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>EndOfEvent</name>
+      <anchorfile>classTargetSensitivity.html</anchorfile>
+      <anchor>aad693b830630986a7167dd5972ce3a0f</anchor>
+      <arglist>(G4HCofThisEvent *HCE)</arglist>
+    </member>
+    <member kind="function" protection="protected" virtualness="virtual">
+      <type>virtual G4bool</type>
+      <name>ProcessHits</name>
+      <anchorfile>classTargetSensitivity.html</anchorfile>
+      <anchor>a127d3c920909d55af4a38037534177fd</anchor>
+      <arglist>(G4Step *aStep, G4TouchableHistory *ROHist)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>TargetHitsCollection *</type>
+      <name>hitsCollection</name>
+      <anchorfile>classTargetSensitivity.html</anchorfile>
+      <anchor>affb13b934bd382892d549a25b9b3d0a1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>G4int</type>
+      <name>fcollectionID</name>
+      <anchorfile>classTargetSensitivity.html</anchorfile>
+      <anchor>a01fc58c601afb2a63eacb35d5b2c9228</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>const G4String</type>
+      <name>fdetName</name>
+      <anchorfile>classTargetSensitivity.html</anchorfile>
+      <anchor>a3847636c542f6a21083ba8c521adc5bf</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>TNamed</name>
+    <filename>classTNamed.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>TreeMaker</name>
+    <filename>classTreeMaker.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>~TreeMaker</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a67e5c6f725b4f17a9c59f876a77307a2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetNumberOfEvents</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a66fef200b50e45b20b725313678e5b07</anchor>
+      <arglist>(const Int_t nEvents)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>CreateNewFileAndTree</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a97c5a5d0469fba8f9ecd4e68d12888c6</anchor>
+      <arglist>(const TString absolutePath, const TString fileName, const Int_t compression=1, const TString treeName=&quot;tree&quot;)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>CloseCurrentFile</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a0833fa97e0a92a4a01f4201a2c3a4736</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>FillBranch</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>aaa86e0d6bb093790282c0e925b9911ec</anchor>
+      <arglist>(const TString varName, const TString varType, Int_t *val, const Int_t nEls=1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>FillBranch</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a4c9a571df63d1651f9ee60ffd026b60d</anchor>
+      <arglist>(const TString varName, const TString varType, Double_t *val, const Int_t nEls=1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>FillBranch</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a3ead56bfb795598cccdf0a64963d3188</anchor>
+      <arglist>(const TString varName, const TString varType, const TString *val)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>FillTree</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a5a88f4154451cf76f1eee820df2c4082</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>AutoSaveTree</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a683b486842e9edc9c41b8475353b31d2</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>DataBucket &amp;</type>
+      <name>GetDataBucket</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a4b8bb6d7d661cc9d174b585eee2b88d6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDisplayInterval</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>adb80b9774a6121ebb7e5bedf7521aa1a</anchor>
+      <arglist>(Int_t interval)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static TreeMaker *</type>
+      <name>GetTreeMakerPointer</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a326b706ff0083a98015ae5b4db780108</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type></type>
+      <name>TreeMaker</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a08f688b44da06554d74123aae9d01a4a</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>CreateNewFile</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a8332623804732dca99bde2718c271108</anchor>
+      <arglist>(const TString path, const TString name, const Int_t compression)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>CreateNewTree</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>ac91e98ea1c2b4e565022f1e2f4baa24a</anchor>
+      <arglist>(const TString name)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>CreateBranch</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a595ad774efaea657f8caafb61fc49569</anchor>
+      <arglist>(const TString varName, const TString varType, const Int_t nEls)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>StartFillTimer</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a18ae10782029315c9a735b40599f934b</anchor>
+      <arglist>(Bool_t reset=1)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>CheckTimerEvery</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a2d68498d2820608da471654b914c53a5</anchor>
+      <arglist>(const Int_t interval)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>DisplayETF</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>aaa3ba7c135972adebb18403bed2b5cc3</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>TString</type>
+      <name>GetDHMS</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>add8843f1f926e78321c389cde278c1b2</anchor>
+      <arglist>(const Double_t timeInSecs)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>GetDateAndTime</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>ae806d63c2e3ce70f4dd75718a83277ff</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>TString</type>
+      <name>fClassName</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>ad6a4f1982810c78965f93b746d9377c5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>TString</type>
+      <name>fMethodName</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>ae810c25ef9f1078b62e8660f00d9db6e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>TDatime *</type>
+      <name>fDateAndTime</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>af796c2f79d181159d00ea8cd9590858c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>TStopwatch *</type>
+      <name>fTimer</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a14f843f7aea337286cf5ee31a0e94aa8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fNumFills</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a41fff3c6a58a78d6a0751801cc22b4f9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fNumEvents</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a9bd4a3f29e78ad76f456e64c38160673</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fDeltaN</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>abf5e43ce8cd7632b4a5f4011c2a1b442</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fPreviousN</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a575c437a3d1344af095dad1ab381dca1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fBefore</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a5eacafde2df2f50e1644f3d893a6100e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fNow</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>aa8443c7200ae414570e4443a77b8db94</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Double_t</type>
+      <name>fElapsedTime</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a1baf48b80bf6792108ffef43259b6e5e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fInterval</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a0ebf04e62663af46c5cecf959c567783</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Double_t</type>
+      <name>fDeltaT</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a3db15df6420cf2c44fd1c6b2d52ed913</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Double_t</type>
+      <name>fPreviousT</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a636dac1af46a298e96e639daddd0baa1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fMonth</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a1d32380fae049f1236da41a165005db9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fDay</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>ad5a0c3f349ec269826da3b6eb02a07a8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fYear</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>ae10310f25827b0276e05202f3329088a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fHr</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a9fb25d220c23edac11572b469920a691</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fMin</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>af192456983ce3a7b8352fe1207f21f3f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>Int_t</type>
+      <name>fSec</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a0db34df1180f86e36af8d99fc75176d5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>TString</type>
+      <name>fFileName</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>ac3245d8a03187f68df5537d732083dfa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>TString</type>
+      <name>fPathAndName</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>acb09ac18c864bb860b3daaa6a21c4cad</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>TFile *</type>
+      <name>fFile</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>ab0de9a6812354bab33a0fe774d7bdbe2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>TString</type>
+      <name>fTreeName</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>aa10490b3377ab7362e459fc2280aa8f6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>TString</type>
+      <name>fTreeTitle</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>acabf630ad9f36620960bd3ee665dfe49</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>TTree *</type>
+      <name>fTree</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>acda3ee6a95f3543ceed8495d2ba4c519</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::map&lt; TString, TString &gt;</type>
+      <name>fBranchName</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a3b1803b731a6091838e0b5399039cb67</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::map&lt; TString, Int_t * &gt;</type>
+      <name>fVarInt</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a452e783987483660b2defed336679665</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::map&lt; TString, Double_t * &gt;</type>
+      <name>fVarDouble</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>af31156c0fb52f22a544d3cf70ad33423</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::map&lt; TString, Char_t * &gt;</type>
+      <name>fVarChar</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>af80e3d1d362c87ab48347fb9931b4d15</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>DataBucket</type>
+      <name>fDataBucket</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a0f2f148a1565bf0007616ab45631c657</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private" static="yes">
+      <type>static TreeMaker *</type>
+      <name>fPtr</name>
+      <anchorfile>classTreeMaker.html</anchorfile>
+      <anchor>a96139cec8ff81bb2dd7d76f7b21ec87b</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>VSource</name>
+    <filename>classVSource.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>VSource</name>
+      <anchorfile>classVSource.html</anchorfile>
+      <anchor>a1a40be8288008d95ea9038291156d9cb</anchor>
+      <arglist>(G4Transform3D const &amp;trans)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>VSource</name>
+      <anchorfile>classVSource.html</anchorfile>
+      <anchor>aebf854feb54f006c200d0f4f40043386</anchor>
+      <arglist>(VSource const &amp;obj)</arglist>
+    </member>
+    <member kind="function">
+      <type>VSource &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classVSource.html</anchorfile>
+      <anchor>a9fa38703baad75a7def058e39642c8e2</anchor>
+      <arglist>(VSource const &amp;obj)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~VSource</name>
+      <anchorfile>classVSource.html</anchorfile>
+      <anchor>a6b72bc48861186df78bb2d5487ecd702</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual G4ThreeVector</type>
+      <name>GetRandomPosition</name>
+      <anchorfile>classVSource.html</anchorfile>
+      <anchor>ac4753908176c0bcd496bc6ca3a49a5ff</anchor>
+      <arglist>(void) const =0</arglist>
+    </member>
+    <member kind="function">
+      <type>G4Transform3D</type>
+      <name>GetTransform</name>
+      <anchorfile>classVSource.html</anchorfile>
+      <anchor>ac0e9594318d89faab272099f1007f1e4</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTransform</name>
+      <anchorfile>classVSource.html</anchorfile>
+      <anchor>af27b7f2e30d2ee8ebdfad36c93ec96f6</anchor>
+      <arglist>(const G4Transform3D &amp;trans)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>G4Transform3D</type>
+      <name>fTransform</name>
+      <anchorfile>classVSource.html</anchorfile>
+      <anchor>a73513852a3699773b109fca7c43cd873</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>G4RotationMatrix</type>
+      <name>fRotation</name>
+      <anchorfile>classVSource.html</anchorfile>
+      <anchor>a216a4451dcd3efed102c36355ac5f933</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>G4ThreeVector</type>
+      <name>fTranslation</name>
+      <anchorfile>classVSource.html</anchorfile>
+      <anchor>a7474f578a9eba3c6a918e5aaaae295fb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>G4ThreeVector</type>
+      <name>fPlaneNorm</name>
+      <anchorfile>classVSource.html</anchorfile>
+      <anchor>a6f755875ca47d012311e00b17734979b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type></type>
+      <name>VSource</name>
+      <anchorfile>classVSource.html</anchorfile>
+      <anchor>a076f009063d1e25ef3c4b941ae058e0e</anchor>
+      <arglist>(void)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>M *</name>
+    <filename>classM_01_5.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>size_t</name>
+    <filename>classsize__t.html</filename>
+  </compound>
+</tagfile>

@@ -1,0 +1,18 @@
+{
+  gROOT->ProcessLine(".L analysis_soft/Scripts/SubtractBgnd.cpp+");
+  TFile * fbg = new TFile("pffrag1_hist_run/normed_hist_run420.root");
+  TFile * fprod = new TFile("pffrag_hist_run/normed_hist_run428to430_shifted_compto447.root");
+
+  TString fout = "pffrag1_hist_run/bgsubbed_normed_run447_451_from_run428to430.root";
+  SubtractBgnd(fbg,fprod,fout.Data());
+  
+  TFile *fsub = new TFile(fout.Data());
+
+  Visualizer vis;
+  fbg->cd();
+  vis.Draw("adc%i_norm_vclk");
+  fprod->cd();
+  vis.Draw("adc%i_shifted_norm_vclk","same color=2 canvas=adc%i_norm_clk_run447");
+  fsub->cd();
+  vis.Draw("normed_bgsubbed_adc%i","same color=4 canvas=adc%i_norm_clk_run447");
+}

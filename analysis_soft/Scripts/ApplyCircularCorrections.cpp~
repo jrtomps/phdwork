@@ -1,0 +1,21 @@
+// ApplyCircularCorrection.cpp
+//
+// Jeromy Tompkins
+// 11/30/2011 
+//
+// 
+
+#include <iostream>
+#include <iomanip>
+#include "TFile.h"
+#include "TGraphErrors.h"
+#include <algorithm>
+
+using namespace std;
+
+void
+ApplyCircularCorrections(TFile *f, const TFile *fcorr)
+{
+  
+
+}

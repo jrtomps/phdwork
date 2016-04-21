@@ -1,0 +1,26 @@
+#ifndef FITMANAGER_H
+#define FITMANAGER_H
+
+class FitManager
+{
+public:
+    FitManager(TString rootfname,
+               TString paramfname,
+               ROOT::Minuit2::FCNBase* fcn);
+
+    ~FitManager();
+
+    Int_t Run();
+
+private:
+    TFitterMinuit *fMinuit;
+    Parameters fPars;
+
+
+private:
+    FitManager(const FitManager& rhs);
+    FitManager& operator=(const FitManager& rhs);
+
+};
+
+#endif // FITMANAGER_H

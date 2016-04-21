@@ -1,0 +1,20 @@
+#ifndef SDANGLES_HH
+#define SDANGLES_HH
+
+class G4VSensitiveDetector;
+
+class SDAngles
+{
+private:
+    G4VSensitiveDetector *fSD;
+    G4PhysicalVolume *fLV;
+    G4
+
+public:
+    SDAngles();
+
+
+
+};
+
+#endif // SDANGLES_HH

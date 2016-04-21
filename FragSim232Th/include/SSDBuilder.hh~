@@ -1,0 +1,190 @@
+// SSDBuilder.hh
+//
+// Jeromy Tompkins
+//
+// 
+
+#include "globals.hh"
+#include "G4String.hh"
+#include "G4ThreeVector.hh"
+#include <map>
+#include <exception>
+
+#ifndef SSDBUILDER_H
+#define SSDBUILDER_H 
+
+class G4LogicalVolume;
+class G4AssemblyVolume;
+class G4VSensitiveDetector;
+class G4Trap;
+class G4SubtractionSolid;
+class G4Material;
+class G4PVPlacement;
+
+class SSDBuilderException : public std::exception
+{};
+
+//! Assembles SSD components into G4AssemblyVolumes
+/*!
+ * A class that builds the Si Strip Detectors (SSD) utilized in
+ * the Photofission Fragment Angular Distribution measurements.
+ * It defines the geometry and also gives the user
+ * the option of passing an G4VSensitiveDetector, i.e., the
+ * detector's sensitivity, to the detector externally. Only 
+ * one of these can be set at a time and no attempt
+ * is made by this class to own the various objects that 
+ * are passed to it. The GetADetector() function 
+ * returns a fully built detector as a G4AssemblyVolume that
+ * is placeable using the G4AssemblyVolume::MakeImprint method.
+ */
+class SSDBuilder 
+{
+public:
+    //! Default constructor
+    /*!
+   * Initializes all of the member variables to NULL values.
+   */
+    SSDBuilder(void);
+    //! Copy constructor
+    /*!
+   * @param obj is the address of the const SSDBuilder object to copy
+   */
+    SSDBuilder(SSDBuilder const& obj);
+    //! Destructor
+    /*!
+   * This is an empty function that doesn't deallocate any
+   * memory allocated by the class since I believe all of the 
+   * logical and physical volumes created on the heap are 
+   * owned by the mother volume, the ultimate being the root 
+   * volume.
+   */
+    ~SSDBuilder(void);
+    //! Equals operator
+    /*!
+   * @param obj is the address of the const SSDBuilder object to make equal to
+   * @return address of this object (ie. return *this;)
+   */
+    SSDBuilder& operator=(SSDBuilder const& obj);
+
+    //! Normal method
+    /*!
+   * Allows the setting of a G4VSensitiveDetector to the silicon
+   * logical volume ONLY. No history of arguments pass is kept 
+   * by this class. Calling this 
+   * method will cause the immediate assignment of the argument
+   * to the silicon logical volume if the Assemble() function has 
+   * already been called. If not, it is stored until a later 
+   * call to Assemble() is made. The SSDSensitivity class is a
+   * concrete class of G4VSensitiveDetector to be used with this
+   * class.
+   *
+   * @param sens is a pointer to a G4VSensitiveDetector object 
+   */
+    void  SetSensitivity(G4VSensitiveDetector *sens);
+
+    //! Normal method
+    /*!
+   * Gets the currently assembled detector. The Assemble() method is 
+   * called if it has not been done previously. Otherwise, the
+   * object pointed to by ssd_assembly is returned. @see Assemble()
+   *
+   * @return a pointer to the built SSD
+   */
+    G4AssemblyVolume* GetADetector(void);
+
+    const G4ThreeVector GetSiOffset(void) const { return fsiOffset;};
+    const G4ThreeVector GetDielectricOffset(void) const { return fDielectricOffset;};
+
+    void     PrintGeometryInfo (void);
+
+protected:
+    //! A normal method
+    /*!
+   * Assembles the logical volumes for the Si ("silicon_log") and the
+   * green dielectric board ("dielectricBoard_log") into a G4AssemblyVolume
+   * whose address is stored by the ssd_assembly pointer of this class.
+   */
+    void              Assemble (void);
+
+    //! A normal method
+    /*!
+   * Defines the materials used in the SSD. These are G4_Si (Si), 
+   * G4_PLEXIGLASS (green dielectric board), and G4_Galactic.
+   */
+    void       DefineMaterials (void);
+    void          BuildSilicon (void);
+    void  BuildDielectricBoard (void);
+
+private:
+    // Maximum dimensions of the detector
+    static const G4double        flongWidth;
+    static const G4double       fshortWidth;
+    static const G4double        fthickness;
+    static const G4double           flength;
+    static const G4double      fobtuseAngle;
+    static const G4double       facuteAngle;
+
+    static const G4double fdielectricBoardOffset_X;
+    static const G4double fdielectricBoardOffset_Y;
+    static const G4double fdielectricBoardOffset_Z;
+
+    // Dimensions for the cutout in the green dielectric
+    static const G4double     fcutoutLength;
+    static const G4double  fcutoutLongWidth;
+    static const G4double fcutoutShortWidth;
+    static const G4double   fcutoutOffset_X;
+    static const G4double   fcutoutOffset_Y;
+    static const G4double   fcutoutOffset_Z;
+
+    // Dimensions for construction and placement
+    // of Si insert
+    static const G4double   fsiliconThickness;
+    static const G4double   fsiliconLongWidth;
+    static const G4double   fsiliconShortWidth_0;
+    static const G4double   fsiliconShortWidth_1;
+    static const G4double   fsiliconLength_0;
+    static const G4double   fsiliconLength_1;
+    static const G4double   fbottomSiliconOffset;
+    static const G4double   fsiliconOffset_X;
+    static const G4double   fsiliconOffset_Y;
+    static const G4double   fsiliconOffset_Z;
+
+public:
+    /*!
+   * The strip_arc_center is computed as
+   *       center_z = L_0/2 - a - L = -9.367 cm
+   * where
+   *       L   = SSDBuilder::flength = 9.27 cm
+   *       L_0 = SSDBuilder::fsiliconLength_0 = 7.36 cm
+   *       a   = 1.487 in = 3.777 cm (measured distance. see Notes/Si_StripDet.pdf)
+   *       d   = 0.250 in = 0.635 cm (measured distance. see Notes/Si_StripDet.pdf)
+   */
+    static const G4ThreeVector     strip_arc_center;
+    static const G4double   radius_first_strip_edge;
+    static const G4double               strip_width;
+
+
+private: 
+    G4ThreeVector     fsiOffset;
+    G4ThreeVector     fDielectricOffset;
+
+    std::map<G4String,G4Material*>     fmaterials; //!< Map of the materials used
+
+    G4VSensitiveDetector     *fsensitivity;
+
+    // Begin declarations of logical volumes
+    G4LogicalVolume          *fsilicon_log;  //!< Logical volume for Silicon backing
+    G4LogicalVolume  *fdielectricBoard_log;  //!< Logical volume for green dielectric board
+    G4AssemblyVolume        *ssd_assembly;  //!< Logical volume for the entire SSD
+
+    // Begin declarations of physical solid
+    G4Trap                      *fsilicon_solid;  //!< Phys. solid for Silicon backing
+    G4SubtractionSolid  *fdielectricBoard_solid;  //!< Phys. solid for green dielectric board
+    //  G4Trap                    *fssd_solid;  //!< Phys. solid for the assembled detector
+
+    // Begin declarations of physical volumes
+    G4PVPlacement          *fsilicon_phys;  //!< Phys. solid for Silicon backing
+    G4PVPlacement  *fdielectricBoard_phys;  //!< Phys. solid for green dielectric board
+
+};
+#endif

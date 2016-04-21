@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mv h_eta.root h_eta_$1.root
+mv lambda_eta.root lambda_$1.root 
+mv eta2_data.root eta2_data_$1.root
+mv test.root $1_analyzed.root

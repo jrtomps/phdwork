@@ -1,0 +1,7 @@
+/vis/open OGL
+/vis/drawVolume
+/vis/viewer/set/viewpointThetaPhi -60 -30
+#/vis/viewer/set/style surface
+/vis/scene/add/trajectories
+/vis/scene/add/hits
+/vis/scene/endOfEventAction accumulate 50

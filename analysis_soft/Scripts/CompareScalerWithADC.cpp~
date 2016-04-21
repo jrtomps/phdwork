@@ -1,0 +1,21 @@
+// CompareScalerWithADC.cpp
+//
+// Jeromy Tompkins
+// 6/21/2011
+//
+//
+
+#include "TString.h"
+#include "TH1.h"
+
+enum { ADC0=0, ADC1=1 };
+
+TString fname("pffrag1_hist_run");
+
+void
+CompareScalerWithADC(const Int_t run, const Int_t adc_id)
+{
+	
+  TFile *f = new TFile();
+
+}

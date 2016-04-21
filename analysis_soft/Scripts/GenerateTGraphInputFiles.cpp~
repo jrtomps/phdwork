@@ -1,0 +1,92 @@
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+bool verbose = true;
+
+void
+GenerateTGraphInputFiles(const string& yield_fname, 
+			 const string& ang_fname,
+			 const string& output_fname)
+{
+  ifstream yield_file(yield_fname.data(), ios::in);
+  if (!yield_file.is_open()) 
+    {
+      cout << yield_fname << " doesn't exist!" << endl;
+      return;
+    }
+
+  // // skip over file header in yield file
+  // unsigned int n_yield_lines_to_skip = 4;
+  // for (unsigned int i=0; i<n_yield_lines_to_skip; i++) 
+  //   yield_file.ignore(1000,'\n');
+
+  ifstream ang_file(ang_fname.data(), ios::in);
+  if (!ang_file.is_open()) 
+    {
+      cout << ang_fname << " doesn't exist!" << endl;
+      return;
+    }
+  // // skip over file header in ang file
+  // unsigned int n_ang_lines_to_skip = 3;
+  // for (unsigned int i=0; i<n_ang_lines_to_skip; i++) 
+  //   ang_file.ignore(1000,'\n');
+
+
+  ofstream out_file(output_fname.data(), ios::out);
+  ios_fmtflags outfmt = ios::left | ios::scientific;
+  out_file << set_iosflags(outfmt);
+  out_file.precision(2);
+  out_file.width(10);
+  
+  stringstream ssyield, ssang;
+  string yield_line, ang_line;
+
+  getline(yield_file, yield_line);
+  getline(ang_file, ang_line);
+  out_file << setw(20) << "Yield data from " 
+	   << yield_fname << endl;
+  out_file << setw(20) << "Angle data from "
+	   << ang_fname << endl;
+  out_file << setw(4*out_file.width()) << setfill('-')
+	   << "-" << endl;
+    
+  if (verbose)
+    out_file.tie(&cout)
+
+  while (yield_file.good() && ang_file.good())
+    {
+      getline(yield_file, yield_line,'\n');
+      getline(ang_file, ang_line,'\n');
+
+      if (yield_file.rdstate()!=0)
+	{
+	  cout << yield_fname 
+	       << " has nonzero state bit. Aborting" << endl;
+	  break;
+	}
+      if (ang_file.rdstate()!=0)
+	{
+	  cout << ang_fname 
+	       << " has nonzero state bit. Aborting" << endl;
+	  break;
+	}
+      if (yield_line.find("Total") != string::npos)
+	break;
+
+      ssyield.str(yield_line);
+      ssyield >> strip_index >> low >> high
+	      >> integral >> plusminus >> uintegral;
+
+      ssang.str(ang_line);
+      ssang >> strip_index >> ang >> uang;
+
+      
+      out_file << ang << integral << uang << uintegral << endl;
+
+    }
+
+};

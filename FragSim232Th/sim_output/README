@@ -1,0 +1,8 @@
+frag_2_gx0_gy3_gz0_r3_r5_x1_y0_z0_0.oldest.root:
+    - This corresponds to simulation with the proper StepMax set 
+      for the target ONLY
+
+frag_2_gx0_gy3_gz0_r3_r5_x1_y0_z0_0.old.root:
+    - This corresponds to simulation with the proper StepMax set 
+      for the target and both sheet metal inserts
+

@@ -1,0 +1,7 @@
+analysis
+include
+src
+/usr/local/root/include
+/usr/local/CLHEP/include
+/usr/local/geant4/geant4.9.5.p01/include
+/home/jrtomps/Code/include

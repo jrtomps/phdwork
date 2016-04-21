@@ -1,0 +1,28 @@
+
+/FragSim02/run/name frag_2_gx4_gy2_gz0_r3_r5_x1_y0_z0
+
+#/source/type surface_layer
+#/source/surface_thickness 8 um
+
+/FragSim02/exp_geometry/global_translation 4 2 0 mm
+/FragSim02/exp_geometry/target_translation 1 0 0 mm
+/FragSim02/exp_geometry/rot1 3 deg
+/FragSim02/exp_geometry/rot2 5 deg
+
+#/FragSim02/generator/set_user_distribution params/less_simple.params
+/FragSim02/generator/set_mass_distribution 1 
+
+/testem/phys/addPhysics emstandard_opt3
+
+/run/initialize 
+
+/testem/stepMax 0.3 um
+
+/gun/particle ion
+/gun/ion 54 130 1 
+/gun/energy 80.8 MeV
+
+/testem/phys/setCuts 0.5 mm
+
+/run/beamOn 1000000
+#/run/beamOn 10000000

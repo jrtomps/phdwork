@@ -1,0 +1,1434 @@
+Script started on Wed 29 Aug 2012 11:14:50 AM EDT
+jrtomps@presario:FragSim232Th$ ls -[K[K[K[Kps -ejh[KH
+  PID  PGID   SID TTY          TIME CMD
+    2     0     0 ?        00:00:00 kthreadd
+    3     0     0 ?        00:00:00   migration/0
+    4     0     0 ?        00:01:31   ksoftirqd/0
+    5     0     0 ?        00:00:00   watchdog/0
+    6     0     0 ?        00:00:00   migration/1
+    7     0     0 ?        00:00:07   ksoftirqd/1
+    8     0     0 ?        00:00:00   watchdog/1
+    9     0     0 ?        00:00:11   events/0
+   10     0     0 ?        00:00:11   events/1
+   11     0     0 ?        00:00:00   cpuset
+   12     0     0 ?        00:00:00   khelper
+   13     0     0 ?        00:00:00   netns
+   14     0     0 ?        00:00:00   async/mgr
+   15     0     0 ?        00:00:00   pm
+   17     0     0 ?        00:00:00   sync_supers
+   18     0     0 ?        00:00:00   bdi-default
+   19     0     0 ?        00:00:00   kintegrityd/0
+   20     0     0 ?        00:00:00   kintegrityd/1
+   21     0     0 ?        00:00:03   kblockd/0
+   22     0     0 ?        00:00:03   kblockd/1
+   23     0     0 ?        00:00:00   kacpid
+   24     0     0 ?        00:00:00   kacpi_notify
+   25     0     0 ?        00:00:00   kacpi_hotplug
+   26     0     0 ?        00:00:00   ata/0
+   27     0     0 ?        00:00:00   ata/1
+   28     0     0 ?        00:00:00   ata_aux
+   29     0     0 ?        00:00:00   ksuspend_usbd
+   30     0     0 ?        00:00:00   khubd
+   31     0     0 ?        00:00:00   kseriod
+   32     0     0 ?        00:00:00   kmmcd
+   35     0     0 ?        00:00:00   khungtaskd
+   36     0     0 ?        00:00:40   kswapd0
+   37     0     0 ?        00:00:00   ksmd
+   38     0     0 ?        00:00:00   aio/0
+   39     0     0 ?        00:00:00   aio/1
+   40     0     0 ?        00:00:00   ecryptfs-kthrea
+   41     0     0 ?        00:00:00   crypto/0
+   42     0     0 ?        00:00:00   crypto/1
+   45     0     0 ?        00:00:00   kstriped
+   46     0     0 ?        00:00:00   kmpathd/0
+   47     0     0 ?        00:00:00   kmpathd/1
+   48     0     0 ?        00:00:00   kmpath_handlerd
+   49     0     0 ?        00:00:00   ksnapd
+   50     0     0 ?        00:01:54   kondemand/0
+   51     0     0 ?        00:02:06   kondemand/1
+   52     0     0 ?        00:00:00   kconservative/0
+   53     0     0 ?        00:00:00   kconservative/1
+  186     0     0 ?        00:00:00   scsi_eh_0
+  262     0     0 ?        00:00:00   scsi_eh_1
+  288     0     0 ?        00:00:00   khpsbpkt
+  291     0     0 ?        00:00:00   scsi_eh_2
+  292     0     0 ?        00:03:57   usb-storage
+  294     0     0 ?        00:00:00   knodemgrd_0
+  295     0     0 ?        00:00:00   scsi_eh_3
+  296     0     0 ?        00:00:00   scsi_eh_4
+  297     0     0 ?        00:01:21   scsi_eh_5
+  298     0     0 ?        00:00:00   scsi_eh_6
+  305     0     0 ?        00:00:00   usbhid_resumer
+  324     0     0 ?        00:00:09   jbd2/sda5-8
+  325     0     0 ?        00:00:00   ext4-dio-unwrit
+  326     0     0 ?        00:00:00   ext4-dio-unwrit
+  564     0     0 ?        00:00:13   flush-8:0
+  825     0     0 ?        00:00:00   hd-audio0
+    1     1     1 ?        00:00:00 init
+  369   367   367 ?        00:00:00   upstart-udev-br
+  381   381   381 ?        00:00:00   udevd
+  627   381   381 ?        00:00:00     udevd
+ 1160   381   381 ?        00:00:00     udevd
+  798   798   798 ?        00:00:00   sshd
+ 1883  1883  1883 ?        00:00:00     sshd
+ 1949  1883  1883 ?        00:00:02       sshd
+ 1950  1950  1950 pts/1    00:00:00         bash
+ 6022  6022  1950 pts/1    00:00:00           root
+ 6023  6022  1950 pts/1    00:00:02             root.exe
+ 4736  4736  4736 ?        00:00:00     sshd
+ 4798  4736  4736 ?        00:00:00       sshd
+ 4799  4799  4799 pts/2    00:00:00         bash
+ 4909  4909  4909 ?        00:00:00     sshd
+ 4971  4909  4909 ?        00:00:00       sshd
+ 4972  4972  4972 pts/4    00:00:00         bash
+ 6358  6358  4972 pts/4    00:00:00           screen
+  826   744   744 ?        00:00:09   rsyslogd
+  867   867   867 ?        00:00:08   dbus-daemon
+  886   886   886 ?        00:00:00   gdm-binary
+ 1058   886   886 ?        00:00:00     gdm-simple-slav
+ 1068  1068  1068 tty7     00:52:21       Xorg
+ 1555   886   886 ?        00:00:00       gdm-session-wor
+ 1579  1579  1579 ?        00:00:00         gnome-session
+ 1613  1613  1613 ?        00:00:01           ssh-agent
+ 1639  1579  1579 ?        00:24:38           compiz
+ 1689  1689  1689 ?        00:00:00             sh
+ 1690  1689  1689 ?        00:00:28               gtk-window-deco
+ 1643  1579  1579 ?        00:00:38           gnome-panel
+ 1644  1579  1579 ?        00:00:35           nautilus
+ 1649  1579  1579 ?        00:00:03           vino-server
+ 1650  1579  1579 ?        00:00:15           empathy
+ 1653  1579  1579 ?        00:00:07           gnome-power-man
+ 1654  1579  1579 ?        00:00:00           polkit-gnome-au
+ 1655  1579  1579 ?        00:00:00           nm-applet
+ 1657  1579  1579 ?        00:00:00           bzr-notify
+ 1732  1579  1579 ?        00:00:01           gdu-notificatio
+ 1770  1579  1579 ?        00:00:00           python
+ 1863  1579  1579 ?        00:00:24           update-notifier
+  894   893   893 ?        00:00:17   avahi-daemon
+  895   895   895 ?        00:00:00     avahi-daemon
+  919   919   919 ?        00:00:00   NetworkManager
+  950   950   919 ?        00:00:00     dhclient
+  921   867   867 ?        00:00:00   modem-manager
+  935   935   935 tty4     00:00:00   getty
+  940   940   940 tty5     00:00:00   getty
+  944   867   867 ?        00:00:02   console-kit-dae
+  948   867   867 ?        00:00:00   wpa_supplicant
+ 1023  1023  1023 tty2     00:00:00   getty
+ 1024  1024  1024 tty3     00:00:00   getty
+ 1026  1026  1026 tty6     00:00:00   getty
+ 1028  1028  1028 ?        00:00:00   acpid
+ 1030  1030  1030 ?        00:00:00   atd
+ 1031  1031  1031 ?        00:00:03   cron
+ 1069  1069  1069 ?        00:00:01   winbindd
+ 1097  1069  1069 ?        00:00:00     winbindd
+ 1096  1096  1096 ?        00:00:00   cupsd
+ 1260  1260  1260 tty1     00:00:00   getty
+ 1309  1285  1285 ?        00:00:00   dbus-launch
+ 1342  1342  1342 ?        00:00:25   ntpd
+ 1359   867   867 ?        00:00:00   upowerd
+ 1370   867   867 ?        00:00:01   polkitd
+ 1408   867   867 ?        00:00:05   rtkit-daemon
+ 1413  1413  1413 ?        00:00:06   hald
+ 1414  1413  1413 ?        00:00:00     hald-runner
+ 1438  1413  1413 ?        00:00:06       hald-addon-inpu
+ 1452  1413  1413 ?        00:00:28       hald-addon-stor
+ 1453  1413  1413 ?        00:00:28       hald-addon-stor
+ 1454  1413  1413 ?        00:00:28       hald-addon-stor
+ 1455  1413  1413 ?        00:00:28       hald-addon-stor
+ 1461  1413  1413 ?        00:01:04       hald-addon-stor
+ 1462  1413  1413 ?        00:00:00       hald-addon-cpuf
+ 1463  1413  1413 ?        00:00:00       hald-addon-acpi
+ 1483  1483  1483 ?        00:00:04   crond
+ 1561   886   886 ?        00:00:00   gnome-keyring-d
+ 1616  1579  1579 ?        00:00:00   dbus-launch
+ 1617  1617  1617 ?        00:00:02   dbus-daemon
+ 1620  1617  1617 ?        00:00:15   gconfd-2
+ 1627  1627  1627 ?        00:01:16   gnome-settings-
+ 1629  1617  1617 ?        00:00:00   gvfsd
+ 1634  1634  1634 ?        00:00:00   gvfs-fuse-daemo
+ 1641  1641  1641 ?        00:06:22   pulseaudio
+ 1664  1641  1641 ?        00:00:00     gconf-helper
+ 1670  1617  1617 ?        00:00:00   mission-control
+ 1674  1617  1617 ?        00:00:02   gvfs-gdu-volume
+ 1676   867   867 ?        00:00:19   udisks-daemon
+ 1678   867   867 ?        00:03:10     udisks-daemon
+ 1680  1617  1617 ?        00:00:00   gvfsd-trash
+ 1682  1617  1617 ?        00:00:11   notify-osd
+ 1684  1684  1684 ?        00:00:00   bonobo-activati
+ 1686  1686  1686 ?        00:00:28   gnome-screensav
+ 1688  1617  1617 ?        00:00:00   telepathy-salut
+ 1692  1617  1617 ?        00:00:00   gvfs-gphoto2-vo
+ 1695  1617  1617 ?        00:00:21   gvfs-afc-volume
+ 1705  1684  1684 ?        00:00:49   wnck-applet
+ 1709  1684  1684 ?        00:00:00   trashapplet
+ 1719  1617  1617 ?        00:00:00   gvfsd-burn
+ 1726  1684  1684 ?        00:13:59   multiload-apple
+ 1727  1684  1684 ?        00:00:39   clock-applet
+ 1729  1684  1684 ?        00:00:00   indicator-apple
+ 1731  1684  1684 ?        00:00:00   notification-ar
+ 1742  1617  1617 ?        00:00:00   gvfsd-metadata
+ 1744  1617  1617 ?        00:00:00   indicator-sound
+ 1748  1617  1617 ?        00:00:00   indicator-appli
+ 1749  1617  1617 ?        00:00:00   indicator-messa
+ 1774  1617  1617 ?        00:15:57   ubuntuone-syncd
+ 2334  2326  1045 ?        00:14:33   Xtightvnc
+ 2338  2326  1045 ?        00:00:00   ck-launch-sessi
+ 2378  2378  2378 ?        00:00:01     ssh-agent
+ 2387  2326  1045 ?        00:00:00     x-session-manag
+ 2410  2326  1045 ?        00:00:12       metacity
+ 2411  2326  1045 ?        00:00:23       gnome-panel
+ 2413  2326  1045 ?        00:00:18       nautilus
+ 2416  2326  1045 ?        00:00:01       vino-server
+ 2417  2326  1045 ?        00:00:09       empathy
+ 2419  2326  1045 ?        00:00:02       gnome-power-man
+ 2421  2326  1045 ?        00:00:00       polkit-gnome-au
+ 2430  2326  1045 ?        00:00:00       bzr-notify
+ 2506  2326  1045 ?        00:00:01       gdu-notificatio
+ 2583  2326  1045 ?        00:00:00       python
+ 2671  2326  1045 ?        00:00:18       update-notifier
+ 2390  2326  1045 ?        00:00:00   dbus-launch
+ 2391  2391  2391 ?        00:00:00   dbus-daemon
+ 2394  2391  2391 ?        00:00:10   gconfd-2
+ 2399  2326  1045 ?        00:00:00   gnome-keyring-d
+ 2403  2403  2403 ?        00:00:24   gnome-settings-
+ 2405  2391  2391 ?        00:00:00   gvfsd
+ 2425  2391  2391 ?        00:00:01   gvfs-gdu-volume
+ 2440  2391  2391 ?        00:00:00   gvfs-gphoto2-vo
+ 2442  2391  2391 ?        00:00:00   mission-control
+ 2444  2391  2391 ?        00:00:16   gvfs-afc-volume
+ 2447  2391  2391 ?        00:00:00   gvfsd-trash
+ 2451  2451  2451 ?        00:00:00   bonobo-activati
+ 2454  2391  2391 ?        00:00:00   notify-osd
+ 2463  2451  2451 ?        00:00:25   wnck-applet
+ 2464  2451  2451 ?        00:00:00   trashapplet
+ 2469  2451  2451 ?        00:10:48   multiload-apple
+ 2470  2451  2451 ?        00:00:43   clock-applet
+ 2473  2451  2451 ?        00:00:00   indicator-apple
+ 2474  2451  2451 ?        00:00:00   notification-ar
+ 2484  2391  2391 ?        00:00:00   gvfsd-metadata
+ 2486  2391  2391 ?        00:00:00   indicator-sound
+ 2488  2391  2391 ?        00:00:00   gvfsd-burn
+ 2492  2391  2391 ?        00:00:00   indicator-appli
+ 2493  2391  2391 ?        00:00:00   indicator-messa
+ 2503  2503  2503 ?        00:00:00   gnome-screensav
+ 2591  2391  2391 ?        00:12:34   ubuntuone-syncd
+24241   867   867 ?        00:00:00   system-service-
+25096  1617  1617 ?        00:00:00   gvfsd-http
+ 6515  2326  1045 ?        00:00:55   qtcreator.bin
+ 6883  2326  1045 ?        00:02:06   gnome-terminal
+ 6884  2326  1045 ?        00:00:00     gnome-pty-helpe
+ 6885  6885  6885 pts/0    00:00:00     bash
+22354  1684  1684 ?        00:00:00   evolution-excha
+22359  1684  1684 ?        00:00:00   evolution-data-
+22856 22856 22856 ?        00:06:34   mount.ntfs
+23927 23927 23927 ?        00:00:02   screen
+23928 23928 23928 pts/3    00:00:00     bash
+ 6434  6434 23928 pts/3    00:00:00       script
+ 6435  6434 23928 pts/3    00:00:00         script
+ 6436  6436  6436 pts/7    00:00:00           bash
+ 6487  6487  6436 pts/7    00:00:00             ps
+ 4092  4092  4092 pts/6    00:00:00     bash
+ 6371  6371  4092 pts/6    00:00:00       script
+ 6372  6371  4092 pts/6    00:00:00         script
+ 6373  6373  6373 pts/5    00:00:00           bash
+ 6424  6424  6373 pts/5    00:00:00             run_today3.sh
+ 6425  6424  6373 pts/5    00:00:00               run.sh
+ 6426  6424  6373 pts/5    00:00:36                 FragSim232Th
+ 1365  1579  1579 ?        00:00:03   update-manager
+ 1366  2326  1045 ?        00:00:03   update-manager
+jrtomps@presario:FragSim232Th$ :q
+:q: command not found
+jrtomps@presario:FragSim232Th$ ./run_[K_todlay[K[K[Kay.4[K[K5[K4.sh 
+Enter run name : 
+*************************************************************
+ Geant4 version Name: geant4-09-05-patch-01    (20-March-2012)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+Instance of SensitiveSSD constructed : UpStreamTop
+Instance of SensitiveSSD constructed : DownStreamLeft
+Instance of SensitiveSSD constructed : UpStreamRight
+Instance of SensitiveSSD constructed : DownStreamBottom
+Instance of FragSimDetConstruction constructed
+Instance of TreeMaker Constructed!
+Constructing FragSimSource2
+Constructing FragSimPrimaryGeneratorAction
+Instance of FragSimRunAction Constructed!
+G4VIS_USE conditional code executed
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Current available graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  G4HepRep (HepRepXML)
+  G4HepRepFile (HepRepFile)
+  RayTracer (RayTracer)
+  VRML1FILE (VRML1FILE)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+  OpenGLStoredQt (OGL)
+  OpenGLImmediateQt (OGLI)
+  OpenGLStoredQt (OGLS)
+  OpenGLImmediateX (OGLIX)
+  OpenGLStoredX (OGLSX)
+  OpenGLImmediateQt (OGLIQt)
+  OpenGLStoredQt (OGLSQt)
+  RayTracerX (RayTracerX)
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByCharge
+  drawByParticleID
+  drawByOriginVolume
+  drawByAttribute
+
+Registered filter factories:
+  chargeFilter
+  particleFilter
+  originVolumeFilter
+  attributeFilter
+
+Some /vis commands (optionally) take a string to specify colour.
+Available colours:
+  black, blue, cyan, gray, green, grey, magenta, red, white, yellow
+
+MassDistr Command = 
+Using fragment mass energy distribution defined in data/232th/7.0
+x[0]=78, y[0]=0.0008
+x[1]=84, y[1]=0.0612
+x[2]=85, y[2]=0.0834
+x[3]=87, y[3]=0.0898
+x[4]=88, y[4]=0.0788
+x[5]=89, y[5]=0.0649
+x[6]=91, y[6]=0.0727
+x[7]=92, y[7]=0.062
+x[8]=93, y[8]=0.0503
+x[9]=94, y[9]=0.0508
+x[10]=95, y[10]=0.0425
+x[11]=97, y[11]=0.024
+x[12]=99, y[12]=0.0099
+x[13]=101, y[13]=0.0019
+x[14]=103, y[14]=0
+x[15]=115, y[15]=0
+x[16]=128, y[16]=0.0002
+x[17]=129, y[17]=0.0026
+x[18]=131, y[18]=0.0081
+x[19]=132, y[19]=0.0185
+x[20]=133, y[20]=0.0318
+x[21]=134, y[21]=0.0412
+x[22]=135, y[22]=0.0449
+x[23]=137, y[23]=0.0498
+x[24]=138, y[24]=0.0502
+x[25]=139, y[25]=0.0717
+x[26]=140, y[26]=0.0847
+x[27]=141, y[27]=0.088
+x[28]=142, y[28]=0.0781
+x[29]=143, y[29]=0.0904
+x[30]=146, y[30]=0.0562
+x[31]=147, y[31]=0.0308
+x[32]=148, y[32]=0.0157
+Found 33 masses
+Found 73 energies 
+PhysicsList::AddPhysicsList: <emstandard_opt3>
+
+   [ (    0.454519     -0.707107      0.541675)
+     (    0.766044   3.93581e-17     -0.642788)
+     (    0.454519      0.707107      0.541675) ]
+phi=147.268
+theta=57.2022
+psi=139.879
+p0n: (25.05,14,-0.5) --> (1.21538,19.5108,21.0144)
+p1n: (25.05,-14,-0.5) --> (21.0144,19.5108,1.21538)
+p2n: (-25.05,-14,-0.5) --> (-1.75706,-18.868,-21.556)
+p3n: (-25.05,14,-0.5) --> (-21.556,-18.868,-1.75706)
+
+
+p0p: (25.05,14,0.5) --> (1.75706,18.868,21.556)
+p1p: (25.05,-14,0.5) --> (21.556,18.868,1.75706)
+p2p: (-25.05,-14,0.5) --> (-1.21538,-19.5108,-21.0144)
+p3p: (-25.05,14,0.5) --> (-21.0144,-19.5108,-1.21538)
+
+Center of the bottom of the target
+(-11.1149,-19.5108,-11.1149)
+The target is actually offset from the base
+of the mount slit. The base of the slit then should be
+displaced by the following vector
+(-6.9,-9.75807,-6.9) (mm)
+
+The displacement of the target from the is defined in the FragSimDetConstruction class.
+The mount is positioned relative to the position of the target. An absolute
+position is acquired by adding the recently computed offset to the bottom center
+of the target.
+
+Center of mount slit = (-18.0149,-29.2689,-18.0149) (mm)
+
+The target overhangs the edge of the mount as well. To account for this overhang
+the mount and sh metal plates are shifted in the +y' direction of the rotated coord
+system.
+
+Overhang   = 0.25 cm
+Shift in yp= 0.12 cm
+
+Also we know that the target is offset by the thickness of the sheet metal
+in the new z direction. Therefore, there must be a shift downwards
+in the mount along the new z-direction by 0.127 cm.
+
+
+The target offset was (-3.4,-0.1,-16.7) (mm)
+
+
+Slit center should then be at the following location: (-21.6284,-30.2669,-33.2313) (mm)
+
+
+The sheet metal inserts used to clamp the target in 
+place are positioned with the same rotation matrix as 
+the target but with the following translations
+
+Rotation (rot1): 3 degrees
+Rotation (rot2): 5 degrees
+Bot. sh. shift): 0 (cm)
+--------------------------------------------
+
+mount_transl   : (-21.6284,-30.2669,-33.2313) (mm)
+
+ins_bot_transl : (-11.9231,-17.5791,-26.0716) (mm)
+
+ins_top_transl : (-14.5369,-17.1044,-27.8369) (mm)
+PhysicsList::SetCuts:CutLength : 1 mm 
+
+phot:   for  gamma    SubType= 12
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       PhotoElectric :  Emin=        0 eV    Emax=       10 TeV  FluoActive
+
+compt:   for  gamma    SubType= 13
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        KleinNishina :  Emin=        0 eV    Emax=       10 TeV  FluoActive
+
+conv:   for  gamma    SubType= 14
+      Lambda tables from 1.022 MeV to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        BetheHeitler :  Emin=        0 eV    Emax=       10 TeV
+
+Rayl:   for  gamma    SubType= 11
+      Lambda tables from 10 eV  to 10 TeV in 200 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh :  Emin=        0 eV    Emax=      100 GeV
+
+msc:   for e-    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.04, stepLimitType: 2, latDisplacement: 1, skin= 1, geomFactor= 2.5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc95 :  Emin=        0 eV    Emax=       10 TeV
+
+eIoni:   for  e-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   AngularGen2BS
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   AngularGen2BS
+
+eIoni:   for  e+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   AngularGenUrban
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   AngularGenUrban
+
+annihil:   for  e+    SubType= 5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for proton    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  proton    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+hBrems:   for  proton    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  proton    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for GenericIon    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+ionIoni:   for  GenericIon    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.001, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      Stopping Power data for 17 ion/material pairs 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+         ParamICRU73 :  Emin=        0 eV    Emax=       10 TeV
+
+nuclearStopping:   for  GenericIon    SubType= 8
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping :  Emin=        0 eV    Emax=       10 TeV
+
+nuclearStopping:   for  alpha    SubType= 8
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  anti_proton    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+msc:   for kaon+    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  kaon+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  kaon-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+muMsc:   for mu+    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV
+
+muIoni:   for  mu+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu+    SubType= 1
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+muIoni:   for  mu-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu-    SubType= 1
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  pi+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for pi-    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  pi-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+========= Table of registered couples ==============================
+
+Index : 0     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Galactic
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  990 eV     e-  990 eV     e+  990 eV  proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 1     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_PLEXIGLASS
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  2.11555 keV    e-  244.79 keV    e+  241.522 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 2     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  5.00023 keV    e-  337.972 keV    e+  324.616 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 3     used in the geometry : Yes     recalculation needed : No 
+ Material : natural Uranium
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  106.748 keV    e-  1.14827 MeV    e+  1.05931 MeV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 4     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Al
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  5.00023 keV    e-  363.901 keV    e+  351.877 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 5     used in the geometry : Yes     recalculation needed : No 
+ Material : Stainless Steel
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  14.4581 keV    e-  741.896 keV    e+  707.805 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+====================================================================
+
+   TreeMaker::CreateNewFile - New File Created: ./sim_output/frag_2_gxn2_gy2_gz0_r3_r5_x1_y0_z0.root
+   TreeMaker::CreateNewTree - New Tree Created: Sim_Tree
+Found transform for :av_1_impr_7_target_log_pv_0
+Following propertiesEuler angles => (41.5296, 59.1639, 30.0609)
+Translate    => (-0.519097,0.19,-2.00884) cm
+Rotated Thickness = 0.19509 cm
+Scale factor = 1.9509
+Source type set to surface_layer
+Plane norm : (0.569282,-0.642788,0.512584)
+Plane norm theta (deg) : 59.1639
+Plane norm phi   (deg) : -48.4704
+   TreeMaker::CreateBranch - Created Branch: DetID/I
+   TreeMaker::CreateBranch - Created Branch: SiStripID/I
+   TreeMaker::CreateBranch - Created Branch: EffPhi/D
+   TreeMaker::CreateBranch - Created Branch: EffTheta/D
+   TreeMaker::CreateBranch - Created Branch: SSDWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: SSDLocalPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: SSDKE/D
+   TreeMaker::CreateBranch - Created Branch: SSDTotDepE/D
+   TreeMaker::CreateBranch - Created Branch: SSDParticleName/C
+   TreeMaker::CreateBranch - Created Branch: TarPhi/D
+   TreeMaker::CreateBranch - Created Branch: TarTheta/D
+   TreeMaker::CreateBranch - Created Branch: TarWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarMomentum[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaMomentum[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarKE/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaKE/D
+   TreeMaker::CreateBranch - Created Branch: TarTotDepE/D
+   TreeMaker::CreateBranch - Created Branch: TarNonIonizingDepE/D
+   TreeMaker::CreateBranch - Created Branch: TarParticleName/C
+   TreeMaker::CreateBranch - Created Branch: TarCharge/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaCharge/D
+   TreeMaker::CreateBranch - Created Branch: TarTrackLength/D
+   TreeMaker::CreateBranch - Created Branch: TarNSteps/I
+   TreeMaker::CreateBranch - Created Branch: TarAveTrackLength/D
+   TreeMaker::CreateBranch - Created Branch: TarLocalPos[3]/D
+   TreeMaker::StartFillTimer - Timer reset and started.
+   TreeMaker::CreateBranch - Created Branch: month/I
+   TreeMaker::CreateBranch - Created Branch: day/I
+   TreeMaker::CreateBranch - Created Branch: year/I
+   TreeMaker::CreateBranch - Created Branch: elapsedRealTime/D
+
+	Filling Began On 8/29/2012
+	Number of Events to Fill: 1000000
+
+        Fill Number   -      Fill Rate      -   Clock   -   Elapsed   -  To Finish 
+                                               HH:MM:SS - DD:HH:MM:SS - DD:HH:MM:SS
+             1 fills  -     9446 fills/sec  -  11:15:21 - 00:00:00:00 - 00:00:01:46
+ 0%          8253 fills  -     1650 fills/sec  -  11:15:26 - 00:00:00:05 - 00:00:10:01
+         19526 fills  -     2254 fills/sec  -  11:15:31 - 00:00:00:10 - 00:00:07:15
+         31046 fills  -     2303 fills/sec  -  11:15:36 - 00:00:00:15 - 00:00:07:01
+         42747 fills  -     2340 fills/sec  -  11:15:41 - 00:00:00:20 - 00:00:06:49
+ 5%         54599 fills  -     2370 fills/sec  -  11:15:46 - 00:00:00:25 - 00:00:06:39
+         66496 fills  -     2379 fills/sec  -  11:15:51 - 00:00:00:30 - 00:00:06:32
+         78398 fills  -     2380 fills/sec  -  11:15:56 - 00:00:00:35 - 00:00:06:27
+         90256 fills  -     2371 fills/sec  -  11:16:01 - 00:00:00:40 - 00:00:06:24
+10%        102086 fills  -     2366 fills/sec  -  11:16:06 - 00:00:00:45 - 00:00:06:19
+        114025 fills  -     2387 fills/sec  -  11:16:11 - 00:00:00:50 - 00:00:06:11
+        125938 fills  -     2382 fills/sec  -  11:16:16 - 00:00:00:55 - 00:00:06:07
+        137815 fills  -     2375 fills/sec  -  11:16:21 - 00:00:01:00 - 00:00:06:03
+15%        149711 fills  -     2379 fills/sec  -  11:16:26 - 00:00:01:05 - 00:00:05:57
+        161579 fills  -     2373 fills/sec  -  11:16:31 - 00:00:01:10 - 00:00:05:53
+        173402 fills  -     2364 fills/sec  -  11:16:36 - 00:00:01:15 - 00:00:05:50
+        185830 fills  -     2485 fills/sec  -  11:16:41 - 00:00:01:20 - 00:00:05:28
+        198162 fills  -     2466 fills/sec  -  11:16:46 - 00:00:01:25 - 00:00:05:25
+20%        210610 fills  -     2489 fills/sec  -  11:16:51 - 00:00:01:30 - 00:00:05:17
+        223135 fills  -     2504 fills/sec  -  11:16:56 - 00:00:01:35 - 00:00:05:10
+        235649 fills  -     2502 fills/sec  -  11:17:01 - 00:00:01:40 - 00:00:05:05
+        248158 fills  -     2501 fills/sec  -  11:17:06 - 00:00:01:45 - 00:00:05:01
+25%        260695 fills  -     2507 fills/sec  -  11:17:11 - 00:00:01:50 - 00:00:04:55
+        273113 fills  -     2483 fills/sec  -  11:17:16 - 00:00:01:55 - 00:00:04:53
+        285675 fills  -     2512 fills/sec  -  11:17:21 - 00:00:02:00 - 00:00:04:44
+        298023 fills  -     2469 fills/sec  -  11:17:26 - 00:00:02:05 - 00:00:04:44
+30%        310588 fills  -     2512 fills/sec  -  11:17:31 - 00:00:02:10 - 00:00:04:34
+        323112 fills  -     2504 fills/sec  -  11:17:36 - 00:00:02:15 - 00:00:04:30
+        338705 fills  -     1559 fills/sec  -  11:17:46 - 00:00:02:25 - 00:00:07:04
+35%        351074 fills  -     2473 fills/sec  -  11:17:51 - 00:00:02:30 - 00:00:04:22
+        363452 fills  -     2475 fills/sec  -  11:17:56 - 00:00:02:35 - 00:00:04:17
+        375608 fills  -     2431 fills/sec  -  11:18:01 - 00:00:02:40 - 00:00:04:17
+        388239 fills  -     2526 fills/sec  -  11:18:06 - 00:00:02:45 - 00:00:04:02
+40%        400765 fills  -     2505 fills/sec  -  11:18:11 - 00:00:02:50 - 00:00:03:59
+        413284 fills  -     2503 fills/sec  -  11:18:16 - 00:00:02:55 - 00:00:03:54
+        425834 fills  -     2510 fills/sec  -  11:18:21 - 00:00:03:00 - 00:00:03:49
+        438277 fills  -     2488 fills/sec  -  11:18:26 - 00:00:03:05 - 00:00:03:46
+45%        450797 fills  -     2503 fills/sec  -  11:18:31 - 00:00:03:10 - 00:00:03:39
+        463340 fills  -     2508 fills/sec  -  11:18:36 - 00:00:03:15 - 00:00:03:34
+        475689 fills  -     2469 fills/sec  -  11:18:41 - 00:00:03:20 - 00:00:03:32
+        488213 fills  -     2504 fills/sec  -  11:18:46 - 00:00:03:25 - 00:00:03:24
+50%        503801 fills  -     1558 fills/sec  -  11:18:56 - 00:00:03:35 - 00:00:05:18
+        516224 fills  -     2484 fills/sec  -  11:19:01 - 00:00:03:40 - 00:00:03:15
+        528602 fills  -     2475 fills/sec  -  11:19:06 - 00:00:03:45 - 00:00:03:10
+        541032 fills  -     2485 fills/sec  -  11:19:11 - 00:00:03:50 - 00:00:03:05
+55%        553400 fills  -     2473 fills/sec  -  11:19:16 - 00:00:03:55 - 00:00:03:01
+        565927 fills  -     2505 fills/sec  -  11:19:21 - 00:00:04:00 - 00:00:02:53
+        578473 fills  -     2509 fills/sec  -  11:19:26 - 00:00:04:05 - 00:00:02:48
+        590987 fills  -     2502 fills/sec  -  11:19:31 - 00:00:04:10 - 00:00:02:43
+60%        603479 fills  -     2498 fills/sec  -  11:19:36 - 00:00:04:15 - 00:00:02:39
+        616046 fills  -     2513 fills/sec  -  11:19:41 - 00:00:04:20 - 00:00:02:33
+        628634 fills  -     2517 fills/sec  -  11:19:46 - 00:00:04:25 - 00:00:02:28
+        641024 fills  -     2477 fills/sec  -  11:19:51 - 00:00:04:30 - 00:00:02:25
+65%        653611 fills  -     2517 fills/sec  -  11:19:56 - 00:00:04:35 - 00:00:02:18
+        666157 fills  -     2509 fills/sec  -  11:20:01 - 00:00:04:40 - 00:00:02:13
+        669084 fills  -      585 fills/sec  -  11:20:06 - 00:00:04:45 - 00:00:09:25
+        681481 fills  -     2479 fills/sec  -  11:20:11 - 00:00:04:50 - 00:00:02:08
+        693914 fills  -     2486 fills/sec  -  11:20:16 - 00:00:04:55 - 00:00:02:03
+70%        706293 fills  -     2475 fills/sec  -  11:20:21 - 00:00:05:00 - 00:00:01:59
+        718595 fills  -     2460 fills/sec  -  11:20:26 - 00:00:05:05 - 00:00:01:54
+        731125 fills  -     2505 fills/sec  -  11:20:31 - 00:00:05:10 - 00:00:01:47
+        743653 fills  -     2505 fills/sec  -  11:20:36 - 00:00:05:15 - 00:00:01:42
+75%        756206 fills  -     2510 fills/sec  -  11:20:41 - 00:00:05:20 - 00:00:01:37
+        768670 fills  -     2492 fills/sec  -  11:20:46 - 00:00:05:25 - 00:00:01:33
+        781216 fills  -     2509 fills/sec  -  11:20:51 - 00:00:05:30 - 00:00:01:27
+        793764 fills  -     2509 fills/sec  -  11:20:56 - 00:00:05:35 - 00:00:01:22
+80%        806077 fills  -     2462 fills/sec  -  11:21:01 - 00:00:05:40 - 00:00:01:19
+        818587 fills  -     2502 fills/sec  -  11:21:06 - 00:00:05:45 - 00:00:01:13
+        831099 fills  -     2502 fills/sec  -  11:21:11 - 00:00:05:50 - 00:00:01:07
+        834139 fills  -      608 fills/sec  -  11:21:16 - 00:00:05:55 - 00:00:04:33
+        846540 fills  -     2480 fills/sec  -  11:21:21 - 00:00:06:00 - 00:00:01:02
+85%        858975 fills  -     2487 fills/sec  -  11:21:26 - 00:00:06:05 - 00:00:00:57
+        871391 fills  -     2482 fills/sec  -  11:21:31 - 00:00:06:10 - 00:00:00:52
+        883442 fills  -     2410 fills/sec  -  11:21:36 - 00:00:06:15 - 00:00:00:48
+        896307 fills  -     2573 fills/sec  -  11:21:41 - 00:00:06:20 - 00:00:00:40
+90%        909268 fills  -     2592 fills/sec  -  11:21:46 - 00:00:06:25 - 00:00:00:35
+        921825 fills  -     2511 fills/sec  -  11:21:51 - 00:00:06:30 - 00:00:00:31
+        934274 fills  -     2489 fills/sec  -  11:21:56 - 00:00:06:35 - 00:00:00:26
+95%        946763 fills  -     2497 fills/sec  -  11:22:01 - 00:00:06:40 - 00:00:00:21
+        959260 fills  -     2499 fills/sec  -  11:22:06 - 00:00:06:45 - 00:00:00:16
+        971586 fills  -     2465 fills/sec  -  11:22:11 - 00:00:06:50 - 00:00:00:12
+        984069 fills  -     2496 fills/sec  -  11:22:16 - 00:00:06:55 - 00:00:00:06
+        995472 fills  -     2280 fills/sec  -  11:22:21 - 00:00:07:00 - 00:00:00:02
+/
+/UpStreamTop   *** Active 
+/DownStreamLeft   *** Active 
+/UpStreamRight   *** Active 
+/DownStreamBottom   *** Active 
+/target   *** Active 
+   TreeMaker::AutoSaveTree - Flushed Buffer For Tree: Sim_Tree
+   TreeMaker::CloseCurrentFile - Closed File: ./sim_output/frag_2_gxn2_gy2_gz0_r3_r5_x1_y0_z0.root
+                                 Compression Level: 1
+                                         File Size: 171.25 MB
+Instance of TreeMaker Destructed!
+Instance of FragSimDetConstruction destructed
+Instance of SensitiveSSD destructed : DownStreamBottom
+Instance of SensitiveSSD destructed : UpStreamRight
+Instance of SensitiveSSD destructed : DownStreamLeft
+Instance of SensitiveSSD destructed : UpStreamTop
+Instance of FragSimRunAction Destructed!
+
+-----------------------------------------------------
+FragSimPrimaryGeneratorAction End of Life Information
+Total vertices = 1522936
+Used vertices  = 1000000
+Frac beam-target intersection = 6.566e-01
+Instance of FragSimEventAction Destructed!
+Enter run name : Stored Random Engine Data Found in : seeds/frag_2_gxn2_gy2_gz0_r3_r5_x1_y0_z0_1.seed
+Do you want to use it? (Y/n)? 
+*************************************************************
+ Geant4 version Name: geant4-09-05-patch-01    (20-March-2012)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+Instance of SensitiveSSD constructed : UpStreamTop
+Instance of SensitiveSSD constructed : DownStreamLeft
+Instance of SensitiveSSD constructed : UpStreamRight
+Instance of SensitiveSSD constructed : DownStreamBottom
+Instance of FragSimDetConstruction constructed
+Instance of TreeMaker Constructed!
+Constructing FragSimSource2
+Constructing FragSimPrimaryGeneratorAction
+Instance of FragSimRunAction Constructed!
+G4VIS_USE conditional code executed
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Current available graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  G4HepRep (HepRepXML)
+  G4HepRepFile (HepRepFile)
+  RayTracer (RayTracer)
+  VRML1FILE (VRML1FILE)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+  OpenGLStoredQt (OGL)
+  OpenGLImmediateQt (OGLI)
+  OpenGLStoredQt (OGLS)
+  OpenGLImmediateX (OGLIX)
+  OpenGLStoredX (OGLSX)
+  OpenGLImmediateQt (OGLIQt)
+  OpenGLStoredQt (OGLSQt)
+  RayTracerX (RayTracerX)
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByCharge
+  drawByParticleID
+  drawByOriginVolume
+  drawByAttribute
+
+Registered filter factories:
+  chargeFilter
+  particleFilter
+  originVolumeFilter
+  attributeFilter
+
+Some /vis commands (optionally) take a string to specify colour.
+Available colours:
+  black, blue, cyan, gray, green, grey, magenta, red, white, yellow
+
+MassDistr Command = 
+Using fragment mass energy distribution defined in data/232th/7.0
+x[0]=78, y[0]=0.0008
+x[1]=84, y[1]=0.0612
+x[2]=85, y[2]=0.0834
+x[3]=87, y[3]=0.0898
+x[4]=88, y[4]=0.0788
+x[5]=89, y[5]=0.0649
+x[6]=91, y[6]=0.0727
+x[7]=92, y[7]=0.062
+x[8]=93, y[8]=0.0503
+x[9]=94, y[9]=0.0508
+x[10]=95, y[10]=0.0425
+x[11]=97, y[11]=0.024
+x[12]=99, y[12]=0.0099
+x[13]=101, y[13]=0.0019
+x[14]=103, y[14]=0
+x[15]=115, y[15]=0
+x[16]=128, y[16]=0.0002
+x[17]=129, y[17]=0.0026
+x[18]=131, y[18]=0.0081
+x[19]=132, y[19]=0.0185
+x[20]=133, y[20]=0.0318
+x[21]=134, y[21]=0.0412
+x[22]=135, y[22]=0.0449
+x[23]=137, y[23]=0.0498
+x[24]=138, y[24]=0.0502
+x[25]=139, y[25]=0.0717
+x[26]=140, y[26]=0.0847
+x[27]=141, y[27]=0.088
+x[28]=142, y[28]=0.0781
+x[29]=143, y[29]=0.0904
+x[30]=146, y[30]=0.0562
+x[31]=147, y[31]=0.0308
+x[32]=148, y[32]=0.0157
+Found 33 masses
+Found 73 energies 
+PhysicsList::AddPhysicsList: <emstandard_opt3>
+
+   [ (    0.454519     -0.707107      0.541675)
+     (    0.766044   3.93581e-17     -0.642788)
+     (    0.454519      0.707107      0.541675) ]
+phi=147.268
+theta=57.2022
+psi=139.879
+p0n: (25.05,14,-0.5) --> (1.21538,19.5108,21.0144)
+p1n: (25.05,-14,-0.5) --> (21.0144,19.5108,1.21538)
+p2n: (-25.05,-14,-0.5) --> (-1.75706,-18.868,-21.556)
+p3n: (-25.05,14,-0.5) --> (-21.556,-18.868,-1.75706)
+
+
+p0p: (25.05,14,0.5) --> (1.75706,18.868,21.556)
+p1p: (25.05,-14,0.5) --> (21.556,18.868,1.75706)
+p2p: (-25.05,-14,0.5) --> (-1.21538,-19.5108,-21.0144)
+p3p: (-25.05,14,0.5) --> (-21.0144,-19.5108,-1.21538)
+
+Center of the bottom of the target
+(-11.1149,-19.5108,-11.1149)
+The target is actually offset from the base
+of the mount slit. The base of the slit then should be
+displaced by the following vector
+(-6.9,-9.75807,-6.9) (mm)
+
+The displacement of the target from the is defined in the FragSimDetConstruction class.
+The mount is positioned relative to the position of the target. An absolute
+position is acquired by adding the recently computed offset to the bottom center
+of the target.
+
+Center of mount slit = (-18.0149,-29.2689,-18.0149) (mm)
+
+The target overhangs the edge of the mount as well. To account for this overhang
+the mount and sh metal plates are shifted in the +y' direction of the rotated coord
+system.
+
+Overhang   = 0.25 cm
+Shift in yp= 0.12 cm
+
+Also we know that the target is offset by the thickness of the sheet metal
+in the new z direction. Therefore, there must be a shift downwards
+in the mount along the new z-direction by 0.127 cm.
+
+
+The target offset was (-3.4,-0.1,-16.7) (mm)
+
+
+Slit center should then be at the following location: (-21.6284,-30.2669,-33.2313) (mm)
+
+
+The sheet metal inserts used to clamp the target in 
+place are positioned with the same rotation matrix as 
+the target but with the following translations
+
+Rotation (rot1): 3 degrees
+Rotation (rot2): 5 degrees
+Bot. sh. shift): 0 (cm)
+--------------------------------------------
+
+mount_transl   : (-21.6284,-30.2669,-33.2313) (mm)
+
+ins_bot_transl : (-11.9231,-17.5791,-26.0716) (mm)
+
+ins_top_transl : (-14.5369,-17.1044,-27.8369) (mm)
+PhysicsList::SetCuts:CutLength : 1 mm 
+
+phot:   for  gamma    SubType= 12
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       PhotoElectric :  Emin=        0 eV    Emax=       10 TeV  FluoActive
+
+compt:   for  gamma    SubType= 13
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        KleinNishina :  Emin=        0 eV    Emax=       10 TeV  FluoActive
+
+conv:   for  gamma    SubType= 14
+      Lambda tables from 1.022 MeV to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        BetheHeitler :  Emin=        0 eV    Emax=       10 TeV
+
+Rayl:   for  gamma    SubType= 11
+      Lambda tables from 10 eV  to 10 TeV in 200 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh :  Emin=        0 eV    Emax=      100 GeV
+
+msc:   for e-    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.04, stepLimitType: 2, latDisplacement: 1, skin= 1, geomFactor= 2.5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc95 :  Emin=        0 eV    Emax=       10 TeV
+
+eIoni:   for  e-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   AngularGen2BS
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   AngularGen2BS
+
+eIoni:   for  e+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   AngularGenUrban
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   AngularGenUrban
+
+annihil:   for  e+    SubType= 5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for proton    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  proton    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+hBrems:   for  proton    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  proton    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for GenericIon    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+ionIoni:   for  GenericIon    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.001, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      Stopping Power data for 17 ion/material pairs 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+         ParamICRU73 :  Emin=        0 eV    Emax=       10 TeV
+
+nuclearStopping:   for  GenericIon    SubType= 8
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping :  Emin=        0 eV    Emax=       10 TeV
+
+nuclearStopping:   for  alpha    SubType= 8
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  anti_proton    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+msc:   for kaon+    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  kaon+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  kaon-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+muMsc:   for mu+    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV
+
+muIoni:   for  mu+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu+    SubType= 1
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+muIoni:   for  mu-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu-    SubType= 1
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  pi+    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi+    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi+    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for pi-    SubType= 10
+      Lambda tables from 10 eV  to 10 TeV in 240 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :  Emin=        0 eV    Emax=       10 TeV
+
+hIoni:   for  pi-    SubType= 2
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      finalRange(mm)= 0.05, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi-    SubType= 3
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi-    SubType= 4
+      dE/dx and range tables from 10 eV  to 10 TeV in 240 bins
+      Lambda tables from threshold to 10 TeV in 240 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+========= Table of registered couples ==============================
+
+Index : 0     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Galactic
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  990 eV     e-  990 eV     e+  990 eV  proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 1     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_PLEXIGLASS
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  2.11555 keV    e-  244.79 keV    e+  241.522 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 2     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  5.00023 keV    e-  337.972 keV    e+  324.616 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 3     used in the geometry : Yes     recalculation needed : No 
+ Material : natural Uranium
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  106.748 keV    e-  1.14827 MeV    e+  1.05931 MeV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 4     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Al
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  5.00023 keV    e-  363.901 keV    e+  351.877 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 5     used in the geometry : Yes     recalculation needed : No 
+ Material : Stainless Steel
+ Range cuts        :  gamma  500 um     e-  500 um     e+  500 um  proton 1 mm 
+ Energy thresholds :  gamma  14.4581 keV    e-  741.896 keV    e+  707.805 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+====================================================================
+
+   TreeMaker::CreateNewFile - New File Created: ./sim_output/frag_2_gxn2_gy2_gz0_r3_r5_x1_y0_z0.root
+   TreeMaker::CreateNewTree - New Tree Created: Sim_Tree
+Found transform for :av_1_impr_7_target_log_pv_0
+Following propertiesEuler angles => (41.5296, 59.1639, 30.0609)
+Translate    => (-0.519097,0.19,-2.00884) cm
+Rotated Thickness = 0.19509 cm
+Scale factor = 1.9509
+Source type set to surface_layer
+Plane norm : (0.569282,-0.642788,0.512584)
+Plane norm theta (deg) : 59.1639
+Plane norm phi   (deg) : -48.4704
+   TreeMaker::CreateBranch - Created Branch: DetID/I
+   TreeMaker::CreateBranch - Created Branch: SiStripID/I
+   TreeMaker::CreateBranch - Created Branch: EffPhi/D
+   TreeMaker::CreateBranch - Created Branch: EffTheta/D
+   TreeMaker::CreateBranch - Created Branch: SSDWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: SSDLocalPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: SSDKE/D
+   TreeMaker::CreateBranch - Created Branch: SSDTotDepE/D
+   TreeMaker::CreateBranch - Created Branch: SSDParticleName/C
+   TreeMaker::CreateBranch - Created Branch: TarPhi/D
+   TreeMaker::CreateBranch - Created Branch: TarTheta/D
+   TreeMaker::CreateBranch - Created Branch: TarWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaWorldPos[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarMomentum[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaMomentum[3]/D
+   TreeMaker::CreateBranch - Created Branch: TarKE/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaKE/D
+   TreeMaker::CreateBranch - Created Branch: TarTotDepE/D
+   TreeMaker::CreateBranch - Created Branch: TarNonIonizingDepE/D
+   TreeMaker::CreateBranch - Created Branch: TarParticleName/C
+   TreeMaker::CreateBranch - Created Branch: TarCharge/D
+   TreeMaker::CreateBranch - Created Branch: TarDeltaCharge/D
+   TreeMaker::CreateBranch - Created Branch: TarTrackLength/D
+   TreeMaker::CreateBranch - Created Branch: TarNSteps/I
+   TreeMaker::CreateBranch - Created Branch: TarAveTrackLength/D
+   TreeMaker::CreateBranch - Created Branch: TarLocalPos[3]/D
+   TreeMaker::StartFillTimer - Timer reset and started.
+   TreeMaker::CreateBranch - Created Branch: month/I
+   TreeMaker::CreateBranch - Created Branch: day/I
+   TreeMaker::CreateBranch - Created Branch: year/I
+   TreeMaker::CreateBranch - Created Branch: elapsedRealTime/D
+
+	Filling Began On 8/29/2012
+	Number of Events to Fill: 1000000
+
+        Fill Number   -      Fill Rate      -   Clock   -   Elapsed   -  To Finish 
+                                               HH:MM:SS - DD:HH:MM:SS - DD:HH:MM:SS
+             1 fills  -     9341 fills/sec  -  11:22:29 - 00:00:00:00 - 00:00:01:47
+ 0%          7392 fills  -     1478 fills/sec  -  11:22:34 - 00:00:00:05 - 00:00:11:12
+         18487 fills  -     2219 fills/sec  -  11:22:39 - 00:00:00:10 - 00:00:07:22
+         30005 fills  -     2303 fills/sec  -  11:22:44 - 00:00:00:15 - 00:00:07:01
+         41557 fills  -     2310 fills/sec  -  11:22:49 - 00:00:00:20 - 00:00:06:55
+ 5%         52906 fills  -     2269 fills/sec  -  11:22:54 - 00:00:00:25 - 00:00:06:57
+         64408 fills  -     2300 fills/sec  -  11:22:59 - 00:00:00:30 - 00:00:06:47
+         75948 fills  -     2307 fills/sec  -  11:23:04 - 00:00:00:35 - 00:00:06:40
+         87715 fills  -     2351 fills/sec  -  11:23:09 - 00:00:00:40 - 00:00:06:28
+         99308 fills  -     2320 fills/sec  -  11:23:14 - 00:00:00:45 - 00:00:06:28
+10%        110861 fills  -     2311 fills/sec  -  11:23:19 - 00:00:00:50 - 00:00:06:25
+        122512 fills  -     2330 fills/sec  -  11:23:24 - 00:00:00:55 - 00:00:06:17
+        134230 fills  -     2341 fills/sec  -  11:23:29 - 00:00:01:00 - 00:00:06:10
+        145908 fills  -     2337 fills/sec  -  11:23:34 - 00:00:01:05 - 00:00:06:05
+15%        157535 fills  -     2325 fills/sec  -  11:23:39 - 00:00:01:10 - 00:00:06:02
+        167886 fills  -     2070 fills/sec  -  11:23:44 - 00:00:01:15 - 00:00:06:42
+        179841 fills  -     2390 fills/sec  -  11:23:49 - 00:00:01:20 - 00:00:05:43
+        191948 fills  -     2421 fills/sec  -  11:23:54 - 00:00:01:25 - 00:00:05:34
+20%        204077 fills  -     2425 fills/sec  -  11:23:59 - 00:00:01:30 - 00:00:05:28
+        216135 fills  -     2411 fills/sec  -  11:24:04 - 00:00:01:35 - 00:00:05:25
+        228274 fills  -     2427 fills/sec  -  11:24:09 - 00:00:01:40 - 00:00:05:18
+        240516 fills  -     2448 fills/sec  -  11:24:14 - 00:00:01:45 - 00:00:05:10
+25%        252779 fills  -     2452 fills/sec  -  11:24:19 - 00:00:01:50 - 00:00:05:05
+        264952 fills  -     2434 fills/sec  -  11:24:24 - 00:00:01:55 - 00:00:05:02
+        277114 fills  -     2432 fills/sec  -  11:24:29 - 00:00:02:00 - 00:00:04:57
+        289386 fills  -     2454 fills/sec  -  11:24:34 - 00:00:02:05 - 00:00:04:50
+30%        301432 fills  -     2409 fills/sec  -  11:24:39 - 00:00:02:10 - 00:00:04:50
+        313651 fills  -     2443 fills/sec  -  11:24:44 - 00:00:02:15 - 00:00:04:41
+        325886 fills  -     2447 fills/sec  -  11:24:49 - 00:00:02:20 - 00:00:04:35
+        340306 fills  -     1441 fills/sec  -  11:24:59 - 00:00:02:30 - 00:00:07:38
+35%        352377 fills  -     2414 fills/sec  -  11:25:04 - 00:00:02:35 - 00:00:04:28
+        364432 fills  -     2411 fills/sec  -  11:25:09 - 00:00:02:40 - 00:00:04:24
+        376487 fills  -     2411 fills/sec  -  11:25:14 - 00:00:02:45 - 00:00:04:19
+        388462 fills  -     2395 fills/sec  -  11:25:19 - 00:00:02:50 - 00:00:04:15
+40%        400669 fills  -     2441 fills/sec  -  11:25:24 - 00:00:02:55 - 00:00:04:06

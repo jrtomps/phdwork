@@ -1,0 +1,50 @@
+set(CMAKE_MODULE_PATH ${ROOT_DIR}/modules)
+
+include_directories(${ROOT_INCLUDE_DIRS}
+                    ${CLHEP_INCLUDE_DIRS}
+                    ${Boost_INCLUDE_DIRS}
+                    ${CMAKE_CURRENT_SOURCE_DIR})
+
+set(FragmentDists_SOURCES
+   AngDist.cpp
+   AngMarginalEta2.cpp
+   AngMarginalEta2C.cpp
+   MDataRange.cpp
+   Eta2.cpp
+   Eta2C.cpp
+   Parameter.cpp
+   Parameters.cpp
+   ParameterFileLoader.cpp
+   SphIntegrand.cpp
+   TH2Func.cpp
+   TAngFoamIntegrandWrapper.cpp
+   SphCoordsIntegrand.cpp
+   dictFragmentDists.cxx)
+
+set(FragmentDists_HEADERS
+   AngDist.h
+   AngMarginalEta2.h
+   AngMarginalEta2C.h
+   MDataRange.h
+   Eta2.h
+   Eta2C.h
+   Parameter.h
+   Parameters.h
+   Polarity.h
+   ParameterFileLoader.h
+   SphIntegrand.h
+   TAngFoamIntegrandWrapper.h
+   TH2Func.h
+   SphCoordsIntegrand.h)
+
+find_package(ROOT COMPONENTS Foam)
+
+ROOT_GENERATE_DICTIONARY(dictFragmentDists ${FragmentDists_HEADERS} LINKDEF LinkDef.h OPTIONS -c)
+
+
+add_library(FragmentDists ${FragmentDists_SOURCES})
+target_link_libraries(FragmentDists ${ROOT_LIBRARIES} -lFoam)
+install(TARGETS FragmentDists ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+install(FILES ${FragmentDists_HEADERS} DESTINATION ${CMAKE_INSTALL_PREFIX}/include)
+
+

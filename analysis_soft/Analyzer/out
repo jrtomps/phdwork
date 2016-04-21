@@ -1,0 +1,19 @@
+Enter run : ConfigurationDatabase for pffrag2 experiment (11/21/2011-11/23/2011 and 11/26/2011-11/28/2011)
+     624      238U_232Th     7.2             lin     397   380.8
+f
+f
+f
+f
+g++  -O2 -I. -I/home/jrtomps/pffrag2/analysis/analysis_soft/include -pthread -m32 -I/usr/local/root/include -fPIC  -c -o  dictAnalyzer.o dictAnalyzer.cpp
+g++ -Wl -shared -o libAnalyzer.so ConfigEntry.o ConfigManager.o ProofPlot.o PAnalysis.o Visualizer.o PFVisualizer.o ScalerTool.o SScalerTool.o Comment.o FNameManager.o ExtensibleDb.o DataElement.o  dictAnalyzer.o -L/usr/local/root/lib -lCore -lCint -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -lGui -pthread -lm -ldl -rdynamic
+Analyzing run 624
+	0% completed  	3.4% completed  	6.8% completed  	10% completed  	14% completed  	17% completed  	20% completed  	24% completed  	27% completed  	31% completed  	34% completed  	37% completed  	41% completed  	44% completed  	48% completed  	51% completed  	54% completed  	58% completed  	61% completed  	65% completed  	68% completed  	71% completed  	75% completed  	78% completed  	82% completed  	85% completed  	88% completed  	92% completed  	95% completed  	99% completed  
+Wrote adc0 ... adc79 to file
+Wrote tdc0 ... tdc95 to file
+Wrote tdc_cut0 ... tdc_cut95 to file
+Wrote inv_tdc_cut0 ... inv_tdc_cut95 to file
+Wrote adc_cut0 ... adc_cut95 to file
+Wrote inv_adc_cut0 ... inv_adc_cut95 to file
+Wrote tof0 ... tof95 to file
+Wrote tof_vs_adc0 ... tof_vs_adc95 to file
+Wrote tof_vs_tdc0 ... tof_vs_tdc95 to file
