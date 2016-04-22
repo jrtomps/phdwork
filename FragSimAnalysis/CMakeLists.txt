@@ -46,7 +46,7 @@ add_library(FragSimAnalyzer SHARED ${FragSimAnalyzer_SOURCES})
 target_link_libraries(FragSimAnalyzer ${ROOT_LIBRARIES} ${CLHEP_LIBRARIES} ROOTUtils) 
 
 
-#set(analyze_SOURCES analyze.cpp)
-#add_executable(analyze ${analyze_SOURCES})
-#target_link_libraries(analyze FragSimAnalyzer ROOTUtils NuclearChart Fit)
+set(analyze_SOURCES analyze.cpp)
+add_executable(analyze ${analyze_SOURCES})
+target_link_libraries(analyze FragSimAnalyzer ROOTUtils NuclearChart FragSim232Th)
 
