@@ -50,3 +50,6 @@ set(analyze_SOURCES analyze.cpp)
 add_executable(analyze ${analyze_SOURCES})
 target_link_libraries(analyze FragSimAnalyzer ROOTUtils NuclearChart FragSim232Th)
 
+set(analyze_lambda_SOURCES analyze_lambda.cpp)
+add_executable(analyze_lambda ${analyze_lambda_SOURCES})
+target_link_libraries(analyze_lambda FragSimAnalyzer ROOTUtils NuclearChart FragSim232Th)
