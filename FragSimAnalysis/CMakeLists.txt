@@ -37,7 +37,9 @@ include(${Geant4_USE_FILE})
 ROOT_GENERATE_DICTIONARY(dictFragSimAnalyzer ${FragSimAnalyzer_HEADERS} 
                           LINKDEF ${CMAKE_CURRENT_SOURCE_DIR}/LinkDef.h OPTIONS -c ${dict_INCLUDES})
 
-find_package(ROOT COMPONENTS ProofPlayer)
+find_package(ROOT CONFIG REQUIRED COMPONENTS ProofPlayer)
+include(${ROOT_USE_FILE})
+
 include_directories(${PROJECT_SOURCE_DIR}/NuclearChart 
                     ${PROJECT_SOURCE_DIR}/ROOTUtils
                     ${PROJECT_SOURCE_DIR}/FragSim232Th/include)

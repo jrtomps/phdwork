@@ -1,4 +1,3 @@
-set(CMAKE_MODULE_PATH ${ROOT_DIR}/modules)
 
 include_directories(${ROOT_INCLUDE_DIRS}
                     ${CLHEP_INCLUDE_DIRS}
@@ -37,7 +36,9 @@ set(FragmentDists_HEADERS
    TH2Func.h
    SphCoordsIntegrand.h)
 
-find_package(ROOT COMPONENTS Foam)
+
+find_package(ROOT CONFIG REQUIRED COMPONENTS Foam)
+include(${ROOT_USE_FILE})
 
 ROOT_GENERATE_DICTIONARY(dictFragmentDists ${FragmentDists_HEADERS} LINKDEF LinkDef.h OPTIONS -c)
 
