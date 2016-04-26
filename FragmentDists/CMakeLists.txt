@@ -6,6 +6,8 @@ include_directories(${ROOT_INCLUDE_DIRS}
 
 set(FragmentDists_SOURCES
    AngDist.cpp
+   AngDistC.cpp
+   AngDistY.cpp
    AngMarginalEta2.cpp
    AngMarginalEta2C.cpp
    MDataRange.cpp
@@ -22,6 +24,8 @@ set(FragmentDists_SOURCES
 
 set(FragmentDists_HEADERS
    AngDist.h
+   AngDistY.h
+   AngDistC.h
    AngMarginalEta2.h
    AngMarginalEta2C.h
    MDataRange.h
