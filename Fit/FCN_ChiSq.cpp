@@ -10,7 +10,7 @@
 #include <CLHEP/Units/SystemOfUnits.h>
 #include "Minuit2/FCNBase.h"
 #include "Math/IntegratorMultiDim.h"
-#include "AngDist.h"
+#include <AngDist.h>
 #include "TMath.h"
 #include "MDataRange.h"
 #include "TGraph2DErrors.h"
