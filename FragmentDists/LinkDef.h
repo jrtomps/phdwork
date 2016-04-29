@@ -16,6 +16,8 @@
 #pragma link C++ class SphIntegrand;
 #pragma link C++ class TH2Func;
 #pragma link C++ class AngDist;
+#pragma link C++ class AngDistC;
+#pragma link C++ class AngDistY;
 
 #pragma link C++ global gROOT;
 #pragma link C++ global gEnv;

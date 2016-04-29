@@ -20,10 +20,7 @@ FCN_ChiSq::FCN_ChiSq(TGraph2DErrors* gr)
     : ROOT::Minuit2::FCNBase(),
     fX(), fY(),
     fZ(), fEX(),
-    fEY(), fEZ(),
-    fIntLimitsLow(new Double_t[2]),
-    fIntLimitsHigh(new Double_t[2])
-
+    fEY(), fEZ()
 {
     CopyDataFromGraph(gr);
     RemoveZeroesFromData();
@@ -57,23 +54,25 @@ Double_t FCN_ChiSq::operator() (const std::vector<Double_t> & par) const
 
     const ROOT::Fit::MDataRange* r = W.GetDataRange();
 
+    std::vector<Double_t> IntLimitsLow(fIntLimitsLow, fIntLimitsLow+2);
+    std::vector<Double_t> IntLimitsHigh(fIntLimitsHigh, fIntLimitsHigh+2);
     Double_t v = 0;
 
-    for (Int_t i=0; i<fZ.size(); i++)
+    for (UInt_t i=0; i<fZ.size(); i++)
     {
-        fIntLimitsLow[0] = (fX[i]-fEX[i])*deg;
-        fIntLimitsLow[1] = (fY[i]-fEY[i])*deg;
+        IntLimitsLow[0] = (fX[i]-fEX[i])*deg;
+        IntLimitsLow[1] = (fY[i]-fEY[i])*deg;
 
-        fIntLimitsHigh[0] = (fX[i]+fEX[i])*deg;
-        fIntLimitsHigh[1] = (fY[i]+fEY[i])*deg;
+        IntLimitsHigh[0] = (fX[i]+fEX[i])*deg;
+        IntLimitsHigh[1] = (fY[i]+fEY[i])*deg;
 
-        r->EnsureInRange(fIntLimitsLow[0],0);
-        r->EnsureInRange(fIntLimitsHigh[0],0);
-        r->EnsureInRange(fIntLimitsLow[1],1);
-        r->EnsureInRange(fIntLimitsHigh[1],1);
+        r->EnsureInRange(IntLimitsLow[0],0);
+        r->EnsureInRange(IntLimitsHigh[0],0);
+        r->EnsureInRange(IntLimitsLow[1],1);
+        r->EnsureInRange(IntLimitsHigh[1],1);
 
 
-        v = fIntegrator.Integral(fIntLimitsLow.get(), fIntLimitsHigh.get());
+        v = fIntegrator.Integral(IntLimitsLow.data(), IntLimitsHigh.data());
 
         sq_sum += Power((fZ[i]-v)/fEZ[i],2.0);
     }

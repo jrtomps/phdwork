@@ -2,16 +2,7 @@
 #define FCN_CHISQ_H
 
 #include <vector>
-#ifndef __CINT__
-#include <boost/shared_ptr.hpp>
-#include <boost/shared_array.hpp>
-#else
-namespace boost
-{
-class shared_ptr<TGraph2DErrors>;
-class shared_array<Double_t>;
-}
-#endif
+#include <memory>
 #include "Rtypes.h"
 #include "TPolyLine.h"
 #include "Minuit2/FCNBase.h"
@@ -29,8 +20,8 @@ private:
     std::vector<Double_t> fEY;
     std::vector<Double_t> fEZ;
     void EnforceRangeLimits();
-    boost::shared_array<Double_t> fIntLimitsLow;
-    boost::shared_array<Double_t> fIntLimitsHigh;
+    Double_t fIntLimitsLow[2];
+    Double_t fIntLimitsHigh[2];
 
 public:
     FCN_ChiSq(TGraph2DErrors* gr);
@@ -44,7 +35,7 @@ public:
 
 private:
     FCN_ChiSq(const FCN_ChiSq& rhs);
-    FCN_ChiSq& operator=(const FCN_ChiSq& rhs) { return *this;}
+    FCN_ChiSq& operator=(const FCN_ChiSq&) { return *this;}
 };
 
 #endif // FCN_CHISQ_H

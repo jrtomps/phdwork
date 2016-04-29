@@ -5,8 +5,6 @@ set(Fit_SOURCES
   DataSetBuilder.cpp
   FCN_ChiSq.cpp
   FcnWrapper.cpp
-  FitAngularDistribution.cpp
-  FitManager.cpp
   GenChiSq.cpp
   GenIntegralChiSq.cpp
   LambdaChiSq.cpp
@@ -90,6 +88,6 @@ set(dictFit_INCLUDES
    
   ROOT_GENERATE_DICTIONARY(dictFit ${Fit_HEADERS} LINKDEF ${CMAKE_CURRENT_SOURCE_DIR}/LinkDef.h OPTIONS -c ${dictFit_INCLUDES})
 
-  include_directories(${CLHEP_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR}/FragmentDists)
-add_library(Fit ${Fit_SOURCES})
-target_link_libraries(Fit FragmentDists)
+include_directories(${CLHEP_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR}/FragmentDists ${PROJECT_SOURCE_DIR}/ROOTUtils)
+add_library(Fit SHARED ${Fit_SOURCES})
+target_link_libraries(Fit FragmentDists ROOTUtils)

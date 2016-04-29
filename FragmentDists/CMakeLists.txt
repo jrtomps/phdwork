@@ -41,15 +41,15 @@ set(FragmentDists_HEADERS
    SphCoordsIntegrand.h)
 
 
-find_package(ROOT CONFIG REQUIRED COMPONENTS Foam)
+ find_package(ROOT CONFIG REQUIRED COMPONENTS Foam MathMore)
 include(${ROOT_USE_FILE})
 
 ROOT_GENERATE_DICTIONARY(dictFragmentDists ${FragmentDists_HEADERS} LINKDEF LinkDef.h OPTIONS -c)
 
 
-add_library(FragmentDists ${FragmentDists_SOURCES})
-target_link_libraries(FragmentDists ${ROOT_LIBRARIES} -lFoam)
-install(TARGETS FragmentDists ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+add_library(FragmentDists SHARED ${FragmentDists_SOURCES})
+target_link_libraries(FragmentDists ${ROOT_LIBRARIES} )
+install(TARGETS FragmentDists LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 install(FILES ${FragmentDists_HEADERS} DESTINATION ${CMAKE_INSTALL_PREFIX}/include)
 
 
