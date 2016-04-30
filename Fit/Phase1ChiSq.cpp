@@ -103,7 +103,7 @@ void Phase1ChiSq::ConstructTheIntegrands()
         h->SetDirectory(0);
 
         // wrap the pdf into a ROOT::Math::IBaseFunctionMultiDim object
-        std::shared_ptr<ROOT::Math::IBaseFunctionMultiDim> hf(new TH2Func(h));
+        std::shared_ptr<ROOT::Math::IBaseFunctionMultiDim> hf(new FS232Th::TH2Func(h));
 
         // Create a SphIntegrand to multiply the pdf
         // and weight the function over sin(theta)

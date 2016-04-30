@@ -26,6 +26,7 @@
 UInt_t LambdaChiSqNCalls = 0;
 
 using ROOT::Math::IParametricFunctionMultiDim;
+using namespace FS232Th;
 
 LambdaChiSq::LambdaChiSq(TGraph2DErrors *gr,
                                    const ROOT::Math::IParametricFunctionMultiDim &func,

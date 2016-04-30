@@ -16,7 +16,7 @@ TH2Func::TH2Func(TH2* h, Bool_t divide_by_width)
     }
 }
 
-TH2Func::TH2Func(const boost::shared_ptr<TH2>& h, Bool_t divide_by_width)
+TH2Func::TH2Func(const std::shared_ptr<TH2>& h, Bool_t divide_by_width)
     : ROOT::Math::IBaseFunctionMultiDim(),
     fHist(h),
     fDivideByWidth(divide_by_width)

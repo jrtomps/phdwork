@@ -3,7 +3,6 @@
 #include "TMath.h"
 #include "Math/IFunction.h"
 #include "Math/IParamFunction.h"
-#include <boost/shared_ptr.hpp>
 #include "SphCoordsIntegrand.h"
 
 SphCoordsIntegrand::SphCoordsIntegrand(const ROOT::Math::IBaseFunctionMultiDim &func)
@@ -11,7 +10,7 @@ SphCoordsIntegrand::SphCoordsIntegrand(const ROOT::Math::IBaseFunctionMultiDim &
     fFunc(func.Clone())
 {}
 
-SphCoordsIntegrand::SphCoordsIntegrand(const boost::shared_ptr<ROOT::Math::IBaseFunctionMultiDim>&func)
+SphCoordsIntegrand::SphCoordsIntegrand(const std::shared_ptr<ROOT::Math::IBaseFunctionMultiDim>&func)
     : ROOT::Math::IBaseFunctionMultiDim(),
     fFunc(func)
 {}

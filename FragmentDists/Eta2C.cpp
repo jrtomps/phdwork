@@ -183,7 +183,7 @@ Double_t Eta2C::ComputeIntegral(TH3* h)
     // necessary that the normalization is computed in the same fashion.
     h->GetZaxis()->SetRange(1,h->GetNbinsZ());
     TH2* hang = dynamic_cast<TH2*>(h->Project3D("yx"));
-    boost::shared_ptr<FS232Th::TH2Func> h2func(new FS232Th::TH2Func(hang));
+    std::shared_ptr<FS232Th::TH2Func> h2func(new FS232Th::TH2Func(hang));
     ROOT::Math::IntegratorMultiDim integrator;
     integrator.SetFunction(*h2func);
 

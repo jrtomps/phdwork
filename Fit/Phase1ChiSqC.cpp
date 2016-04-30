@@ -113,7 +113,7 @@ void Phase1ChiSqC::ConstructTheIntegrands()
         h->SetDirectory(0);
 
         // wrap the pdf into a ROOT::Math::IBaseFunctionMultiDim object
-        std::shared_ptr<ROOT::Math::IBaseFunctionMultiDim> hf(new TH2Func(h));
+        std::shared_ptr<ROOT::Math::IBaseFunctionMultiDim> hf(new FS232Th::TH2Func(h));
 
 
         // add the h(costhetatheta,phi) piece to the integrand

@@ -128,7 +128,7 @@ void Phase2ChiSqC::ConstructTheIntegrands()
         h->SetDirectory(0);
 
         // wrap the pdf into a ROOT::Math::IBaseFunctionMultiDim object
-        std::shared_ptr<ROOT::Math::IBaseFunctionMultiDim> hsubi(new TH2Func(h));
+        std::shared_ptr<ROOT::Math::IBaseFunctionMultiDim> hsubi(new FS232Th::TH2Func(h));
 
         // Construct the numerator
         fNumIntegrands[i] = std::shared_ptr<ProductIntegrand>(new ProductIntegrand);

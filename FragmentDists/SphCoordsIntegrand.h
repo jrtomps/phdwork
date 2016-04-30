@@ -4,24 +4,16 @@
 #include "Rtypes.h"
 #include "Math/IFunction.h"
 #include "Math/IParamFunction.h"
-#ifndef __CINT__
-#include <boost/shared_ptr.hpp>
-#else
-namespace boost
-{
-    struct shared_ptr<ROOT::Math::IBaseFunctionMultiDim>;
-    struct shared_ptr<ROOT::Math::IParametricFunctionMultiDim>;
-}
-#endif
+#include <memory>
 
 class SphCoordsIntegrand : public ROOT::Math::IBaseFunctionMultiDim
 {
 private:
-    boost::shared_ptr<ROOT::Math::IBaseFunctionMultiDim> fFunc;
+    std::shared_ptr<ROOT::Math::IBaseFunctionMultiDim> fFunc;
 
 public:
     SphCoordsIntegrand(const ROOT::Math::IBaseFunctionMultiDim& func);
-    SphCoordsIntegrand(const boost::shared_ptr<ROOT::Math::IBaseFunctionMultiDim>& func);
+    SphCoordsIntegrand(const std::shared_ptr<ROOT::Math::IBaseFunctionMultiDim>& func);
     SphCoordsIntegrand(const SphCoordsIntegrand& obj);
     SphCoordsIntegrand& operator=(SphCoordsIntegrand obj);
     friend void swap(SphCoordsIntegrand& lhs, SphCoordsIntegrand& rhs);
@@ -46,7 +38,7 @@ inline void swap(SphCoordsIntegrand &lhs, SphCoordsIntegrand &rhs)
 class SphCoordsParamIntegrand : public ROOT::Math::IParametricFunctionMultiDim
 {
 private:
-    boost::shared_ptr<ROOT::Math::IParametricFunctionMultiDim> fFunc;
+    std::shared_ptr<ROOT::Math::IParametricFunctionMultiDim> fFunc;
 
 public:
     SphCoordsParamIntegrand(const ROOT::Math::IParametricFunctionMultiDim& func);
