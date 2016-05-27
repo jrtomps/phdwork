@@ -1,0 +1,79 @@
+BEGIN ANALYSIS
+begin processing runs 419
+Next step : align hist run 419 to 420
+Continue? (y/n) : Next step : set errors on shifted run 419
+Continue? (y/n) : Next step : normalize shifted run 419 by Veto10HzClock
+Continue? (y/n) : Next step : set errors on run 420
+Continue? (y/n) : Next step : normalize run 420 by Veto10HzClock
+Continue? (y/n) : Subtraction...
+Next step : subtract run 420 from run 419
+Continue? (y/n) : 64
+Filtered size = 64
+64
+adc0_shifted_norm_vclk
+adc1_shifted_norm_vclk
+adc2_shifted_norm_vclk
+adc3_shifted_norm_vclk
+adc4_shifted_norm_vclk
+adc5_shifted_norm_vclk
+adc6_shifted_norm_vclk
+adc7_shifted_norm_vclk
+adc8_shifted_norm_vclk
+adc9_shifted_norm_vclk
+adc10_shifted_norm_vclk
+adc11_shifted_norm_vclk
+adc12_shifted_norm_vclk
+adc13_shifted_norm_vclk
+adc14_shifted_norm_vclk
+adc15_shifted_norm_vclk
+adc16_shifted_norm_vclk
+adc17_shifted_norm_vclk
+adc18_shifted_norm_vclk
+adc19_shifted_norm_vclk
+adc20_shifted_norm_vclk
+adc21_shifted_norm_vclk
+adc22_shifted_norm_vclk
+adc23_shifted_norm_vclk
+adc24_shifted_norm_vclk
+adc25_shifted_norm_vclk
+adc26_shifted_norm_vclk
+adc27_shifted_norm_vclk
+adc28_shifted_norm_vclk
+adc29_shifted_norm_vclk
+adc30_shifted_norm_vclk
+adc31_shifted_norm_vclk
+adc32_shifted_norm_vclk
+adc33_shifted_norm_vclk
+adc34_shifted_norm_vclk
+adc35_shifted_norm_vclk
+adc36_shifted_norm_vclk
+adc37_shifted_norm_vclk
+adc38_shifted_norm_vclk
+adc39_shifted_norm_vclk
+adc40_shifted_norm_vclk
+adc41_shifted_norm_vclk
+adc42_shifted_norm_vclk
+adc43_shifted_norm_vclk
+adc44_shifted_norm_vclk
+adc45_shifted_norm_vclk
+adc46_shifted_norm_vclk
+adc47_shifted_norm_vclk
+adc48_shifted_norm_vclk
+adc49_shifted_norm_vclk
+adc50_shifted_norm_vclk
+adc51_shifted_norm_vclk
+adc52_shifted_norm_vclk
+adc53_shifted_norm_vclk
+adc54_shifted_norm_vclk
+adc55_shifted_norm_vclk
+adc56_shifted_norm_vclk
+adc57_shifted_norm_vclk
+adc58_shifted_norm_vclk
+adc59_shifted_norm_vclk
+adc60_shifted_norm_vclk
+adc61_shifted_norm_vclk
+adc62_shifted_norm_vclk
+adc63_shifted_norm_vclk
+Filtered size = 64
+Next step : unnormalize run bgsubbed 419
+Continue? (y/n) : ANALYSIS COMPLETE

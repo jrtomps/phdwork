@@ -1,0 +1,35 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <sstream>
+#include "TTree.h"
+
+using namespace std;
+
+string
+FormPatternSection(const Int_t i)
+{
+  string pattern("ADC2");
+  stringstream spattern(pattern);
+  spattern.seekp(spattern.str().length());
+  spattern << setiosflags(ios::fixed);
+  spattern << setfill("0") << setw(2) << setprecision(0) << i;
+  return spattern.str();
+}
+
+
+void
+InspectADC2(const Int_t i0, const Int_t i1)
+{
+  if ((i1-i0)>=7)
+    cerr << "Warning! Range of channels too large" << endl;
+  
+  string pattern("");
+  for (Int_t i=i0; i<=i1; i++)
+    {
+      pattern.append(FormPatternSection(i));
+      if (i != i1) pattern.append(":");
+    }
+
+  flat_tree->Scan(pattern.data());
+};

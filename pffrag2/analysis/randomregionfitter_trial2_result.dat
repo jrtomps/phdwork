@@ -1,0 +1,158 @@
+Started at ~ 9:00 am
+
+jrtomps@presario:Fitters$ RandomRegionFitter 
+
+For the regions 
+The following .dats file are in the current folder
+
+	regions.bndry
+	circular.bndry
+
+Enter filename : regions.bndry
+Found 64 boundaries
+
+For the graph 
+The following .dats file are in the current folder
+
+	fitlogger.root
+	myfile.root
+
+Enter filename : myfile.root
+
+TFile**		myfile.root	
+ TFile*		myfile.root	
+  KEY: TH2D	h;1	
+  KEY: TGraph2DErrors	mygraph;1	Graph2D
+  KEY: TGraph2DErrors	rand_surf;1	Graph2D
+  KEY: TGraph2DErrors	rand_surf_deg;1	Graph2D
+  KEY: TGraph2DErrors	Graph2D;1	Graph2D
+  KEY: TGraph2DErrors	my_plane;1	Graph2D
+  KEY: TGraph2DErrors	my_plane2;1	Graph2D
+  KEY: TGraph2DErrors	rand_surf_deg_30;1	Graph2D
+  KEY: TGraph2DErrors	rand_surf_deg_200;1	rand_surf_deg_200
+  KEY: TGraph2DErrors	rabotnov_232th_6.2;1	rabotnov_232th_6.2
+  KEY: TGraph2DErrors	corr_graph2d;1	SA Corrected Angular Dist
+
+Enter name of graph : corr_graph2d
+Warning in <TFile::Append>: Replacing existing TGraph2D: corr_graph2d (Potential memory leak).
+
+For the parameters 
+The following .dats file are in the current folder
+
+	big_fit.params
+	default_fit.params
+	latest_fit.params
+	rabotnov_6.2_232th.params
+
+Enter param file : latest_fit.params
+
+Found the following parameters:
+  0         a  2.20e+03  1.00e-01  2.00e+03  2.20e+03  2.00e-03
+  1         b -1.37e+03  1.00e-01  0.00e+00  1.00e+00  2.00e-03
+  2         c -3.11e+03  1.00e-01 -5.00e-01  5.00e-01  2.00e-03
+  3         d  8.86e+03  1.00e-01  8.00e+03  9.00e+03  2.00e-03
+
+Removed 16 elements with value zero
+mmap.size()=48
+
+PointToRegionMap
+
+0	4
+1	5
+2	6
+3	7
+4	9
+5	10
+6	11
+7	12
+8	13
+9	14
+10	15
+11	16
+12	17
+13	18
+14	19
+15	20
+16	22
+17	23
+18	24
+19	25
+20	26
+21	27
+22	28
+23	29
+24	30
+25	31
+26	32
+27	34
+28	35
+29	36
+30	37
+31	38
+32	47
+33	48
+34	49
+35	50
+36	51
+37	52
+38	53
+39	54
+40	55
+41	56
+42	57
+43	58
+44	59
+45	60
+46	61
+47	62
+Instance of TreeMaker Constructed!
+   TreeMaker::CreateNewFile - New File Created: ./fitlogger.root
+   TreeMaker::CreateNewTree - New Tree Created: fit_log
+Enter number of trials : 1
+
+
+Fitting Results
+---------------------------------------------------------------------
+Iteration :     0
+       0         a  2.20e+03  1.00e-01  2.00e+03  2.20e+03  2.00e-03
+       1         b -1.37e+03  1.00e-01  0.00e+00  1.00e+00  2.00e-03
+       2         c -3.11e+03  1.00e-01 -5.00e-01  5.00e-01  2.00e-03
+       3         d  8.86e+03  1.00e-01  8.00e+03  9.00e+03  2.00e-03
+
+Minuit2Minimizer: Minimize with max-calls 200 convergence for edm < 0.1 strategy 1
+MnSeedGenerator: for initial parameters FCN = 176.032
+MnSeedGenerator: Initial state:   - FCN =   176.0318174267 Edm =  1.71669e-09 NCalls =     17
+VariableMetric: start iterating until Edm is < 0.0002
+VariableMetric: Initial state   - FCN =   176.0318174267 Edm =  1.71669e-09 NCalls =     17
+VariableMetric: Iteration #   1 - FCN =   176.0318174255 Edm =  5.60411e-09 NCalls =     32
+Info in <Minuit2>: matrix forced pos-def by adding to diagonal : padd = 0.123316
+Info in <Minuit2>: MnHesse: matrix was forced pos. def. 
+VariableMetric: After Hessian   - FCN =   176.0318174255 Edm =  2.55082e-07 NCalls =     59
+Number of iterations 3
+----------> Iteration 0
+            FVAL = 176.031817427 Edm = 1.71669088345e-09 Nfcn = 17
+            Error matrix change = 1
+            Parameters :  p0 = 2199.28 p1 = -1365.33 p2 = -3106.79 p3 = 8863.73
+----------> Iteration 1
+            FVAL = 176.031817425 Edm = 5.60411319593e-09 Nfcn = 32
+            Error matrix change = 1.12798
+            Parameters :  p0 = 2199.28 p1 = -1365.33 p2 = -3106.79 p3 = 8863.73
+----------> Iteration 2
+            FVAL = 176.031817425 Edm = 2.55081971278e-07 Nfcn = 59
+            Error matrix change = 1
+            Parameters :  p0 = 2199.28 p1 = -1365.33 p2 = -3106.79 p3 = 8863.73
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Covar was made pos def
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 176.031817425458541
+Edm   = 2.55081971278332785e-07
+Nfcn  = 59
+a	  = 2199.28	 +/-  833.679
+b	  = -1365.33	 +/-  236.626
+c	  = -3106.79	 +/-  1945.34
+d	  = 8863.73	 +/-  15263.1
+RandomRegionFitter: /usr/local/root/math/minuit2/src/Minuit2Minimizer.cxx:469: virtual const double* ROOT::Minuit2::Minuit2Minimizer::X() const: Assertion `fDim == paramsObj.size()' failed.
+Aborted
+jrtomps@presario:Fitters$ date Tue Apr  3 14:07:13 EDT 2012
+
+
+

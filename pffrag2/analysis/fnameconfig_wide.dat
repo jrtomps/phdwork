@@ -1,0 +1,9 @@
+BaseDir     : /home/jrtomps/pffrag2
+SclrDir     : scalers
+RunTreeDir  : analysis/run_tree_dir
+HistFileDir : analysis/pffrag2_hist_run_wide
+SclrFileName: pffrag2_scalers
+HistFileBase: pffrag2_hist_run
+AnalysisDir : analysis
+ConfigFName : configdatabase_wide.dat
+ResultsDir  : results_wide

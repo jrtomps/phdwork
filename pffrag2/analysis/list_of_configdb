@@ -1,0 +1,10 @@
+Name							Description
+----------------------------------------------------
+configdatabase_narrow.dat		
+								* Sets a tight tdc cut on the self-timing peaks. 
+								* Used in the original analysis of the 7.6 MeV Circ and 6.2 
+								  MeV Lin data.
+configdatabase_wide.dat
+								* Set a wide tdc cut on the self-timing peaks to account for
+								  possible signal degradation leading to poor peak 
+								  definition.
