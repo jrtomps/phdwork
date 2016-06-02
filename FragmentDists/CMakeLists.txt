@@ -46,9 +46,10 @@ include(${ROOT_USE_FILE})
 
 ROOT_GENERATE_DICTIONARY(dictFragmentDists ${FragmentDists_HEADERS} LINKDEF LinkDef.h OPTIONS -c)
 
+include_directories(${Boost_INCLUDE_DIRS})
 
 add_library(FragmentDists SHARED ${FragmentDists_SOURCES})
-target_link_libraries(FragmentDists ${ROOT_LIBRARIES} )
+target_link_libraries(FragmentDists ${ROOT_LIBRARIES} ${Boost_LIBRARIES})
 install(TARGETS FragmentDists LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 install(FILES ${FragmentDists_HEADERS} DESTINATION ${CMAKE_INSTALL_PREFIX}/include)
 

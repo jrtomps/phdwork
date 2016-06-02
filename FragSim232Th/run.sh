@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # $1 is the base name of the macro e.g. for frag_0.mac --> $1 = frag_0
 # $2 is the iteration number to begin with
 # $3 is the iteration number to end with
 
 name=$1
-SIMNAME=FragSim232Th
+SIMNAME=fragsim232th
 OUTDIR=sim_output
 
 echo ${name}_$2.seed > temp;

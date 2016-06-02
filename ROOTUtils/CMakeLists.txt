@@ -38,5 +38,6 @@ include_directories(${ROOT_INCLUDE_DIRS})
 add_library(ROOTUtils SHARED ${ROOTUtils_SOURCES})
 target_link_libraries(ROOTUtils ${ROOT_LIBRARIES})
 
+install(TARGETS ROOTUtils DESTINATION lib)
 
 

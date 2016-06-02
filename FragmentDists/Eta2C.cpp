@@ -2,8 +2,8 @@
 #include <string>
 #include <sstream>
 #include <stdexcept>
-//#include <boost/regex.hpp>
-#include <regex>
+#include <boost/regex.hpp>
+//#include <regex>
 #include <CLHEP/Units/PhysicalConstants.h>
 #include "TFile.h"
 #include "TF1.h"
@@ -117,8 +117,8 @@ Bool_t Eta2C::IsIsotopeFolder(TDirectory *dir) const
     Bool_t flag = false;
     if (dir!=0)
     {
-      std::regex expr("^[0-9]+_[0-9]+$");
-      flag = std::regex_match(dir->GetName(),expr);
+      boost::regex expr("^[0-9]+_[0-9]+$");
+      flag = boost::regex_match(dir->GetName(),expr);
     }
     return flag;
 }

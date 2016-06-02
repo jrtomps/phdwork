@@ -10,8 +10,8 @@
 #include <sstream>
 #include "TString.h"
 //#include "TPRegexp.h"
-//#include <boost/regex.hpp>
-#include <regex>
+#include <boost/regex.hpp>
+//#include <regex>
 #include <CLHEP/Random/Random.h>
 #include "RandomSeedManager.hh"
 
@@ -104,27 +104,27 @@ RandomSeedManager::stripIDFromFName(void)
     std::string name = fFName.data();
   //  std::vector<TString> files = GetDir(dir);
   
-//  TPRegexp pre("_[0-9]+$");
-    std::regex exp("_([0-9]+)(\.seed)$");
-    std::smatch what;
+  //  TPRegexp pre("_[0-9]+$");
+    boost::regex exp("^.*_([0-9]+)(\.seed)$");
+    boost::smatch what;
 
-    std::smatch::difference_type in, in2;
-//  size_t in, in2;
+    boost::smatch::difference_type in, in2;
+    //  size_t in, in2;
 
-  //  std::vector<std::string>::iterator it1;
-  //  for (it1=files.begin(); it1!=files.end(); ++it1)
-  //    {
-//  in = name.Index(pre);
-  std::string::const_iterator begin = name.begin();
-  std::string::const_iterator end = name.end();
-  if( std::regex_search(begin, end, what, exp) )
-  {
+    //  std::vector<std::string>::iterator it1;
+    //  for (it1=files.begin(); it1!=files.end(); ++it1)
+    //    {
+    //  in = name.Index(pre);
+    std::string::const_iterator begin = name.begin();
+    std::string::const_iterator end = name.end();
+    if( boost::regex_search(begin, end, what, exp) )
+    {
       in = what.position(1);
       in2 = what.position(2);
       fStrippedFName = fFName.substr(0, in-1);
       std::string indexstr = name.substr(in, in2-in);
-//      std::cout << indexstr << std::endl;
+      //      std::cout << indexstr << std::endl;
       fFIndex = TString(indexstr.data()).Atoi();
-//      std::cout << "From name = " << name << " found index = " << fFIndex << std::endl;
-  }
+      //      std::cout << "From name = " << name << " found index = " << fFIndex << std::endl;
+    }
 }

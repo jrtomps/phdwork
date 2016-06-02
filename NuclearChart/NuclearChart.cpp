@@ -1,5 +1,5 @@
 #include <cstdlib>
-#include <regex>
+#include <boost/regex.hpp>
 #include "NuclearChart.h"
 
 ClassImp(NuclearChart);
@@ -148,9 +148,9 @@ Isotope NuclearChart::ParseName(const std::string &name)
 {
     Isotope iso; iso.A=0; iso.Z=0;
 
-    std::smatch match;
-    std::regex expr ("([A-Z]+[a-z]*)([0-9]+)");
-    if (regex_search(name.begin(),name.end(),match, expr))
+    boost::smatch match;
+    boost::regex expr ("([A-Z]+[a-z]*)([0-9]+)");
+    if (boost::regex_search(name.begin(),name.end(),match, expr))
     {
         iso.Z = fNameMap[match[1].str()];
         iso.A = ::atoi(match[2].str().data());
