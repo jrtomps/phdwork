@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
 
 project(PhD)
-
+set(PhD_VERSION 2.0)
 
 include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
@@ -57,3 +57,17 @@ add_subdirectory(FragSimAnalysis)
 add_subdirectory(Fit)
 add_subdirectory(SystematicFitter)
 add_subdirectory(Fitters)
+
+
+#include(CMakePackageConfigHelpers)
+#write_basic_package_version_file("${CMAKE_CURRENT_BINARY_DIR}/PhDConfigVersion.cmake" VERSION ${PhD_VERSION} 
+#COMPATIBILITY AnyNewerVersion)
+
+#export(EXPORT PhDTargets FILE "${CMAKE_CURRENT_BINARY_DIR}/PhDTargets.cmake")
+#configure_file(cmake/PhDConfig.cmake "${CMAKE_CURRENT_BINARY_DIR}/PhDConfig.cmake" COPY_ONLY)
+#set(ConfigPackageLocation lib/cmake)
+
+#install(EXPORT PhDTargets FILE PhDTargets.cmake NAMESPACE PhD:: DESTINATION ${ConfigPackageLocation})
+#install(FILES cmake/PhDConfig.cmake "${CMAKE_CURRENT_BINARY_DIR}/PhDConfigVersion.cmake"
+#  DESTINATION ${ConfigPackageLocation} COMPONENT Devel)
+

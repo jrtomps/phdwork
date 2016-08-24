@@ -16,3 +16,4 @@ add_library(NuclearChart SHARED ${NuclearChart_SOURCES})
 target_link_libraries(NuclearChart ${Boost_LIBRARIES})
 
 install(TARGETS NuclearChart DESTINATION lib)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libdictNuclearChart_rdict.pcm DESTINATION lib)

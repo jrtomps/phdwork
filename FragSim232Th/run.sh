@@ -8,6 +8,11 @@ name=$1
 SIMNAME=fragsim232th
 OUTDIR=sim_output
 
+if [[ $# -ne 3 ]] ; then 
+  echo "USAGE: ./run.sh sim_name seed_index number_of_iterations"
+  exit 0
+fi
+
 echo ${name}_$2.seed > temp;
 ${SIMNAME} macros/${name}.mac < temp
 mv ${OUTDIR}/${name}.root ${OUTDIR}/${name}_$2.root

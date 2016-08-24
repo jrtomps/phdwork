@@ -55,3 +55,7 @@ target_link_libraries(analyze FragSimAnalyzer ROOTUtils NuclearChart FragSim232T
 set(analyze_lambda_SOURCES analyze_lambda.cpp)
 add_executable(analyze_lambda ${analyze_lambda_SOURCES})
 target_link_libraries(analyze_lambda FragSimAnalyzer ROOTUtils NuclearChart FragSim232Th)
+
+install(TARGETS analyze analyze_lambda DESTINATION bin)
+install(TARGETS FragSimAnalyzer DESTINATION lib)
+install(FILES dictFragSimAnalyzer_rdict.pcm DESTINATION lib)

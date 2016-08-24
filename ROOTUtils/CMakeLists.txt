@@ -39,5 +39,6 @@ add_library(ROOTUtils SHARED ${ROOTUtils_SOURCES})
 target_link_libraries(ROOTUtils ${ROOT_LIBRARIES})
 
 install(TARGETS ROOTUtils DESTINATION lib)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libdictROOTUtils_rdict.pcm DESTINATION lib)
 
 
