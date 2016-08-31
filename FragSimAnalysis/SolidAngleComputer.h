@@ -38,7 +38,7 @@ private:
     //  void   LoadHists(void);
     void   PrintStandardResults(std::ostream &stream);
     void   PrintResultsForExpData(void);
-    void   PrintResultsForExpData(std::ostream& stream, UInt_t det_index);
+    void   PrintResultsForExpData(std::ostream& stream, Int_t det_index);
     void   ConcatenateResultsForExpData(UInt_t first_det_index, UInt_t ndets);
     Int_t                  fNDets;
     Int_t                fNStrips;

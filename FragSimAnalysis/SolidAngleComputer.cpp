@@ -13,6 +13,12 @@
 #include "DataBucket.h"
 #include "SolidAngleComputer.h"
 
+#ifdef DEBUG_SolidAngleComputer
+#define ENTRY entry
+#else
+#define ENTRY 
+#endif
+
 SolidAngleComputer::SolidAngleComputer(TFile *file)
     : fNDets(4),
       fNStrips(16),
@@ -74,7 +80,7 @@ SolidAngleComputer::~SolidAngleComputer(void)
 {}
 
 Bool_t 
-SolidAngleComputer::Process(Long64_t entry)
+SolidAngleComputer::Process(Long64_t ENTRY)
 {
 #ifdef DEBUG_SolidAngleComputer
     if (entry%200==0)
@@ -113,7 +119,7 @@ SolidAngleComputer::PrintStandardResults(std::ostream &stream)
     stream << "Solid Angle per det (deg)";
     stream << "\n" << std::setfill('-') << std::setw(9*8) << "-";
     stream << std::setfill(' ');
-    for (Int_t i=0; i<fNEntries.size(); i++)
+    for (UInt_t i=0; i<fNEntries.size(); i++)
     {
         if (i%fNStrips==0)
         {
@@ -148,7 +154,7 @@ SolidAngleComputer::PrintResultsForExpData()
     if (fNEscape==0) throw -1;
 
     std::ofstream stream;
-    for (UInt_t i=0; i<fNDets; i++)
+    for (Int_t i=0; i<fNDets; i++)
     {
         TString fname = TString::Format("angle_data/sa_corrections%i",i);
         stream.open(fname, std::ofstream::out);
@@ -164,12 +170,12 @@ SolidAngleComputer::PrintResultsForExpData()
 }
 
 void
-SolidAngleComputer::PrintResultsForExpData(std::ostream& stream, UInt_t det_index)
+SolidAngleComputer::PrintResultsForExpData(std::ostream& stream, Int_t det_index)
 {
     if (fNEscape==0) throw SolidAngleComputerException();
     if (det_index>fNDets) return;
 
-    for (UInt_t i=det_index*fNStrips; i<(det_index+1)*fNStrips; i++)
+    for (Int_t i=det_index*fNStrips; i<(det_index+1)*fNStrips; i++)
     {
         stream << std::setw(14) << static_cast<Double_t>(fNEntries[i])/fNEscape
                << std::setw(14) << sqrt(fNEntries[i])/fNEscape
