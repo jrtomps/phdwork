@@ -70,9 +70,6 @@ AngleAverager::AngleAverager(TTree* tree, TFile *outfile, TFile* infile, Double_
 
 AngleAverager::~AngleAverager()
 {
-#ifdef DEBUG_AngleAverager
-    PrintResults();
-#endif
 }
 
 Bool_t 
@@ -212,7 +209,7 @@ AngleAverager::PrintResultsForExpData()
 {
     for (Int_t i=0; i<fNDets; i++)
     {
-        TString fname = TString::Format(PHD_SHARE_DIR "/angle_data/angles%i",i);
+        TString fname = TString::Format(PHD_SHARE_DIR "/angles%i",i);
         std::ofstream stream(fname, std::ofstream::out);
         if (stream.fail()) return;
 
@@ -229,7 +226,6 @@ AngleAverager::PrintResultsForExpData()
 void
 AngleAverager::PrintResultsForExpData(std::ostream& stream, UInt_t det_index)
 {
-  std::cout << "PrintResultsForExpData(cout, " << det_index << std::endl;
     if (det_index>static_cast<UInt_t>(fNDets)) return;
 
     stream << std::right;
@@ -257,7 +253,7 @@ AngleAverager::PrintResultsForExpData(std::ostream& stream, UInt_t det_index)
 void
 AngleAverager::ConcatenateResultsForExpData(UInt_t first_det_index, UInt_t ndets)
 {
-    TString fname(PHD_SHARE_DIR "/angle_data/angles");
+    TString fname(PHD_SHARE_DIR "/angles");
     std::ofstream stream(fname, std::ofstream::out);
     if (stream.fail()) return;
 
