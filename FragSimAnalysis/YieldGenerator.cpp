@@ -31,8 +31,8 @@ YieldGenerator::YieldGenerator(TTree* tree, TFile *file)
   fYieldVsKE(new TH2D("fYieldVsKE","Simulated Yields vs. Assigned KE; A; Kinetic Energy (MeV); Yield",
                       238, 0.5, 238.5, 130,0, 130)),
   fA(0),
-  fZ(0),
-  fKE(0)
+  fKE(0),
+  fZ(0)
 {
 #ifdef DEBUG_YieldGenerator
   std::cout << "YieldGenerator constructed for TTree="

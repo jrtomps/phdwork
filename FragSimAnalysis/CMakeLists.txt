@@ -31,7 +31,10 @@ set(FragSimAnalyzer_HEADERS
 
 set(dict_INCLUDES  
     -I${PROJECT_SOURCE_DIR}/NuclearChart 
-    -I${PROJECT_SOURCE_DIR}/FragSim232Th/include)
+    -I${PROJECT_SOURCE_DIR}/FragSim232Th/include
+    -I${PROJECT_BINARY_DIR})
+
+  #add_definitions(-DDEBUG_AngleAverager)
 
 include(${Geant4_USE_FILE})
 ROOT_GENERATE_DICTIONARY(dictFragSimAnalyzer ${FragSimAnalyzer_HEADERS} 
@@ -42,7 +45,8 @@ include(${ROOT_USE_FILE})
 
 include_directories(${PROJECT_SOURCE_DIR}/NuclearChart 
                     ${PROJECT_SOURCE_DIR}/ROOTUtils
-                    ${PROJECT_SOURCE_DIR}/FragSim232Th/include)
+                    ${PROJECT_SOURCE_DIR}/FragSim232Th/include
+                    ${PROJECT_BINARY_DIR})
 
 add_library(FragSimAnalyzer SHARED ${FragSimAnalyzer_SOURCES})
 target_link_libraries(FragSimAnalyzer ${ROOT_LIBRARIES} ${CLHEP_LIBRARIES} ROOTUtils) 
@@ -58,4 +62,6 @@ target_link_libraries(analyze_lambda FragSimAnalyzer ROOTUtils NuclearChart Frag
 
 install(TARGETS analyze analyze_lambda DESTINATION bin)
 install(TARGETS FragSimAnalyzer DESTINATION lib)
-install(FILES dictFragSimAnalyzer_rdict.pcm DESTINATION lib)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libdictFragSimAnalyzer_rdict.pcm DESTINATION lib)
+
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/angle_data DESTINATION share) 

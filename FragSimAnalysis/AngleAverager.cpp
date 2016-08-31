@@ -5,14 +5,7 @@
 //
 // 
 
-#include <iostream>
-#include <iomanip>
-#include <vector>
-#include <fstream>
-#include <typeinfo>
 #include <CLHEP/Units/PhysicalConstants.h>
-#include "TFile.h"
-#include "TTree.h"
 #include "TH1.h"
 #include "TObject.h"
 #include "TDirectory.h"
@@ -22,7 +15,16 @@
 #include "TSelectorInsert.h"
 #include "AngleAverager.h"
 #include "DataBucket.h"
+#include "TFile.h"
+#include "TTree.h"
 #include "TGraph2DErrors.h"
+#include "PhDConfig.h"
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <fstream>
+#include <typeinfo>
 
 ClassImp(AngleAverager)
 
@@ -69,7 +71,7 @@ AngleAverager::AngleAverager(TTree* tree, TFile *outfile, TFile* infile, Double_
 AngleAverager::~AngleAverager()
 {
 #ifdef DEBUG_AngleAverager
-    PrintAllResults();
+    PrintResults();
 #endif
 }
 
@@ -101,11 +103,11 @@ void
 AngleAverager::Save(void)
 {
     fFile->cd("AngleAveragerOutput");
-    for (Int_t i=0; i<fThetaHists.size(); i++)
+    for (UInt_t i=0; i<fThetaHists.size(); i++)
         fThetaHists.at(i)->Write("",TObject::kOverwrite);
 
 
-    for (Int_t i=0; i<fPhiHists.size(); i++)
+    for (UInt_t i=0; i<fPhiHists.size(); i++)
         fPhiHists.at(i)->Write("",TObject::kOverwrite);
 
 
@@ -127,14 +129,14 @@ AngleAverager::ConstructHists(void)
     fFile->cd("AngleAveragerOutput");
 
     TString name;
-    for (Int_t i=0; i<fThetaHists.size(); i++)
+    for (UInt_t i=0; i<fThetaHists.size(); i++)
     {
         fThetaHists.at(i) = new TH1D("","",200,-1,1);
         name = FormName(i);
         name += "_theta";
         fThetaHists.at(i)->SetName(name.Data());
     }
-    for (Int_t i=0; i<fPhiHists.size(); i++)
+    for (UInt_t i=0; i<fPhiHists.size(); i++)
     {
         fPhiHists.at(i) = new TH1D("","",360,-1.0*CLHEP::pi,CLHEP::pi);
         name = FormName(i);
@@ -154,7 +156,7 @@ AngleAverager::LoadHists()
 
     TString name;
     TH1D* hp;
-    for (Int_t i=0; i<fThetaHists.size(); i++)
+    for (UInt_t i=0; i<fThetaHists.size(); i++)
     {
         name = FormName(i);
         name += "_theta";
@@ -164,7 +166,7 @@ AngleAverager::LoadHists()
             fThetaHists.at(i) = hp;
         }
     }
-    for (Int_t i=0; i<fPhiHists.size(); i++)
+    for (UInt_t i=0; i<fPhiHists.size(); i++)
     {
         name = FormName(i);
         name += "_phi";
@@ -208,9 +210,9 @@ AngleAverager::PrintResults(std::ostream& stream)
 void
 AngleAverager::PrintResultsForExpData()
 {
-    for (UInt_t i=0; i<fNDets; i++)
+    for (Int_t i=0; i<fNDets; i++)
     {
-        TString fname = TString::Format("angle_data/angles%i",i);
+        TString fname = TString::Format(PHD_SHARE_DIR "/angle_data/angles%i",i);
         std::ofstream stream(fname, std::ofstream::out);
         if (stream.fail()) return;
 
@@ -227,7 +229,8 @@ AngleAverager::PrintResultsForExpData()
 void
 AngleAverager::PrintResultsForExpData(std::ostream& stream, UInt_t det_index)
 {
-    if (det_index>fNDets) return;
+  std::cout << "PrintResultsForExpData(cout, " << det_index << std::endl;
+    if (det_index>static_cast<UInt_t>(fNDets)) return;
 
     stream << std::right;
 
@@ -254,7 +257,7 @@ AngleAverager::PrintResultsForExpData(std::ostream& stream, UInt_t det_index)
 void
 AngleAverager::ConcatenateResultsForExpData(UInt_t first_det_index, UInt_t ndets)
 {
-    TString fname("angle_data/angles");
+    TString fname(PHD_SHARE_DIR "/angle_data/angles");
     std::ofstream stream(fname, std::ofstream::out);
     if (stream.fail()) return;
 
@@ -357,8 +360,8 @@ AngleAverager::PhiIsStraddlingEdge(TH1D *h)
     UInt_t begin = ax->GetFirst();
     UInt_t end   = ax->GetLast()+1;
 
-    UInt_t peak_low_side;
-    UInt_t peak_high_side;
+    UInt_t peak_low_side = 0;
+    UInt_t peak_high_side = 0;
     UInt_t ntrailingbins=10;
     Double_t c_prev, c_curr;
 
@@ -400,7 +403,7 @@ AngleAverager::PrintThetaResults(std::ostream& stream)
     stream << "Mean Theta per det (deg)";
     stream << "\n" << std::setfill('-') << std::setw(9*8) << "-";
     stream << std::setfill(' ');
-    for (Int_t i=0; i<fThetaHists.size(); i++)
+    for (UInt_t i=0; i<fThetaHists.size(); i++)
     {
         if (i%fNStrips==0)
         {
@@ -415,7 +418,8 @@ AngleAverager::PrintThetaResults(std::ostream& stream)
         }
 
         stream << std::setw(8) << std::setprecision(3)
-               << std::right << fThetaHists.at(i)->GetMean();
+//<< std::right << fThetaHists.at(i)->GetMean();
+               <<  fThetaHists.at(i)->GetMean();
     }
     stream << std::endl;
     stream << std::endl;
@@ -423,7 +427,7 @@ AngleAverager::PrintThetaResults(std::ostream& stream)
     stream << "RMS Theta per det (deg)";
     stream << "\n" << std::setfill('-') << std::setw(9*8) << "-";
     stream << std::setfill(' ');
-    for (Int_t i=0; i<fThetaHists.size(); i++)
+    for (UInt_t i=0; i<fThetaHists.size(); i++)
     {
         if (i%fNStrips==0)
         {
@@ -450,7 +454,7 @@ AngleAverager::PrintPhiResults(std::ostream& stream)
     stream << "Mean Phi per det (deg)";
     stream << "\n" << std::setfill('-') << std::setw(9*8) << "-";
     stream << std::setfill(' ');
-    for (Int_t i=0; i<fPhiHists.size(); i++)
+    for (UInt_t i=0; i<fPhiHists.size(); i++)
     {
         if (i%fNStrips==0)
         {
@@ -473,7 +477,7 @@ AngleAverager::PrintPhiResults(std::ostream& stream)
     stream << "RMS Phi per det (deg)";
     stream << "\n" << std::setfill('-') << std::setw(9*8) << "-";
     stream << std::setfill(' ');
-    for (Int_t i=0; i<fPhiHists.size(); i++)
+    for (UInt_t i=0; i<fPhiHists.size(); i++)
     {
         if (i%fNStrips==0)
         {

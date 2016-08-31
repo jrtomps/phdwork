@@ -124,11 +124,11 @@ main ()
 
         Analyzer *an = new Analyzer;
         an->AddFunction(aa);
-        an->AddFunction(sac);
-        an->AddFunction(eh);
-		an->AddFunction(rvo);
-        an->AddFunction(yg);
-        an->AddFunction(ehs);
+//an->AddFunction(sac);
+//        an->AddFunction(eh);
+//		an->AddFunction(rvo);
+//        an->AddFunction(yg);
+//        an->AddFunction(ehs);
 
         tr->Process(an,"",entries);
 

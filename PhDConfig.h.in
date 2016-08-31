@@ -1,0 +1,3 @@
+
+
+#cmakedefine PHD_SHARE_DIR "@PHD_SHARE_DIR@"

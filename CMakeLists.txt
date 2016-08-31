@@ -48,6 +48,11 @@ ENDIF("${isSystemDir}" STREQUAL "-1")
 
 find_package(Boost REQUIRED COMPONENTS regex)
 
+set(PHD_SHARE_DIR "${CMAKE_INSTALL_PREFIX}/share")
+
+configure_file(PhDConfig.h.in PhDConfig.h @ONLY)
+
+
 
 add_subdirectory(ROOTUtils)
 add_subdirectory(NuclearChart)
