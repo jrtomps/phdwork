@@ -26,6 +26,12 @@
 #include <fstream>
 #include <typeinfo>
 
+#ifdef DEBUG_AngleAverager
+#define ENTRY entry
+#else
+#define ENTRY 
+#endif
+
 ClassImp(AngleAverager)
 
 AngleAverager::AngleAverager(TTree* tree, TFile *outfile, TFile* infile, Double_t ethresh)
@@ -73,7 +79,7 @@ AngleAverager::~AngleAverager()
 }
 
 Bool_t 
-AngleAverager::Process(const Long64_t entry)
+AngleAverager::Process(const Long64_t ENTRY)
 {
 #ifdef DEBUG_AngleAverager
     if (entry%200==0)
