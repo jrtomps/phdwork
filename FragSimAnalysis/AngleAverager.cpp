@@ -215,7 +215,7 @@ AngleAverager::PrintResultsForExpData()
 {
     for (Int_t i=0; i<fNDets; i++)
     {
-        TString fname = TString::Format(PHD_SHARE_DIR "/angles%i",i);
+        TString fname = TString::Format(PHD_SHARE_DIR "/angle_data/angles%i",i);
         std::ofstream stream(fname, std::ofstream::out);
         if (stream.fail()) return;
 
@@ -259,7 +259,7 @@ AngleAverager::PrintResultsForExpData(std::ostream& stream, UInt_t det_index)
 void
 AngleAverager::ConcatenateResultsForExpData(UInt_t first_det_index, UInt_t ndets)
 {
-    TString fname(PHD_SHARE_DIR "/angles");
+    TString fname(PHD_SHARE_DIR "/angle_data/angles");
     std::ofstream stream(fname, std::ofstream::out);
     if (stream.fail()) return;
 

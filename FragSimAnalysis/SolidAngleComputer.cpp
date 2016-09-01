@@ -12,6 +12,7 @@
 #include "TTreeProxy.h"
 #include "DataBucket.h"
 #include "SolidAngleComputer.h"
+#include "PhDConfig.h"
 
 #ifdef DEBUG_SolidAngleComputer
 #define ENTRY entry
@@ -156,7 +157,7 @@ SolidAngleComputer::PrintResultsForExpData()
     std::ofstream stream;
     for (Int_t i=0; i<fNDets; i++)
     {
-        TString fname = TString::Format("angle_data/sa_corrections%i",i);
+        TString fname = TString::Format(PHD_SHARE_DIR "/angle_data/sa_corrections%i",i);
         stream.open(fname, std::ofstream::out);
         if (stream.fail()) return;
         stream << std::setiosflags(std::ios::scientific)
@@ -186,7 +187,7 @@ SolidAngleComputer::PrintResultsForExpData(std::ostream& stream, Int_t det_index
 void
 SolidAngleComputer::ConcatenateResultsForExpData(UInt_t first_det_index, UInt_t ndets)
 {
-    TString fname("angle_data/sa_corrections");
+    TString fname(PHD_SHARE_DIR "/sa_corrections");
     std::ofstream stream(fname, std::ofstream::out);
     if (stream.fail()) return;
 
