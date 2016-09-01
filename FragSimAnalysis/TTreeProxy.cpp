@@ -19,11 +19,12 @@
 #include "TTreeProxy.h"
 
 TTreeProxy::TTreeProxy(void)
-    : fNames(),
+    : 
       fIntMap(),
       fDoubleMap(),
       fVectorMap(),
       fStringMap(),
+      fNames(),
       fInts(20),
       fDoubles(20),
       fVectors(20),
@@ -48,7 +49,7 @@ TTreeProxy::SetAddresses(TTree *tree)
     fDoubles.resize(tree->GetNbranches(),0);
     fVectors.resize(tree->GetNbranches(),0);
     fStrings.resize(tree->GetNbranches(),0);
-    for (UInt_t i=0; i<tree->GetNbranches(); i++)
+    for (Int_t i=0; i<tree->GetNbranches(); i++)
     {
         TString leaf_typename;
         Int_t leaf_length;
@@ -104,7 +105,7 @@ TTreeProxy::SetAddresses(TTree *tree)
 
 
 void
-TTreeProxy::GetEntry(Long64_t entry)
+TTreeProxy::GetEntry(Long64_t)
 {
 }
 
