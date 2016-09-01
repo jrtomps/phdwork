@@ -34,7 +34,16 @@ set(dict_INCLUDES
     -I${PROJECT_SOURCE_DIR}/FragSim232Th/include
     -I${PROJECT_BINARY_DIR})
 
-  #add_definitions(-DDEBUG_AngleAverager)
+  option(DBG_AngleAverager "Enable debugging output for angle averager")
+  option(DBG_SolidAngleComputer "Enable debugging output for solid angle computer")
+
+  if(DBG_AngleAverager) 
+    add_definitions(-DDEBUG_AngleAverager)
+  endif()
+
+  if(DBG_SolidAngleComputer) 
+    add_definitions(-DDEBUG_SolidAngleComputer)
+  endif()
 
 include(${Geant4_USE_FILE})
 ROOT_GENERATE_DICTIONARY(dictFragSimAnalyzer ${FragSimAnalyzer_HEADERS} 
