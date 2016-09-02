@@ -24,6 +24,7 @@
 #include <iomanip>
 #include <vector>
 #include <fstream>
+#include <stdexcept>
 #include <typeinfo>
 
 #ifdef DEBUG_AngleAverager
@@ -51,6 +52,14 @@ AngleAverager::AngleAverager(TTree* tree, TFile *outfile, TFile* infile, Double_
       fTarKE(0),
       fMinSSDTotDepE(ethresh)
 {
+
+    const char* pAnalDir = std::getenv("PHD_ANALYSIS_DIR");
+    if  (pAnalDir == nullptr) {
+      throw std::runtime_error("User must set PHD_ANALYSIS_DIR environment variable");
+    } else {
+      fAnalysisDir = pAnalDir;
+    }
+
 #ifdef DEBUG_AngleAverager
     std::cout << "AngleAverager constructed for TTree="
               << fTree->GetName()
@@ -215,7 +224,7 @@ AngleAverager::PrintResultsForExpData()
 {
     for (Int_t i=0; i<fNDets; i++)
     {
-        TString fname = TString::Format(PHD_SHARE_DIR "/angle_data/angles%i",i);
+        TString fname = TString::Format("%s/angle_data/angles%i",fAnalysisDir.c_str(), i);
         std::ofstream stream(fname, std::ofstream::out);
         if (stream.fail()) return;
 
@@ -259,7 +268,7 @@ AngleAverager::PrintResultsForExpData(std::ostream& stream, UInt_t det_index)
 void
 AngleAverager::ConcatenateResultsForExpData(UInt_t first_det_index, UInt_t ndets)
 {
-    TString fname(PHD_SHARE_DIR "/angle_data/angles");
+    TString fname((fAnalysisDir + "/angle_data/angles").c_str());
     std::ofstream stream(fname, std::ofstream::out);
     if (stream.fail()) return;
 

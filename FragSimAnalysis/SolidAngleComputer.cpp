@@ -33,6 +33,13 @@ SolidAngleComputer::SolidAngleComputer(TFile *file)
       fTarTotDepE(0),
       fTarKE(0)
 {
+    const char* pAnalDir = std::getenv("PHD_ANALYSIS_DIR");
+    if  (pAnalDir == nullptr) {
+      throw std::runtime_error("User must set PHD_ANALYSIS_DIR environment variable");
+    } else {
+      fAnalysisDir = pAnalDir;
+    }
+
 #ifdef DEBUG_SolidAngleComputer
     std::cout << "SolidAngleComputer constructed for TTree="
               << fTree->GetName()
@@ -59,6 +66,14 @@ SolidAngleComputer::SolidAngleComputer(TTree* tree, TFile *file)
       fTarTotDepE(0),
       fTarKE(0)
 {
+    const char* pAnalDir = std::getenv("PHD_ANALYSIS_DIR");
+    if  (pAnalDir == nullptr) {
+      throw std::runtime_error("User must set PHD_ANALYSIS_DIR environment variable");
+    } else {
+      fAnalysisDir = pAnalDir;
+    }
+
+
 #ifdef DEBUG_SolidAngleComputer
     std::cout << "SolidAngleComputer constructed for TTree="
               << fTree->GetName()
@@ -157,7 +172,7 @@ SolidAngleComputer::PrintResultsForExpData()
     std::ofstream stream;
     for (Int_t i=0; i<fNDets; i++)
     {
-        TString fname = TString::Format(PHD_SHARE_DIR "/angle_data/sa_corrections%i",i);
+        TString fname = TString::Format("%s/angle_data/sa_corrections%i",fAnalysisDir.c_str(), i);
         stream.open(fname, std::ofstream::out);
         if (stream.fail()) return;
         stream << std::setiosflags(std::ios::scientific)
@@ -187,7 +202,7 @@ SolidAngleComputer::PrintResultsForExpData(std::ostream& stream, Int_t det_index
 void
 SolidAngleComputer::ConcatenateResultsForExpData(UInt_t first_det_index, UInt_t ndets)
 {
-    TString fname(PHD_SHARE_DIR "/sa_corrections");
+    TString fname((fAnalysisDir + "/sa_corrections").c_str());
     std::ofstream stream(fname, std::ofstream::out);
     if (stream.fail()) return;
 

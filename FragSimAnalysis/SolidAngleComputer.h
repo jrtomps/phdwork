@@ -7,6 +7,7 @@
 #include <ostream>
 #include <vector>
 #include <exception>
+#include <string>
 #include "Rtypes.h"
 #include "TSelectorInsert.h"
 
@@ -51,6 +52,7 @@ private:
     Int_t                fNEscape;
     Double_t             fTarTotDepE;
     Double_t             fTarKE;
+    std::string       fAnalysisDir;
 
 };
 #endif

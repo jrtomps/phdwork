@@ -65,6 +65,7 @@ private:
     Double_t           fTarTotDepE;
     Double_t                fTarKE;
     Double_t        fMinSSDTotDepE;
+    std::string       fAnalysisDir;
 
     ClassDef(AngleAverager, 0);
 };

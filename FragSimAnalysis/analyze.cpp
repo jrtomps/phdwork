@@ -4,7 +4,7 @@
 #include <sstream>
 #include <cstdlib>
 #include <set>
-#include <exception>
+#include <stdexcept>
 #include <dirent.h>
 #include <functional>
 #include <limits>
@@ -48,25 +48,25 @@ void ListAllFilesInDirOfType(std::string dirname, std::string fsuffix)
     std::cout << std::endl;
 }
 
+string getEnv(string varName) {
+    if (getenv(varName.c_str())==NULL)
+    {
+        throw std::runtime_error(varName + " variable not set");
+    }
+    else
+        return string(getenv("SIM_OUT_DIR"));
+}
+
 int
 main ()
 {
-    string indir;
-
-    if (getenv("SIM_OUT_DIR")==NULL)
-    {
-        std::cout << "SIM_OUT_DIR variable not set"
-                  << "\n> source setup.sh "
-                  << std::endl;
-        return -1;
-    }
-    else
-        indir = getenv("SIM_OUT_DIR");
+    string indir = getEnv("SIM_OUT_DIR");
+    string outdir = getEnv("PHD_ANALYSIS_DIR");
 
     try
     {
         string file = "test.root";
-        TFile fout(file.data(), "UPDATE");
+        TFile fout((outdir + "/" + file).data(), "UPDATE");
 
         Char_t ans;
         TChain *tr = new TChain("Sim_Tree");
@@ -101,7 +101,7 @@ main ()
             for (Int_t i=first; i<=last; i++)
             {
                 fn.clear(); fn.str("");
-                fn << ifname << i << ".root";
+                fn << indir << "/" << ifname << i << ".root";
                 tr->AddFile(fn.str().data());
             }
         }
@@ -138,7 +138,7 @@ main ()
           std::cout << "Processing tree failed" << std::endl;
         }
 
-        eh->WriteIntegralsToFile("g4_sa_corr_232Th.dat",7.1, 9.0);
+        eh->WriteIntegralsToFile(outdir + "/g4_sa_corr_232Th.dat",7.1, 9.0);
 
         fout.Close();
         delete an;
