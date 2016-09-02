@@ -36,6 +36,7 @@ set(dict_INCLUDES
 
   option(DBG_AngleAverager "Enable debugging output for angle averager")
   option(DBG_SolidAngleComputer "Enable debugging output for solid angle computer")
+  option(DBG_Analyzer "Enable debugging output for analyzer")
 
   if(DBG_AngleAverager) 
     add_definitions(-DDEBUG_AngleAverager)
@@ -43,6 +44,10 @@ set(dict_INCLUDES
 
   if(DBG_SolidAngleComputer) 
     add_definitions(-DDEBUG_SolidAngleComputer)
+  endif()
+
+  if(DBG_Analyzer) 
+    add_definitions(-DDEBUG_Analyzer)
   endif()
 
 include(${Geant4_USE_FILE})

@@ -18,8 +18,8 @@ ClassImp(Analyzer)
 
 Analyzer::Analyzer(void)
     : TSelector(),
-      fFunctions(),
       fTree(NULL),
+      fFunctions(),
       fProxy()
 {
 #ifdef DEBUG_Analyzer
@@ -109,7 +109,7 @@ Analyzer::Process(Long64_t entry)
     {
         std::cout << std::setiosflags(std::ios::fixed) << std::setprecision(1);
 
-        std::cout << "\r" << std::setw(5) << gentry*100.0/fTree->GetTree()->GetEntries() << " \%"
+        std::cout << "\r" << std::setw(5) << gentry*100.0/fTree->GetTree()->GetEntries() << " %"
                   << std::flush;
 
         std::cout << resetiosflags(std::ios::fixed) << std::setprecision(6);

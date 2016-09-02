@@ -7,6 +7,7 @@
 #include <exception>
 #include <dirent.h>
 #include <functional>
+#include <limits>
 #include "TFile.h"
 #include "TTree.h"
 #include "TChain.h"
@@ -69,43 +70,43 @@ main ()
 
         Char_t ans;
         TChain *tr = new TChain("Sim_Tree");
-
-        std::cout << "Do you want to run multiple files? ";
-        std::cin >> ans;
-
+//
+//        std::cout << "Do you want to run multiple files? ";
+//        std::cin >> ans;
+//
         std::string ifname;
-        if (std::cin.peek()=='\n') std::cin.get();
-        if (ans=='n')
-        {
+//        if (std::cin.peek()=='\n') std::cin.get();
+//        if (ans=='n')
+//        {
             cout << "\nIn directory = " << indir << endl;
             ListAllFilesInDirOfType(indir,".root");
             cout << "\nEnter file name containing TTree : ";
             getline(cin,ifname);
-			std::ostringstream fn;
-			fn << indir << "/" << ifname;
-            tr->AddFile(fn.str().data());
-        }
-        else
-        {
-            Int_t first, last;
-            cout << "\nEnter base name : ";
-            getline(cin, ifname);
-            cout << "Enter first index : ";
-            cin >> first;
-            cout << "Enter last index :  ";
-            cin >> last;
-
-            if (ifname.at(ifname.length()-1)!='_')  ifname.append("_");
             std::ostringstream fn;
-            for (Int_t i=first; i<=last; i++)
-            {
-                fn.clear(); fn.str("");
-                fn << ifname << i << ".root";
-                tr->AddFile(fn.str().data());
-            }
-        }
+            fn << indir << "/" << ifname;
+//            tr->AddFile(fn.str().data());
+//        }
+//        else
+//        {
+//            Int_t first, last;
+//            cout << "\nEnter base name : ";
+//            getline(cin, ifname);
+//            cout << "Enter first index : ";
+//            cin >> first;
+//            cout << "Enter last index :  ";
+//            cin >> last;
+//
+//            if (ifname.at(ifname.length()-1)!='_')  ifname.append("_");
+//            std::ostringstream fn;
+//            for (Int_t i=first; i<=last; i++)
+//            {
+//                fn.clear(); fn.str("");
+//                fn << ifname << i << ".root";
+//                tr->AddFile(fn.str().data());
+//            }
+//        }
 
-        Int_t entries=TChain::kBigNumber;
+        Long64_t entries=std::numeric_limits<Long64_t>::max();
         std::cout << "Do you want to process the entire tree? (y/n) : ";
         std::cin >> ans;
         if (ans!='y' && ans!='Y')
@@ -113,14 +114,18 @@ main ()
             std::cout << "Enter number to process : ";
             std::cin >> entries;
         }
-//        TTree *tr   = dynamic_cast<TTree*>(fin.Get("Sim_Tree"));
 
+//        TFile fin(fn.str().c_str(), "READ");
+//        TTree *tr   = dynamic_cast<TTree*>(fin.Get("Sim_Tree"));
+        tr->AddFile(fn.str().c_str());
         AngleAverager     *aa = new AngleAverager(tr, &fout, tr->GetFile(), 7.1);
         SolidAngleComputer *sac = new SolidAngleComputer(tr, tr->GetFile());
-        EnergyHist       *eh = new EnergyHist(tr, &fout, 7.1, 9.0);
-        RatioVsOrigin       *rvo = new RatioVsOrigin(tr, &fout, 7.1, 9.0);
-        YieldGenerator       *yg = new YieldGenerator(tr, &fout);
-        EnergyHistSorted       *ehs= new EnergyHistSorted(tr, &fout);
+//        AngleAverager       *aa = new AngleAverager(tr, &fout, &fin, 7.1);
+//        SolidAngleComputer *sac = new SolidAngleComputer(tr, &fin);
+        EnergyHist          *eh = new EnergyHist(tr, &fout, 7.1, 9.0);
+        RatioVsOrigin      *rvo = new RatioVsOrigin(tr, &fout, 7.1, 9.0);
+        YieldGenerator      *yg = new YieldGenerator(tr, &fout);
+        EnergyHistSorted   *ehs = new EnergyHistSorted(tr, &fout);
 
         Analyzer *an = new Analyzer;
         an->AddFunction(aa);
@@ -130,9 +135,12 @@ main ()
 //        an->AddFunction(yg);
 //        an->AddFunction(ehs);
 
-        tr->Process(an,"",entries);
+        Long_t status = tr->Process(an,"",entries);
+        if (status == -1) {
+          std::cout << "Processing tree failed" << std::endl;
+        }
 
-		eh->WriteIntegralsToFile("g4_sa_corr_232Th.dat",7.1, 9.0);
+        eh->WriteIntegralsToFile("g4_sa_corr_232Th.dat",7.1, 9.0);
 
         fout.Close();
         delete an;
