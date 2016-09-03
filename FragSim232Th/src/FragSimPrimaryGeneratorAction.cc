@@ -198,13 +198,12 @@ void FragSimPrimaryGeneratorAction::SampleMassAndEnergyDistribution()
     G4int A;
     G4int Z;
     G4double energy;
-    fMassDistr->SampleIsotopeAndEnergy(Z, A, energy);
     G4ParticleTable* table = G4ParticleTable::GetParticleTable();
-    G4ParticleDefinition* fragment=0;
+    G4ParticleDefinition* fragment=nullptr;
     G4int count = 0;
-    while (fragment==0 && count<30)
+    while (fragment==nullptr && count<30)
     {
-
+      fMassDistr->SampleIsotopeAndEnergy(Z, A, energy);
       fragment = table->GetIon(Z,A,0*MeV);
       count++;
     }

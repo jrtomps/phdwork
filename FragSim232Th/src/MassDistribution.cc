@@ -114,11 +114,15 @@ void MassDistribution::LoadDataFromFile(const std::string &db_fname)
     {
 //        m = ax->FindBin(gr->GetX()[i]);
         m = ax->GetBinCenter(i);
-        if (m>=gr->GetX()[1] && m<=gr->GetX()[gr->GetN()-1])
-            fMassDistr->SetBinContent(i, gr->Eval(m,0,"S") );
-        else if (m>=gr->GetX()[0] && m<gr->GetX()[1])
+        if (m>=gr->GetX()[1] && m<=gr->GetX()[gr->GetN()-1]) {
+          double val = gr->Eval(m,0,"S");
+          // if the spline results in a negative value, we set it to zero
+          if (val < 0) val = 0;
+          fMassDistr->SetBinContent(i, val);
+        } else if (m>=gr->GetX()[0] && m<gr->GetX()[1])
         {
-            fMassDistr->SetBinContent(i, a + b*m + c*m*m);
+          double val = a + b*m + c*m*m;
+          fMassDistr->SetBinContent(i, val);
 //            fMassDistr->SetBinContent(i, 1.12816059451781147e-02*m+(gr->GetY()[0]-gr->GetX()[0]*1.12816059451781147e-02) );
         }
         else
@@ -126,6 +130,7 @@ void MassDistribution::LoadDataFromFile(const std::string &db_fname)
     }
     delete gr;
 
+    fMassDistr->Clone("mass_distr")->Write();
 
     size_t in = db_fname.rfind("/");
     std::string enstr = db_fname.substr(in+1, db_fname.size()-in-1);
@@ -139,6 +144,7 @@ void MassDistribution::SampleIsotopeAndEnergy(G4int& z, G4int& a, G4double& ener
     a = fMassDistr->GetRandom();
     z = ComputeZFromA(a);
 
+    std::cout << "A=" << a << " Z=" << z << std::endl;
     if (a>=fTKE->GetX()[0] && a <= fTKE->GetX()[fTKE->GetN()-1])
     {
         energy = fTKE->Eval(a,0,"S")*MeV;
