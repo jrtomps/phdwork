@@ -34,4 +34,5 @@ else
 	fi
 fi
 
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$HOME/g4work/tmp/Linux-g++/FragSim02
+export G4LEDATA=/usr/local/geant4/geant4.9.6.p04-build/data/G4EMLOW6.32
+#export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$HOME/g4work/tmp/Linux-g++/FragSim02
