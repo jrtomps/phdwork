@@ -6,9 +6,9 @@
 
 OUTPUTDIR="/media/jeromy/FreeAgent\ Drive/."
 #OUTPUTDIR=$PWD/sim_output
-./run.sh frag_gx2_gy0_gz0_r1_r5_x1_y0_z0 1 2
-mv sim_output/frag_gx2_gy0_gz0* $OUTPUTDIR
+./run.sh frag_gx2_gy0_gz0_r1_r5_x1_y0_z0 5 6
+mv sim_output/frag_gx2_gy0_gz0* "$OUTPUTDIR"
 
-./run.sh frag_gx2_gy0_gz0_r1_r5_x1_y0_z0 3 4
-mv sim_output/frag_gx2_gy0_gz0* $OUTPUTDIR
+./run.sh frag_gx2_gy0_gz0_r1_r5_x1_y0_z0 7 8
+mv sim_output/frag_gx2_gy0_gz0* "$OUTPUTDIR"
 
