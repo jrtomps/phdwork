@@ -54,7 +54,7 @@ string getEnv(string varName) {
         throw std::runtime_error(varName + " variable not set");
     }
     else
-        return string(getenv("SIM_OUT_DIR"));
+        return string(getenv(varName.c_str()));
 }
 
 int
