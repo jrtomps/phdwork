@@ -3,7 +3,7 @@
 #include <string>
 #include <cstdlib>
 #include <set>
-#include <exception>
+#include <stdexcept>
 #include <dirent.h>
 #include <functional>
 #include "TFile.h"
@@ -41,30 +41,31 @@ void ListAllFilesInDirOfType(std::string dirname, std::string fsuffix)
     std::cout << std::endl;
 }
 
+std::string getEnv(std::string varName) {
+    if (getenv(varName.c_str())==NULL)
+    {
+        string msg = varName + " variable not set";
+        throw std::runtime_error(msg);
+    }
+    else
+        return getenv(varName.c_str());
+}
+
 int
 main ()
 {
-    string indir;
-
-    if (getenv("SIM_OUT_DIR")==NULL)
-    {
-        std::cout << "SIM_OUT_DIR variable not set"
-                  << "\n> source setup.sh "
-                  << std::endl;
-        return -1;
-    }
-    else
-        indir = getenv("SIM_OUT_DIR");
+    string indir = getEnv("SIM_OUT_DIR");
+    string outdir = getEnv("PHD_ANALYSIS_DIR");
 
     try
     {
-        string file = "h_eta.root";
+        string file = outdir + "/h_eta.root";
         TFile fout(file.data(), "UPDATE");
         
-        string file2 = "lambda_eta.root";
+        string file2 = outdir + "/lambda_eta.root";
         TFile fout2(file2.data(), "UPDATE");
 
-        string file3 = "angles_eta.root";
+        string file3 = outdir + "/angles_eta.root";
         TFile fout3(file3.data(), "UPDATE");
   
         Char_t ans;
@@ -81,7 +82,7 @@ main ()
             ListAllFilesInDirOfType(indir,".root");
             cout << "\nEnter file name containing TTree : ";
             getline(cin,ifname);
-			indir += "/";
+       			indir += "/";
             ifname.insert(0, indir);
             tr->AddFile(ifname.data());
         }
@@ -99,7 +100,7 @@ main ()
             for (Int_t i=first; i<=last; i++)
             {
                 fn.clear(); fn.str("");
-                fn << ifname << i << ".root";
+                fn << indir << "/" << ifname << i << ".root";
                 tr->AddFile(fn.str().data());
             }
         }
