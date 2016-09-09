@@ -77,5 +77,6 @@ target_link_libraries(analyze_lambda FragSimAnalyzer ROOTUtils NuclearChart Frag
 install(TARGETS analyze analyze_lambda DESTINATION bin)
 install(TARGETS FragSimAnalyzer DESTINATION lib)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libdictFragSimAnalyzer_rdict.pcm DESTINATION lib)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libdictFragSimAnalyzer.rootmap DESTINATION lib)
 
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/angle_data DESTINATION share) 

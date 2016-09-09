@@ -52,6 +52,7 @@ add_library(FragmentDists SHARED ${FragmentDists_SOURCES})
 target_link_libraries(FragmentDists ${ROOT_LIBRARIES} ${Boost_LIBRARIES})
 install(TARGETS FragmentDists LIBRARY DESTINATION lib)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libdictFragmentDists_rdict.pcm DESTINATION lib)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libdictFragmentDists.rootmap DESTINATION lib)
 install(FILES ${FragmentDists_HEADERS} DESTINATION include)
 
 
