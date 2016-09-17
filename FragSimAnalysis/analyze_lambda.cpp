@@ -114,7 +114,7 @@ main ()
         Analyzer *an = new Analyzer;
 //        an->AddFunction(aa);
         an->AddFunction(sapg);
-//        an->AddFunction(lg);
+        an->AddFunction(lg);
         an->AddFunction(edbf);
 
 

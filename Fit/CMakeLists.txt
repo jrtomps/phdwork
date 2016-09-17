@@ -91,3 +91,6 @@ set(dictFit_INCLUDES
 include_directories(${CLHEP_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR}/FragmentDists ${PROJECT_SOURCE_DIR}/ROOTUtils)
 add_library(Fit SHARED ${Fit_SOURCES})
 target_link_libraries(Fit FragmentDists ROOTUtils)
+install(TARGETS Fit LIBRARY DESTINATION lib)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libdictFit_rdict.pcm DESTINATION lib)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libdictFit.rootmap DESTINATION lib)
