@@ -55,6 +55,7 @@ configure_file(PhDConfig.h.in PhDConfig.h @ONLY)
 
 
 add_subdirectory(ROOTUtils)
+add_subdirectory(Analyzer)
 add_subdirectory(NuclearChart)
 add_subdirectory(FragmentDists)
 add_subdirectory(FragSim232Th)

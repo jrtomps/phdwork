@@ -51,7 +51,7 @@ ConfigManager::~ConfigManager (void)
 #ifdef DEBUG
     cout << "Begin ConfigManager destructor" << endl; cout.flush();
 #endif
-    for (Int_t i=0; i<fDb.size(); i++)
+    for (UInt_t i=0; i<fDb.size(); i++)
     {
         delete fDb[i];
     }
@@ -134,7 +134,7 @@ void ConfigManager::PrintTargetRuns(const Char_t* tarname)
                 << "-----------------"
                 << endl;
 
-        for (Int_t i=0; i<runs.size(); i++)
+        for (UInt_t i=0; i<runs.size(); i++)
         {
             cout << runs.at(i) << endl;
         }
@@ -150,11 +150,10 @@ const string  ConfigManager::GetComment(void) const
 vector<Int_t> ConfigManager::GetListOfRuns(void)
 {
 
-    Int_t minlength;
     listofruns.clear();
 
     //  cout << "The following runs match" << endl;
-    for (Int_t i=0; i<fDb.size(); i++)
+    for (UInt_t i=0; i<fDb.size(); i++)
     {
         listofruns.push_back(fDb.at(i)->GetRun());
     }
@@ -165,12 +164,11 @@ vector<Int_t> ConfigManager::GetListOfRuns(void)
 vector<Int_t> ConfigManager::GetListOfTargetRuns(const Char_t *targetname)
 {
 
-    Int_t minlength;
     string tarstr(targetname);
     listofruns.clear();
 
     //  cout << "The following runs match" << endl;
-    for (Int_t i=0; i<fDb.size(); i++)
+    for (UInt_t i=0; i<fDb.size(); i++)
     {
         const Char_t *tarintree = fDb.at(i)->GetTarget();
         if (tarstr.compare(tarintree) == 0)
@@ -185,12 +183,11 @@ vector<Int_t> ConfigManager::GetListOfTargetRuns(const Char_t *targetname)
 vector<Int_t> ConfigManager::GetListOfTargetRunsWithEnergy(const Char_t *targetname, const Float_t energy)
 {
 
-    Int_t minlength;
     string tarstr(targetname);
     listofruns.clear();
 
     //  cout << "The following runs match" << endl;
-    for (Int_t i=0; i<fDb.size(); i++)
+    for (UInt_t i=0; i<fDb.size(); i++)
     {
         const Char_t *tarintree = fDb.at(i)->GetTarget();
         if (tarstr.compare(tarintree) == 0
@@ -206,13 +203,12 @@ vector<Int_t> ConfigManager::GetListOfTargetRunsWithEnergy(const Char_t *targetn
 vector<Int_t> ConfigManager::GetListOfTargetRunsWithEnergyAndPol(const Char_t *targetname, const Float_t energy, const Char_t* pol)
 {
 
-    Int_t minlength;
     string tarstr(targetname);
     string polstr(pol);
     listofruns.clear();
 
     //  cout << "The following runs match" << endl;
-    for (Int_t i=0; i<fDb.size(); i++)
+    for (UInt_t i=0; i<fDb.size(); i++)
     {
         const Char_t *tarintree = fDb.at(i)->GetTarget();
         const Char_t *polintree = fDb.at(i)->GetPol();
@@ -229,11 +225,10 @@ vector<Int_t> ConfigManager::GetListOfTargetRunsWithEnergyAndPol(const Char_t *t
 vector<ConfigEntry*> ConfigManager::GetListOfEntries(void)
 {
 
-    Int_t minlength;
     vector<ConfigEntry*> avec;
 
     //  cout << "The following runs match" << endl;
-    for (Int_t i=0; i<fDb.size(); i++)
+    for (UInt_t i=0; i<fDb.size(); i++)
     {
         avec.push_back(fDb.at(i));
     }
@@ -244,12 +239,11 @@ vector<ConfigEntry*> ConfigManager::GetListOfEntries(void)
 vector<ConfigEntry*> ConfigManager::GetListOfTargetEntries(const Char_t *targetname)
 {
 
-    Int_t minlength;
     string tarstr(targetname);
     vector<ConfigEntry*> avec;
 
     //  cout << "The following runs match" << endl;
-    for (Int_t i=0; i<fDb.size(); i++)
+    for (UInt_t i=0; i<fDb.size(); i++)
     {
         const Char_t *tarintree = fDb.at(i)->GetTarget();
         if (tarstr.compare(tarintree) == 0)
@@ -264,12 +258,11 @@ vector<ConfigEntry*> ConfigManager::GetListOfTargetEntries(const Char_t *targetn
 vector<ConfigEntry*> ConfigManager::GetListOfTargetEntriesWithEnergy(const Char_t *targetname, const Float_t energy)
 {
 
-    Int_t minlength;
     string tarstr(targetname);
     vector<ConfigEntry*> avec;
 
     //  cout << "The following runs match" << endl;
-    for (Int_t i=0; i<fDb.size(); i++)
+    for (UInt_t i=0; i<fDb.size(); i++)
     {
         const Char_t *tarintree = fDb.at(i)->GetTarget();
         if (tarstr.compare(tarintree) == 0
@@ -285,13 +278,12 @@ vector<ConfigEntry*> ConfigManager::GetListOfTargetEntriesWithEnergy(const Char_
 vector<ConfigEntry*> ConfigManager::GetListOfTargetEntriesWithEnergyAndPol(const Char_t *targetname, const Float_t energy, const Char_t* pol)
 {
 
-    Int_t minlength;
     string tarstr(targetname);
     string polstr(pol);
     vector<ConfigEntry*> avec;
 
     //  cout << "The following runs match" << endl;
-    for (Int_t i=0; i<fDb.size(); i++)
+    for (UInt_t i=0; i<fDb.size(); i++)
     {
         const Char_t *tarintree = fDb.at(i)->GetTarget();
         const Char_t *polintree = fDb.at(i)->GetPol();
@@ -573,7 +565,7 @@ void ConfigManager::Save ()
 
     ofile << fComment << endl;
 
-    for (Int_t i=0; i<fDb.size(); i++)
+    for (UInt_t i=0; i<fDb.size(); i++)
     {
         fDb.at(i)->WriteToFile(ofile,fSpacer);
     }
@@ -582,7 +574,7 @@ void ConfigManager::Save ()
 
 };
 
-void ConfigManager::SaveAs (const Char_t* fname, const Char_t* comment, Char_t spacer)
+void ConfigManager::SaveAs (const Char_t* fname, const Char_t* /*comment*/, Char_t spacer)
 {
 
     if (fDb.size()==0)
@@ -597,7 +589,7 @@ void ConfigManager::SaveAs (const Char_t* fname, const Char_t* comment, Char_t s
 
     ofile << fComment << endl;
 
-    for (Int_t i=0; i<fDb.size(); i++)
+    for (UInt_t i=0; i<fDb.size(); i++)
     {
         fDb.at(i)->WriteToFile(ofile,fSpacer);
     }
@@ -635,7 +627,7 @@ void ConfigManager::SetArrayForRuns(const Char_t *id, Float_t *array, vector<Int
         vec.push_back(*(array+i));
     }
 
-    for (Int_t i=0; i<runlist.size(); i++)
+    for (UInt_t i=0; i<runlist.size(); i++)
     {
         entry = GetRun(runlist[i]);
         if (entry) entry->SetMember(id, vec);
@@ -665,7 +657,7 @@ void ConfigManager::SetValueForRuns(const Char_t *id, Float_t val, vector<Int_t>
     vector<Float_t> vec;
     vec.push_back(val);
 
-    for (Int_t i=0; i<runlist.size(); i++)
+    for (UInt_t i=0; i<runlist.size(); i++)
     {
         entry = GetRun(runlist[i]);
         if (entry) entry->SetMember(id, vec);
@@ -689,7 +681,7 @@ void ConfigManager::SetValueForRuns(const Char_t *id, const Char_t* name, vector
 {
     ConfigEntry *entry;
 
-    for (Int_t i=0; i<runlist.size(); i++)
+    for (UInt_t i=0; i<runlist.size(); i++)
     {
         entry = GetRun(runlist[i]);
         if (entry) entry->SetMember(id, name);

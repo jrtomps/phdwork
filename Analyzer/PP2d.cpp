@@ -38,9 +38,6 @@ PP2d::PP2d(ConfigEntry *ce, bool save)
     fThresh(),
     fLowCut(),
     fHighCut(),
-    ndet(ce->GetNDets()), 
-    nadc_ch(ce->GetNADCChannels()),
-    ntdc_ch(ce->GetNTDCChannels()), 
     tof_vs_adc_cut(),
     tof_vs_tdc_cut(),
     tof_vs_inv_adc_cut(),
@@ -48,7 +45,10 @@ PP2d::PP2d(ConfigEntry *ce, bool save)
     runnumber(),
     starttime(), 
     endtime(), 
-    n_phys_events()
+    n_phys_events(),
+    ndet(ce->GetNDets()),
+    nadc_ch(ce->GetNADCChannels()),
+    ntdc_ch(ce->GetNTDCChannels())
 {
   willSave = save;
       
@@ -67,7 +67,7 @@ PP2d::PP2d(ConfigEntry *ce, bool save)
 }
 
 PP2d::PP2d(PP2d const& obj)  
-  : fPed(),
+  : TSelector(), fPed(),
     fThresh(),
     fLowCut(),
     fHighCut()

@@ -39,7 +39,7 @@ class ExtensibleDb : public ExDb
   ExtensibleDb(ExtensibleDb const& obj);
   ExtensibleDb& operator=(ExtensibleDb const& obj);
   friend void swap(ExtensibleDb& lhs, ExtensibleDb& rhs);
-  ~ExtensibleDb(void); 
+  virtual ~ExtensibleDb(void); 
 
   void GetValue(std::string const& headername, void* var_to_set);
   

@@ -8,8 +8,8 @@
 #include "TObjArray.h"
 
 static const Int_t ndets = 32;
-static Char_t* adc_base = "ADC";
-static Char_t* tdc_base = "TDC";
+static const Char_t* adc_base = "ADC";
+static const Char_t* tdc_base = "TDC";
 TObjArray *histarr;
 TCanvas *c1, *c2;
 

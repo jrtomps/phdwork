@@ -44,9 +44,12 @@ ProofPlot::ProofPlot(ConfigEntry *ce, bool save)
     fHighCut3(),
     fLowTOFCut(),
     fHighTOFCut(),
-    ndet(ce->GetNDets()),
-    nadc_ch(ce->GetNADCChannels()),
-    ntdc_ch(ce->GetNTDCChannels()), 
+    fChain(nullptr),
+    runcount(0),
+    nentries(0),
+    cm(),
+    pce(nullptr),
+
     //    tdc_gate(),
     adc(),   
     adc_cut(), 
@@ -72,7 +75,10 @@ ProofPlot::ProofPlot(ConfigEntry *ce, bool save)
     runnumber(),
     starttime(), 
     endtime(), 
-    n_phys_events()
+    n_phys_events(),
+    ndet(ce->GetNDets()),
+    nadc_ch(ce->GetNADCChannels()),
+    ntdc_ch(ce->GetNTDCChannels())
     //   max_clock(),
 {
     willSave = save;
@@ -112,7 +118,7 @@ ProofPlot::ProofPlot(ConfigEntry *ce, bool save)
 }
 
 ProofPlot::ProofPlot(ProofPlot const& obj)  
-    : fPed(),
+    : TSelector(), fPed(),
     fThresh(),
     fLowCut(),
     fHighCut(),
@@ -503,82 +509,82 @@ Bool_t ProofPlot::Process(Long64_t entry)
 
     bpmval = 0;
     tdcval = 0;
-    Double_t adc_val, tdc_val;
-    Float_t tofval;
+    Double_t adc_val=0, tdc_val=0;
+    Float_t tofval=0;
     for (incr=0;incr<ntdc_ch;incr++)
     {
-        if (incr<nadc_ch)
-	{
-            b_adc[incr]->GetEntry(entry);
-            adc_val = nt_adc[incr];
+      if (incr<nadc_ch)
+      {
+        b_adc[incr]->GetEntry(entry);
+        adc_val = nt_adc[incr];
 
-            b_tdc[incr]->GetEntry(entry);
-            tdc_val = nt_tdc[incr];
+        b_tdc[incr]->GetEntry(entry);
+        tdc_val = nt_tdc[incr];
 
-            // TOF corresponds to appropriate BPM channel
-            tofval = nt_tdc[32*(incr/32+1)-1]-tdc_val;
+        // TOF corresponds to appropriate BPM channel
+        tofval = nt_tdc[32*(incr/32+1)-1]-tdc_val;
 
-            if (adc_val>0)
-	    {
-                adc[incr]->Fill(adc_val);
-                if (adc_val>4095)
-                    std::cout << "Overflow detected in adc"
-                            << incr
-                            << std::endl;
-                if (adc_val>fThresh[incr])
-                {
-                    adc_gt_thresh[incr]->Fill(adc_val);
-                    tdc_gt_thresh[incr]->Fill(tdc_val);
-                    tof_gt_thresh[incr]->Fill(tofval);
-
-                    if (tofval>fLowTOFCut[incr] && tofval<fHighTOFCut[incr])
-                    {
-                        adc_gt_thresh_tofcut[incr]->Fill(adc_val);
-                        tdc_gt_thresh_tofcut[incr]->Fill(tdc_val);
-                        tof_gt_thresh_tofcut[incr]->Fill(tofval);
-                    }
-                }
-            }
-	}
-	
-        if (tdc_val>0)
+        if (adc_val>0)
         {
-	    tdc[incr]->Fill(tdc_val);
-	    tof[incr]->Fill(tofval);
-        }
-
-	// Fill tdc-cut histograms
-        if ( (tdc_val>fLowCut[incr] && tdc_val<fHighCut[incr]) || (tdc_val>fLowCut2[incr] && tdc_val<fHighCut2[incr]) || (tdc_val>fLowCut3[incr] && tdc_val<fHighCut3[incr]) )
-        {
-            tdc_cut[incr]->Fill(tdc_val);
-	    tof_cut[incr]->Fill(tofval);
+          adc[incr]->Fill(adc_val);
+          if (adc_val>4095)
+            std::cout << "Overflow detected in adc"
+              << incr
+              << std::endl;
+          if (adc_val>fThresh[incr])
+          {
+            adc_gt_thresh[incr]->Fill(adc_val);
+            tdc_gt_thresh[incr]->Fill(tdc_val);
+            tof_gt_thresh[incr]->Fill(tofval);
 
             if (tofval>fLowTOFCut[incr] && tofval<fHighTOFCut[incr])
             {
-                tdc_cut_tofcut[incr]->Fill(tdc_val);
-                tof_cut_tofcut[incr]->Fill(tofval);
+              adc_gt_thresh_tofcut[incr]->Fill(adc_val);
+              tdc_gt_thresh_tofcut[incr]->Fill(tdc_val);
+              tof_gt_thresh_tofcut[incr]->Fill(tofval);
             }
-
-	    if (incr<nadc_ch && adc_val>0)
-            {
-		adc_cut[incr]->Fill(adc_val);
-
-                if (tofval>fLowTOFCut[incr] && tofval<fHighTOFCut[incr])
-                {
-                    adc_cut_tofcut[incr]->Fill(adc_val);
-                }
-            }
+          }
         }
-	else // Fill tdc-cut complement histograms
-        {
-	    inv_tdc_cut[incr]->Fill(tdc_val);
-	    inv_tof_cut[incr]->Fill(tofval);
+      }
 
-	    if (incr<nadc_ch && adc_val>0)
-            {
-		inv_adc_cut[incr]->Fill(adc_val);
-            }
-        } // end if-else construct for tdc-cuts
+      if (tdc_val>0)
+      {
+        tdc[incr]->Fill(tdc_val);
+        tof[incr]->Fill(tofval);
+      }
+
+      // Fill tdc-cut histograms
+      if ( (tdc_val>fLowCut[incr] && tdc_val<fHighCut[incr]) || (tdc_val>fLowCut2[incr] && tdc_val<fHighCut2[incr]) || (tdc_val>fLowCut3[incr] && tdc_val<fHighCut3[incr]) )
+      {
+        tdc_cut[incr]->Fill(tdc_val);
+        tof_cut[incr]->Fill(tofval);
+
+        if (tofval>fLowTOFCut[incr] && tofval<fHighTOFCut[incr])
+        {
+          tdc_cut_tofcut[incr]->Fill(tdc_val);
+          tof_cut_tofcut[incr]->Fill(tofval);
+        }
+
+        if (incr<nadc_ch && adc_val>0)
+        {
+          adc_cut[incr]->Fill(adc_val);
+
+          if (tofval>fLowTOFCut[incr] && tofval<fHighTOFCut[incr])
+          {
+            adc_cut_tofcut[incr]->Fill(adc_val);
+          }
+        }
+      }
+      else // Fill tdc-cut complement histograms
+      {
+        inv_tdc_cut[incr]->Fill(tdc_val);
+        inv_tof_cut[incr]->Fill(tofval);
+
+        if (incr<nadc_ch && adc_val>0)
+        {
+          inv_adc_cut[incr]->Fill(adc_val);
+        }
+      } // end if-else construct for tdc-cuts
     }
 
     return kTRUE;
@@ -594,237 +600,237 @@ void ProofPlot::SlaveTerminate()
 //_________________________________________________________________
 void ProofPlot::Terminate()
 {
-    std::cout << std::endl;
-    //  CreateLines();
+  std::cout << std::endl;
+  //  CreateLines();
 
-    SetCutHistogramColors();
-    FNameManager fnm;
-    std::string base = fnm.GetHistFileBase(true);
-    if (willSave==kTRUE)
-    {
-        TFile *histfile = new TFile(Form("%s%i.root",base.data(),runnumber[runcount-1]),"UPDATE");
+  SetCutHistogramColors();
+  FNameManager fnm;
+  std::string base = fnm.GetHistFileBase(true);
+  if (willSave==kTRUE)
+  {
+    TFile *histfile = new TFile(Form("%s%i.root",base.data(),runnumber[runcount-1]),"UPDATE");
 
-	WriteToFile(histfile,"adc",adc);
-        WriteToFile(histfile,"adc_cut",adc_cut);
-        WriteToFile(histfile,"inv_adc_cut",inv_adc_cut);
-        WriteToFile(histfile,"adc_cut_tofcut",adc_cut_tofcut);
-        WriteToFile(histfile,"adc_gt_thresh",adc_gt_thresh);
-        WriteToFile(histfile,"adc_gt_thresh_tofcut",adc_gt_thresh_tofcut);
+    WriteToFile(histfile,"adc",adc);
+    WriteToFile(histfile,"adc_cut",adc_cut);
+    WriteToFile(histfile,"inv_adc_cut",inv_adc_cut);
+    WriteToFile(histfile,"adc_cut_tofcut",adc_cut_tofcut);
+    WriteToFile(histfile,"adc_gt_thresh",adc_gt_thresh);
+    WriteToFile(histfile,"adc_gt_thresh_tofcut",adc_gt_thresh_tofcut);
 
-        WriteToFile(histfile,"tdc",tdc);
-        WriteToFile(histfile,"tdc_cut",tdc_cut);
-	WriteToFile(histfile,"inv_tdc_cut",inv_tdc_cut);
-        WriteToFile(histfile,"tdc_cut_tofcut",tdc_cut_tofcut);
-        WriteToFile(histfile,"tdc_gt_thresh",tdc_gt_thresh);
-        WriteToFile(histfile,"tdc_gt_thresh_tofcut",tdc_gt_thresh_tofcut);
+    WriteToFile(histfile,"tdc",tdc);
+    WriteToFile(histfile,"tdc_cut",tdc_cut);
+    WriteToFile(histfile,"inv_tdc_cut",inv_tdc_cut);
+    WriteToFile(histfile,"tdc_cut_tofcut",tdc_cut_tofcut);
+    WriteToFile(histfile,"tdc_gt_thresh",tdc_gt_thresh);
+    WriteToFile(histfile,"tdc_gt_thresh_tofcut",tdc_gt_thresh_tofcut);
 
-        WriteToFile(histfile,"tof",tof);
-	WriteToFile(histfile,"tof_cut",tof_cut);
-	WriteToFile(histfile,"inv_tof_cut",inv_tof_cut);
-        WriteToFile(histfile,"tof_cut_tofcut",tof_cut_tofcut);
-        WriteToFile(histfile,"tof_gt_thresh",tof_gt_thresh);
-        WriteToFile(histfile,"tof_gt_thresh_tofcut",tof_gt_thresh_tofcut);
+    WriteToFile(histfile,"tof",tof);
+    WriteToFile(histfile,"tof_cut",tof_cut);
+    WriteToFile(histfile,"inv_tof_cut",inv_tof_cut);
+    WriteToFile(histfile,"tof_cut_tofcut",tof_cut_tofcut);
+    WriteToFile(histfile,"tof_gt_thresh",tof_gt_thresh);
+    WriteToFile(histfile,"tof_gt_thresh_tofcut",tof_gt_thresh_tofcut);
 
 
-        SaveCanvases(histfile,"canvases");
-        trigger->Write("",TObject::kOverwrite);
-	//       bpm->Write();
-        histfile->Close();
+    SaveCanvases(histfile,"canvases");
+    trigger->Write("",TObject::kOverwrite);
+    //       bpm->Write();
+    histfile->Close();
 
-    }
+  }
 
 }
 
 void ProofPlot::LoadSettings(ConfigEntry *dbentry)
 {
-    ExtensibleDb *db = dbentry->GetExtensibleDb();
+  ExtensibleDb *db = dbentry->GetExtensibleDb();
 
-    if (db==NULL) throw -1;
+  if (db==NULL) throw -1;
 
-    db->GetValues("Pedestal",fPed);
-    if (fPed.size()==0) throw -1;
+  db->GetValues("Pedestal",fPed);
+  if (fPed.size()==0) throw -1;
 
-    db->GetValues("Threshold",fThresh);
-    if (fThresh.size()==0) throw -1;
+  db->GetValues("Threshold",fThresh);
+  if (fThresh.size()==0) throw -1;
 
-    db->GetValues("LowCut",fLowCut);
-    if (fLowCut.size()==0) throw -1;
+  db->GetValues("LowCut",fLowCut);
+  if (fLowCut.size()==0) throw -1;
 
-    db->GetValues("HighCut",fHighCut);
-    if (fHighCut.size()==0) throw -1;
+  db->GetValues("HighCut",fHighCut);
+  if (fHighCut.size()==0) throw -1;
 
-    db->GetValues("LowCut2",fLowCut2);
-    if (fLowCut2.size()==0) throw -1;
+  db->GetValues("LowCut2",fLowCut2);
+  if (fLowCut2.size()==0) throw -1;
 
-    db->GetValues("HighCut2",fHighCut2);
-    if (fHighCut2.size()==0) throw -1;
+  db->GetValues("HighCut2",fHighCut2);
+  if (fHighCut2.size()==0) throw -1;
 
-    db->GetValues("LowCut3",fLowCut3);
-    if (fLowCut3.size()==0) throw -1;
+  db->GetValues("LowCut3",fLowCut3);
+  if (fLowCut3.size()==0) throw -1;
 
-    db->GetValues("HighCut3",fHighCut3);
-    if (fHighCut3.size()==0) throw -1;
+  db->GetValues("HighCut3",fHighCut3);
+  if (fHighCut3.size()==0) throw -1;
 
-    db->GetValues("LowTOFCut",fLowTOFCut);
-    if (fLowTOFCut.size()==0) throw -1;
+  db->GetValues("LowTOFCut",fLowTOFCut);
+  if (fLowTOFCut.size()==0) throw -1;
 
-    db->GetValues("HighTOFCut",fHighTOFCut);
-    if (fHighTOFCut.size()==0) throw -1;
+  db->GetValues("HighTOFCut",fHighTOFCut);
+  if (fHighTOFCut.size()==0) throw -1;
 
 
 #ifdef VERBOSE_PROOFPLOT
-    std::cout << std::setw(15) << "Pedestal" << ":"; PrintVector(fPed);
-    std::cout << std::setw(15) << "Threshold" << ":"; PrintVector(fThresh);
-    std::cout << std::setw(15) << "LowCut" << ":"; PrintVector(fLowCut);
-    std::cout << std::setw(15) << "HighCut" << ":"; PrintVector(fHighCut);
+  std::cout << std::setw(15) << "Pedestal" << ":"; PrintVector(fPed);
+  std::cout << std::setw(15) << "Threshold" << ":"; PrintVector(fThresh);
+  std::cout << std::setw(15) << "LowCut" << ":"; PrintVector(fLowCut);
+  std::cout << std::setw(15) << "HighCut" << ":"; PrintVector(fHighCut);
 #endif
 }
 
 void ProofPlot::SetWarningColors(TH1* h)
 {
-    if (h)
-    {
-	h->SetLineColor(kRed);
-	h->SetLineWidth(2);
-	h->SetFillColor(kYellow);
-	h->SetMarkerColor(kRed);
-    }
-    else
-    {
-	std::cerr << "SetWarningColors:: histogram doesn't exist" 
-                << std::endl;
-    }
+  if (h)
+  {
+    h->SetLineColor(kRed);
+    h->SetLineWidth(2);
+    h->SetFillColor(kYellow);
+    h->SetMarkerColor(kRed);
+  }
+  else
+  {
+    std::cerr << "SetWarningColors:: histogram doesn't exist" 
+      << std::endl;
+  }
 }
 
 void ProofPlot::SetCutHistogramColors(void)
 {
-    for (Int_t i=0; i<ntdc_ch; i++)
+  for (Int_t i=0; i<ntdc_ch; i++)
+  {
+    if (fLowCut[i] > fHighCut[i])
     {
-	if (fLowCut[i] > fHighCut[i])
-        {
-	    SetWarningColors(adc_cut[i]);
-	    SetWarningColors(tdc_cut[i]);
-	    SetWarningColors(tof_cut[i]);
-	    SetWarningColors(inv_adc_cut[i]);
-	    SetWarningColors(inv_tdc_cut[i]);
-	    SetWarningColors(inv_tof_cut[i]);
-            SetWarningColors(adc_cut_tofcut[i]);
-            SetWarningColors(tdc_cut_tofcut[i]);
-            SetWarningColors(tof_cut_tofcut[i]);
-        }
+      SetWarningColors(adc_cut[i]);
+      SetWarningColors(tdc_cut[i]);
+      SetWarningColors(tof_cut[i]);
+      SetWarningColors(inv_adc_cut[i]);
+      SetWarningColors(inv_tdc_cut[i]);
+      SetWarningColors(inv_tof_cut[i]);
+      SetWarningColors(adc_cut_tofcut[i]);
+      SetWarningColors(tdc_cut_tofcut[i]);
+      SetWarningColors(tof_cut_tofcut[i]);
     }
+  }
 }
 
 void ProofPlot::WriteToFile(TFile* f, const Char_t* dir_name, std::vector<TH1F*>& vec)
 {
-    if (f==0)
-    {
-	std::cout << "ProofPlot::WriteToFile:::> NULL file argument" << std::endl;
-	return;
-    }
-    else if (!f->IsOpen())
-    {
-	std::cout << "ProofPlot::WriteToFile:::> File is not open" << std::endl;
-	return;
-    }
+  if (f==0)
+  {
+    std::cout << "ProofPlot::WriteToFile:::> NULL file argument" << std::endl;
+    return;
+  }
+  else if (!f->IsOpen())
+  {
+    std::cout << "ProofPlot::WriteToFile:::> File is not open" << std::endl;
+    return;
+  }
 
-    TObject *obj=0;
-    TDirectory* dir;
-    obj = f->Get(dir_name);
-    if (obj!=0)
-        dir = static_cast<TDirectory*>(obj);
-    else
-        dir = f->mkdir(dir_name);
+  TObject *obj=0;
+  TDirectory* dir;
+  obj = f->Get(dir_name);
+  if (obj!=0)
+    dir = static_cast<TDirectory*>(obj);
+  else
+    dir = f->mkdir(dir_name);
 
-    dir->cd();
+  dir->cd();
 
-    for (UInt_t i=0; i<vec.size(); i++)
-        vec[i]->Write("",TObject::kOverwrite);
+  for (UInt_t i=0; i<vec.size(); i++)
+    vec[i]->Write("",TObject::kOverwrite);
 
-    f->cd();
+  f->cd();
 
 }
 
 void ProofPlot::SaveCanvases(TFile *f, const TString& dir_name)
 {
-    if (f==0)
-    {
-        std::cerr << "ProofPlot::SaveCanvases:::> NULL file argument" << std::endl;
-        return;
-    }
-    else if (!f->IsOpen())
-    {
-        std::cerr << "ProofPlot::SaveCanvases:::> File is not open or doesn't exist" << std::endl;
-        return;
-    }
+  if (f==0)
+  {
+    std::cerr << "ProofPlot::SaveCanvases:::> NULL file argument" << std::endl;
+    return;
+  }
+  else if (!f->IsOpen())
+  {
+    std::cerr << "ProofPlot::SaveCanvases:::> File is not open or doesn't exist" << std::endl;
+    return;
+  }
 
-    TDirectory* dir;
-    dir = dynamic_cast<TDirectory*>(f->GetDirectory(dir_name));
-    if (dir==NULL)
-        dir = f->mkdir(dir_name);
-    f->cd();
-    //    dir->cd();
+  TDirectory* dir;
+  dir = dynamic_cast<TDirectory*>(f->GetDirectory(dir_name));
+  if (dir==NULL)
+    dir = f->mkdir(dir_name);
+  f->cd();
+  //    dir->cd();
 
-    gROOT->SetBatch(true);
+  gROOT->SetBatch(true);
 
-    Visualizer vis;
-    std::vector<TLine*> vlow, vhi;
+  Visualizer vis;
+  std::vector<TLine*> vlow, vhi;
 
-    std::cout << "Begin drawing ADC canvases" << std::endl;
-    vlow = GenerateTLines(fThresh);
-    vis.Draw("adc%i","logy");
-    vis.Draw("inv_adc_cut%i",Form("canvas=adc_run%i color=3 same",runnumber[runcount-1]));
-    vis.Draw("adc_cut%i",Form("canvas=adc_run%i color=2 same",runnumber[runcount-1]));
-    vis.Draw("adc_cut_tofcut%i",Form("canvas=adc_run%i color=6 same",runnumber[runcount-1]));
-    vis.Draw("adc_gt_thresh",Form("canvas=adc_run%i color=7 same",runnumber[runcount-1]));
-    vis.Draw("adc_gt_thresh_tofcut",Form("canvas=adc_run%i color=14 same",runnumber[runcount-1]));
-    vis.DrawLines(vlow,Form("canvas=adc_run%i color=4 same",runnumber[runcount-1]));
+  std::cout << "Begin drawing ADC canvases" << std::endl;
+  vlow = GenerateTLines(fThresh);
+  vis.Draw("adc%i","logy");
+  vis.Draw("inv_adc_cut%i",Form("canvas=adc_run%i color=3 same",runnumber[runcount-1]));
+  vis.Draw("adc_cut%i",Form("canvas=adc_run%i color=2 same",runnumber[runcount-1]));
+  vis.Draw("adc_cut_tofcut%i",Form("canvas=adc_run%i color=6 same",runnumber[runcount-1]));
+  vis.Draw("adc_gt_thresh",Form("canvas=adc_run%i color=7 same",runnumber[runcount-1]));
+  vis.Draw("adc_gt_thresh_tofcut",Form("canvas=adc_run%i color=14 same",runnumber[runcount-1]));
+  vis.DrawLines(vlow,Form("canvas=adc_run%i color=4 same",runnumber[runcount-1]));
 
-    std::cout << "Begin drawing TDC canvases" << std::endl;
-    vlow = GenerateTLines(fLowCut);
-    vhi = GenerateTLines(fHighCut);
-    vis.Draw("tdc%i","logy");
-    vis.Draw("inv_tdc_cut%i",Form("canvas=tdc_run%i color=3 same",runnumber[runcount-1]));
-    vis.Draw("tdc_cut%i",Form("canvas=tdc_run%i color=2 same",runnumber[runcount-1]));
-    vis.Draw("tdc_cut_tofcut%i",Form("canvas=tdc_run%i color=6 same",runnumber[runcount-1]));
-    vis.Draw("tdc_gt_thresh",Form("canvas=tdc_run%i color=7 same",runnumber[runcount-1]));
-    vis.Draw("tdc_gt_thresh_tofcut",Form("canvas=tdc_run%i color=14 same",runnumber[runcount-1]));
-    vis.DrawLines(vlow,Form("canvas=tdc_run%i color=4 same",runnumber[runcount-1]));
-    vis.DrawLines(vhi,Form("canvas=tdc_run%i color=4 same",runnumber[runcount-1]));
+  std::cout << "Begin drawing TDC canvases" << std::endl;
+  vlow = GenerateTLines(fLowCut);
+  vhi = GenerateTLines(fHighCut);
+  vis.Draw("tdc%i","logy");
+  vis.Draw("inv_tdc_cut%i",Form("canvas=tdc_run%i color=3 same",runnumber[runcount-1]));
+  vis.Draw("tdc_cut%i",Form("canvas=tdc_run%i color=2 same",runnumber[runcount-1]));
+  vis.Draw("tdc_cut_tofcut%i",Form("canvas=tdc_run%i color=6 same",runnumber[runcount-1]));
+  vis.Draw("tdc_gt_thresh",Form("canvas=tdc_run%i color=7 same",runnumber[runcount-1]));
+  vis.Draw("tdc_gt_thresh_tofcut",Form("canvas=tdc_run%i color=14 same",runnumber[runcount-1]));
+  vis.DrawLines(vlow,Form("canvas=tdc_run%i color=4 same",runnumber[runcount-1]));
+  vis.DrawLines(vhi,Form("canvas=tdc_run%i color=4 same",runnumber[runcount-1]));
 
 
-    std::cout << "Begin drawing TOF canvases" << std::endl;
-    vlow = GenerateTLines(fLowTOFCut);
-    vhi = GenerateTLines(fHighTOFCut);
+  std::cout << "Begin drawing TOF canvases" << std::endl;
+  vlow = GenerateTLines(fLowTOFCut);
+  vhi = GenerateTLines(fHighTOFCut);
 
-    vis.Draw("tof%i","logy");
-    vis.Draw("inv_tof_cut%i",Form("canvas=tof_run%i color=3 same",runnumber[runcount-1]));
-    vis.Draw("tof_cut%i",Form("canvas=tof_run%i color=2 same",runnumber[runcount-1]));
-    vis.Draw("tof_cut_tofcut%i",Form("canvas=tof_run%i color=6 same",runnumber[runcount-1]));
-    vis.Draw("tof_gt_thresh",Form("canvas=tof_run%i color=7 same",runnumber[runcount-1]));
-    vis.Draw("tof_gt_thresh_tofcut",Form("canvas=tof_run%i color=14 same",runnumber[runcount-1]));
-    vis.DrawLines(vlow,Form("canvas=tof_run%i color=4 same",runnumber[runcount-1]));
-    vis.DrawLines(vhi,Form("canvas=tof_run%i color=4 same",runnumber[runcount-1]));
+  vis.Draw("tof%i","logy");
+  vis.Draw("inv_tof_cut%i",Form("canvas=tof_run%i color=3 same",runnumber[runcount-1]));
+  vis.Draw("tof_cut%i",Form("canvas=tof_run%i color=2 same",runnumber[runcount-1]));
+  vis.Draw("tof_cut_tofcut%i",Form("canvas=tof_run%i color=6 same",runnumber[runcount-1]));
+  vis.Draw("tof_gt_thresh",Form("canvas=tof_run%i color=7 same",runnumber[runcount-1]));
+  vis.Draw("tof_gt_thresh_tofcut",Form("canvas=tof_run%i color=14 same",runnumber[runcount-1]));
+  vis.DrawLines(vlow,Form("canvas=tof_run%i color=4 same",runnumber[runcount-1]));
+  vis.DrawLines(vhi,Form("canvas=tof_run%i color=4 same",runnumber[runcount-1]));
 
-    //    for (UInt_t i=0; i<vec.size(); i++)
-    //        vec[i]->Write("",TObject::kOverwrite);
-    vis.SetAxisLabelSizeOnAllCanvases(0.05,'x');
-    vis.SaveAllCanvases(dir);
+  //    for (UInt_t i=0; i<vec.size(); i++)
+  //        vec[i]->Write("",TObject::kOverwrite);
+  vis.SetAxisLabelSizeOnAllCanvases(0.05,'x');
+  vis.SaveAllCanvases(dir);
 
-    gROOT->SetBatch(false);
-    f->cd();
+  gROOT->SetBatch(false);
+  f->cd();
 
 }
 
 
 std::vector<TLine*> ProofPlot::GenerateTLines(std::vector<Float_t> &xvals)
 {
-    std::vector<TLine*> lines(xvals.size(),static_cast<TLine*>(NULL));
+  std::vector<TLine*> lines(xvals.size(),static_cast<TLine*>(NULL));
 
-    for (UInt_t i=0; i<xvals.size(); i++)
-    {
-        lines[i] = new TLine(xvals[i],0,xvals[i],10000);
-    }
+  for (UInt_t i=0; i<xvals.size(); i++)
+  {
+    lines[i] = new TLine(xvals[i],0,xvals[i],10000);
+  }
 
-    return lines;
+  return lines;
 }
