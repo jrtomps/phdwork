@@ -18,7 +18,7 @@
 //#include "FragSimSource.hh"
 #include "FragSimSource2.hh"
 //#include "AllVolumeSource.hh"
-//#include "AllVolumeSource2.hh"
+#include "AllVolumeSource2.hh"
 #include "PrimarySupervisor.hh"
 #include "AngDist.h"
 #include "Parameters.h"
@@ -52,12 +52,12 @@ main(int argc, char* argv[])
         runManager->SetUserInitialization(new PhysicsList);
 
 //        FragSimSource2 fss(0.9525*cm,
-        FragSimSource2 fss(1.02*cm,
-                           "av_1_impr_7_target_log_pv_0",
-                           FragSimSource2::kSurfaceLayer,
-                           10.0*um);
+//        FragSimSource2 fss(1.02*cm,
+//                           "av_1_impr_7_target_log_pv_0",
+//                           FragSimSource2::kSurfaceLayer,
+//                           10.0*um);
 
-//        AllVolumeSource2 fss("expHall","av_1_impr_7_target_log_pv_0", 33.0*um);
+        AllVolumeSource2 fss("expHall","av_1_impr_7_target_log_pv_0", 33.0*um);
         PrimarySupervisor ps("expHall","av_1_impr_7_target_log_pv_0");
 
         FragSimPrimaryGeneratorAction *pga = new FragSimPrimaryGeneratorAction;

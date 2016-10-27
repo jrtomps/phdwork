@@ -35,4 +35,5 @@ else
 fi
 
 export G4LEDATA=/usr/local/geant4/geant4.9.6.p04-build/data/G4EMLOW6.32
+export SIM_OUTPUT_DIR="/mnt/PhD/sim_output"
 #export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$HOME/g4work/tmp/Linux-g++/FragSim02

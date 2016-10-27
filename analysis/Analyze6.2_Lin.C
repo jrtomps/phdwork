@@ -100,15 +100,15 @@ void Analyze6p2_Lin(bool force_recompile=true)
     TString message = TString::Format("Form LTF corrected histograms");
     if (OkToContinue(message))
     {
-        FormAlphaLTFCorrection(target.Data(), eg, pol.Data(), 678);
+//        FormAlphaLTFCorrection(target.Data(), eg, pol.Data(), 678);
     }
 
 
-    TString message = TString::Format("combine %s, Eg=%.1f, %s", target.Data(), eg, pol.Data());
+    message = TString::Format("combine %s, Eg=%.1f, %s", target.Data(), eg, pol.Data());
     if (OkToContinue(message))
     {
         CombineAllRunsForTargetWithEnergyAndPol(target.Data(),eg,pol.Data(),true);
-        f = new TFile(combined_hist_run,"UPDATE");
+        auto  = new TFile(combined_hist_run,"UPDATE");
         CleanupCombinedCanvasesDirectory(f);
         f->Close();
         f = TFile::Open(combined_hist_run,"UPDATE");
@@ -119,7 +119,7 @@ void Analyze6p2_Lin(bool force_recompile=true)
     message = TString::Format("calibrate %s, Eg=%.1f, %s", target.Data(), eg, pol.Data());
     if (OkToContinue(message))
     {
-        f = new TFile(combined_hist_run.Data(),"UPDATE");
+        auto f = new TFile(combined_hist_run.Data(),"UPDATE");
         TDirectory* dir = f->GetDirectory("adc");
         if (dir==0)
         {
@@ -204,7 +204,7 @@ void Analyze6p2_Lin(bool force_recompile=true)
          message = TString::Format("normalize %s by Veto10HzClock", bgnd_id.Data());
          if (OkToContinue(message))
          {
-             f = new TFile(overnight_hist_run.Data(),"UPDATE");
+             auto f = new TFile(overnight_hist_run.Data(),"UPDATE");
 
              std::cout << "\tNormalizing hists in ltf_corr_adc directory" << std::endl;
              TDirectory *dir = f->GetDirectory("ltf_corr_adc");
@@ -226,7 +226,7 @@ void Analyze6p2_Lin(bool force_recompile=true)
          message = TString::Format("calibrate %s", bgnd_id.Data());
          if (OkToContinue(message))
          {
-             f = new TFile(overnight_hist_run,"UPDATE");
+             auto f = new TFile(overnight_hist_run,"UPDATE");
              TDirectory* dir = f->GetDirectory("adc");
              if (dir==0)
              {
@@ -284,7 +284,7 @@ void Analyze6p2_Lin(bool force_recompile=true)
                                    target.Data(), eg, pol.Data(), bgnd_id.Data());
          if (OkToContinue(message))
          {
-             f = new TFile(combined_hist_run.Data(),"UPDATE");
+             auto f = new TFile(combined_hist_run.Data(),"UPDATE");
 
              std::cout << "\tShifting ltf_corr_adc hists" << std::endl;
              TDirectory *dir = f->GetDirectory("ltf_corr_adc");
@@ -308,7 +308,7 @@ void Analyze6p2_Lin(bool force_recompile=true)
                                    bgnd_id.Data(), target.Data(), eg, pol.Data());
          if (OkToContinue(message))
          {
-             f = new TFile(combined_hist_run.Data(),"UPDATE");
+             auto f = new TFile(combined_hist_run.Data(),"UPDATE");
 
              std::cout << "\tSubtracting shifted_ltf_corr_adc hists" << std::endl;
              TDirectory *dir = f->GetDirectory("shifted_ltf_corr_adc");
@@ -348,7 +348,7 @@ void Analyze6p2_Lin(bool force_recompile=true)
              }
              else
              {
-                 fbg = new TFile(overnight_hist_run.Data(),"UPDATE");
+                 auto fbg = new TFile(overnight_hist_run.Data(),"UPDATE");
                  TDirectory *dirbg = fbg->GetDirectory("normed_ltf_corr_adc_gt_thresh_tofcut");
                  if (dirbg==0) std::cout << "cannot find normed histograms in " << fbg->GetName() << std::endl;
                  else          SubtractBgndRuns(dirbg,dir);
@@ -365,7 +365,7 @@ void Analyze6p2_Lin(bool force_recompile=true)
      {
          TString uncorr_dir = "ltf_corr_adc_gt_thresh";
          TString corr_dir = "bgsubbed_shifted_ltf_corr_adc_gt_thresh";
-         f = new TFile(combined_hist_run.Data(),"update");
+         auto f = new TFile(combined_hist_run.Data(),"update");
          TDirectory* du = f->GetDirectory(uncorr_dir.Data());
          TDirectory* ds = f->GetDirectory(corr_dir.Data());
 
@@ -455,7 +455,7 @@ void Analyze6p2_Lin(bool force_recompile=true)
 
     if (OkToContinue("generate ratio and asymmetry plots"))
     {
-        f = new TFile(angdist_root_file.Data(),"UPDATE");
+        auto f = new TFile(angdist_root_file.Data(),"UPDATE");
         GenerateRatioAndAsymmetry(f);
         f->Close();
 
@@ -476,7 +476,7 @@ void Analyze6p2_Lin(bool force_recompile=true)
     if (OkToContinue("create overlaid angular distributions"))
     {
         gROOT->SetBatch(true);
-        f = new TFile(angdist_root_file.Data(),"UPDATE");
+        auto f = new TFile(angdist_root_file.Data(),"UPDATE");
         CreatePlotOverlay(f, Form("%s E_{#gamma}=%.1f MeV %s Yields", target.Data(), eg, pol.Data()));
         f->Close();
 
@@ -513,7 +513,7 @@ void Analyze6p2_Lin(bool force_recompile=true)
 
     if (OkToContinue("form alpha_ratio graph"))
     {
-        f = new TFile(combined_hist_run.Data(),"UPDATE");
+        auto  = new TFile(combined_hist_run.Data(),"UPDATE");
 
         StripDb sdb(angle_file.Data());
         TH1* halpha_ints;
@@ -528,7 +528,7 @@ void Analyze6p2_Lin(bool force_recompile=true)
 
     if (OkToContinue("incorporate systematic uncertainty into the ratio"))
     {
-        f = new TFile(combined_hist_run.Data(),"UPDATE");
+        auto f = new TFile(combined_hist_run.Data(),"UPDATE");
 //        if (gr_==0)
 //        {
 //            std::cout << "Failed to find the ratio graph" << std::endl;

@@ -3,6 +3,10 @@
 
 /FragSim02/exp_geometry/target_translation -5 0 0 mm
 #/FragSim02/generator/set_user_distribution params/simple.params
+/FragSim02/exp_geometry/global_translation 0 -2 0 mm
+/FragSim02/exp_geometry/target_translation 1 0 0 mm
+/FragSim02/exp_geometry/rot1 1 deg
+/FragSim02/exp_geometry/rot2 5 deg
 
 # THESE ARE NOT APPLICABLE
 # IN FragSim232Th.cc the all volume source needs 
@@ -20,5 +24,5 @@
 /gun/energy 8.955 MeV
 
 /testem/phys/setCuts 0.5 mm
-/run/beamOn 1000000
+/run/beamOn 300000000
 #/run/beamOn 10000000

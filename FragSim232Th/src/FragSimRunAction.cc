@@ -42,7 +42,11 @@ FragSimRunAction::BeginOfRunAction(const G4Run *aRun)
   aRun = 0;
   ftreeMaker = ::TreeMaker::GetTreeMakerPointer();
 
-  TString path = "./sim_output/";
+  TString path = "./sim_output";
+  const char* outdir = getenv("SIM_OUTPUT_DIR");
+  if (outdir) {
+    path = outdir;
+  }
   TString name = frun_name.data();
   TString treeName = "Sim_Tree";
   Int_t compression = 1;
