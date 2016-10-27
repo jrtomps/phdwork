@@ -1,4 +1,4 @@
-BaseDir     : /home/jrtomps/pffrag2
+BaseDir     : /home/jeromy/PhD/PhDPaper
 SclrDir     : scalers
 RunTreeDir  : analysis/run_tree_dir
 HistFileDir : analysis/pffrag2_hist_run_narrow
