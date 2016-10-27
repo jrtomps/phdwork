@@ -8,6 +8,7 @@
 #pragma link C++ class HistFiller;
 
 #pragma link C++ namespace ROOTUtils;
+#pragma link C++ namespace PhD;
 #pragma link C++ nestedclass;
 #pragma link C++ nestedfunction;
 #pragma link C++ nestedtypedef;
@@ -43,6 +44,7 @@
 #pragma link C++ function ROOTUtils::FormatTPad(TVirtualPad*);
 #pragma link C++ function ROOTUtils::CalibrateHistWithConsistentAxis(TH1*, UInt_t, Double_t, Double_t);
 #pragma link C++ function ROOTUtils::GetAllTDirectoriesInDirectory(TDirectory*);
+#pragma
 #pragma link C++ class VectorSorter;
 #pragma link C++ class VectorWriter;
 #pragma link C++ class std::vector<Double_t>;
@@ -58,6 +60,12 @@
 #pragma link C++ class ROOTUtils::TH2CosPhiSmear;
 #pragma link C++ class ColumnFileLoader;
 
+
+#pragma link C++ namespace PhD;
+#pragma link C++ namespace PhD::ColumnFileReader;
+#pragma link C++ function PhD::ColumnFileReader::parseFile(std::istream&, const std::string&, size_t);
+#pragma link C++ function PhD::ColumnFileReader::parseLine(std::istream&);
+#pragma link C++ function PhD::ColumnFileReader::column(const std::vector<std::vector<double> >&, size_t);
 #pragma link C++ global gROOT;
 #pragma link C++ global gEnv;
 

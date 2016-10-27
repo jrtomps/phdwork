@@ -14,6 +14,7 @@ set(ROOTUtils_SOURCES
   ConsistentAxisConverter.cpp
   TH2GaussianSmear.cpp
   TH2CosPhiSmear.cpp
+  ColumnFileReader.cpp
   dictROOTUtils.cxx)
 
 set(ROOTUtils_HEADERS
@@ -29,6 +30,7 @@ set(ROOTUtils_HEADERS
   MultiTreeMaker.h
   ConsistentAxisConverter.h
   TH2GaussianSmear.h
+  ColumnFileReader.h
   TH2CosPhiSmear.h)
 
 ROOT_GENERATE_DICTIONARY(dictROOTUtils ${ROOTUtils_HEADERS} LINKDEF ${CMAKE_CURRENT_SOURCE_DIR}/LinkDef.h OPTIONS -c)

@@ -1,4 +1,11 @@
 
+#include "CalibrateHIsts.cpp"
+#include "NormalizeAlphaCountsByReference.cpp"
+#include "../analysis_soft/Scripts/CreateOverlayCanvases.cpp"
+#include "../analysis_soft/Scripts/NormalizeAllHists.C"
+#include "../analysis_soft/Scripts/ShiftHistsFromFile.cpp"
+#include "PAnalysis.h"
+
 Bool_t OkToContinue(const TString& text)
 {
     Char_t ans;
@@ -22,10 +29,13 @@ TString calib_file = "eg7.2_Lin_calib.dat";
 TString bgnd_calib_file = "overnight_bgnd0_calib.dat";
 
 // includes runs 632-637
-Double_t norm = 12972.2/20485.5; // (total 10Hz clock time prod. data)/(total 10Hz clock time bgnd)
+Double_t normalization = 12972.2/20485.5; // (total 10Hz clock time prod. data)/(total 10Hz clock time bgnd)
 
 void Analyze7p2_Lin(bool force_recompile=true)
 {
+    TFile* f = nullptr;
+    TFile* fbg = nullptr;
+
     FNameManager fnm("fnameconfig.dat");
     TString results_dir = fnm.GetResultsDir(true);
     TString target_id  = TString::Format("%s_%.1f_%s",target.Data(), eg, pol.Data());
@@ -80,7 +90,7 @@ void Analyze7p2_Lin(bool force_recompile=true)
     else
     {
         gROOT->ProcessLine(".L analysis_soft/Scripts/GenerateTGraphInputFiles.cpp+");
-        gROOT->ProcessLine(".L analysis_soft/Scripts/CreatePlotOverlay.C+");
+        gROOT->ProcessLine(".L ../analysis_soft/Scripts/CreatePlotOverlay.C+");
         gROOT->ProcessLine(".L analysis_soft/Scripts/CleanupCombinedCanvasesDirectory.cpp+");
         gROOT->ProcessLine(".L analysis_soft/Scripts/CreateOverlayCanvases.cpp+");
         gROOT->ProcessLine(".L analysis_soft/Scripts/GenerateRatioAndAsymmetry.cpp+");
@@ -105,7 +115,7 @@ void Analyze7p2_Lin(bool force_recompile=true)
     }
 
 
-    TString message = TString::Format("combine %s, Eg=%.1f, %s", target.Data(), eg, pol.Data());
+    message = TString::Format("combine %s, Eg=%.1f, %s", target.Data(), eg, pol.Data());
     if (OkToContinue(message))
     {
         CombineAllRunsForTargetWithEnergyAndPol(target.Data(),eg,pol.Data(),true);
@@ -210,17 +220,17 @@ void Analyze7p2_Lin(bool force_recompile=true)
              std::cout << "\tNormalizing hists in ltf_corr_adc directory" << std::endl;
              TDirectory *dir = f->GetDirectory("ltf_corr_adc");
              if (dir==0) std::cout << "Cannot find ltf_corr_adc folder" << std::endl;
-             else        NormalizeAllHists(dir,norm);
+             else        NormalizeAllHists(dir,normalization);
 
              std::cout << "\tNormalizing hists in ltf_corr_adc_gt_thresh directory" << std::endl;
              dir = f->GetDirectory("ltf_corr_adc_gt_thresh");
              if (dir==0) std::cout << "Cannot find ltf_corr_adc_gt_thresh folder" << std::endl;
-             else        NormalizeAllHists(dir,norm);
+             else        NormalizeAllHists(dir,normalization);
 
              std::cout << "\tNormalizing hists in ltf_corr_adc_gt_thresh_tofcut directory" << std::endl;
              dir = f->GetDirectory("ltf_corr_adc_gt_thresh_tofcut");
              if (dir==0) std::cout << "Cannot find ltf_corr_adc_gt_thresh_tofcut folder" << std::endl;
-             else        NormalizeAllHists(dir,norm);
+             else        NormalizeAllHists(dir,normalization);
              f->Close();
          }
 

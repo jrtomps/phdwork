@@ -14,6 +14,7 @@
 #pragma link C++ global gROOT;
 #pragma link C++ class Visualizer;
 #pragma link C++ class PFVisualizer;
+#pragma link C++ class PlotVisualizer;
 #pragma link C++ class ScalerTool;
 #pragma link C++ class SScalerTool;
 #pragma link C++ class FNameManager;
@@ -32,5 +33,6 @@
 #pragma link C++ typedef StripPair;
 #pragma link C++ class StripDb;
 
+#pragma link C++ class HPusher;
 #endif
 
