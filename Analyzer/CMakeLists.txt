@@ -7,7 +7,7 @@ set(Analyzer_SOURCES
            SScalerTool.cpp Comment.cpp FNameManager.cpp ExtensibleDb.cpp 
            DataElement.cpp Utils.cpp CombinationEngine.cpp 
 			MultiplicityGroupGenerator.cpp FluxCalculator.cpp 
-			ADCRegionInspector.cpp  StripInfo.cpp dictAnalyzer.cxx)
+			ADCRegionInspector.cpp  StripInfo.cpp PlotVisualizer.cpp dictAnalyzer.cxx)
 
 set(Analyzer_HEADERS
     ConfigEntry.h ConfigManager.h ProofPlot.h PP2d.h PPCoincMap.h 
@@ -16,7 +16,7 @@ set(Analyzer_HEADERS
               ScalerTool.h SScalerTool.h Comment.h FNameManager.h 
               ExtensibleDb.h DataElement.h Utils.h CombinationEngine.h 
 			  MultiplicityGroupGenerator.h FluxCalculator.h 
-				ADCRegionInspector.h StripInfo.h UtilTemplates.h)
+        ADCRegionInspector.h StripInfo.h PlotVisualizer.h UtilTemplates.h)
 
 ROOT_GENERATE_DICTIONARY(dictAnalyzer ${Analyzer_HEADERS} LINKDEF ${CMAKE_CURRENT_SOURCE_DIR}/LinkDef.h OPTIONS -c)
 

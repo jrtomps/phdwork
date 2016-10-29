@@ -12,7 +12,7 @@
 #ifndef COMMENT_H
 #define COMMENT_H
 
-class Comment : public std::list<std::string>
+class Comment : public std::list<std::string>, public TObject
 {
  public:
   Comment (void);

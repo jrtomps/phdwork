@@ -22,7 +22,7 @@
 #ifndef CONFIGMANAGER_H
 #define CONFIGMANAGER_H 1
 
-class ConfigManager {
+class ConfigManager : public TObject {
 
  public:
   ConfigManager  (void);

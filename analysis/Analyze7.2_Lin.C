@@ -22,7 +22,9 @@ TString calib_file = "eg7.2_Lin_calib.dat";
 TString bgnd_calib_file = "overnight_bgnd0_calib.dat";
 
 // includes runs 632-637
-Double_t norm = 12972.2/20485.5; // (total 10Hz clock time prod. data)/(total 10Hz clock time bgnd)
+Double_t normalization = 12972.2/20485.5; // (total 10Hz clock time prod. data)/(total 10Hz clock time bgnd)
+TFile * f = nullptr;
+TFile * fbg = nullptr;
 
 void Analyze7p2_Lin(bool force_recompile=true)
 {
@@ -105,7 +107,7 @@ void Analyze7p2_Lin(bool force_recompile=true)
     }
 
 
-    TString message = TString::Format("combine %s, Eg=%.1f, %s", target.Data(), eg, pol.Data());
+    message = TString::Format("combine %s, Eg=%.1f, %s", target.Data(), eg, pol.Data());
     if (OkToContinue(message))
     {
         CombineAllRunsForTargetWithEnergyAndPol(target.Data(),eg,pol.Data(),true);
@@ -210,17 +212,17 @@ void Analyze7p2_Lin(bool force_recompile=true)
              std::cout << "\tNormalizing hists in ltf_corr_adc directory" << std::endl;
              TDirectory *dir = f->GetDirectory("ltf_corr_adc");
              if (dir==0) std::cout << "Cannot find ltf_corr_adc folder" << std::endl;
-             else        NormalizeAllHists(dir,norm);
+             else        NormalizeAllHists(dir,normalization);
 
              std::cout << "\tNormalizing hists in ltf_corr_adc_gt_thresh directory" << std::endl;
              dir = f->GetDirectory("ltf_corr_adc_gt_thresh");
              if (dir==0) std::cout << "Cannot find ltf_corr_adc_gt_thresh folder" << std::endl;
-             else        NormalizeAllHists(dir,norm);
+             else        NormalizeAllHists(dir,normalization);
 
              std::cout << "\tNormalizing hists in ltf_corr_adc_gt_thresh_tofcut directory" << std::endl;
              dir = f->GetDirectory("ltf_corr_adc_gt_thresh_tofcut");
              if (dir==0) std::cout << "Cannot find ltf_corr_adc_gt_thresh_tofcut folder" << std::endl;
-             else        NormalizeAllHists(dir,norm);
+             else        NormalizeAllHists(dir,normalization);
              f->Close();
          }
 
