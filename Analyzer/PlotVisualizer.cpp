@@ -38,6 +38,7 @@ PlotVisualizer::~PlotVisualizer()
 {}
 
 PlotVisualizer::PlotVisualizer(PlotVisualizer const& obj)
+  : Visualizer(obj)
 {
   if ( this != &obj)
     {
@@ -61,6 +62,7 @@ PlotVisualizer::operator=(PlotVisualizer const& obj)
       fDetMap = obj.fDetMap;
       fIsValidMap = obj.fIsValidMap;
       fConfigFilename = obj.fConfigFilename;
+      Visualizer::operator=(obj);
     }
   return *this;
 }
@@ -133,7 +135,7 @@ PlotVisualizer::Draw(const TString& basename, TString options)
 	    canvas_count++;
 	  }
 
-	if (fDetMap.size() < hist_index-failcount+1)
+	if (int(fDetMap.size()) < hist_index-failcount+1)
 	  fDetMap[hist_index-failcount]=pad_index+1;
 	 
 	pc->cd(fDetMap[hist_index-failcount]);
@@ -188,7 +190,6 @@ PlotVisualizer::IsAValidMapping(void)
 {
 
   Bool_t validity = kTRUE;
-  Int_t max_key=0, max_map=0;
   Int_t max = fDetMap.size();
 
   std::map<Int_t,Int_t>::iterator it;

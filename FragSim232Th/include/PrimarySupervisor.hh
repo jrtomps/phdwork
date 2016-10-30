@@ -13,7 +13,7 @@
 class MyException : public std::exception
 {
 public:
-  MyException(const G4String& what) throw() : std::exception(), fWhat(what) {};
+  MyException(const G4String& huh) throw() : std::exception(), fWhat(huh) {};
   ~MyException(void) throw()  {};
   const char* what() const throw()  { return fWhat.data(); };
 private:

@@ -24,7 +24,7 @@ do
 	echo ${name}_${index}.seed > temp;
 	echo Y >> temp;
 	${SIMNAME} macros/${name}.mac < temp
-	mv ${OUTDIR}/${name}.root ${OUTDIR}/${name}_${index}.root
+#	mv ${OUTDIR}/${name}.root ${OUTDIR}/${name}_${index}.root
 done
 
 ./sendemail.py

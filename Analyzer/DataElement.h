@@ -24,7 +24,7 @@ union Data_t
   Char_t*          cstr;
 };
 
-class DataElement 
+class DataElement  : public TObject
 {
  private:
   DataElement(void);

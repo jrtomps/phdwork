@@ -115,7 +115,7 @@ TreeMaker::CreateNewFile(const TString path, const TString name, const Int_t com
   {
     TString ext = ".root";
     fFileName = name+ext;
-    fPathAndName = path+name+ext;
+    fPathAndName = path+"/"+name+ext;
 
     fFile = new TFile(fPathAndName,"recreate",fFileName);
     fFile->SetCompressionLevel(compression);

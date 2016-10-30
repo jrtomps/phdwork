@@ -11,13 +11,13 @@
 #ifndef FNAMEMANAGER_H
 #define FNAMEMANAGER_H
 
-class FNameManager
+class FNameManager : public TObject
 {
  public:
   //  FNameManager ();
   FNameManager (const Char_t* configfile="fnameconfig.dat");
   FNameManager (FNameManager const& obj);
-  ~FNameManager ();
+  virtual ~FNameManager ();
   FNameManager& operator=(FNameManager const& obj);
 
   std::string GetBaseDir(void)     const;
