@@ -4,6 +4,7 @@
 #include "../analysis_soft/Scripts/CreateOverlayCanvases.cpp"
 #include "../analysis_soft/Scripts/NormalizeAllHists.C"
 #include "../analysis_soft/Scripts/ShiftHistsFromFile.cpp"
+#include "SubtractBgnd.cpp"
 #include "PAnalysis.h"
 
 Bool_t OkToContinue(const TString& text)

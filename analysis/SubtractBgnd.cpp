@@ -2,11 +2,11 @@
 #include <ROOTUtils.h>
 #include <algorithm>
 
-void SubtractBgndHists(TDirectory* bgndDir, TDirectory* prodDir)
+void SubtractBgndRuns(TDirectory* bgndDir, TDirectory* prodDir)
 {
 
-  vector<TH1*> bgndHists = ROOTUtils::GetAllHistsInDirectory(bgndDir);
-  vector<TH1*> prodHists = ROOTUtils::GetAllHistsInDirectory(prodDir);
+  vector<TH1*> bgndHists = ROOTUtils::GetAllTH1InDirectory(bgndDir);
+  vector<TH1*> prodHists = ROOTUtils::GetAllTH1InDirectory(prodDir);
 
   if (bgndHists.size() != prodHists.size()) {
     throw std::runtime_error("SubtractBgndHists(TDirectory*, TDirectory*) found different number of hists in each directory");
@@ -23,7 +23,7 @@ void SubtractBgndHists(TDirectory* bgndDir, TDirectory* prodDir)
   pMotherDir->cd();
 
   for (size_t i=0; i<bgndHists.size(); ++i) {
-      TString name = TString::Format("bgsubbed_%s", prodHists->GetName());
+      TString name = TString::Format("bgsubbed_%s", prodHists.at(i)->GetName());
 
       TH1* pClone = dynamic_cast<TH1*>(prodHists.at(i)->Clone(name.Data()));
 
